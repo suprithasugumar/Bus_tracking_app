@@ -1,0 +1,27 @@
+﻿Running Gradle task 'assembleDebug'...                              6.7s
+flutter : Gradle build 
+failed to produce an .apk 
+file. It's likely that 
+this file was generated 
+under 
+D:\ACADEMICS\RAKSHITHA 
+PROJECT\Bus Tracking App\B
+us_tracking_app\build, 
+but the tool couldn't 
+find it.
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | Out-File 
+-FilePath 
+".\build_output.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (G  
+  radle build fa...uldn   
+ 't find it.:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 

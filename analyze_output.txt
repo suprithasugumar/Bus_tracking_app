@@ -1,0 +1,26 @@
+﻿Analyzing Bus_tracking_app...                                   
+
+   info - 'zIndex' is deprecated and shouldn't be used. Use zIndexInt instead. On some platforms zIndex is truncated to an int, which can lead to incorrect/unstable ordering - lib\screens\driver_dashboard.dart:363:9 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\screens\profile_screen.dart:72:30 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\profile_screen.dart:216:40 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\route_selection_screen.dart:53:56 - deprecated_member_use
+   info - 'zIndex' is deprecated and shouldn't be used. Use zIndexInt instead. On some platforms zIndex is truncated to an int, which can lead to incorrect/unstable ordering - lib\screens\student_tracking_screen.dart:344:9 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\student_tracking_screen.dart:356:40 - deprecated_member_use
+
+flutter : 6 issues found. 
+(ran in 20.3s)
+At line:1 char:1
++ flutter analyze 2>&1 | 
+Out-File -FilePath 
+".\analyze_output.txt" 
+-Enc ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpeci    fied: 
+(6 issues f    ound. (ran 
+in 20.    3s):String) [], 
+R    emoteException
+    + FullyQualifiedE    
+rrorId : NativeCo    
+mmandError
+ 

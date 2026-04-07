@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "211843255527",
+    "project_id": "bustrackingapp-6d421",
+    "storage_bucket": "bustrackingapp-6d421.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211843255527:android:be8ab2785e1861e4cde642",
+        "android_client_info": {
+          "package_name": "com.example.bus_tracking_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKtBlcymXzL_b_t2gaVZP3WHslGE8yNTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
