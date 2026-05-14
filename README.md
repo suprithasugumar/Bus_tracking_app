@@ -111,7 +111,7 @@ flutter run
 
 **Supritha S**
 M.Tech Integrated CSE (Business Analytics) — VIT Chennai
-[LinkedIn]( www.linkedin.com/in/supritha-s-308968300
+[LinkedIn]( [www.linkedin.com/in/supritha-s-308968300](https://www.linkedin.com/in/supritha-s-308968300/)
 ) · [GitHub](https://github.com/suprithasugumar)
 
 ---
