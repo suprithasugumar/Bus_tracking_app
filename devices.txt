@@ -1,0 +1,9 @@
+Found 4 connected devices:
+  23122PCD1I (mobile) • c1e59859 • android-arm64  • Android 16 (API 36)
+  Windows (desktop)   • windows  • windows-x64    • Microsoft Windows [Version 10.0.22631.6199]
+  Chrome (web)        • chrome   • web-javascript • Google Chrome 146.0.7680.178
+  Edge (web)          • edge     • web-javascript • Microsoft Edge 146.0.3856.109
+
+Run "flutter emulators" to list and start any available device emulators.
+
+If you expected another device to be detected, please run "flutter doctor" to diagnose potential issues. You may also try increasing the time to wait for connected devices with the "--device-timeout" flag. Visit https://flutter.dev/setup/ for troubleshooting tips.

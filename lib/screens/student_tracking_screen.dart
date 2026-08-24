@@ -38,19 +38,56 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
   bool _isDriverOnline = false;
   DateTime? _lastUpdated;
   bool _hasNotifiedTwoStops = false;
+  StreamSubscription? _anyDriverSubscription;
+  StreamSubscription? _notificationSubscription;
+  final Set<String> _seenNotificationIds = {};
+  bool _isInitialNotificationFetch = true;
+
   @override
   void initState() {
     super.initState();
     _initAnimation();
+    _subscribeToLocation();
+    _subscribeToNotifications();
+  }
 
-    // Use the driver assigned to this route (if any)
-    final driverId = widget.routeModel.assignedDriverId;
-    if (driverId.isNotEmpty) {
-      _subscribeToDriver(driverId);
-    } else {
-      // Fallback: listen to any bus on this route
-      _subscribeToRouteAnyDriver();
-    }
+  void _subscribeToNotifications() {
+    _notificationSubscription?.cancel();
+    _notificationSubscription = _firestoreService
+        .getNotificationsForRoute(widget.routeModel.routeId)
+        .listen((notifications) {
+      if (_isInitialNotificationFetch) {
+        // Mark existing historical notifications as seen
+        for (final item in notifications) {
+          final id = item['id'] as String?;
+          if (id != null) _seenNotificationIds.add(id);
+        }
+        _isInitialNotificationFetch = false;
+        return;
+      }
+
+      // Show local push notification for any new alert added by driver
+      for (final item in notifications) {
+        final id = item['id'] as String?;
+        final message = item['message'] as String?;
+        final type = item['type'] as String?;
+
+        if (id != null && message != null && !_seenNotificationIds.contains(id)) {
+          _seenNotificationIds.add(id);
+          final title = type == 'breakdown'
+              ? '🚨 Bus Breakdown Alert!'
+              : type == 'delay'
+                  ? '⚠️ Bus Delay Alert!'
+                  : '📢 Route Alert';
+
+          NotificationService.show(
+            id: id.hashCode,
+            title: title,
+            body: message,
+          );
+        }
+      }
+    });
   }
 
   void _initAnimation() {
@@ -60,17 +97,12 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
     );
   }
 
-  void _subscribeToDriver(String driverId) {
-    _busStream =
-        _firestoreService.getBusLocationStream(driverId).listen((bus) {
-      _handleBusUpdate(bus);
-    });
-  }
+  void _subscribeToLocation() {
+    _busStream?.cancel();
+    _anyDriverSubscription?.cancel();
 
-  /// If no driver is assigned, watch the entire bus_location collection for
-  /// any bus on this route that is online.
-  void _subscribeToRouteAnyDriver() {
-    FirebaseFirestore.instance
+    // Query bus_location strictly for active buses matching this route's routeId
+    _anyDriverSubscription = FirebaseFirestore.instance
         .collection('bus_location')
         .where('routeId', isEqualTo: widget.routeModel.routeId)
         .where('isOnline', isEqualTo: true)
@@ -80,7 +112,12 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
         final bus = BusLocation.fromFirestore(snap.docs.first);
         _handleBusUpdate(bus);
       } else {
-        if (mounted) setState(() => _isDriverOnline = false);
+        if (mounted) {
+          setState(() {
+            _isDriverOnline = false;
+            _busLocation = null;
+          });
+        }
       }
     });
   }
@@ -159,6 +196,8 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
   @override
   void dispose() {
     _busStream?.cancel();
+    _anyDriverSubscription?.cancel();
+    _notificationSubscription?.cancel();
     _animController?.dispose();
     super.dispose();
   }
@@ -210,7 +249,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
         points: widget.routeModel.stopCoordinates,
         color: const Color(0xFF0D47A1),
         width: 4,
-        patterns: [],
+        patterns: const [],
       ),
     };
   }
@@ -229,6 +268,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
           snippet:
               '${_busLocation?.speed.toStringAsFixed(1) ?? '0'} km/h',
         ),
+        // ignore: deprecated_member_use
         zIndex: 3,
       ));
     }
@@ -246,6 +286,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
                 ? BitmapDescriptor.hueGreen
                 : BitmapDescriptor.hueRed),
         infoWindow: InfoWindow(title: widget.routeModel.stops[i]),
+        // ignore: deprecated_member_use
         zIndex: 1,
       ));
     }
@@ -267,6 +308,10 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
         backgroundColor: const Color(0xFF0D47A1),
         foregroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
       ),
       body: Column(
         children: [

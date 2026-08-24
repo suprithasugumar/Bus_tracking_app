@@ -196,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return TextField(
       controller: controller,
       obscureText: isPassword,
-      scribbleEnabled: false,
+      stylusHandwritingEnabled: false,
       enableIMEPersonalizedLearning: false,
       decoration: InputDecoration(
         filled: true,

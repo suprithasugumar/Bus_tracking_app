@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/bus_model.dart';
 import '../services/firestore_service.dart';
+import '../models/trip_record_model.dart';
 
 /// Shows a history of all trips on the selected route.
 class TripHistoryScreen extends StatelessWidget {
@@ -22,6 +22,10 @@ class TripHistoryScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Trip History'),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
       ),
       body: StreamBuilder<List<TripRecord>>(
         stream: firestoreService.tripHistoryStream(routeId),

@@ -28,8 +28,39 @@ class _DriverDashboardState extends State<DriverDashboard> {
   Position? _lastPosition;
 
   @override
+  void initState() {
+    super.initState();
+    _restoreTripState();
+  }
+
+  Future<void> _restoreTripState() async {
+    try {
+      final busLoc = await _firestoreService.getBusLocationOnce(widget.uid);
+      if (busLoc != null && busLoc.isOnline && mounted) {
+        setState(() {
+          _isOnline = true;
+          _lastPosition = Position(
+            latitude: busLoc.latitude,
+            longitude: busLoc.longitude,
+            timestamp: busLoc.timestamp ?? DateTime.now(),
+            accuracy: 0,
+            altitude: 0,
+            altitudeAccuracy: 0,
+            heading: 0,
+            headingAccuracy: 0,
+            speed: busLoc.speed / 3.6,
+            speedAccuracy: 0,
+          );
+        });
+        _startLocationTimer();
+      }
+    } catch (_) {}
+  }
+
+  @override
   void dispose() {
-    _stopTrip();
+    _locationTimer?.cancel();
+    _locationTimer = null;
     super.dispose();
   }
 
@@ -70,19 +101,29 @@ class _DriverDashboardState extends State<DriverDashboard> {
     // Immediately send first position
     await _sendLocation();
 
-    // Then every 5 seconds
+    _startLocationTimer();
+
+    if (mounted) {
+      setState(() {
+        _isSendingLocation = false;
+      });
+    }
+  }
+
+  void _startLocationTimer() {
+    _locationTimer?.cancel();
     _locationTimer = Timer.periodic(const Duration(seconds: 5), (_) async {
       await _sendLocation();
     });
   }
 
-  void _stopTrip() {
+  Future<void> _stopTrip() async {
     _locationTimer?.cancel();
     _locationTimer = null;
 
     if (_isOnline) {
-      // Mark driver as offline in Firestore
-      _firestoreService.updateBusLocation(
+      // Mark driver as offline in Firestore only on explicit stop trip action
+      await _firestoreService.updateBusLocation(
         driverId: widget.uid,
         latitude: _lastPosition?.latitude ?? 0,
         longitude: _lastPosition?.longitude ?? 0,
@@ -175,6 +216,10 @@ class _DriverDashboardState extends State<DriverDashboard> {
         backgroundColor: const Color(0xFF0D47A1),
         foregroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

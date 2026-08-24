@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/bus_model.dart';
 import '../services/firestore_service.dart';
+import '../models/announcement_model.dart';
 
 /// Displays announcements for a route.
 /// Drivers can post new announcements; students can only read.
@@ -70,6 +70,10 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
       appBar: AppBar(
         title: const Text('Announcements'),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
       ),
       body: Column(
         children: [
@@ -111,6 +115,19 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
               stream: _firestoreService
                   .announcementsStream(widget.routeId),
               builder: (context, snap) {
+                if (snap.hasError) {
+                  return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Unable to load announcements: ${snap.error}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.red[700]),
+                      ),
+                    ),
+                  );
+                }
+
                 if (snap.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 }

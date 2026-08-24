@@ -63,6 +63,10 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
         backgroundColor: const Color(0xFF0D47A1),
         foregroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
       ),
       body: _buildBody(),
     );

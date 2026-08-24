@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/route_model.dart';
 import '../models/bus_model.dart';
 import '../models/user_profile.dart';
+import '../models/announcement_model.dart';
+import '../models/trip_record_model.dart';
 import 'seed_service.dart';
 
 class FirestoreService {
@@ -69,6 +71,15 @@ class FirestoreService {
 
   // ─── Bus Location ──────────────────────────────────────────────────────────
 
+  /// Read a single driver's bus location document once
+  Future<BusLocation?> getBusLocationOnce(String driverId) async {
+    final doc = await _db.collection('bus_location').doc(driverId).get();
+    if (doc.exists && doc.data() != null) {
+      return BusLocation.fromFirestore(doc);
+    }
+    return null;
+  }
+
   /// Driver writes their live GPS position
   Future<void> updateBusLocation({
     required String driverId,
@@ -133,5 +144,54 @@ class FirestoreService {
         .snapshots()
         .map((snap) =>
             snap.docs.map((d) => {'id': d.id, ...d.data()}).toList());
+  }
+
+  // ─── Announcements ─────────────────────────────────────────────────────────
+
+  /// Driver posts a new announcement for a route
+  Future<void> postAnnouncement({
+    required String routeId,
+    required String message,
+    required String postedBy,
+  }) async {
+    await _db.collection('announcements').add({
+      'routeId': routeId,
+      'message': message,
+      'postedBy': postedBy,
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// Real-time stream of announcements for a route (newest first)
+  Stream<List<Announcement>> announcementsStream(String routeId) {
+    return _db
+        .collection('announcements')
+        .where('routeId', isEqualTo: routeId)
+        .snapshots()
+        .map((snap) {
+      final list =
+          snap.docs.map((d) => Announcement.fromFirestore(d)).toList();
+      list.sort((a, b) => b.postedAt.compareTo(a.postedAt));
+      return list;
+    });
+  }
+
+  /// Driver deletes one of their own announcements
+  Future<void> deleteAnnouncement(String announcementId) async {
+    await _db.collection('announcements').doc(announcementId).delete();
+  }
+
+  // ─── Trip History ───────────────────────────────────────────────────────────
+
+  /// Real-time stream of trip records for a route (newest first)
+  Stream<List<TripRecord>> tripHistoryStream(String routeId) {
+    return _db
+        .collection('trips')
+        .where('routeId', isEqualTo: routeId)
+        .orderBy('startTime', descending: true)
+        .limit(30)
+        .snapshots()
+        .map((snap) =>
+            snap.docs.map((d) => TripRecord.fromFirestore(d)).toList());
   }
 }

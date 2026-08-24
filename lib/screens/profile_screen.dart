@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/bus_model.dart';
 import '../models/user_profile.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
@@ -103,6 +102,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: const Text('My Profile'),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.maybePop(context),
+        ),
         actions: [
           if (!_isEditing)
             IconButton(
