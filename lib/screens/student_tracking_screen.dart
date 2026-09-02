@@ -294,6 +294,90 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
     return markers;
   }
 
+  void _openFeedbackDialog() {
+    String category = 'Bus Delay';
+    final textCtrl = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDialogState) => AlertDialog(
+          title: const Row(
+            children: [
+              Icon(Icons.rate_review, color: Color(0xFF0D47A1)),
+              SizedBox(width: 8),
+              Text('Report Issue / Feedback'),
+            ],
+          ),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Issue Category', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                const SizedBox(height: 6),
+                DropdownButtonFormField<String>(
+                  value: category,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  ),
+                  items: const [
+                    DropdownMenuItem(value: 'Bus Delay', child: Text('Bus Delay / Late')),
+                    DropdownMenuItem(value: 'Overcrowding', child: Text('Bus Overcrowded / No Seats')),
+                    DropdownMenuItem(value: 'Lost Item', child: Text('Lost Item on Bus')),
+                    DropdownMenuItem(value: 'Driver Feedback', child: Text('Driver Behavior / Driving')),
+                    DropdownMenuItem(value: 'Route Suggestion', child: Text('Route / Schedule Suggestion')),
+                  ],
+                  onChanged: (val) {
+                    if (val != null) setDialogState(() => category = val);
+                  },
+                ),
+                const SizedBox(height: 14),
+                const Text('Details & Comments', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                const SizedBox(height: 6),
+                TextField(
+                  controller: textCtrl,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                    hintText: 'Describe the issue or feedback...',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D47A1), foregroundColor: Colors.white),
+              onPressed: () async {
+                if (textCtrl.text.trim().isEmpty) return;
+                await _firestoreService.submitStudentFeedback(
+                  uid: 'student_${DateTime.now().millisecondsSinceEpoch}',
+                  studentName: 'Student',
+                  routeId: widget.routeModel.routeId,
+                  category: category,
+                  details: textCtrl.text.trim(),
+                );
+                if (mounted) {
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('✅ Feedback submitted to Transit Operations!'), backgroundColor: Colors.green),
+                  );
+                }
+              },
+              child: const Text('Submit Report'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final initialTarget = widget.routeModel.stopCoordinates.isNotEmpty
@@ -312,6 +396,13 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.maybePop(context),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.rate_review_outlined),
+            tooltip: 'Report Issue / Feedback',
+            onPressed: _openFeedbackDialog,
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -334,7 +425,9 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
                   child: Text(
                     _isDriverOnline
                         ? 'Driver Online – ${widget.routeModel.routeName}'
-                        : 'Waiting for driver to start trip…',
+                        : _lastUpdated != null
+                            ? '⚠️ Bus Offline • Last known at ${_formatTimestamp(_lastUpdated)}'
+                            : 'Waiting for driver to start trip…',
                     style: const TextStyle(
                         color: Colors.white, fontWeight: FontWeight.w500),
                   ),
@@ -381,15 +474,22 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
                         value: '${_calculateETA()} min',
                         color: const Color(0xFF0D47A1),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       _InfoChip(
                         icon: Icons.speed,
                         label: 'Speed',
                         value:
-                            '${_busLocation?.speed.toStringAsFixed(0) ?? '—'} km/h',
+                            '${_busLocation?.speed.toStringAsFixed(0) ?? '0'} km/h',
                         color: Colors.green.shade700,
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
+                      _InfoChip(
+                        icon: Icons.airline_seat_recline_normal,
+                        label: 'Seats',
+                        value: '${50 - (_busLocation?.passengerCount ?? 18)} left',
+                        color: Colors.indigo.shade700,
+                      ),
+                      const SizedBox(width: 8),
                       _InfoChip(
                         icon: Icons.place_outlined,
                         label: 'Stops',

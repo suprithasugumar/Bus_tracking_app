@@ -1,0 +1,87 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to verify user authentication
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to verify admin role
+    function isAdmin() {
+      return isAuthenticated() && (
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'Admin' ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'superadmin' ||
+        request.auth.token.email.matches('.*admin.*')
+      );
+    }
+
+    // Helper function to verify driver role
+    function isDriver() {
+      return isAuthenticated() && (
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'Driver' ||
+        isAdmin()
+      );
+    }
+
+    // /users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // /routes collection
+    match /routes/{routeId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // /bus_location collection
+    match /bus_location/{driverId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && (request.auth.uid == driverId || isDriver() || isAdmin());
+    }
+
+    // /notifications collection
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated();
+      allow create: if isDriver() || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // /announcements collection
+    match /announcements/{announcementId} {
+      allow read: if isAuthenticated();
+      allow create: if isDriver() || isAdmin();
+      allow delete: if isAdmin() || (isDriver() && resource.data.postedBy.matches('.*' + request.auth.uid + '.*'));
+    }
+
+    // /trips collection
+    match /trips/{tripId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isDriver() || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // /sos_alerts collection
+    match /sos_alerts/{alertId} {
+      allow read: if isAuthenticated();
+      allow create: if isDriver() || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // /audit_logs collection
+    match /audit_logs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    // /system_config collection
+    match /system_config/{configId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+  }
+}

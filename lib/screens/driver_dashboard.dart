@@ -24,6 +24,8 @@ class _DriverDashboardState extends State<DriverDashboard> {
   bool _isOnline = false;
   bool _isSendingLocation = false;
   int _currentStopIndex = 0;
+  int _passengerCount = 18; // Default occupancy
+  DateTime? _tripStartTime;
   Timer? _locationTimer;
   Position? _lastPosition;
 
@@ -36,14 +38,15 @@ class _DriverDashboardState extends State<DriverDashboard> {
   Future<void> _restoreTripState() async {
     try {
       final busLoc = await _firestoreService.getBusLocationOnce(widget.uid);
-      if (busLoc != null && busLoc.isOnline && mounted) {
+      if (busLoc != null && busLoc.isOnline && busLoc.routeId == widget.routeModel.routeId && mounted) {
         setState(() {
           _isOnline = true;
+          _tripStartTime = busLoc.timestamp ?? DateTime.now();
           _lastPosition = Position(
             latitude: busLoc.latitude,
             longitude: busLoc.longitude,
             timestamp: busLoc.timestamp ?? DateTime.now(),
-            accuracy: 0,
+            accuracy: 4.0,
             altitude: 0,
             altitudeAccuracy: 0,
             heading: 0,
@@ -94,6 +97,7 @@ class _DriverDashboardState extends State<DriverDashboard> {
 
     setState(() {
       _isOnline = true;
+      _tripStartTime = DateTime.now();
       _currentStopIndex = 0;
       _isSendingLocation = true;
     });
@@ -107,6 +111,7 @@ class _DriverDashboardState extends State<DriverDashboard> {
       setState(() {
         _isSendingLocation = false;
       });
+      _showSnack('🟢 Trip Started! Real-time GPS broadcasting active.');
     }
   }
 
@@ -122,7 +127,10 @@ class _DriverDashboardState extends State<DriverDashboard> {
     _locationTimer = null;
 
     if (_isOnline) {
-      // Mark driver as offline in Firestore only on explicit stop trip action
+      final endTime = DateTime.now();
+      final startTime = _tripStartTime ?? endTime.subtract(const Duration(minutes: 15));
+
+      // 1. Mark driver as offline in Firestore
       await _firestoreService.updateBusLocation(
         driverId: widget.uid,
         latitude: _lastPosition?.latitude ?? 0,
@@ -130,8 +138,25 @@ class _DriverDashboardState extends State<DriverDashboard> {
         routeName: widget.routeModel.routeName,
         routeId: widget.routeModel.routeId,
         speed: 0,
+        passengerCount: _passengerCount,
         isOnline: false,
       );
+
+      // 2. Persist completed trip to /trips collection
+      try {
+        await _firestoreService.recordCompletedTrip(
+          routeId: widget.routeModel.routeId,
+          routeName: widget.routeModel.routeName,
+          driverId: widget.uid,
+          driverName: 'Driver',
+          startTime: startTime,
+          endTime: endTime,
+          stopsCompleted: _currentStopIndex + 1,
+          totalStops: widget.routeModel.stops.length,
+        );
+      } catch (e) {
+        debugPrint('[TripHistory] Error saving trip record: $e');
+      }
     }
 
     if (mounted) {
@@ -139,6 +164,7 @@ class _DriverDashboardState extends State<DriverDashboard> {
         _isOnline = false;
         _isSendingLocation = false;
       });
+      _showSnack('🏁 Trip Ended & Saved to Trip History.');
     }
   }
 
@@ -156,6 +182,7 @@ class _DriverDashboardState extends State<DriverDashboard> {
         routeName: widget.routeModel.routeName,
         routeId: widget.routeModel.routeId,
         speed: (position.speed * 3.6).clamp(0, 150), // m/s → km/h
+        passengerCount: _passengerCount,
         isOnline: true,
       );
     } catch (e) {
@@ -176,16 +203,26 @@ class _DriverDashboardState extends State<DriverDashboard> {
     }
   }
 
-  // ─── Notifications ─────────────────────────────────────────────────────────
+  // ─── Notifications & Alerts ────────────────────────────────────────────────
 
   Future<void> _sendDelayAlert() async {
     await _firestoreService.sendRouteNotification(
       routeId: widget.routeModel.routeId,
       message:
-          'Delay alert on ${widget.routeModel.routeName}. Bus running late.',
+          'Delay alert on ${widget.routeModel.routeName}. Bus running ~15 mins late.',
       type: 'delay',
     );
     _showSnack('⚠️ Delay alert sent to all students on this route');
+  }
+
+  Future<void> _sendTrafficAlert() async {
+    await _firestoreService.sendRouteNotification(
+      routeId: widget.routeModel.routeId,
+      message:
+          'Heavy traffic congestion encountered along ${widget.routeModel.routeName}.',
+      type: 'traffic',
+    );
+    _showSnack('🚦 Traffic delay broadcasted to route subscribers.');
   }
 
   Future<void> _sendBreakdownAlert() async {
@@ -196,6 +233,50 @@ class _DriverDashboardState extends State<DriverDashboard> {
       type: 'breakdown',
     );
     _showSnack('🚨 Breakdown alert sent!');
+  }
+
+  Future<void> _triggerEmergencySos() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Row(
+          children: [
+            Icon(Icons.warning, color: Colors.red, size: 28),
+            SizedBox(width: 8),
+            Text('Trigger Emergency SOS?'),
+          ],
+        ),
+        content: const Text(
+          'This will instantly alert Fleet Control & Emergency Dispatch with your exact GPS location.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('TRANSMIT SOS', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      final lat = _lastPosition?.latitude ?? 13.0827;
+      final lng = _lastPosition?.longitude ?? 80.2707;
+      await _firestoreService.sendSosAlert(
+        driverId: widget.uid,
+        driverName: 'Driver',
+        routeId: widget.routeModel.routeId,
+        routeName: widget.routeModel.routeName,
+        latitude: lat,
+        longitude: lng,
+        message: 'EMERGENCY: Immediate assistance requested on ${widget.routeModel.routeName}',
+      );
+      _showSnack('🚨 SOS Broadcast Sent to Central Command!');
+    }
   }
 
   void _showSnack(String msg) {
@@ -327,6 +408,64 @@ class _DriverDashboardState extends State<DriverDashboard> {
 
             const SizedBox(height: 14),
 
+            // ── Passenger Occupancy Counter ─────────────────────────────────
+            _SectionCard(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Passenger Occupancy',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        '$_passengerCount / 50 Seats Occupied (${50 - _passengerCount} Available)',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: _passengerCount > 45 ? Colors.red : Colors.grey[600],
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      IconButton.filledTonal(
+                        onPressed: _passengerCount > 0
+                            ? () {
+                                setState(() => _passengerCount--);
+                                if (_isOnline) _sendLocation();
+                              }
+                            : null,
+                        icon: const Icon(Icons.remove, size: 20),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '$_passengerCount',
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 8),
+                      IconButton.filled(
+                        style: IconButton.styleFrom(backgroundColor: const Color(0xFF0D47A1)),
+                        onPressed: _passengerCount < 60
+                            ? () {
+                                setState(() => _passengerCount++);
+                                if (_isOnline) _sendLocation();
+                              }
+                            : null,
+                        icon: const Icon(Icons.add, size: 20, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 14),
+
             // ── Stop Progress ───────────────────────────────────────────────
             if (_isOnline) ...[
               _SectionCard(
@@ -396,13 +535,13 @@ class _DriverDashboardState extends State<DriverDashboard> {
               const SizedBox(height: 14),
             ],
 
-            // ── Alerts ──────────────────────────────────────────────────────
+            // ── Alerts & Incident Dispatch ──────────────────────────────────
             _SectionCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Send Alert to Students',
+                    'Broadcast Incident to Students',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 15),
                   ),
@@ -417,16 +556,69 @@ class _DriverDashboardState extends State<DriverDashboard> {
                           onTap: _sendDelayAlert,
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: _AlertButton(
-                          label: 'Breakdown Alert',
+                          label: 'Traffic Jam',
+                          icon: Icons.traffic,
+                          color: Colors.amber.shade800,
+                          onTap: _sendTrafficAlert,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: _AlertButton(
+                          label: 'Breakdown',
                           icon: Icons.warning_amber_rounded,
-                          color: Colors.red,
+                          color: Colors.red.shade700,
                           onTap: _sendBreakdownAlert,
                         ),
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 14),
+
+            // ── Emergency SOS Command ───────────────────────────────────────
+            _SectionCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Row(
+                    children: [
+                      Icon(Icons.shield, color: Colors.red, size: 20),
+                      SizedBox(width: 6),
+                      Text(
+                        'Emergency Protocol',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.red),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    'Tap in case of medical emergency, accident, or security incident to transmit high-priority alert to Dispatch.',
+                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                  ),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 48,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red.shade600,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                      onPressed: _triggerEmergencySos,
+                      icon: const Icon(Icons.emergency, size: 22),
+                      label: const Text(
+                        'TRANSMIT EMERGENCY SOS',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 0.5),
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -20,6 +20,7 @@ class RouteSelectionScreen extends StatefulWidget {
 class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
   final FirestoreService _firestoreService = FirestoreService();
   List<RouteModel> _routes = [];
+  String? _favoriteRouteId;
   bool _isLoading = true;
   String? _error;
 
@@ -34,9 +35,11 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
       // Seed routes on first run (no-op if already seeded)
       await _firestoreService.seedDefaultRoutesIfEmpty();
       final routes = await _firestoreService.getRoutes();
+      final favId = await _firestoreService.getFavoriteRoute(widget.uid);
       if (mounted) {
         setState(() {
           _routes = routes;
+          _favoriteRouteId = favId;
           _isLoading = false;
         });
       }
@@ -48,6 +51,18 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
         });
       }
     }
+  }
+
+  Future<void> _toggleFavorite(String routeId) async {
+    final newFav = _favoriteRouteId == routeId ? '' : routeId;
+    setState(() => _favoriteRouteId = newFav.isEmpty ? null : newFav);
+    await _firestoreService.saveFavoriteRoute(widget.uid, newFav);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(newFav.isNotEmpty ? '⭐ Saved as Favorite Route!' : 'Removed from Favorites'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
   }
 
   @override
@@ -121,12 +136,15 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
     return RefreshIndicator(
       onRefresh: _loadRoutes,
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         itemCount: _routes.length,
         itemBuilder: (context, index) {
           final route = _routes[index];
+          final isFav = route.routeId == _favoriteRouteId;
           return _RouteCard(
             route: route,
+            isFavorite: isFav,
+            onFavoriteToggle: () => _toggleFavorite(route.routeId),
             onTap: () => _onRouteTapped(route),
           );
         },
@@ -150,9 +168,16 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
 
 class _RouteCard extends StatelessWidget {
   final RouteModel route;
+  final bool isFavorite;
+  final VoidCallback onFavoriteToggle;
   final VoidCallback onTap;
 
-  const _RouteCard({required this.route, required this.onTap});
+  const _RouteCard({
+    required this.route,
+    required this.isFavorite,
+    required this.onFavoriteToggle,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -181,16 +206,42 @@ class _RouteCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: Text(
-                      route.routeName,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          route.routeName,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        if (isFavorite)
+                          Container(
+                            margin: const EdgeInsets.only(top: 2),
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: Colors.amber.shade100,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: const Text(
+                              '⭐ DEFAULT ROUTE',
+                              style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.brown),
+                            ),
+                          ),
+                      ],
                     ),
                   ),
+                  IconButton(
+                    icon: Icon(
+                      isFavorite ? Icons.star : Icons.star_border,
+                      color: isFavorite ? Colors.amber.shade700 : Colors.grey.shade400,
+                    ),
+                    onPressed: onFavoriteToggle,
+                    tooltip: isFavorite ? 'Remove Default' : 'Set as Default Route',
+                  ),
                   const Icon(Icons.arrow_forward_ios,
-                      size: 16, color: Colors.grey),
+                      size: 14, color: Colors.grey),
                 ],
               ),
               const SizedBox(height: 10),

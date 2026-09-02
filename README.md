@@ -33,6 +33,7 @@ Student opens app → Logs in → Sees live bus position on Google Maps
 - **Google Maps integration** — interactive map with live bus marker and student's current location
 - **Route selection** — students filter by their specific bus route
 - **Lightweight and fast** — built as a Flutter app for smooth performance on Android
+- **Admin Dashboard Website** — Real-time web control center with live GPS tracking, route manager, user directory, announcements broadcast, striped performance charts, route allocation gauge, and built-in fleet simulator matching the app's electric blue theme.
 
 ---
 
@@ -40,11 +41,21 @@ Student opens app → Logs in → Sees live bus position on Google Maps
 
 | Technology | Purpose |
 |---|---|
-| Flutter | Cross-platform mobile app (Android/iOS) |
-| Firebase Auth | Driver and student authentication |
-| Firebase Realtime Database | Live location streaming |
-| Google Maps API | Interactive map with live markers |
-| Dart | Programming language |
+| Flutter & Dart | Cross-platform mobile app (Android/iOS) |
+| HTML5 / CSS3 / ES6+ JS | Admin Web Dashboard (Enterprise Control Center) |
+| Leaflet & CartoDB Maps | Interactive live fleet mapping & stop sequence visualization |
+| Firebase Auth & Firestore | Driver/Student authentication, live telemetry, and route data |
+| Firebase Cloud Functions (v2) | Event-driven FCM push notifications |
+| Google Maps API | Mobile map tracking |
+
+---
+
+## 🖥️ Running the Admin Dashboard
+
+To start the Admin Dashboard web application:
+1. Double-click `start_admin_dashboard.bat` (or run `powershell -ExecutionPolicy Bypass -File .\admin_dashboard\serve.ps1`).
+2. Open your browser at **`http://localhost:8080/`**.
+3. Sign in with administrative credentials (e.g., `admin@transit.org` / `admin123`).
 
 ---
 

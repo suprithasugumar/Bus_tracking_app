@@ -89,6 +89,7 @@ class FirestoreService {
     required String routeId,
     required double speed,
     required bool isOnline,
+    int passengerCount = 0,
   }) async {
     await _db.collection('bus_location').doc(driverId).set({
       'latitude': latitude,
@@ -97,6 +98,7 @@ class FirestoreService {
       'routeName': routeName,
       'routeId': routeId,
       'speed': speed,
+      'passengerCount': passengerCount,
       'timestamp': FieldValue.serverTimestamp(),
     });
   }
@@ -183,6 +185,33 @@ class FirestoreService {
 
   // ─── Trip History ───────────────────────────────────────────────────────────
 
+  /// Record a completed trip to /trips
+  Future<void> recordCompletedTrip({
+    required String routeId,
+    required String routeName,
+    required String driverId,
+    required String driverName,
+    required DateTime startTime,
+    required DateTime endTime,
+    required int stopsCompleted,
+    required int totalStops,
+  }) async {
+    final durationMinutes = endTime.difference(startTime).inMinutes;
+    await _db.collection('trips').add({
+      'routeId': routeId,
+      'routeName': routeName,
+      'driverId': driverId,
+      'driverName': driverName,
+      'startTime': Timestamp.fromDate(startTime),
+      'endTime': Timestamp.fromDate(endTime),
+      'durationMinutes': durationMinutes > 0 ? durationMinutes : 1,
+      'stopsCompleted': stopsCompleted,
+      'totalStops': totalStops,
+      'status': 'COMPLETED',
+      'createdAt': FieldValue.serverTimestamp(),
+    });
+  }
+
   /// Real-time stream of trip records for a route (newest first)
   Stream<List<TripRecord>> tripHistoryStream(String routeId) {
     return _db
@@ -193,5 +222,69 @@ class FirestoreService {
         .snapshots()
         .map((snap) =>
             snap.docs.map((d) => TripRecord.fromFirestore(d)).toList());
+  }
+
+  // ─── Emergency SOS ──────────────────────────────────────────────────────────
+
+  /// Driver posts an emergency SOS alert
+  Future<void> sendSosAlert({
+    required String driverId,
+    required String driverName,
+    required String routeId,
+    required String routeName,
+    required double latitude,
+    required double longitude,
+    required String message,
+  }) async {
+    await _db.collection('sos_alerts').add({
+      'driverId': driverId,
+      'driverName': driverName,
+      'routeId': routeId,
+      'routeName': routeName,
+      'latitude': latitude,
+      'longitude': longitude,
+      'message': message,
+      'status': 'ACTIVE',
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
+  // ─── Student Feedback & Issue Reporting ──────────────────────────────────────
+
+  /// Submit student issue or feedback
+  Future<void> submitStudentFeedback({
+    required String uid,
+    required String studentName,
+    required String routeId,
+    required String category, // 'delay', 'overcrowding', 'lost_item', 'driver_behavior', 'general'
+    required String details,
+  }) async {
+    await _db.collection('feedback').add({
+      'studentId': uid,
+      'studentName': studentName,
+      'routeId': routeId,
+      'category': category,
+      'details': details,
+      'status': 'OPEN',
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
+  // ─── Favorite Route Persistence ─────────────────────────────────────────────
+
+  /// Save student's preferred/favorite route
+  Future<void> saveFavoriteRoute(String uid, String routeId) async {
+    await _db.collection('users').doc(uid).set({
+      'favoriteRouteId': routeId,
+    }, SetOptions(merge: true));
+  }
+
+  /// Retrieve favorite route ID for user
+  Future<String?> getFavoriteRoute(String uid) async {
+    final doc = await _db.collection('users').doc(uid).get();
+    if (doc.exists && doc.data() != null) {
+      return doc.data()?['favoriteRouteId'] as String?;
+    }
+    return null;
   }
 }

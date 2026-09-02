@@ -7,6 +7,7 @@ class BusLocation {
   final String routeName;
   final String routeId;
   final double speed; // km/h
+  final int passengerCount;
   final DateTime? timestamp;
 
   BusLocation({
@@ -16,6 +17,7 @@ class BusLocation {
     required this.routeName,
     required this.routeId,
     required this.speed,
+    this.passengerCount = 0,
     this.timestamp,
   });
 
@@ -29,6 +31,7 @@ class BusLocation {
       routeName: data['routeName'] as String? ?? '',
       routeId: data['routeId'] as String? ?? '',
       speed: (data['speed'] as num?)?.toDouble() ?? 0.0,
+      passengerCount: (data['passengerCount'] as num?)?.toInt() ?? 0,
       timestamp: ts is Timestamp ? ts.toDate() : null,
     );
   }
@@ -41,6 +44,7 @@ class BusLocation {
       'routeName': routeName,
       'routeId': routeId,
       'speed': speed,
+      'passengerCount': passengerCount,
       'timestamp': FieldValue.serverTimestamp(),
     };
   }

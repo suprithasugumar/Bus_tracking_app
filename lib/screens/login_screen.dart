@@ -88,49 +88,59 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF0D47A1), Color(0xFF42A5F5)],
+            colors: [Color(0xFF0D47A1), Color(0xFF1976D2), Color(0xFF42A5F5)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: 30),
-                const Icon(Icons.directions_bus, size: 85, color: Colors.white),
-                const SizedBox(height: 15),
-                const Text(
-                  'Smart Bus Tracking',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 0.5,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight,
                   ),
-                ),
-                const Text(
-                  'Chennai City Bus Tracker',
-                  style: TextStyle(fontSize: 14, color: Colors.white70),
-                ),
-                const SizedBox(height: 40),
-                _inputField(_email, 'Email', Icons.email),
-                const SizedBox(height: 18),
-                _inputField(_password, 'Password', Icons.lock,
-                    isPassword: true),
-                const SizedBox(height: 25),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Select Role',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
+                  child: IntrinsicHeight(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.directions_bus, size: 85, color: Colors.white),
+                          const SizedBox(height: 15),
+                          const Text(
+                            'VIT Bus Tracker',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                          const Text(
+                            'Chennai Campus Transit System',
+                            style: TextStyle(fontSize: 14, color: Colors.white70),
+                          ),
+                          const SizedBox(height: 35),
+                          _inputField(_email, 'Email', Icons.email),
+                          const SizedBox(height: 18),
+                          _inputField(_password, 'Password', Icons.lock,
+                              isPassword: true),
+                          const SizedBox(height: 25),
+                          const Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Select Role',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ),
                 const SizedBox(height: 10),
                 Row(
                   children: [
@@ -182,6 +192,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  },
+),
         ),
       ),
     );

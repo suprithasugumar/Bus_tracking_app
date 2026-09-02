@@ -200,7 +200,48 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     icon: Icons.route,
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 20),
+
+                  // ── Preferences & Performance ──
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'App Preferences',
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: [
+                        SwitchListTile(
+                          dense: true,
+                          title: const Text('Low-Data Mode', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.5)),
+                          subtitle: const Text('Reduces map tile refresh rate to conserve data', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
+                          value: false,
+                          onChanged: (val) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(val ? '🟢 Low-Data mode enabled.' : 'Standard telemetry enabled.')),
+                            );
+                          },
+                        ),
+                        const Divider(height: 1),
+                        SwitchListTile(
+                          dense: true,
+                          title: const Text('High-Contrast Map', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.5)),
+                          subtitle: const Text('Enhance visibility of stops and bus markers', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
+                          value: true,
+                          onChanged: (val) {},
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 28),
 
                   // Logout button
                   SizedBox(

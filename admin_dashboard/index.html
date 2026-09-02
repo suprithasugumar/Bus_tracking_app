@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIT Bus Tracker — Admin Control Center</title>
+  <meta name="description" content="Production-Grade Fleet Telemetry & Transit Operations Control Center" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       AUTHENTICATION / ADMIN LOGIN SCREEN
+       ============================================================ -->
+  <div class="auth-page" id="auth-screen">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-icon">🚌</div>
+        <h2 class="auth-title">VIT BUS TRACKER</h2>
+        <div class="auth-sub">Fleet Operations Control Center</div>
+      </div>
+
+      <div id="login-error-msg" style="display:none;background:#FEF2F2;color:#DC2626;border:1px solid #FECACA;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;"></div>
+
+      <form id="form-admin-login">
+        <div class="form-group">
+          <label class="form-label" for="admin-email-input">Admin Email</label>
+          <input type="email" id="admin-email-input" class="form-control" placeholder="admin@transit.org" required value="admin@transit.org" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="admin-password-input">Password</label>
+          <input type="password" id="admin-password-input" class="form-control" placeholder="••••••••" required value="admin123" />
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-login-submit" style="width:100%;margin-top:10px;padding:11px;">
+          Sign In as Administrator
+        </button>
+        <button type="button" class="btn btn-secondary" id="btn-quick-demo" style="width:100%;margin-top:8px;padding:9px;font-size:12.5px;">
+          ⚡ 1-Click Fast Admin Sign In
+        </button>
+      </form>
+
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--text-muted);">
+        🔒 Authorized Personnel Only &bull; Connected to Firebase
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       APPLICATION SHELL (PROTECTED ADMIN INTERFACE)
+       ============================================================ -->
+  <div class="app-container" id="app-shell" style="display:none;">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🚌</div>
+        <div class="logo-text">
+          <h1>VIT BUS TRACKER</h1>
+          <span>Operations Admin</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- MAIN GROUP -->
+        <div>
+          <div class="nav-group-title">Main</div>
+          <ul class="nav-list">
+            <li><button class="nav-link active" data-nav="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><span>Overview</span></button></li>
+            <li><button class="nav-link" data-nav="tracking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg><span>Live Tracking</span></button></li>
+            <li><button class="nav-link" data-nav="buses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-4.8C20 6.8 19 6 17.8 6H4c-1.1 0-2 .9-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg><span>Buses</span></button></li>
+            <li><button class="nav-link" data-nav="drivers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Drivers</span></button></li>
+            <li><button class="nav-link" data-nav="students"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>Students</span></button></li>
+            <li><button class="nav-link" data-nav="routes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg><span>Routes</span></button></li>
+          </ul>
+        </div>
+
+        <!-- OPERATIONS GROUP -->
+        <div>
+          <div class="nav-group-title">Operations</div>
+          <ul class="nav-list">
+            <li><button class="nav-link" data-nav="alerts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Alerts</span></button></li>
+            <li><button class="nav-link" data-nav="announcements"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Announcements</span></button></li>
+            <li><button class="nav-link" data-nav="emergency"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>Emergency SOS</span><span class="nav-badge danger" id="badge-emergency-count" style="display:none;">0</span></button></li>
+            <li><button class="nav-link" data-nav="trips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Trips</span></button></li>
+          </ul>
+        </div>
+
+        <!-- INSIGHTS GROUP -->
+        <div>
+          <div class="nav-group-title">Insights</div>
+          <ul class="nav-list">
+            <li><button class="nav-link" data-nav="analytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg><span>Analytics</span></button></li>
+            <li><button class="nav-link" data-nav="health"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>System Health</span></button></li>
+          </ul>
+        </div>
+
+        <!-- ADMIN GROUP -->
+        <div>
+          <div class="nav-group-title">Admin</div>
+          <ul class="nav-list">
+            <li><button class="nav-link" data-nav="audit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Audit Logs</span></button></li>
+            <li><button class="nav-link" data-nav="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- SIDEBAR FOOTER -->
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="sidebar-admin-avatar">A</div>
+          <div class="user-details">
+            <div class="user-name" id="sidebar-admin-name">Admin User</div>
+            <div class="user-role" id="sidebar-admin-role">Fleet Director</div>
+          </div>
+        </div>
+        <button class="btn-logout" title="Logout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="page-title-wrap">
+            <h2 id="page-title">Overview Operations Center</h2>
+            <div class="breadcrumb" id="page-breadcrumb">Dashboard / Overview</div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="global-search-btn" id="btn-global-search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Search fleet, drivers, routes...</span>
+            <span class="search-shortcut">Ctrl+K</span>
+          </button>
+
+          <div class="realtime-indicator" id="realtime-indicator">
+            <span class="live-dot"></span> LIVE SYNC
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT VIEWPORT -->
+      <main class="content-viewport">
+
+        <!-- ===================== VIEW: OVERVIEW ===================== -->
+        <div class="view-container active" id="view-overview">
+          <div id="overview-sos-banner" style="display:none;"></div>
+
+          <!-- KPI STAT CARDS -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#EFF6FF;color:#0265D2;">🚌</div>
+              <div class="kpi-info"><div class="kpi-label">Total Buses</div><div class="kpi-value" id="kpi-total-buses">10</div><div class="kpi-subtext">Registered Fleet</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#ECFDF5;color:#059669;">🟢</div>
+              <div class="kpi-info"><div class="kpi-label">Active Buses</div><div class="kpi-value" id="kpi-active-buses" style="color:#059669;">0</div><div class="kpi-subtext">Live Telemetry</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#F1F5F9;color:#64748B;">⚪</div>
+              <div class="kpi-info"><div class="kpi-label">Offline Buses</div><div class="kpi-value" id="kpi-offline-buses">0</div><div class="kpi-subtext">Standby / Parked</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#FAF5FF;color:#9333EA;">👨‍✈️</div>
+              <div class="kpi-info"><div class="kpi-label">Active Drivers</div><div class="kpi-value" id="kpi-active-drivers">0</div><div class="kpi-subtext">Assigned Shifts</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#FFFBEB;color:#D97706;">🎓</div>
+              <div class="kpi-info"><div class="kpi-label">Total Students</div><div class="kpi-value" id="kpi-total-students">0</div><div class="kpi-subtext">Active Passholders</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#EFF6FF;color:#2563EB;">🗺️</div>
+              <div class="kpi-info"><div class="kpi-label">Total Routes</div><div class="kpi-value" id="kpi-total-routes">10</div><div class="kpi-subtext">Chennai Network</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#ECFDF5;color:#059669;">🚀</div>
+              <div class="kpi-info"><div class="kpi-label">Active Trips</div><div class="kpi-value" id="kpi-active-trips">0</div><div class="kpi-subtext">In Transit Now</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#FEF2F2;color:#DC2626;">🚨</div>
+              <div class="kpi-info"><div class="kpi-label">Active SOS</div><div class="kpi-value" id="kpi-active-sos" style="color:#DC2626;">0</div><div class="kpi-subtext">Emergencies</div></div>
+            </div>
+          </div>
+
+          <!-- MAP & INCIDENTS SPLIT -->
+          <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:24px;">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+                <div>
+                  <h3 class="card-title">Live Fleet Map</h3>
+                  <p class="card-subtitle">Real-time GPS stream of active transit units</p>
+                </div>
+                <button class="btn btn-secondary btn-sm" data-nav="tracking">Full Screen Map ➔</button>
+              </div>
+              <div class="map-wrapper" style="height:380px;border:none;border-radius:0;">
+                <div id="overview-map-el" class="map-container-el"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div><h3 class="card-title">Recent Alerts</h3><p class="card-subtitle">Delay & incident feed</p></div>
+                <button class="btn btn-secondary btn-sm" data-nav="alerts">All Alerts ➔</button>
+              </div>
+              <div id="overview-alerts-feed"></div>
+            </div>
+          </div>
+
+          <!-- ACTIVE TRIPS -->
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Trips Currently in Transit</h3><p class="card-subtitle">Live journeys streaming coordinates</p></div>
+              <button class="btn btn-secondary btn-sm" data-nav="trips">Trip Logs ➔</button>
+            </div>
+            <div id="overview-trips-list"></div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: LIVE TRACKING ===================== -->
+        <div class="view-container" id="view-tracking">
+          <div class="card" style="padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <label style="font-size:13px;font-weight:700;">Filter Route:</label>
+              <select class="form-control" id="tracking-route-filter" style="width:220px;padding:6px 10px;">
+                <option value="all">All Routes (Chennai)</option>
+              </select>
+
+              <label style="font-size:13px;font-weight:700;margin-left:8px;">Status:</label>
+              <select class="form-control" id="tracking-status-filter" style="width:140px;padding:6px 10px;">
+                <option value="all">All Statuses</option>
+                <option value="LIVE">🟢 Live</option>
+                <option value="STALE">🟡 Stale</option>
+                <option value="OFFLINE">⚪ Offline</option>
+              </select>
+            </div>
+            <div id="tracking-summary-badge" style="font-size:13px;"></div>
+          </div>
+
+          <div class="map-wrapper" style="height:calc(100vh - 230px);">
+            <div id="tracking-map-el" class="map-container-el"></div>
+          </div>
+
+          <!-- Slide-out Bus Telemetry Drawer -->
+          <div id="bus-telemetry-drawer" style="display:none;position:fixed;bottom:24px;left:290px;width:340px;z-index:1000;"></div>
+        </div>
+
+        <!-- ===================== VIEW: BUSES ===================== -->
+        <div class="view-container" id="view-buses">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Fleet Directory</h3><p class="card-subtitle">Real-time telematics and status overrides</p></div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Bus / Route</th><th>Assigned Driver</th><th>Status</th><th>Speed</th><th>Coordinates</th><th>Last Ping</th><th>Control</th></tr>
+                </thead>
+                <tbody id="buses-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: DRIVERS ===================== -->
+        <div class="view-container" id="view-drivers">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Driver Directory</h3><p class="card-subtitle">Manage driver shift assignments and routes</p></div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Driver Name & Email</th><th>Phone</th><th>Assigned Route</th><th>Account Role</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="drivers-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: STUDENTS ===================== -->
+        <div class="view-container" id="view-students">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Student Directory</h3><p class="card-subtitle">Student transit passholders and route preferences</p></div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Student Name & Email</th><th>Phone</th><th>Preferred Route</th><th>Role</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="students-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: ROUTES ===================== -->
+        <div class="view-container" id="view-routes">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Route Network & Schedules</h3><p class="card-subtitle">Configure stops, departure timetables, and waypoints</p></div>
+              <div style="display:flex;gap:10px;">
+                <button class="btn btn-secondary" id="btn-seed-routes">⚡ Seed Default Routes</button>
+                <button class="btn btn-primary" id="btn-open-add-route" data-open-modal="modal-add-route">+ Add New Route</button>
+              </div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Route ID</th><th>Route Name & Stops</th><th>Schedule (AM/PM)</th><th>Assigned Driver</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="routes-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: ALERTS ===================== -->
+        <div class="view-container" id="view-alerts">
+          <div class="card" style="margin-bottom:18px;">
+            <div class="card-header">
+              <div><h3 class="card-title">Broadcast Alert Center</h3><p class="card-subtitle">Send real-time FCM push alerts for delays & breakdowns</p></div>
+              <button class="btn btn-primary" data-open-modal="modal-broadcast-alert">📢 + Broadcast Alert</button>
+            </div>
+          </div>
+          <div id="alerts-list"></div>
+        </div>
+
+        <!-- ===================== VIEW: ANNOUNCEMENTS ===================== -->
+        <div class="view-container" id="view-announcements">
+          <div class="card" style="margin-bottom:18px;">
+            <div class="card-header">
+              <div><h3 class="card-title">Campus Announcements</h3><p class="card-subtitle">Post notifications to student and driver message boards</p></div>
+              <button class="btn btn-primary" data-open-modal="modal-create-ann">✍️ + New Announcement</button>
+            </div>
+          </div>
+          <div id="announcements-list"></div>
+        </div>
+
+        <!-- ===================== VIEW: EMERGENCY / SOS ===================== -->
+        <div class="view-container" id="view-emergency">
+          <div class="card" style="margin-bottom:18px;">
+            <div class="card-header">
+              <div><h3 class="card-title">Emergency SOS Command Room</h3><p class="card-subtitle">Critical driver distress signals & real-time dispatch</p></div>
+            </div>
+          </div>
+          <div id="sos-active-list" style="margin-bottom:24px;"></div>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Historical SOS Incidents</h3></div>
+            <div id="sos-history-list"></div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: TRIPS ===================== -->
+        <div class="view-container" id="view-trips">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Trip History</h3><p class="card-subtitle">Transit logs, durations, and journey records</p></div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Route</th><th>Driver</th><th>Duration</th><th>Status</th><th>Start Time</th><th>End Time</th></tr>
+                </thead>
+                <tbody id="trips-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: AUDIT LOGS ===================== -->
+        <div class="view-container" id="view-audit">
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Administrative Audit Trail</h3><p class="card-subtitle">Append-only log of management operations</p></div>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Action</th><th>Target</th><th>Administrator</th><th>Details</th><th>Timestamp</th></tr>
+                </thead>
+                <tbody id="audit-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: ANALYTICS ===================== -->
+        <div class="view-container" id="view-analytics">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#EFF6FF;color:#0265D2;">📊</div>
+              <div class="kpi-info"><div class="kpi-label">Total Logged Trips</div><div class="kpi-value" id="analytics-total-trips">0</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#ECFDF5;color:#059669;">⏱️</div>
+              <div class="kpi-info"><div class="kpi-label">Avg Trip Duration</div><div class="kpi-value" id="analytics-avg-duration">42 min</div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon" style="background:#FFFBEB;color:#D97706;">⚠️</div>
+              <div class="kpi-info"><div class="kpi-label">Broadcast Alerts</div><div class="kpi-value" id="analytics-total-alerts">0</div></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:20px;">
+            <div class="card-header"><h3 class="card-title">Route Utilization Frequency</h3></div>
+            <div id="analytics-route-utilization"></div>
+          </div>
+        </div>
+
+        <!-- ===================== VIEW: SYSTEM HEALTH ===================== -->
+        <div class="view-container" id="view-health">
+          <div class="kpi-grid" id="health-metrics-grid"></div>
+        </div>
+
+        <!-- ===================== VIEW: SETTINGS ===================== -->
+        <div class="view-container" id="view-settings">
+          <div class="card" style="max-width:600px;">
+            <div class="card-header">
+              <div><h3 class="card-title">Telemetry & Operational Parameters</h3><p class="card-subtitle">Persisted in /system_config</p></div>
+            </div>
+            <form id="form-settings">
+              <div class="form-group">
+                <label class="form-label">GPS Stale Threshold (Seconds)</label>
+                <input type="number" id="setting-stale-sec" class="form-control" value="15" min="5" max="60" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">GPS Offline Threshold (Seconds)</label>
+                <input type="number" id="setting-offline-sec" class="form-control" value="60" min="30" max="300" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Calculated ETA Minutes per Transit Leg</label>
+                <input type="number" id="setting-eta-min" class="form-control" value="4" min="1" max="15" required />
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save Parameters</button>
+            </form>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: ADD NEW ROUTE
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-add-route">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">+ Add New Bus Route</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-add-route">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Route Identifier (e.g. route_11)</label>
+            <input type="text" id="add-route-id" class="form-control" placeholder="route_11" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Route Display Name</label>
+            <input type="text" id="add-route-name" class="form-control" placeholder="Route 11 – Guindy Express" required />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group">
+              <label class="form-label">Morning Departure Time</label>
+              <input type="text" id="add-route-morning" class="form-control" value="7:15 AM" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Evening Departure Time</label>
+              <input type="text" id="add-route-evening" class="form-control" value="5:15 PM" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sequential Stops (Comma Separated)</label>
+            <textarea id="add-route-stops" class="form-control" rows="3" placeholder="Stop 1, Stop 2, Stop 3, College" required></textarea>
+            <span style="font-size:11px;color:var(--text-muted);">Enter stops in departure sequence, separated by commas.</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">+ Create Route</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: EDIT ROUTE
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-edit-route">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Route Configuration</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-edit-route">
+        <div class="modal-body">
+          <input type="hidden" id="form-route-id" />
+          <div class="form-group">
+            <label class="form-label">Route Name</label>
+            <input type="text" id="form-route-name" class="form-control" required />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group">
+              <label class="form-label">Morning Departure</label>
+              <input type="text" id="form-route-morning" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Evening Departure</label>
+              <input type="text" id="form-route-evening" class="form-control" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sequential Stops (Comma Separated)</label>
+            <textarea id="form-route-stops" class="form-control" rows="4" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: ASSIGN ROUTE
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-assign-route">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Assign Transit Route</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-assign-route">
+        <div class="modal-body">
+          <input type="hidden" id="modal-assign-user-uid" />
+          <div style="font-size:13.5px;margin-bottom:14px;">
+            Assigning route for: <strong id="modal-assign-driver-name">User</strong>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select Route</label>
+            <select id="modal-assign-route-select" class="form-control" required></select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Assignment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: BROADCAST ALERT
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-broadcast-alert">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Broadcast Route Alert</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-broadcast-alert">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Target Route</label>
+            <select id="alert-route-select" class="form-control" required>
+              <option value="route_01">Route 1 – Anna Nagar</option>
+              <option value="route_02">Route 2 – T Nagar</option>
+              <option value="route_03">Route 3 – Tambaram</option>
+              <option value="route_04">Route 4 – Velachery</option>
+              <option value="route_05">Route 5 – Porur</option>
+              <option value="route_06">Route 6 – Perambur</option>
+              <option value="route_07">Route 7 – Adyar</option>
+              <option value="route_08">Route 8 – Avadi</option>
+              <option value="route_09">Route 9 – OMR / IT Corridor</option>
+              <option value="route_10">Route 10 – Poonamallee</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Alert Severity Type</label>
+            <select id="alert-type-select" class="form-control" required>
+              <option value="delay">⚠️ Delay Alert</option>
+              <option value="breakdown">🚨 Breakdown Alert</option>
+              <option value="info">📢 Information Alert</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notification Message</label>
+            <textarea id="alert-message-input" class="form-control" rows="3" placeholder="e.g. Bus running 15 minutes late due to traffic at Guindy." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send FCM Push Notification</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: CREATE ANNOUNCEMENT
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-create-ann">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">New Campus Announcement</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-create-announcement">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Target Route</label>
+            <select id="ann-route-select" class="form-control" required>
+              <option value="All Routes">All Routes</option>
+              <option value="route_01">Route 1 – Anna Nagar</option>
+              <option value="route_02">Route 2 – T Nagar</option>
+              <option value="route_03">Route 3 – Tambaram</option>
+              <option value="route_04">Route 4 – Velachery</option>
+              <option value="route_05">Route 5 – Porur</option>
+              <option value="route_06">Route 6 – Perambur</option>
+              <option value="route_07">Route 7 – Adyar</option>
+              <option value="route_08">Route 8 – Avadi</option>
+              <option value="route_09">Route 9 – OMR / IT Corridor</option>
+              <option value="route_10">Route 10 – Poonamallee</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Announcement Content</label>
+            <textarea id="ann-message-input" class="form-control" rows="4" placeholder="Type campus transit announcement here..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Publish Announcement</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: GLOBAL SEARCH COMMAND PALETTE
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-search">
+    <div class="modal-box" style="max-width:540px;">
+      <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="global-search-input" placeholder="Search buses, drivers, routes, or students..." style="flex:1;border:none;outline:none;font-size:15px;font-family:inherit;" />
+        <button class="modal-close" style="font-size:18px;">&times;</button>
+      </div>
+      <div id="search-results-list" style="max-height:360px;overflow-y:auto;padding:8px 12px;">
+        <div style="padding:20px;text-align:center;color:var(--text-muted);font-size:13px;">Type to search across transit system...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- BOOTSTRAP SCRIPT -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
