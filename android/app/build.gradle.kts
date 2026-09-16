@@ -41,6 +41,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.core:core:1.13.1")
+    implementation("androidx.browser:browser:1.8.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
 
@@ -48,6 +49,9 @@ configurations.all {
     resolutionStrategy.eachDependency {
         if (requested.group == "androidx.core") {
             useVersion("1.13.1")
+        }
+        if (requested.group == "androidx.browser") {
+            useVersion("1.8.0")
         }
     }
 }

@@ -14,7 +14,7 @@ class SeedService {
             'Ashok Nagar',
             'Ekkattuthangal',
             'Guindy',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.0850, 80.2101), // Anna Nagar Tower
@@ -23,7 +23,7 @@ class SeedService {
             const LatLng(13.0358, 80.2172), // Ashok Nagar
             const LatLng(13.0069, 80.2206), // Ekkattuthangal
             const LatLng(12.9916, 80.2209), // Guindy
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:30 AM',
@@ -39,7 +39,7 @@ class SeedService {
             'St. Thomas Mount',
             'Chromepet',
             'Pallavaram',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.0418, 80.2341), // T Nagar
@@ -48,7 +48,7 @@ class SeedService {
             const LatLng(12.9847, 80.1991), // St Thomas Mount
             const LatLng(12.9516, 80.1416), // Chromepet
             const LatLng(12.9675, 80.1490), // Pallavaram
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:00 AM',
@@ -64,7 +64,7 @@ class SeedService {
             'St. Thomas Mount',
             'Guindy',
             'Saidapet',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(12.9249, 80.1000), // Tambaram
@@ -73,7 +73,7 @@ class SeedService {
             const LatLng(12.9847, 80.1991), // St Thomas Mount
             const LatLng(12.9916, 80.2209), // Guindy
             const LatLng(13.0210, 80.2293), // Saidapet
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '6:45 AM',
@@ -89,7 +89,7 @@ class SeedService {
             'Sholinganallur',
             'Pallikaranai',
             'Medavakkam',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(12.9815, 80.2180), // Velachery
@@ -98,7 +98,7 @@ class SeedService {
             const LatLng(12.9003, 80.2275), // Sholinganallur
             const LatLng(12.9325, 80.2121), // Pallikaranai
             const LatLng(12.9215, 80.1936), // Medavakkam
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:15 AM',
@@ -114,7 +114,7 @@ class SeedService {
             'Kodambakkam',
             'Vadapalani',
             'Koyambedu',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.0358, 80.1577), // Porur
@@ -123,7 +123,7 @@ class SeedService {
             const LatLng(13.0501, 80.2209), // Kodambakkam
             const LatLng(13.0524, 80.2120), // Vadapalani
             const LatLng(13.0694, 80.1948), // Koyambedu
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:00 AM',
@@ -139,7 +139,7 @@ class SeedService {
             'Mogappair',
             'Anna Nagar East',
             'Koyambedu',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.1143, 80.2416), // Perambur
@@ -148,7 +148,7 @@ class SeedService {
             const LatLng(13.0892, 80.1782), // Mogappair
             const LatLng(13.0820, 80.2134), // Anna Nagar East
             const LatLng(13.0694, 80.1948), // Koyambedu
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '6:30 AM',
@@ -164,7 +164,7 @@ class SeedService {
             'Kotturpuram',
             'Saidapet',
             'Guindy',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.0012, 80.2565), // Adyar
@@ -173,7 +173,7 @@ class SeedService {
             const LatLng(13.0186, 80.2520), // Kotturpuram
             const LatLng(13.0210, 80.2293), // Saidapet
             const LatLng(12.9916, 80.2209), // Guindy
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:30 AM',
@@ -189,7 +189,7 @@ class SeedService {
             'Mogappair',
             'Koyambedu',
             'Vadapalani',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.1146, 80.0993), // Avadi
@@ -198,7 +198,7 @@ class SeedService {
             const LatLng(13.0892, 80.1782), // Mogappair
             const LatLng(13.0694, 80.1948), // Koyambedu
             const LatLng(13.0524, 80.2120), // Vadapalani
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '6:15 AM',
@@ -214,7 +214,7 @@ class SeedService {
             'Karapakkam',
             'Taramani',
             'Thiruvanmiyur',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(12.8263, 80.2218), // Siruseri SIPCOT
@@ -223,7 +223,7 @@ class SeedService {
             const LatLng(12.9266, 80.2308), // Karapakkam
             const LatLng(12.9892, 80.2464), // Taramani
             const LatLng(12.9829, 80.2591), // Thiruvanmiyur
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '7:00 AM',
@@ -239,7 +239,7 @@ class SeedService {
             'Porur',
             'Valasaravakkam',
             'Koyambedu',
-            'College',
+            'VIT Chennai Campus',
           ],
           stopCoordinates: [
             const LatLng(13.0470, 80.0970), // Poonamallee
@@ -248,7 +248,7 @@ class SeedService {
             const LatLng(13.0358, 80.1577), // Porur
             const LatLng(13.0479, 80.1751), // Valasaravakkam
             const LatLng(13.0694, 80.1948), // Koyambedu
-            const LatLng(12.9716, 80.2200), // College
+            const LatLng(12.8419815, 80.1549340), // VIT Chennai Campus
           ],
           assignedDriverId: '',
           morningSchedule: '6:30 AM',

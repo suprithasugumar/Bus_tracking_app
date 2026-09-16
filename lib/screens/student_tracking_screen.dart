@@ -317,7 +317,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
                 const Text('Issue Category', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                 const SizedBox(height: 6),
                 DropdownButtonFormField<String>(
-                  value: category,
+                  initialValue: category,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -481,13 +481,6 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen>
                         value:
                             '${_busLocation?.speed.toStringAsFixed(0) ?? '0'} km/h',
                         color: Colors.green.shade700,
-                      ),
-                      const SizedBox(width: 8),
-                      _InfoChip(
-                        icon: Icons.airline_seat_recline_normal,
-                        label: 'Seats',
-                        value: '${50 - (_busLocation?.passengerCount ?? 18)} left',
-                        color: Colors.indigo.shade700,
                       ),
                       const SizedBox(width: 8),
                       _InfoChip(

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BusLocation {
+  final String driverId;
   final double latitude;
   final double longitude;
   final bool isOnline;
@@ -11,6 +12,7 @@ class BusLocation {
   final DateTime? timestamp;
 
   BusLocation({
+    this.driverId = '',
     required this.latitude,
     required this.longitude,
     required this.isOnline,
@@ -22,9 +24,10 @@ class BusLocation {
   });
 
   factory BusLocation.fromFirestore(DocumentSnapshot doc) {
-    final data = doc.data() as Map<String, dynamic>;
+    final data = (doc.data() as Map<String, dynamic>?) ?? {};
     final ts = data['timestamp'];
     return BusLocation(
+      driverId: doc.id,
       latitude: (data['latitude'] as num?)?.toDouble() ?? 0.0,
       longitude: (data['longitude'] as num?)?.toDouble() ?? 0.0,
       isOnline: data['isOnline'] as bool? ?? false,

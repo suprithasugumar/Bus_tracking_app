@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/route_model.dart';
+import '../models/bus_model.dart';
 import '../services/firestore_service.dart';
 import 'home_screen.dart';
+import 'login_screen.dart';
 
 class RouteSelectionScreen extends StatefulWidget {
   final String role;
@@ -65,25 +67,48 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
     );
   }
 
+  void _navigateToLogin() {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (_) => const LoginScreen()),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF4F6FC),
-      appBar: AppBar(
-        title: const Text(
-          'Select Your Route',
-          style: TextStyle(fontWeight: FontWeight.bold),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        _navigateToLogin();
+      },
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF4F6FC),
+        appBar: AppBar(
+          title: Text(
+            widget.role.toLowerCase() == 'driver' ? 'Select Route to Drive' : 'Select Your Route',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          backgroundColor: const Color(0xFF0D47A1),
+          foregroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            tooltip: 'Back to Login',
+            onPressed: _navigateToLogin,
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.logout),
+              tooltip: 'Logout / Switch Account',
+              onPressed: _navigateToLogin,
+            ),
+          ],
         ),
-        centerTitle: true,
-        backgroundColor: const Color(0xFF0D47A1),
-        foregroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.maybePop(context),
-        ),
+        body: _buildBody(),
       ),
-      body: _buildBody(),
     );
   }
 
@@ -133,26 +158,147 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
       return const Center(child: Text('No routes found.'));
     }
 
-    return RefreshIndicator(
-      onRefresh: _loadRoutes,
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        itemCount: _routes.length,
-        itemBuilder: (context, index) {
-          final route = _routes[index];
-          final isFav = route.routeId == _favoriteRouteId;
-          return _RouteCard(
-            route: route,
-            isFavorite: isFav,
-            onFavoriteToggle: () => _toggleFavorite(route.routeId),
-            onTap: () => _onRouteTapped(route),
-          );
-        },
-      ),
+    return StreamBuilder<Map<String, BusLocation>>(
+      stream: _firestoreService.getActiveRoutesMapStream(),
+      builder: (context, snapshot) {
+        final activeRoutesMap = snapshot.data ?? {};
+
+        // Find if this driver is actively driving any route
+        RouteModel? myActiveRoute;
+        if (widget.role.toLowerCase() == 'driver') {
+          for (final route in _routes) {
+            final activeBus = activeRoutesMap[route.routeId];
+            if (activeBus != null && activeBus.isOnline && activeBus.driverId == widget.uid) {
+              myActiveRoute = route;
+              break;
+            }
+          }
+        }
+
+        return RefreshIndicator(
+          onRefresh: _loadRoutes,
+          child: ListView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            itemCount: _routes.length + (myActiveRoute != null ? 1 : 0),
+            itemBuilder: (context, index) {
+              if (myActiveRoute != null && index == 0) {
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: Colors.green.shade400, width: 1.5),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.sensors, color: Colors.green, size: 28),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'YOUR ACTIVE TRIP IN PROGRESS',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                letterSpacing: 0.5,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              myActiveRoute.routeName,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                        ),
+                        onPressed: () => _navigateToRoute(myActiveRoute!),
+                        child: const Text('Resume Trip'),
+                      ),
+                    ],
+                  ),
+                );
+              }
+
+              final routeIndex = myActiveRoute != null ? index - 1 : index;
+              final route = _routes[routeIndex];
+              final isFav = route.routeId == _favoriteRouteId;
+              final activeBus = activeRoutesMap[route.routeId];
+              final isOnline = activeBus != null && activeBus.isOnline;
+              final isMyTrip = isOnline && activeBus.driverId == widget.uid && widget.role.toLowerCase() == 'driver';
+
+              return _RouteCard(
+                route: route,
+                isFavorite: isFav,
+                isOnline: isOnline,
+                isMyTrip: isMyTrip,
+                onFavoriteToggle: () => _toggleFavorite(route.routeId),
+                onTap: () => _onRouteTapped(route, myActiveRoute),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 
-  void _onRouteTapped(RouteModel route) {
+  void _onRouteTapped(RouteModel route, RouteModel? myActiveRoute) {
+    if (widget.role.toLowerCase() == 'driver' && myActiveRoute != null && myActiveRoute.routeId != route.routeId) {
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Row(
+            children: [
+              Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 26),
+              SizedBox(width: 8),
+              Text('Trip in Progress'),
+            ],
+          ),
+          content: Text(
+            'You are currently broadcasting live GPS on "${myActiveRoute.routeName}".\n\nWould you like to resume your active trip, or open "${route.routeName}"?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                _navigateToRoute(route);
+              },
+              child: Text('Open ${route.routeId.toUpperCase()}'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pop(ctx);
+                _navigateToRoute(myActiveRoute);
+              },
+              child: const Text('Resume Active Trip'),
+            ),
+          ],
+        ),
+      );
+    } else {
+      _navigateToRoute(route);
+    }
+  }
+
+  void _navigateToRoute(RouteModel route) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -169,12 +315,16 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
 class _RouteCard extends StatelessWidget {
   final RouteModel route;
   final bool isFavorite;
+  final bool isOnline;
+  final bool isMyTrip;
   final VoidCallback onFavoriteToggle;
   final VoidCallback onTap;
 
   const _RouteCard({
     required this.route,
     required this.isFavorite,
+    required this.isOnline,
+    required this.isMyTrip,
     required this.onFavoriteToggle,
     required this.onTap,
   });
@@ -183,8 +333,13 @@ class _RouteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 14),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: isMyTrip
+            ? const BorderSide(color: Colors.green, width: 2)
+            : BorderSide.none,
+      ),
+      elevation: isMyTrip ? 4 : 2,
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
@@ -198,11 +353,15 @@ class _RouteCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0D47A1).withValues(alpha: 0.12),
+                      color: isOnline
+                          ? Colors.green.withValues(alpha: 0.15)
+                          : const Color(0xFF0D47A1).withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(Icons.directions_bus,
-                        color: Color(0xFF0D47A1)),
+                    child: Icon(
+                      Icons.directions_bus,
+                      color: isOnline ? Colors.green.shade800 : const Color(0xFF0D47A1),
+                    ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -216,19 +375,62 @@ class _RouteCard extends StatelessWidget {
                             fontSize: 15,
                           ),
                         ),
-                        if (isFavorite)
-                          Container(
-                            margin: const EdgeInsets.only(top: 2),
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: Colors.amber.shade100,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: const Text(
-                              '⭐ DEFAULT ROUTE',
-                              style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.brown),
-                            ),
-                          ),
+                        const SizedBox(height: 3),
+                        Wrap(
+                          spacing: 6,
+                          runSpacing: 4,
+                          children: [
+                            if (isMyTrip)
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.green.shade100,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: const Text(
+                                  '🟢 YOUR ACTIVE TRIP',
+                                  style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.green),
+                                ),
+                              )
+                            else if (isOnline)
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.green.shade50,
+                                  borderRadius: BorderRadius.circular(6),
+                                  border: Border.all(color: Colors.green.shade300),
+                                ),
+                                child: const Text(
+                                  '🟢 LIVE TRIP',
+                                  style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.green),
+                                ),
+                              )
+                            else
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade100,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: Text(
+                                  '⚪ OFFLINE',
+                                  style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.grey.shade600),
+                                ),
+                              ),
+                            if (isFavorite)
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: Colors.amber.shade100,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: const Text(
+                                  '⭐ DEFAULT ROUTE',
+                                  style: TextStyle(fontSize: 9.5, fontWeight: FontWeight.bold, color: Colors.brown),
+                                ),
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

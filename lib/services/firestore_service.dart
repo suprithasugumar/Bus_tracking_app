@@ -56,15 +56,12 @@ class FirestoreService {
       ..sort((a, b) => a.routeName.compareTo(b.routeName));
   }
 
-  /// Seed 10 default Chennai routes if the collection is empty
+  /// Seed or update the 10 canonical Chennai routes with accurate coordinates
   Future<void> seedDefaultRoutesIfEmpty() async {
-    final snapshot = await _db.collection('routes').limit(1).get();
-    if (snapshot.docs.isNotEmpty) return; // already seeded
-
     final batch = _db.batch();
     for (final route in SeedService.defaultRoutes) {
       final ref = _db.collection('routes').doc(route.routeId);
-      batch.set(ref, route.toMap());
+      batch.set(ref, route.toMap(), SetOptions(merge: true));
     }
     await batch.commit();
   }
@@ -76,6 +73,18 @@ class FirestoreService {
     final doc = await _db.collection('bus_location').doc(driverId).get();
     if (doc.exists && doc.data() != null) {
       return BusLocation.fromFirestore(doc);
+    }
+    return null;
+  }
+
+  /// Check if the driver currently has an active trip on any route
+  Future<BusLocation?> getDriverActiveTrip(String driverId) async {
+    final doc = await _db.collection('bus_location').doc(driverId).get();
+    if (doc.exists && doc.data() != null) {
+      final bus = BusLocation.fromFirestore(doc);
+      if (bus.isOnline && bus.routeId.isNotEmpty) {
+        return bus;
+      }
     }
     return null;
   }
@@ -103,6 +112,15 @@ class FirestoreService {
     });
   }
 
+  /// Mark driver as offline / end trip
+  Future<void> endDriverTrip(String driverId) async {
+    await _db.collection('bus_location').doc(driverId).update({
+      'isOnline': false,
+      'speed': 0,
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
   /// Student subscribes to a specific driver's location
   Stream<BusLocation?> getBusLocationStream(String driverId) {
     return _db
@@ -110,6 +128,18 @@ class FirestoreService {
         .doc(driverId)
         .snapshots()
         .map((snap) => snap.exists ? BusLocation.fromFirestore(snap) : null);
+  }
+
+  /// Student / screen subscribes to a specific route's live bus
+  Stream<BusLocation?> getRouteBusLocationStream(String routeId) {
+    return _db
+        .collection('bus_location')
+        .where('routeId', isEqualTo: routeId)
+        .where('isOnline', isEqualTo: true)
+        .limit(1)
+        .snapshots()
+        .map((snap) =>
+            snap.docs.isNotEmpty ? BusLocation.fromFirestore(snap.docs.first) : null);
   }
 
   /// Returns all currently online buses (for admin / multi-bus view)
@@ -120,6 +150,24 @@ class FirestoreService {
         .snapshots()
         .map((snap) =>
             snap.docs.map((d) => BusLocation.fromFirestore(d)).toList());
+  }
+
+  /// Returns a map of routeId -> BusLocation for all currently online routes
+  Stream<Map<String, BusLocation>> getActiveRoutesMapStream() {
+    return _db
+        .collection('bus_location')
+        .where('isOnline', isEqualTo: true)
+        .snapshots()
+        .map((snap) {
+      final map = <String, BusLocation>{};
+      for (final doc in snap.docs) {
+        final bus = BusLocation.fromFirestore(doc);
+        if (bus.routeId.isNotEmpty) {
+          map[bus.routeId] = bus;
+        }
+      }
+      return map;
+    });
   }
 
   // ─── Notifications ─────────────────────────────────────────────────────────

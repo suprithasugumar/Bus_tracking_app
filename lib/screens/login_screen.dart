@@ -141,62 +141,63 @@ class _LoginScreenState extends State<LoginScreen> {
                                   color: Colors.white, fontWeight: FontWeight.bold),
                             ),
                           ),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Expanded(child: _roleCard('Student', Icons.school)),
-                    const SizedBox(width: 15),
-                    Expanded(child: _roleCard('Driver', Icons.person)),
-                  ],
-                ),
-                const SizedBox(height: 30),
-                SizedBox(
-                  width: double.infinity,
-                  height: 52,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
-                    ),
-                    onPressed: _isLoading ? null : _handleAuth,
-                    child: _isLoading
-                        ? const SizedBox(
-                            height: 22,
-                            width: 22,
-                            child: CircularProgressIndicator(
-                                strokeWidth: 2.5,
-                                color: Color(0xFF0D47A1)),
-                          )
-                        : Text(
-                            _isLogin ? 'Login' : 'Register',
-                            style: const TextStyle(
-                              color: Color(0xFF0D47A1),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Expanded(child: _roleCard('Student', Icons.school)),
+                              const SizedBox(width: 15),
+                              Expanded(child: _roleCard('Driver', Icons.directions_bus)),
+                            ],
+                          ),
+                          const SizedBox(height: 30),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 52,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                foregroundColor: const Color(0xFF0D47A1),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14)),
+                              ),
+                              onPressed: _isLoading ? null : _handleAuth,
+                              child: _isLoading
+                                  ? const SizedBox(
+                                      height: 22,
+                                      width: 22,
+                                      child: CircularProgressIndicator(
+                                          strokeWidth: 2.5,
+                                          color: Color(0xFF0D47A1)),
+                                    )
+                                  : Text(
+                                      _isLogin ? 'Login' : 'Register',
+                                      style: const TextStyle(
+                                        color: Color(0xFF0D47A1),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
                             ),
                           ),
+                          const SizedBox(height: 18),
+                          TextButton(
+                            onPressed: () => setState(() => _isLogin = !_isLogin),
+                            child: Text(
+                              _isLogin
+                                  ? "Don't have an account? Register"
+                                  : 'Already have an account? Login',
+                              style: const TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(height: 18),
-                TextButton(
-                  onPressed: () => setState(() => _isLogin = !_isLogin),
-                  child: Text(
-                    _isLogin
-                        ? "Don't have an account? Register"
-                        : 'Already have an account? Login',
-                    style: const TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
+              );
+            },
           ),
-        ),
-      ),
-    );
-  },
-),
         ),
       ),
     );

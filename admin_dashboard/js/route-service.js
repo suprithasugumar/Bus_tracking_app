@@ -28,7 +28,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Ashok Nagar",
       "Ekkattuthangal",
       "Guindy",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.0850, lng: 80.2101 },
@@ -37,7 +37,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0358, lng: 80.2172 },
       { lat: 13.0069, lng: 80.2206 },
       { lat: 12.9916, lng: 80.2209 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:15 AM", evening: "5:15 PM" },
@@ -53,7 +53,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "St. Thomas Mount",
       "Chromepet",
       "Pallavaram",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.0418, lng: 80.2341 },
@@ -62,7 +62,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 12.9942, lng: 80.1970 },
       { lat: 12.9516, lng: 80.1462 },
       { lat: 12.9675, lng: 80.1491 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:20 AM", evening: "5:15 PM" },
@@ -78,7 +78,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "St. Thomas Mount",
       "Guindy",
       "Saidapet",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 12.9366, lng: 80.1264 },
@@ -87,7 +87,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 12.9942, lng: 80.1970 },
       { lat: 13.0069, lng: 80.2206 },
       { lat: 13.0213, lng: 80.2231 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:30 AM", evening: "5:15 PM" },
@@ -103,7 +103,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Sholinganallur",
       "Pallikaranai",
       "Medavakkam",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 12.9815, lng: 80.2180 },
@@ -112,7 +112,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 12.9010, lng: 80.2279 },
       { lat: 12.9348, lng: 80.2085 },
       { lat: 12.9194, lng: 80.1934 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:25 AM", evening: "5:15 PM" },
@@ -128,7 +128,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Kodambakkam",
       "Vadapalani",
       "Koyambedu",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.0382, lng: 80.1565 },
@@ -137,7 +137,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0520, lng: 80.2250 },
       { lat: 13.0524, lng: 80.2120 },
       { lat: 13.0694, lng: 80.1948 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:15 AM", evening: "5:15 PM" },
@@ -153,7 +153,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Mogappair",
       "Anna Nagar East",
       "Koyambedu",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.1110, lng: 80.2430 },
@@ -162,7 +162,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0840, lng: 80.1760 },
       { lat: 13.0850, lng: 80.2200 },
       { lat: 13.0694, lng: 80.1948 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:00 AM", evening: "5:15 PM" },
@@ -178,7 +178,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Kotturpuram",
       "Saidapet",
       "Guindy",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.0012, lng: 80.2565 },
@@ -187,7 +187,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0180, lng: 80.2410 },
       { lat: 13.0213, lng: 80.2231 },
       { lat: 13.0069, lng: 80.2206 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:20 AM", evening: "5:15 PM" },
@@ -203,7 +203,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Mogappair West",
       "Koyambedu",
       "Vadapalani",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.1180, lng: 80.1010 },
@@ -212,7 +212,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0780, lng: 80.1700 },
       { lat: 13.0694, lng: 80.1948 },
       { lat: 13.0524, lng: 80.2120 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:00 AM", evening: "5:15 PM" },
@@ -228,7 +228,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Karapakkam",
       "Taramani",
       "Thiruvanmiyur",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 12.8250, lng: 80.2200 },
@@ -237,7 +237,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 12.9150, lng: 80.2310 },
       { lat: 12.9784, lng: 80.2412 },
       { lat: 12.9830, lng: 80.2594 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:15 AM", evening: "5:15 PM" },
@@ -253,7 +253,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       "Porur",
       "Valasaravakkam",
       "Koyambedu",
-      "College"
+      "VIT Chennai Campus"
     ],
     stopCoordinates: [
       { lat: 13.0480, lng: 80.1110 },
@@ -262,7 +262,7 @@ export const DEFAULT_CHENNAI_ROUTES = [
       { lat: 13.0382, lng: 80.1565 },
       { lat: 13.0450, lng: 80.1780 },
       { lat: 13.0694, lng: 80.1948 },
-      { lat: 12.9716, lng: 80.2200 }
+      { lat: 12.8419815, lng: 80.1549340 }
     ],
     assignedDriverId: "",
     schedule: { morning: "7:10 AM", evening: "5:15 PM" },
