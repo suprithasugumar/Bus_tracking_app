@@ -5,7 +5,7 @@
 
 import { authService } from "./auth-service.js";
 import { busService } from "./bus-service.js";
-import { routeService } from "./route-service.js";
+import { routeService, DEFAULT_CHENNAI_ROUTES } from "./route-service.js";
 import { userService } from "./user-service.js";
 import { alertService } from "./alert-service.js";
 import { announcementService } from "./announcement-service.js";
@@ -84,6 +84,7 @@ export class UIController {
     this.setupStopAutocomplete('add');
     this.setupStopAutocomplete('edit');
     this.initGeocodeReview();
+    this.setupRouteImportModal();
   }
 
   bindTrackingControls() {
@@ -1225,6 +1226,22 @@ export class UIController {
       btn.addEventListener("click", () => this.closeAllModals());
     });
 
+    // Close when clicking outside modal box
+    document.querySelectorAll(".modal-backdrop").forEach(backdrop => {
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          this.closeAllModals();
+        }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.closeAllModals();
+      }
+    });
+
     document.querySelectorAll("[data-open-modal]").forEach(btn => {
       btn.addEventListener("click", () => {
         const modalId = btn.getAttribute("data-open-modal");
@@ -1247,13 +1264,14 @@ export class UIController {
   }
 
   bindForms() {
-    // Seed Routes Button
-    document.getElementById("btn-seed-routes")?.addEventListener("click", async () => {
-      if (confirm("Seed all 10 standard Chennai transit routes to Firebase Firestore?")) {
-        await routeService.seedRoutes();
-        await auditService.logAction("ROUTES_SEEDED", "ROUTES", "BATCH", { count: 10 }, authService.userProfile);
-        this.toast("Seeded 10 default Chennai routes to Firestore.");
-      }
+    // Seed Routes Button (opens safe selection modal)
+    document.getElementById("btn-seed-routes")?.addEventListener("click", () => {
+      this.openRouteImportModal("default");
+    });
+
+    // Direct Morning Routes Import Button (opens safe selection modal)
+    document.getElementById("btn-open-morning-import")?.addEventListener("click", () => {
+      this.openRouteImportModal("morning");
     });
 
     // Form: Create New Route
@@ -1823,31 +1841,551 @@ export class UIController {
   }
 
   async importApprovedMorningRoutes() {
-    let approvedCount = 0;
-    this.toast("Importing morning routes to Cloud Firestore with merge writes...", "info");
+    this.closeAllModals();
+    this.openRouteImportModal("morning");
+  }
 
-    for (const r of this.morningRoutes) {
-      const allValid = r.stopCoordinates.every(s => s.status === "ok" || s.status === "ok_manual");
-      if (allValid) {
-        await routeService.saveRoute({
-          routeId: r.routeId,
-          routeNumber: r.routeNumber,
-          routeName: r.routeName,
-          shift: "morning",
-          singleStop: r.singleStop === true,
-          stops: r.stops,
-          scheduledTimes: r.scheduledTimes,
-          stopCoordinates: r.stopCoordinates.map(s => ({ lat: s.lat, lng: s.lng })),
-          isActive: true
-        });
-        approvedCount++;
+  // ============================================================
+  // ROUTE SELECTION & IMPORT MODAL CONTROLLER
+  // ============================================================
+  setupRouteImportModal() {
+    this.routeImportType = "default"; // 'default' or 'morning'
+    this.routeImportCandidates = [];
+    this.routeImportSelectedIds = new Set();
+    this.routeImportExistingMap = {};
+    this.routeImportFiltered = [];
+
+    const searchInput = document.getElementById("route-import-search");
+    searchInput?.addEventListener("input", () => {
+      this.filterRouteImportList(searchInput.value);
+    });
+
+    const selectAllCheckbox = document.getElementById("route-import-select-all");
+    selectAllCheckbox?.addEventListener("change", () => {
+      const isChecked = selectAllCheckbox.checked;
+      this.routeImportFiltered.forEach(r => {
+        if (isChecked) {
+          this.routeImportSelectedIds.add(r.routeId);
+        } else {
+          this.routeImportSelectedIds.delete(r.routeId);
+        }
+      });
+      this.syncRouteImportCheckboxes();
+      this.updateRouteImportState();
+    });
+
+    document.getElementById("btn-import-select-new")?.addEventListener("click", () => {
+      this.routeImportSelectedIds.clear();
+      this.routeImportCandidates.forEach(r => {
+        if (r._importStatus === "NEW") {
+          this.routeImportSelectedIds.add(r.routeId);
+        }
+      });
+      this.syncRouteImportCheckboxes();
+      this.updateRouteImportState();
+    });
+
+    document.getElementById("btn-import-clear")?.addEventListener("click", () => {
+      this.routeImportSelectedIds.clear();
+      this.syncRouteImportCheckboxes();
+      this.updateRouteImportState();
+    });
+
+    document.getElementById("route-import-confirm-overwrite")?.addEventListener("change", () => {
+      this.updateRouteImportState();
+    });
+
+    document.getElementById("btn-route-import-submit")?.addEventListener("click", async () => {
+      await this.executeRouteImport();
+    });
+
+    // Dataset Switcher Tabs inside the modal
+    document.getElementById("btn-dataset-switch-80")?.addEventListener("click", () => {
+      this.switchRouteImportDataset("morning");
+    });
+    document.getElementById("btn-dataset-switch-10")?.addEventListener("click", () => {
+      this.switchRouteImportDataset("legacy10");
+    });
+  }
+
+  switchRouteImportDataset(type) {
+    this.routeImportType = type;
+    const btn80 = document.getElementById("btn-dataset-switch-80");
+    const btn10 = document.getElementById("btn-dataset-switch-10");
+    if (type === "legacy10") {
+      if (btn80) {
+        btn80.style.background = "transparent";
+        btn80.style.color = "var(--text-muted)";
+        btn80.style.boxShadow = "none";
+      }
+      if (btn10) {
+        btn10.style.background = "white";
+        btn10.style.color = "var(--text-primary)";
+        btn10.style.boxShadow = "0 1px 2px rgba(0,0,0,0.05)";
+      }
+    } else {
+      if (btn80) {
+        btn80.style.background = "white";
+        btn80.style.color = "var(--text-primary)";
+        btn80.style.boxShadow = "0 1px 2px rgba(0,0,0,0.05)";
+      }
+      if (btn10) {
+        btn10.style.background = "transparent";
+        btn10.style.color = "var(--text-muted)";
+        btn10.style.boxShadow = "none";
+      }
+    }
+    this.populateRouteImportCandidates();
+  }
+
+  async openRouteImportModal(type = "default") {
+    // Default to the 80 campus morning routes dataset!
+    this.routeImportType = (type === "legacy10") ? "legacy10" : "morning";
+    this.routeImportSelectedIds.clear();
+
+    const searchInput = document.getElementById("route-import-search");
+    const conflictBanner = document.getElementById("route-import-conflict-banner");
+    const confirmOverwriteCheck = document.getElementById("route-import-confirm-overwrite");
+    const progressBox = document.getElementById("route-import-progress-box");
+    const summaryBox = document.getElementById("route-import-result-summary");
+    const submitBtn = document.getElementById("btn-route-import-submit");
+
+    if (searchInput) searchInput.value = "";
+    if (conflictBanner) conflictBanner.style.display = "none";
+    if (confirmOverwriteCheck) confirmOverwriteCheck.checked = false;
+    if (progressBox) progressBox.style.display = "none";
+    if (summaryBox) {
+      summaryBox.style.display = "none";
+      summaryBox.innerHTML = "";
+    }
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Import Selected (0)";
+    }
+
+    const tbody = document.getElementById("route-import-tbody");
+    if (tbody) {
+      tbody.innerHTML = `<tr><td colspan="5" style="padding:30px;text-align:center;color:var(--text-muted);">Fetching existing routes from Cloud Firestore...</td></tr>`;
+    }
+
+    // Sync dataset switch buttons UI
+    const btn80 = document.getElementById("btn-dataset-switch-80");
+    const btn10 = document.getElementById("btn-dataset-switch-10");
+    if (this.routeImportType === "legacy10") {
+      if (btn80) {
+        btn80.style.background = "transparent";
+        btn80.style.color = "var(--text-muted)";
+        btn80.style.boxShadow = "none";
+      }
+      if (btn10) {
+        btn10.style.background = "white";
+        btn10.style.color = "var(--text-primary)";
+        btn10.style.boxShadow = "0 1px 2px rgba(0,0,0,0.05)";
+      }
+    } else {
+      if (btn80) {
+        btn80.style.background = "white";
+        btn80.style.color = "var(--text-primary)";
+        btn80.style.boxShadow = "0 1px 2px rgba(0,0,0,0.05)";
+      }
+      if (btn10) {
+        btn10.style.background = "transparent";
+        btn10.style.color = "var(--text-muted)";
+        btn10.style.boxShadow = "none";
       }
     }
 
-    await auditService.logAction("MORNING_ROUTES_IMPORTED", "ROUTE", "BATCH", { approvedCount }, authService.userProfile);
-    this.toast(`Successfully imported ${approvedCount} morning routes to Cloud Firestore!`, "success");
-    this.closeAllModals();
+    this.openModal("modal-route-import");
+
+    // Step 1: Single read to get existing Firestore routes map
+    try {
+      this.routeImportExistingMap = await routeService.getExistingRoutesMap();
+    } catch (err) {
+      console.warn("[RouteImport] Error fetching existing map, using cached routes:", err);
+      this.routeImportExistingMap = {};
+      routeService.routes.forEach(r => {
+        this.routeImportExistingMap[r.routeId || r.id] = r;
+      });
+    }
+
+    // Step 2: Populate candidate routes
+    this.populateRouteImportCandidates();
+  }
+
+  populateRouteImportCandidates() {
+    this.routeImportSelectedIds.clear();
+
+    const titleEl = document.getElementById("route-import-modal-title");
+    const subEl = document.getElementById("route-import-modal-sub");
+
+    let rawDataset = [];
+    if (this.routeImportType === "legacy10") {
+      rawDataset = DEFAULT_CHENNAI_ROUTES;
+      if (titleEl) titleEl.textContent = "⚡ Seed Standard Transit Routes (10 Routes)";
+      if (subEl) subEl.textContent = "Select standard Chennai transit routes to write to Firestore.";
+    } else {
+      rawDataset = (this.morningRoutes && this.morningRoutes.length > 0) ? this.morningRoutes : MORNING_ROUTES_DATA;
+      if (titleEl) titleEl.textContent = `⚡ Seed Default Routes (${rawDataset.length} Campus Routes)`;
+      if (subEl) subEl.textContent = `Select from all ${rawDataset.length} Chennai campus routes to write to Firestore. Existing routes and driver assignments are preserved.`;
+    }
+
+    this.routeImportCandidates = rawDataset.map(r => {
+      const routeId = r.routeId || r.id;
+      const existing = this.routeImportExistingMap ? this.routeImportExistingMap[routeId] : null;
+      let status = "NEW"; // "NEW", "EXISTS", "CONFLICT"
+      let conflictNote = "";
+
+      if (existing) {
+        const normExisting = (existing.routeName || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const normCand = (r.routeName || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const isMatch = normExisting === normCand || normExisting.includes(normCand) || normCand.includes(normExisting);
+
+        if (isMatch) {
+          status = "EXISTS";
+        } else {
+          status = "CONFLICT";
+          conflictNote = `Conflicts with existing Firestore route "${existing.routeName || existing.id}"`;
+        }
+      }
+
+      // Checkbox defaults: checked if NEW, unchecked if EXISTS or CONFLICT
+      if (status === "NEW") {
+        this.routeImportSelectedIds.add(routeId);
+      }
+
+      return {
+        ...r,
+        routeId,
+        _importStatus: status,
+        _conflictNote: conflictNote,
+        _existingDoc: existing
+      };
+    });
+
+    const searchInput = document.getElementById("route-import-search");
+    if (searchInput && searchInput.value) {
+      this.filterRouteImportList(searchInput.value);
+    } else {
+      this.routeImportFiltered = [...this.routeImportCandidates];
+      this.renderRouteImportList();
+      this.updateRouteImportState();
+    }
+  }
+
+  filterRouteImportList(query) {
+    const q = (query || "").trim().toLowerCase();
+    if (!q) {
+      this.routeImportFiltered = [...this.routeImportCandidates];
+    } else {
+      this.routeImportFiltered = this.routeImportCandidates.filter(r => {
+        const idMatch = (r.routeId || "").toLowerCase().includes(q);
+        const numMatch = (r.routeNumber || "").toString().toLowerCase().includes(q);
+        const nameMatch = (r.routeName || "").toLowerCase().includes(q);
+        const stopsMatch = Array.isArray(r.stops) && r.stops.some(s => s.toLowerCase().includes(q));
+        return idMatch || numMatch || nameMatch || stopsMatch;
+      });
+    }
+    this.renderRouteImportList();
+    this.updateRouteImportState();
+  }
+
+  renderRouteImportList() {
+    const tbody = document.getElementById("route-import-tbody");
+    if (!tbody) return;
+
+    if (this.routeImportFiltered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5" style="padding:30px;text-align:center;color:var(--text-muted);">No matching routes found.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = this.routeImportFiltered.map(r => {
+      const isChecked = this.routeImportSelectedIds.has(r.routeId);
+      const stopCount = Array.isArray(r.stops) ? r.stops.length : 0;
+      const startStop = stopCount > 0 ? r.stops[0] : "—";
+      const endStop = stopCount > 1 ? r.stops[stopCount - 1] : "";
+
+      // Schedule formatting
+      let schedText = "—";
+      if (r.schedule) {
+        if (typeof r.schedule === "object") {
+          schedText = `${r.schedule.morning || ""}${r.schedule.evening ? " / " + r.schedule.evening : ""}`;
+        } else {
+          schedText = String(r.schedule);
+        }
+      } else if (Array.isArray(r.scheduledTimes) && r.scheduledTimes.length > 0) {
+        schedText = `${r.scheduledTimes[0]} - ${r.scheduledTimes[r.scheduledTimes.length - 1]}`;
+      }
+
+      // Badge formatting
+      let badgeHtml = "";
+      let rowClass = "route-import-row";
+      if (isChecked) rowClass += " selected";
+
+      if (r._importStatus === "NEW") {
+        badgeHtml = `<span class="badge badge-live">New</span>`;
+      } else if (r._importStatus === "EXISTS") {
+        badgeHtml = `<span class="badge badge-stale" title="Route exists in Firestore">Already exists</span>`;
+      } else if (r._importStatus === "CONFLICT") {
+        rowClass += " conflict";
+        badgeHtml = `<span class="badge badge-conflict" title="${r._conflictNote}">⚠️ Conflict</span>`;
+      }
+
+      return `
+        <tr class="${rowClass}" data-route-id="${r.routeId}">
+          <td style="padding:10px 12px;text-align:center;">
+            <input type="checkbox" class="route-import-checkbox" data-route-id="${r.routeId}" ${isChecked ? 'checked' : ''} style="cursor:pointer;width:15px;height:15px;" />
+          </td>
+          <td style="padding:10px 12px;">
+            <div style="font-weight:700;color:var(--text-primary);font-family:var(--font-heading);">${r.routeName || r.routeId}</div>
+            <div style="font-size:11px;color:var(--text-muted);font-family:var(--font-mono);">${r.routeId}${r.routeNumber ? ` • Bus #${r.routeNumber}` : ''}</div>
+          </td>
+          <td style="padding:10px 12px;">
+            <div style="font-weight:600;font-size:12px;">${stopCount} Stops</div>
+            <div style="font-size:11px;color:var(--text-muted);max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+              ${startStop}${endStop ? ' ➔ ' + endStop : ''}
+            </div>
+          </td>
+          <td style="padding:10px 12px;font-size:12px;color:var(--text-secondary);font-family:var(--font-mono);">
+            ${schedText}
+          </td>
+          <td style="padding:10px 12px;text-align:right;">
+            <div>${badgeHtml}</div>
+            ${r._conflictNote ? `<div style="font-size:10.5px;color:#DC2626;margin-top:2px;">${r._conflictNote}</div>` : ''}
+            ${(r._importStatus === "EXISTS" && isChecked) ? `<div style="font-size:10.5px;color:#D97706;margin-top:2px;">Will update existing doc</div>` : ''}
+          </td>
+        </tr>
+      `;
+    }).join("");
+
+    // Bind row click & checkbox listeners
+    tbody.querySelectorAll(".route-import-row").forEach(row => {
+      row.addEventListener("click", (e) => {
+        if (e.target.tagName === "INPUT" && e.target.type === "checkbox") return;
+        const routeId = row.getAttribute("data-route-id");
+        const chk = row.querySelector(".route-import-checkbox");
+        if (chk) {
+          chk.checked = !chk.checked;
+          if (chk.checked) this.routeImportSelectedIds.add(routeId);
+          else this.routeImportSelectedIds.delete(routeId);
+          this.updateRouteImportRowClass(row, chk.checked);
+          this.updateRouteImportState();
+        }
+      });
+    });
+
+    tbody.querySelectorAll(".route-import-checkbox").forEach(chk => {
+      chk.addEventListener("change", () => {
+        const routeId = chk.getAttribute("data-route-id");
+        if (chk.checked) this.routeImportSelectedIds.add(routeId);
+        else this.routeImportSelectedIds.delete(routeId);
+        const row = chk.closest("tr");
+        if (row) this.updateRouteImportRowClass(row, chk.checked);
+        this.updateRouteImportState();
+      });
+    });
+  }
+
+  updateRouteImportRowClass(row, isChecked) {
+    if (isChecked) row.classList.add("selected");
+    else row.classList.remove("selected");
+  }
+
+  syncRouteImportCheckboxes() {
+    document.querySelectorAll(".route-import-checkbox").forEach(chk => {
+      const id = chk.getAttribute("data-route-id");
+      chk.checked = this.routeImportSelectedIds.has(id);
+      const row = chk.closest("tr");
+      if (row) this.updateRouteImportRowClass(row, chk.checked);
+    });
+  }
+
+  updateRouteImportState() {
+    const total = this.routeImportCandidates.length;
+    const selected = this.routeImportSelectedIds.size;
+    const visible = this.routeImportFiltered.length;
+
+    // Counter
+    const counterEl = document.getElementById("route-import-counter");
+    if (counterEl) {
+      if (visible < total) {
+        counterEl.textContent = `${selected} of ${total} selected (${visible} in search)`;
+      } else {
+        counterEl.textContent = `${selected} of ${total} selected`;
+      }
+    }
+
+    // Select All Checkbox state (with indeterminate support)
+    const selectAllChk = document.getElementById("route-import-select-all");
+    if (selectAllChk) {
+      const visibleSelectedCount = this.routeImportFiltered.filter(r => this.routeImportSelectedIds.has(r.routeId)).length;
+      if (visibleSelectedCount === 0) {
+        selectAllChk.checked = false;
+        selectAllChk.indeterminate = false;
+      } else if (visibleSelectedCount === visible && visible > 0) {
+        selectAllChk.checked = true;
+        selectAllChk.indeterminate = false;
+      } else {
+        selectAllChk.checked = false;
+        selectAllChk.indeterminate = true;
+      }
+    }
+
+    // Check for Overwrites / Conflicts among selected
+    const selectedOverwrites = [];
+    const selectedConflicts = [];
+    this.routeImportCandidates.forEach(r => {
+      if (this.routeImportSelectedIds.has(r.routeId)) {
+        if (r._importStatus === "CONFLICT") {
+          selectedConflicts.push(r);
+        } else if (r._importStatus === "EXISTS") {
+          selectedOverwrites.push(r);
+        }
+      }
+    });
+
+    const conflictBanner = document.getElementById("route-import-conflict-banner");
+    const conflictText = document.getElementById("route-import-conflict-text");
+    const confirmOverwriteCheck = document.getElementById("route-import-confirm-overwrite");
+    const submitBtn = document.getElementById("btn-route-import-submit");
+
+    const hasDangerousOverwrites = selectedConflicts.length > 0 || selectedOverwrites.length > 0;
+
+    if (hasDangerousOverwrites) {
+      if (conflictBanner) conflictBanner.style.display = "block";
+      if (conflictText) {
+        const parts = [];
+        if (selectedConflicts.length > 0) {
+          parts.push(`<strong>${selectedConflicts.length} route(s)</strong> conflict with existing Firestore names (${selectedConflicts.slice(0, 3).map(r => r.routeId).join(", ")}${selectedConflicts.length > 3 ? "..." : ""}).`);
+        }
+        if (selectedOverwrites.length > 0) {
+          parts.push(`<strong>${selectedOverwrites.length} route(s)</strong> already exist in Firestore and will be updated.`);
+        }
+        conflictText.innerHTML = parts.join(" ");
+      }
+    } else {
+      if (conflictBanner) conflictBanner.style.display = "none";
+    }
+
+    // Submit button enablement
+    if (submitBtn) {
+      submitBtn.textContent = `Import Selected (${selected})`;
+      if (selected === 0) {
+        submitBtn.disabled = true;
+      } else if (hasDangerousOverwrites && (!confirmOverwriteCheck || !confirmOverwriteCheck.checked)) {
+        submitBtn.disabled = true;
+      } else {
+        submitBtn.disabled = false;
+      }
+    }
+  }
+
+  async executeRouteImport() {
+    const selectedRoutes = this.routeImportCandidates.filter(r => this.routeImportSelectedIds.has(r.routeId));
+    if (selectedRoutes.length === 0) return;
+
+    const confirmOverwrite = document.getElementById("route-import-confirm-overwrite")?.checked === true;
+    const progressBox = document.getElementById("route-import-progress-box");
+    const progressText = document.getElementById("route-import-progress-text");
+    const progressPercent = document.getElementById("route-import-progress-percent");
+    const progressBar = document.getElementById("route-import-progress-bar");
+    const summaryBox = document.getElementById("route-import-result-summary");
+    const submitBtn = document.getElementById("btn-route-import-submit");
+
+    if (progressBox) progressBox.style.display = "block";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Writing...";
+    }
+    if (summaryBox) summaryBox.style.display = "none";
+
+    try {
+      const res = await routeService.importRoutes(selectedRoutes, {
+        allowOverwrite: confirmOverwrite,
+        onProgress: ({ current, total }) => {
+          const pct = Math.round((current / total) * 100);
+          if (progressPercent) progressPercent.textContent = `${pct}%`;
+          if (progressBar) progressBar.style.width = `${pct}%`;
+          if (progressText) progressText.textContent = `Writing routes to Firestore (${current} of ${total})...`;
+        }
+      });
+
+      // Audit Log
+      await auditService.logAction(
+        this.routeImportType === "default" ? "DEFAULT_ROUTES_SEEDED" : "MORNING_ROUTES_IMPORTED",
+        "ROUTES",
+        "BATCH",
+        {
+          totalSelected: selectedRoutes.length,
+          created: res.created,
+          updated: res.updated,
+          skipped: res.skipped,
+          failedCount: res.failed.length
+        },
+        authService.userProfile
+      );
+
+      // Render Result Summary
+      if (progressBox) progressBox.style.display = "none";
+      if (summaryBox) {
+        summaryBox.style.display = "block";
+        const hasFailures = res.failed.length > 0;
+        summaryBox.style.background = hasFailures ? "#FEF2F2" : "#F0FDF4";
+        summaryBox.style.border = `1px solid ${hasFailures ? '#FECACA' : '#BBF7D0'}`;
+        summaryBox.style.color = hasFailures ? "#991B1B" : "#166534";
+
+        let summaryHtml = `
+          <div style="font-weight:700;font-size:13px;margin-bottom:4px;">
+            ${hasFailures ? '⚠️ Import Finished with Warnings' : '✅ Import Completed Successfully!'}
+          </div>
+          <div style="font-size:12px;">
+            <strong>${res.created}</strong> created &bull;
+            <strong>${res.updated}</strong> updated &bull;
+            <strong>${res.skipped}</strong> skipped (not overwritten) &bull;
+            <strong>${res.failed.length}</strong> failed
+          </div>
+        `;
+
+        if (hasFailures) {
+          summaryHtml += `
+            <div style="margin-top:8px;font-size:11.5px;max-height:100px;overflow-y:auto;">
+              ${res.failed.map(f => `<div>• <strong>${f.routeId}</strong>: ${f.reason}</div>`).join("")}
+            </div>
+          `;
+        }
+
+        summaryBox.innerHTML = summaryHtml;
+      }
+
+      this.toast(`Imported ${res.created + res.updated} routes to Cloud Firestore!`, "success");
+
+      // Refresh routes table without page reload
+      this.renderRoutes();
+
+      if (submitBtn) {
+        submitBtn.textContent = "✓ Finished";
+        submitBtn.disabled = false;
+        submitBtn.onclick = () => this.closeAllModals();
+      }
+
+      // Re-read existing map to update badges in the open modal if left open
+      this.routeImportExistingMap = await routeService.getExistingRoutesMap();
+    } catch (importErr) {
+      console.error("[RouteImport] Unexpected error during import:", importErr);
+      if (progressBox) progressBox.style.display = "none";
+      if (summaryBox) {
+        summaryBox.style.display = "block";
+        summaryBox.style.background = "#FEF2F2";
+        summaryBox.style.border = "1px solid #FECACA";
+        summaryBox.style.color = "#DC2626";
+        summaryBox.innerHTML = `<strong>Import Failed:</strong> ${importErr.message || "An unexpected error occurred."}`;
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Retry Import";
+      }
+    }
   }
 }
 
 export const uiController = new UIController();
+window.uiController = uiController;

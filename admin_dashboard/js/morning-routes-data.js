@@ -1,4 +1,4 @@
-window.MORNING_ROUTES_DATA = [
+export const MORNING_ROUTES_DATA = [
   {
     "routeId": "route_01",
     "routeNumber": "1",
@@ -4852,3 +4852,7 @@ window.MORNING_ROUTES_DATA = [
     "roadPointsCount": 88
   }
 ];
+
+if (typeof window !== "undefined") {
+  window.MORNING_ROUTES_DATA = MORNING_ROUTES_DATA;
+}

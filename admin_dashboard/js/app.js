@@ -16,11 +16,28 @@ import { settingsService } from "./settings-service.js";
 import { uiController } from "./ui-controller.js";
 
 class App {
+  constructor() {
+    this.isDashboardVisible = false;
+  }
+
   init() {
     console.log("[VIT Bus Tracker Admin] Initializing Fleet Control Center...");
 
+    // Global startup error listener to ensure module errors are never silent
+    window.addEventListener("error", (e) => {
+      const loginError = document.getElementById("login-error-msg");
+      if (loginError && !this.isDashboardVisible) {
+        loginError.textContent = `Initialization Error: ${e.message}`;
+        loginError.style.display = "block";
+      }
+    });
+
     // Initialize UI Controller
-    uiController.init();
+    try {
+      uiController.init();
+    } catch (uiErr) {
+      console.error("[App] UI Controller initialization error:", uiErr);
+    }
 
     // Bind Login Form Immediately
     const loginForm = document.getElementById("form-admin-login");
@@ -30,8 +47,8 @@ class App {
     if (loginForm) {
       loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const email = document.getElementById("admin-email-input").value;
-        const pass = document.getElementById("admin-password-input").value;
+        const email = document.getElementById("admin-email-input")?.value || "";
+        const pass = document.getElementById("admin-password-input")?.value || "";
         
         if (loginError) loginError.style.display = "none";
         if (loginBtn) {
@@ -40,7 +57,8 @@ class App {
         }
 
         try {
-          await authService.login(email, pass);
+          const res = await authService.login(email, pass);
+          this.showDashboard(res.user, res.profile);
           uiController.toast("Admin Authentication Successful!");
         } catch (err) {
           console.error("[Login] Authentication failed:", err);
@@ -66,20 +84,20 @@ class App {
         const email = (emailInput && emailInput.value) ? emailInput.value : "admin@transit.org";
         const pass = (passInput && passInput.value) ? passInput.value : "admin123";
 
+        if (loginError) loginError.style.display = "none";
         quickDemoBtn.textContent = "Signing In...";
         quickDemoBtn.disabled = true;
 
         try {
-          await authService.login(email, pass);
-          uiController.toast("Fast Admin Access Granted!");
+          const res = await authService.login(email, pass);
+          this.showDashboard(res.user, res.profile);
+          uiController.toast("Admin Authentication Successful!");
         } catch (err) {
-          console.warn("[QuickDemo] Fallback to anonymous admin session:", err);
-          // If Firebase Auth fails with network/credentials, grant session-level admin directly
-          authService.currentUser = { uid: "admin_local_" + Date.now(), email: email };
-          authService.userProfile = { name: "Fleet Operations Admin", email: email, role: "Admin" };
-          authService.isAdmin = true;
-          authService.notifyListeners();
-          uiController.toast("Administrator Session Activated!");
+          console.error("[QuickDemo] Authentication failed:", err);
+          if (loginError) {
+            loginError.textContent = err.message || "Authentication failed.";
+            loginError.style.display = "block";
+          }
         } finally {
           quickDemoBtn.textContent = "⚡ 1-Click Fast Admin Sign In";
           quickDemoBtn.disabled = false;
@@ -97,6 +115,7 @@ class App {
       btn.addEventListener("click", async () => {
         if (confirm("Sign out of Administrator Fleet Control Center?")) {
           await authService.logout();
+          this.hideDashboard();
           uiController.toast("Logged out.");
         }
       });
@@ -104,41 +123,65 @@ class App {
 
     // Monitor Auth State
     authService.init((user, isAdmin, profile) => {
-      const authScreen = document.getElementById("auth-screen");
-      const appShell = document.getElementById("app-shell");
-
       if (user && isAdmin) {
-        if (authScreen) authScreen.style.display = "none";
-        if (appShell) appShell.style.display = "flex";
-
-        // Update Admin Profile in Sidebar
-        const adminNameEl = document.getElementById("sidebar-admin-name");
-        const adminRoleEl = document.getElementById("sidebar-admin-role");
-        const adminAvatarEl = document.getElementById("sidebar-admin-avatar");
-
-        if (adminNameEl) adminNameEl.textContent = profile?.name || user.email.split("@")[0];
-        if (adminRoleEl) adminRoleEl.textContent = profile?.role || "Fleet Director";
-        if (adminAvatarEl) adminAvatarEl.textContent = (profile?.name || user.email)[0].toUpperCase();
-
-        // Start all real-time Firestore listeners
-        this.startRealtimeListeners();
+        this.showDashboard(user, profile);
       } else {
-        if (authScreen) authScreen.style.display = "flex";
-        if (appShell) appShell.style.display = "none";
-
-        // Stop listeners
-        this.stopRealtimeListeners();
+        this.hideDashboard();
       }
     });
   }
 
+  showDashboard(user, profile) {
+    this.isDashboardVisible = true;
+    const authScreen = document.getElementById("auth-screen");
+    const appShell = document.getElementById("app-shell");
+
+    if (authScreen) authScreen.style.display = "none";
+    if (appShell) appShell.style.display = "flex";
+
+    // Update Admin Profile in Sidebar
+    const adminNameEl = document.getElementById("sidebar-admin-name");
+    const adminRoleEl = document.getElementById("sidebar-admin-role");
+    const adminAvatarEl = document.getElementById("sidebar-admin-avatar");
+
+    const displayName = profile?.name || user?.displayName || user?.email?.split("@")[0] || "Administrator";
+    const displayRole = profile?.role || "Admin";
+
+    if (adminNameEl) adminNameEl.textContent = displayName;
+    if (adminRoleEl) adminRoleEl.textContent = displayRole;
+    if (adminAvatarEl) adminAvatarEl.textContent = displayName[0].toUpperCase();
+
+    // Start all real-time Firestore listeners with fault isolation
+    this.startRealtimeListeners();
+  }
+
+  hideDashboard() {
+    this.isDashboardVisible = false;
+    const authScreen = document.getElementById("auth-screen");
+    const appShell = document.getElementById("app-shell");
+
+    if (authScreen) authScreen.style.display = "flex";
+    if (appShell) appShell.style.display = "none";
+
+    // Stop listeners
+    this.stopRealtimeListeners();
+  }
+
   startRealtimeListeners() {
-    busService.startListening(() => uiController.renderCurrentView());
-    routeService.startListening(() => uiController.renderCurrentView());
-    userService.startListening(() => uiController.renderCurrentView());
-    alertService.startListening(() => uiController.renderCurrentView());
-    announcementService.startListening(() => uiController.renderCurrentView());
-    sosService.startListening((alerts) => {
+    const startListener = (name, fn) => {
+      try {
+        fn();
+      } catch (err) {
+        console.error(`[App] Failed to start listener for ${name}:`, err);
+      }
+    };
+
+    startListener("busService", () => busService.startListening(() => uiController.renderCurrentView()));
+    startListener("routeService", () => routeService.startListening(() => uiController.renderCurrentView()));
+    startListener("userService", () => userService.startListening(() => uiController.renderCurrentView()));
+    startListener("alertService", () => alertService.startListening(() => uiController.renderCurrentView()));
+    startListener("announcementService", () => announcementService.startListening(() => uiController.renderCurrentView()));
+    startListener("sosService", () => sosService.startListening((alerts) => {
       const activeSos = alerts.filter(a => (a.status || "ACTIVE").toUpperCase() === "ACTIVE");
       const navBadge = document.getElementById("badge-emergency-count");
       if (navBadge) {
@@ -146,9 +189,9 @@ class App {
         navBadge.style.display = activeSos.length > 0 ? "inline-block" : "none";
       }
       uiController.renderCurrentView();
-    });
-    tripService.startListening(() => uiController.renderCurrentView());
-    auditService.startListening(() => uiController.renderCurrentView());
+    }));
+    startListener("tripService", () => tripService.startListening(() => uiController.renderCurrentView()));
+    startListener("auditService", () => auditService.startListening(() => uiController.renderCurrentView()));
 
     // Update Live Indicator
     const liveIndicator = document.getElementById("realtime-indicator");
@@ -159,14 +202,22 @@ class App {
   }
 
   stopRealtimeListeners() {
-    busService.stopListening();
-    routeService.stopListening();
-    userService.stopListening();
-    alertService.stopListening();
-    announcementService.stopListening();
-    sosService.stopListening();
-    tripService.stopListening();
-    auditService.stopListening();
+    const stopListener = (name, fn) => {
+      try {
+        fn();
+      } catch (err) {
+        console.error(`[App] Failed to stop listener for ${name}:`, err);
+      }
+    };
+
+    stopListener("busService", () => busService.stopListening());
+    stopListener("routeService", () => routeService.stopListening());
+    stopListener("userService", () => userService.stopListening());
+    stopListener("alertService", () => alertService.stopListening());
+    stopListener("announcementService", () => announcementService.stopListening());
+    stopListener("sosService", () => sosService.stopListening());
+    stopListener("tripService", () => tripService.stopListening());
+    stopListener("auditService", () => auditService.stopListening());
 
     const liveIndicator = document.getElementById("realtime-indicator");
     if (liveIndicator) {
@@ -178,4 +229,10 @@ class App {
 
 // Boot application
 const app = new App();
-document.addEventListener("DOMContentLoaded", () => app.init());
+window.app = app;
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => app.init());
+} else {
+  app.init();
+}
+

@@ -1052,3 +1052,36 @@ tbody tr:last-child td {
   background: #FCA5A5;
 }
 
+/* ============================================================
+   ROUTE SELECTION & IMPORT MODAL
+   ============================================================ */
+.route-import-row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.route-import-row:hover {
+  background: #F8FAFC;
+}
+
+.route-import-row.selected {
+  background: #F0F9FF;
+}
+
+.route-import-row.conflict {
+  background: #FFF5F5;
+}
+
+.route-import-row.conflict.selected {
+  background: #FEE2E2;
+}
+
+.badge-conflict {
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+  font-size: 11px;
+  font-weight: 700;
+}
+

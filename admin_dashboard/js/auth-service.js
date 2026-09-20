@@ -27,6 +27,10 @@ class AuthService {
    * Listen to Firebase Auth state changes and verify admin privileges
    */
   init(onAuthResolved) {
+    if (onAuthResolved) {
+      this.subscribe(onAuthResolved);
+    }
+
     onAuthStateChanged(auth, async (user) => {
       this.currentUser = user;
       if (user) {
@@ -38,36 +42,21 @@ class AuthService {
             this.userProfile = userDoc.data();
             const role = (this.userProfile.role || "").toLowerCase();
             
-            if (role === "admin" || role === "superadmin" || role === "driver" || role === "student" || user.email) {
+            if (role === "admin" || role === "superadmin") {
               this.isAdmin = true;
+            } else {
+              this.isAdmin = false;
+              console.warn(`[AuthService] Authenticated user ${user.uid} role '${this.userProfile.role}' is not Admin.`);
             }
           } else {
-            // Auto-provision user as Admin in Firestore
-            this.isAdmin = true;
-            this.userProfile = {
-              name: user.displayName || user.email?.split("@")[0] || "Administrator",
-              email: user.email,
-              role: "Admin"
-            };
-            try {
-              await setDoc(userDocRef, {
-                name: this.userProfile.name,
-                email: user.email,
-                role: "Admin",
-                createdAt: serverTimestamp()
-              }, { merge: true });
-            } catch (e) {
-              console.warn("[AuthService] Could not write /users doc:", e);
-            }
+            this.userProfile = null;
+            this.isAdmin = false;
+            console.warn(`[AuthService] No /users record found for ${user.uid}.`);
           }
         } catch (error) {
-          console.warn("[AuthService] Error reading user doc, granting admin access by session:", error);
-          this.isAdmin = true;
-          this.userProfile = {
-            name: user.displayName || user.email?.split("@")[0] || "Administrator",
-            email: user.email,
-            role: "Admin"
-          };
+          console.error("[AuthService] Error reading user doc:", error);
+          this.userProfile = null;
+          this.isAdmin = false;
         }
       } else {
         this.userProfile = null;
@@ -75,61 +64,75 @@ class AuthService {
       }
 
       this.notifyListeners();
-      if (onAuthResolved) onAuthResolved(this.currentUser, this.isAdmin, this.userProfile);
     });
   }
 
   /**
    * Log in with Email and Password.
-   * If the account does not exist in Firebase Auth yet, it automatically creates it.
+   * Strictly enforces Admin or Superadmin role from the /users/{uid} document.
    */
   async login(email, password) {
-    const cleanEmail = email.trim();
-    let user = null;
+    const cleanEmail = (email || "").trim();
+    if (!cleanEmail || !password) {
+      throw new Error("Please enter both email and password.");
+    }
 
+    let user = null;
     try {
       const cred = await signInWithEmailAndPassword(auth, cleanEmail, password);
       user = cred.user;
     } catch (authErr) {
-      console.warn("[AuthService] signIn failed, trying createUser:", authErr.code);
-      try {
-        const cred = await createUserWithEmailAndPassword(auth, cleanEmail, password);
-        user = cred.user;
-      } catch (createErr) {
-        console.error("[AuthService] createUser failed:", createErr);
-        if (createErr.code === "auth/email-already-in-use" || createErr.code === "auth/wrong-password") {
-          throw new Error("Password does not match this existing account. Please re-check your password.");
-        }
-        throw new Error(createErr.message || authErr.message || "Failed to authenticate.");
+      console.warn("[AuthService] signIn failed:", authErr.code);
+      const code = authErr.code || "";
+      if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found") {
+        throw new Error("Invalid email or password. Please verify your credentials.");
+      } else if (code === "auth/invalid-email") {
+        throw new Error("Please enter a valid email address.");
+      } else if (code === "auth/too-many-requests") {
+        throw new Error("Access temporarily blocked due to multiple failed sign-in attempts. Please try again later.");
+      } else if (code === "auth/network-request-failed") {
+        throw new Error("Network error: Unable to connect to Firebase Authentication. Check your connection.");
       }
+      throw new Error(authErr.message || "Failed to authenticate.");
     }
 
+    // Role check verification from user document in Firestore
     try {
       const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
-      
-      if (userDoc.exists()) {
-        this.userProfile = userDoc.data();
-      } else {
-        this.userProfile = {
-          name: user.displayName || cleanEmail.split("@")[0] || "Fleet Administrator",
-          email: cleanEmail,
-          role: "Admin"
-        };
-        await setDoc(userDocRef, {
-          name: this.userProfile.name,
-          email: cleanEmail,
-          role: "Admin",
-          createdAt: serverTimestamp()
-        }, { merge: true });
+
+      if (!userDoc.exists()) {
+        await signOut(auth);
+        this.currentUser = null;
+        this.userProfile = null;
+        this.isAdmin = false;
+        this.notifyListeners();
+        throw new Error("Access Denied: No profile record found in /users for this account.");
+      }
+
+      this.userProfile = userDoc.data();
+      const role = (this.userProfile.role || "").toLowerCase();
+
+      if (role !== "admin" && role !== "superadmin") {
+        await signOut(auth);
+        const assignedRole = this.userProfile.role || "Unknown";
+        this.currentUser = null;
+        this.userProfile = null;
+        this.isAdmin = false;
+        this.notifyListeners();
+        throw new Error(`Access Denied: Account role is '${assignedRole}'. Administrator privileges are required to access this dashboard.`);
       }
     } catch (e) {
-      console.warn("[AuthService] Firestore sync skipped:", e);
-      this.userProfile = {
-        name: cleanEmail.split("@")[0] || "Administrator",
-        email: cleanEmail,
-        role: "Admin"
-      };
+      if (e.message && e.message.startsWith("Access Denied")) {
+        throw e;
+      }
+      console.error("[AuthService] Role verification error:", e);
+      await signOut(auth);
+      this.currentUser = null;
+      this.userProfile = null;
+      this.isAdmin = false;
+      this.notifyListeners();
+      throw new Error("Failed to verify administrator role: " + (e.message || "Permission or network error."));
     }
 
     this.currentUser = user;

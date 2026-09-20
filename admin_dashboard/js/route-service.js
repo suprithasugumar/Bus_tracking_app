@@ -13,8 +13,10 @@ import {
   updateDoc, 
   deleteDoc, 
   onSnapshot,
-  writeBatch
+  writeBatch,
+  serverTimestamp
 } from "./firebase-config.js";
+import { MORNING_ROUTES_DATA } from "./morning-routes-data.js";
 
 // Canonical seed dataset matching Flutter seed_service.dart
 export const DEFAULT_CHENNAI_ROUTES = [
@@ -466,22 +468,150 @@ class RouteService {
   }
 
   /**
-   * Seed default 10 Chennai routes if collection is empty
+   * Fetch all existing routes once as an ID-keyed map
+   */
+  async getExistingRoutesMap() {
+    const map = {};
+    try {
+      const snap = await getDocs(collection(db, "routes"));
+      snap.forEach(d => {
+        map[d.id] = { id: d.id, ...d.data() };
+      });
+    } catch (err) {
+      console.warn("[RouteService] getDocs error, using local memory cache:", err);
+      this.routes.forEach(r => {
+        map[r.routeId || r.id] = r;
+      });
+    }
+    return map;
+  }
+
+  /**
+   * Safe batch import of routes with ID collision detection, field preservation, and chunking (<= 400)
+   * @param {Array} routesToImport Array of route objects to write
+   * @param {Object} options { allowOverwrite: boolean, onProgress: Function }
+   * @returns {Promise<Object>} Summary { created, updated, skipped, failed: [{ routeId, reason }] }
+   */
+  async importRoutes(routesToImport, options = {}) {
+    const { allowOverwrite = false, onProgress = null } = options;
+    const results = {
+      created: 0,
+      updated: 0,
+      skipped: 0,
+      failed: []
+    };
+
+    if (!Array.isArray(routesToImport) || routesToImport.length === 0) {
+      return results;
+    }
+
+    const existingMap = await this.getExistingRoutesMap();
+    const preparedOps = [];
+
+    for (const r of routesToImport) {
+      const routeId = r.routeId || r.id;
+      if (!routeId) {
+        results.failed.push({ routeId: "unknown", reason: "Missing routeId" });
+        continue;
+      }
+
+      const existing = existingMap[routeId];
+      if (existing) {
+        if (!allowOverwrite) {
+          results.skipped++;
+          continue;
+        }
+
+        // Construct update payload preserving driver, bus, custom schedules, polylines
+        const payload = {
+          routeId: routeId,
+          routeName: r.routeName || existing.routeName,
+          stops: Array.isArray(r.stops) ? r.stops : (existing.stops || []),
+          stopCoordinates: Array.isArray(r.stopCoordinates) ? r.stopCoordinates : (existing.stopCoordinates || []),
+          assignedDriverId: existing.assignedDriverId || r.assignedDriverId || "",
+          assignedDriverName: existing.assignedDriverName || r.assignedDriverName || "",
+          busNumber: existing.busNumber || r.busNumber || "",
+          schedule: existing.schedule || r.schedule || { morning: (r.scheduledTimes && r.scheduledTimes[0]) ? r.scheduledTimes[0] : "07:30", evening: "17:00" },
+          polylinePoints: existing.polylinePoints || r.polylinePoints || "",
+          encodedPolyline: existing.encodedPolyline || r.encodedPolyline || "",
+          scheduledTimes: (existing.scheduledTimes && existing.scheduledTimes.length > 0)
+            ? existing.scheduledTimes
+            : (r.scheduledTimes || []),
+          isActive: r.isActive !== false,
+          updatedAt: serverTimestamp()
+        };
+
+        if (r.routeNumber) payload.routeNumber = r.routeNumber;
+        if (r.shift) payload.shift = r.shift;
+
+        preparedOps.push({ type: "update", routeId, payload });
+      } else {
+        // New route payload
+        const payload = {
+          routeId: routeId,
+          routeName: r.routeName || `Route ${routeId}`,
+          stops: Array.isArray(r.stops) ? r.stops : [],
+          stopCoordinates: Array.isArray(r.stopCoordinates) ? r.stopCoordinates : [],
+          assignedDriverId: r.assignedDriverId || "",
+          assignedDriverName: r.assignedDriverName || "",
+          busNumber: r.busNumber || "",
+          schedule: r.schedule || { morning: (r.scheduledTimes && r.scheduledTimes[0]) ? r.scheduledTimes[0] : "07:30", evening: "17:00" },
+          polylinePoints: r.polylinePoints || "",
+          encodedPolyline: r.encodedPolyline || "",
+          scheduledTimes: r.scheduledTimes || [],
+          isActive: r.isActive !== false,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp()
+        };
+
+        if (r.routeNumber) payload.routeNumber = r.routeNumber;
+        if (r.shift) payload.shift = r.shift;
+
+        preparedOps.push({ type: "create", routeId, payload });
+      }
+    }
+
+    // Batched writes in chunks of 400 or fewer
+    const CHUNK_SIZE = 400;
+    const totalOps = preparedOps.length;
+    let completedOps = 0;
+
+    for (let i = 0; i < preparedOps.length; i += CHUNK_SIZE) {
+      const chunk = preparedOps.slice(i, i + CHUNK_SIZE);
+      const batch = writeBatch(db);
+
+      chunk.forEach(op => {
+        const ref = doc(db, "routes", op.routeId);
+        batch.set(ref, op.payload, { merge: true });
+      });
+
+      try {
+        await batch.commit();
+        chunk.forEach(op => {
+          if (op.type === "create") results.created++;
+          else if (op.type === "update") results.updated++;
+        });
+      } catch (batchErr) {
+        console.error(`[RouteService] Batch write failure:`, batchErr);
+        chunk.forEach(op => {
+          results.failed.push({ routeId: op.routeId, reason: batchErr.message || "Write failed" });
+        });
+      }
+
+      completedOps += chunk.length;
+      if (typeof onProgress === "function") {
+        onProgress({ current: completedOps, total: totalOps });
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * Seed default routes (seeds the 80 Chennai campus routes)
    */
   async seedRoutes() {
-    const batch = writeBatch(db);
-    DEFAULT_CHENNAI_ROUTES.forEach((r) => {
-      const ref = doc(db, "routes", r.routeId);
-      batch.set(ref, {
-        routeName: r.routeName,
-        stops: r.stops,
-        stopCoordinates: r.stopCoordinates,
-        assignedDriverId: r.assignedDriverId,
-        schedule: r.schedule,
-        isActive: r.isActive
-      }, { merge: true });
-    });
-    await batch.commit();
+    return this.importRoutes(MORNING_ROUTES_DATA, { allowOverwrite: true });
   }
 }
 
