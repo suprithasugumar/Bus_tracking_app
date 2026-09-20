@@ -239,6 +239,10 @@
                 <option value="STALE">🟡 Stale</option>
                 <option value="OFFLINE">⚪ Offline</option>
               </select>
+
+              <button class="btn btn-secondary btn-sm" id="btn-toggle-route-line" style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;margin-left:6px;" title="Toggle route path polyline">
+                <span id="icon-route-line">🛣️</span> <span id="text-route-line">Route Line: ON</span>
+              </button>
             </div>
             <div id="tracking-summary-badge" style="font-size:13px;"></div>
           </div>
@@ -290,11 +294,14 @@
           <div class="card">
             <div class="card-header">
               <div><h3 class="card-title">Student Directory</h3><p class="card-subtitle">Student transit passholders and route preferences</p></div>
+              <div style="display:flex;gap:10px;">
+                <button class="btn btn-primary" id="btn-open-csv-import" data-open-modal="modal-csv-import">📥 Bulk CSV Import</button>
+              </div>
             </div>
             <div class="table-container">
               <table>
                 <thead>
-                  <tr><th>Student Name & Email</th><th>Phone</th><th>Preferred Route</th><th>Role</th><th>Actions</th></tr>
+                  <tr><th>Student Name & Email</th><th>Phone / Roll #</th><th>Assigned Route</th><th>Selected Stop</th><th>Role</th><th>Actions</th></tr>
                 </thead>
                 <tbody id="students-tbody"></tbody>
               </table>
@@ -302,13 +309,15 @@
           </div>
         </div>
 
+
         <!-- ===================== VIEW: ROUTES ===================== -->
         <div class="view-container" id="view-routes">
           <div class="card">
             <div class="card-header">
               <div><h3 class="card-title">Route Network & Schedules</h3><p class="card-subtitle">Configure stops, departure timetables, and waypoints</p></div>
-              <div style="display:flex;gap:10px;">
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
                 <button class="btn btn-secondary" id="btn-seed-routes">⚡ Seed Default Routes</button>
+                <button class="btn btn-secondary" id="btn-open-geocode-review" style="background:#0284C7;color:white;border-color:#0284C7;">📍 Review & Import Morning Routes (80 Routes)</button>
                 <button class="btn btn-primary" id="btn-open-add-route" data-open-modal="modal-add-route">+ Add New Route</button>
               </div>
             </div>
@@ -453,7 +462,7 @@
        MODAL: ADD NEW ROUTE
        ============================================================ -->
   <div class="modal-backdrop" id="modal-add-route">
-    <div class="modal-box">
+    <div class="modal-box" style="max-width:580px;">
       <div class="modal-header">
         <h3 class="modal-title">+ Add New Bus Route</h3>
         <button class="modal-close">&times;</button>
@@ -478,10 +487,24 @@
               <input type="text" id="add-route-evening" class="form-control" value="5:15 PM" required />
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label">Sequential Stops (Comma Separated)</label>
-            <textarea id="add-route-stops" class="form-control" rows="3" placeholder="Stop 1, Stop 2, Stop 3, College" required></textarea>
-            <span style="font-size:11px;color:var(--text-muted);">Enter stops in departure sequence, separated by commas.</span>
+          
+          <!-- Sequential Stops Autocomplete Builder -->
+          <div class="form-group" style="position:relative;">
+            <label class="form-label">Sequential Stops & Locations (Type to Search)</label>
+            <div class="autocomplete-wrapper">
+              <div style="display:flex;gap:8px;">
+                <input type="text" id="add-route-stop-input" class="form-control" placeholder="Type stop name (e.g. Nathamuni, Guindy, Koyambedu)..." autocomplete="off" />
+                <button type="button" class="btn btn-secondary" id="btn-add-stop-manual" style="white-space:nowrap;">+ Add</button>
+              </div>
+              <div id="add-route-autocomplete-list" class="autocomplete-dropdown" style="display:none;"></div>
+            </div>
+            <span style="font-size:11px;color:var(--text-muted);display:block;margin-top:4px;">
+              💡 Suggests live Chennai places & bus stops (e.g. Nathamuni Bus Stop, Nathamuni Theatre).
+            </span>
+            <div id="add-route-stops-list" class="stop-sequence-list"></div>
+            <!-- Hidden textarea for backward-compatibility fallback -->
+            <textarea id="add-route-stops" style="display:none;"></textarea>
+            <input type="hidden" id="add-route-scheduled-times" />
           </div>
         </div>
         <div class="modal-footer">
@@ -496,7 +519,7 @@
        MODAL: EDIT ROUTE
        ============================================================ -->
   <div class="modal-backdrop" id="modal-edit-route">
-    <div class="modal-box">
+    <div class="modal-box" style="max-width:580px;">
       <div class="modal-header">
         <h3 class="modal-title">Edit Route Configuration</h3>
         <button class="modal-close">&times;</button>
@@ -518,9 +541,24 @@
               <input type="text" id="form-route-evening" class="form-control" required />
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label">Sequential Stops (Comma Separated)</label>
-            <textarea id="form-route-stops" class="form-control" rows="4" required></textarea>
+          
+          <!-- Sequential Stops Autocomplete Builder -->
+          <div class="form-group" style="position:relative;">
+            <label class="form-label">Sequential Stops & Locations (Type to Search)</label>
+            <div class="autocomplete-wrapper">
+              <div style="display:flex;gap:8px;">
+                <input type="text" id="form-route-stop-input" class="form-control" placeholder="Type stop name (e.g. Nathamuni, Guindy)..." autocomplete="off" />
+                <button type="button" class="btn btn-secondary" id="btn-edit-stop-manual" style="white-space:nowrap;">+ Add</button>
+              </div>
+              <div id="form-route-autocomplete-list" class="autocomplete-dropdown" style="display:none;"></div>
+            </div>
+            <span style="font-size:11px;color:var(--text-muted);display:block;margin-top:4px;">
+              💡 Suggests live Chennai places & bus stops (e.g. Nathamuni Bus Stop, Nathamuni Theatre).
+            </span>
+            <div id="form-route-stops-list" class="stop-sequence-list"></div>
+            <!-- Hidden textarea for backward-compatibility fallback -->
+            <textarea id="form-route-stops" style="display:none;"></textarea>
+            <input type="hidden" id="form-route-scheduled-times" />
           </div>
         </div>
         <div class="modal-footer">
@@ -532,23 +570,29 @@
   </div>
 
   <!-- ============================================================
-       MODAL: ASSIGN ROUTE
+       MODAL: ASSIGN ROUTE & STOP
        ============================================================ -->
   <div class="modal-backdrop" id="modal-assign-route">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 class="modal-title">Assign Transit Route</h3>
+        <h3 class="modal-title">Assign Transit Route & Stop</h3>
         <button class="modal-close">&times;</button>
       </div>
       <form id="form-assign-route">
         <div class="modal-body">
           <input type="hidden" id="modal-assign-user-uid" />
           <div style="font-size:13.5px;margin-bottom:14px;">
-            Assigning route for: <strong id="modal-assign-driver-name">User</strong>
+            Assigning for: <strong id="modal-assign-driver-name">User</strong>
           </div>
           <div class="form-group">
-            <label class="form-label">Select Route</label>
+            <label class="form-label">Assigned Route</label>
             <select id="modal-assign-route-select" class="form-control" required></select>
+          </div>
+          <div class="form-group" id="modal-assign-stop-group">
+            <label class="form-label">Selected Boarding Stop (Students)</label>
+            <select id="modal-assign-stop-select" class="form-control">
+              <option value="">-- Select Stop --</option>
+            </select>
           </div>
         </div>
         <div class="modal-footer">
@@ -556,6 +600,131 @@
           <button type="submit" class="btn btn-primary">Confirm Assignment</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: BULK CSV IMPORT FOR STUDENTS
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-csv-import">
+    <div class="modal-box" style="max-width:650px;">
+      <div class="modal-header">
+        <h3 class="modal-title">📥 Bulk Import Students via CSV</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="form-csv-import">
+        <div class="modal-body">
+          <div style="background:#EFF6FF;border:1px solid #BFDBFE;padding:12px;border-radius:8px;font-size:12.5px;color:#1E40AF;margin-bottom:14px;">
+            <strong>CSV Template Format:</strong><br>
+            <code>Name, Email, Phone, RollNumber, RouteId, StopName</code><br>
+            <em>Example:</em> <code>Rahul Kumar, rahul@vitstudent.ac.in, 9876543210, 21BCE1042, route_01, Anna Nagar Tower</code>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select CSV File</label>
+            <input type="file" id="csv-file-input" accept=".csv" class="form-control" required />
+          </div>
+          <div id="csv-preview-container" style="display:none;margin-top:14px;">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px;">Preview (<span id="csv-record-count">0</span> students found):</div>
+            <div style="max-height:180px;overflow-y:auto;border:1px solid var(--border-color);border-radius:6px;font-size:12px;">
+              <table style="width:100%;text-align:left;">
+                <thead>
+                  <tr style="background:#F8FAFC;">
+                    <th style="padding:6px 8px;">Name</th>
+                    <th style="padding:6px 8px;">Email</th>
+                    <th style="padding:6px 8px;">Route</th>
+                    <th style="padding:6px 8px;">Stop</th>
+                  </tr>
+                </thead>
+                <tbody id="csv-preview-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" id="btn-submit-csv" class="btn btn-primary" disabled>Upload & Import to Firestore</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: GEOCODE REVIEW & PIN ADJUSTER (PHASE 2)
+       ============================================================ -->
+  <div class="modal-backdrop" id="modal-geocode-review">
+    <div class="modal-box" style="max-width:960px;width:95%;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">📍 Morning Routes Geocode Review & Pin Adjuster</h3>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:2px;">Inspect 80 imported morning routes, verify GPS stop locations, and drag pins to adjust coordinates.</p>
+        </div>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px 20px;">
+        <!-- Summary Badges & Filter Toolbar -->
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:14px;background:#F8FAFC;padding:10px 14px;border-radius:8px;border:1px solid var(--border);">
+          <div style="display:flex;gap:12px;align-items:center;font-size:12.5px;">
+            <span><strong>Total Stops:</strong> <span id="rev-stat-total" style="font-weight:700;">245</span></span>
+            <span style="color:#059669;"><strong>OK:</strong> <span id="rev-stat-ok" style="font-weight:700;">244</span></span>
+            <span style="color:#D97706;"><strong>Needs Review:</strong> <span id="rev-stat-review" style="font-weight:700;">1</span></span>
+            <span style="color:#DC2626;"><strong>Failed:</strong> <span id="rev-stat-failed" style="font-weight:700;">0</span></span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <label style="font-size:12px;font-weight:600;">Filter:</label>
+            <select id="rev-filter-status" class="form-control" style="width:160px;padding:4px 8px;font-size:12px;">
+              <option value="all">All Stops (245)</option>
+              <option value="needs_review" selected>⚠️ Needs Review (1)</option>
+              <option value="ok">✅ OK / Verified</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Split Grid: Stops List on Left, Map & Adjuster on Right -->
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:14px;min-height:420px;">
+          <!-- Left: Stop list -->
+          <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+            <div style="padding:8px 12px;background:#F1F5F9;font-weight:700;font-size:12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+              <span>Route & Stop Sequence</span>
+              <span>Status</span>
+            </div>
+            <div id="rev-stops-list" style="overflow-y:auto;max-height:380px;flex:1;"></div>
+          </div>
+
+          <!-- Right: Pin Adjuster & Map -->
+          <div style="border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:10px;">
+            <div style="font-weight:700;font-size:13px;" id="rev-selected-stop-title">Select a stop to inspect</div>
+            <div id="rev-selected-stop-meta" style="font-size:11.5px;color:var(--text-muted);">Click any stop from the list to view its location on the map.</div>
+
+            <div class="map-wrapper" style="height:220px;border-radius:6px;overflow:hidden;">
+              <div id="rev-map-el" style="width:100%;height:100%;"></div>
+            </div>
+
+            <!-- Coordinate Editor -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div>
+                <label style="font-size:11px;font-weight:600;">Latitude:</label>
+                <input type="number" step="0.000001" id="rev-input-lat" class="form-control" style="padding:4px 8px;font-size:12px;" />
+              </div>
+              <div>
+                <label style="font-size:11px;font-weight:600;">Longitude:</label>
+                <input type="number" step="0.000001" id="rev-input-lng" class="form-control" style="padding:4px 8px;font-size:12px;" />
+              </div>
+            </div>
+
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;">
+              <a id="rev-gmaps-link" href="#" target="_blank" style="font-size:11.5px;color:#0284C7;text-decoration:none;display:none;">🔗 Open in Google Maps</a>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-save-manual-coord" style="margin-left:auto;">💾 Mark as OK (Manual)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:space-between;align-items:center;">
+        <button type="button" class="btn btn-secondary" id="btn-download-geocode-csv">📥 Download geocode_review.csv</button>
+        <div style="display:flex;gap:10px;">
+          <button type="button" class="btn btn-secondary modal-cancel">Close</button>
+          <button type="button" class="btn btn-primary" id="btn-import-all-morning-routes" style="background:#059669;border-color:#059669;">⚡ Import Approved Routes to Firestore (Merge)</button>
+        </div>
+      </div>
     </div>
   </div>
 

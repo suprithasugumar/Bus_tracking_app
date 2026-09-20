@@ -16,6 +16,52 @@ import { AnalyticsService } from "./analytics-service.js";
 import { HealthService } from "./health-service.js";
 import { settingsService } from "./settings-service.js";
 import { MapController } from "./map-controller.js";
+import { MORNING_ROUTES_DATA } from "./morning-routes-data.js";
+
+const CHENNAI_PRESET_LOCATIONS = [
+  { name: "Nathamuni Bus Stop", desc: "Villivakkam, Chennai", lat: 13.1118, lng: 80.2052 },
+  { name: "Nathamuni Theatre", desc: "MTH Road, Villivakkam, Chennai", lat: 13.1125, lng: 80.2048 },
+  { name: "Nathamuni Street", desc: "T. Nagar, Chennai", lat: 13.0410, lng: 80.2330 },
+  { name: "Anna Nagar Tower", desc: "Anna Nagar, Chennai", lat: 13.0850, lng: 80.2101 },
+  { name: "Anna Nagar Roundtana", desc: "2nd Avenue, Anna Nagar, Chennai", lat: 13.0855, lng: 80.2185 },
+  { name: "Koyambedu CMBT Bus Stand", desc: "Koyambedu, Chennai", lat: 13.0694, lng: 80.1948 },
+  { name: "Vadapalani Murugan Temple", desc: "Vadapalani, Chennai", lat: 13.0524, lng: 80.2120 },
+  { name: "Vadapalani Bus Terminus", desc: "Arcot Road, Vadapalani, Chennai", lat: 13.0505, lng: 80.2132 },
+  { name: "Ashok Nagar (Ashok Pillar)", desc: "Ashok Nagar, Chennai", lat: 13.0358, lng: 80.2172 },
+  { name: "Ekkattuthangal Metro", desc: "Jawaharlal Nehru Rd, Chennai", lat: 13.0069, lng: 80.2206 },
+  { name: "Guindy Kathipara Junction", desc: "Guindy, Chennai", lat: 12.9916, lng: 80.2209 },
+  { name: "Guindy Railway Station / Bus Stand", desc: "Guindy, Chennai", lat: 13.0084, lng: 80.2130 },
+  { name: "St. Thomas Mount", desc: "St. Thomas Mount, Chennai", lat: 12.9847, lng: 80.1991 },
+  { name: "Pallavaram Bus Stand", desc: "GST Road, Pallavaram, Chennai", lat: 12.9675, lng: 80.1490 },
+  { name: "Chromepet Bus Stand", desc: "GST Road, Chromepet, Chennai", lat: 12.9516, lng: 80.1416 },
+  { name: "Tambaram Sanatorium", desc: "GST Road, Tambaram, Chennai", lat: 12.9412, lng: 80.1284 },
+  { name: "Tambaram Bus Terminus", desc: "Tambaram West, Chennai", lat: 12.9249, lng: 80.1000 },
+  { name: "Velachery Vijaya Nagar", desc: "Velachery Bypass Rd, Chennai", lat: 12.9815, lng: 80.2180 },
+  { name: "Taramani (Ascendas IT Park)", desc: "Taramani, Chennai", lat: 12.9892, lng: 80.2464 },
+  { name: "Perungudi Toll Gate", desc: "OMR, Perungudi, Chennai", lat: 12.9651, lng: 80.2466 },
+  { name: "Sholinganallur Junction", desc: "OMR / Medavakkam Link Rd, Chennai", lat: 12.9003, lng: 80.2275 },
+  { name: "Navalur (OMR IT Corridor)", desc: "Navalur, Chennai", lat: 12.8465, lng: 80.2268 },
+  { name: "Siruseri (SIPCOT IT Park)", desc: "Siruseri, Chennai", lat: 12.8273, lng: 80.2189 },
+  { name: "Kelambakkam Junction", desc: "Kelambakkam, Chennai", lat: 12.7915, lng: 80.2205 },
+  { name: "VIT Chennai Campus", desc: "Vandalur-Kelambakkam Rd, Chennai", lat: 12.8419815, lng: 80.1549340 },
+  { name: "Porur Tollgate / Junction", desc: "Mount-Poonamallee Rd, Porur, Chennai", lat: 13.0382, lng: 80.1565 },
+  { name: "Avadi Bus Stand", desc: "Avadi, Chennai", lat: 13.1147, lng: 80.1017 },
+  { name: "Perambur Railway Station", desc: "Perambur, Chennai", lat: 13.1112, lng: 80.2415 },
+  { name: "Broadway Bus Terminus", desc: "George Town, Chennai", lat: 13.0883, lng: 80.2885 },
+  { name: "Chennai Central Railway Station", desc: "Park Town, Chennai", lat: 13.0827, lng: 80.2707 },
+  { name: "Chennai Egmore Railway Station", desc: "Egmore, Chennai", lat: 13.0784, lng: 80.2607 },
+  { name: "Saidapet Panagal Building", desc: "Saidapet, Chennai", lat: 13.0210, lng: 80.2293 },
+  { name: "T. Nagar Bus Terminus", desc: "Panagal Park, T. Nagar, Chennai", lat: 13.0418, lng: 80.2341 },
+  { name: "Adyar Depot / Lattice Bridge", desc: "Adyar, Chennai", lat: 13.0064, lng: 80.2575 },
+  { name: "Thiruvanmiyur Bus Depot", desc: "Thiruvanmiyur, Chennai", lat: 12.9868, lng: 80.2588 },
+  { name: "Medavakkam Koot Road", desc: "Medavakkam, Chennai", lat: 12.9215, lng: 80.1936 },
+  { name: "Pallikaranai Bus Stop", desc: "Velachery Main Rd, Pallikaranai, Chennai", lat: 12.9325, lng: 80.2121 },
+  { name: "Poonamallee Bus Terminus", desc: "Poonamallee, Chennai", lat: 13.0494, lng: 80.1118 },
+  { name: "Iyyappanthangal Depot", desc: "Mount-Poonamallee Rd, Chennai", lat: 13.0435, lng: 80.1382 },
+  { name: "Ambattur OT Bus Stand", desc: "Ambattur, Chennai", lat: 13.1143, lng: 80.1548 },
+  { name: "Villivakkam Bus Stand", desc: "Villivakkam, Chennai", lat: 13.1090, lng: 80.2070 },
+  { name: "Kolathur Retteri Junction", desc: "Kolathur, Chennai", lat: 13.1250, lng: 80.2090 }
+];
 
 export class UIController {
   constructor() {
@@ -25,6 +71,8 @@ export class UIController {
     this.selectedBus = null;
     this.editingRoute = null;
     this.searchQuery = "";
+    this.addRouteStops = [];
+    this.editRouteStops = [];
   }
 
   init() {
@@ -32,6 +80,25 @@ export class UIController {
     this.bindModals();
     this.bindForms();
     this.bindSearch();
+    this.bindTrackingControls();
+    this.setupStopAutocomplete('add');
+    this.setupStopAutocomplete('edit');
+    this.initGeocodeReview();
+  }
+
+  bindTrackingControls() {
+    const toggleBtn = document.getElementById("btn-toggle-route-line");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        if (!this.fleetMap) return;
+        const isShown = this.fleetMap.toggleRouteLine();
+        const textEl = document.getElementById("text-route-line");
+        const iconEl = document.getElementById("icon-route-line");
+        if (textEl) textEl.textContent = isShown ? "Route Line: ON" : "Route Line: OFF";
+        if (iconEl) iconEl.textContent = isShown ? "🛣️" : "📍";
+        this.toast(isShown ? "Route line visible on map" : "Route line hidden (live bus movement only)", "info");
+      });
+    }
   }
 
   /**
@@ -291,6 +358,20 @@ export class UIController {
         opt.textContent = r.routeName;
         routeFilter.appendChild(opt);
       });
+
+      routeFilter.addEventListener("change", () => {
+        const selectedRouteId = routeFilter.value;
+        if (selectedRouteId !== "all") {
+          const route = routes.find(r => r.routeId === selectedRouteId);
+          const activeBus = buses.find(b => b.routeId === selectedRouteId);
+          if (this.fleetMap && route) {
+            this.fleetMap.renderRoutePath(route, activeBus);
+          }
+        } else {
+          if (this.fleetMap) this.fleetMap.clearRoutePaths();
+        }
+        this.renderTracking();
+      });
     }
 
     // Filter buses
@@ -319,7 +400,7 @@ export class UIController {
       `;
     }
 
-    // Update Map
+    // Update Map with smooth marker interpolation
     if (this.fleetMap) {
       this.fleetMap.updateBuses(filtered, this.selectedBus?.id);
     }
@@ -329,6 +410,16 @@ export class UIController {
     this.selectedBus = bus;
     const drawer = document.getElementById("bus-telemetry-drawer");
     if (!drawer) return;
+
+    const routes = routeService.routes;
+    const matchedRoute = routes.find(r => r.routeId === bus.routeId);
+    if (this.fleetMap && matchedRoute) {
+      this.fleetMap.renderRoutePath(matchedRoute, bus);
+    }
+
+    const completedCount = bus.completedStops ? bus.completedStops.length : 0;
+    const totalStops = matchedRoute ? matchedRoute.stops.length : 0;
+    const headingText = typeof bus.heading === "number" ? `${Math.round(bus.heading)}°` : "N/A";
 
     drawer.style.display = "block";
     drawer.innerHTML = `
@@ -342,10 +433,17 @@ export class UIController {
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12.5px;margin-bottom:12px;">
           <div><strong>Speed:</strong> ${bus.speed} km/h</div>
-          <div><strong>Last GPS:</strong> ${bus.lastUpdateText}</div>
-          <div><strong>Latitude:</strong> ${bus.latitude.toFixed(4)}</div>
-          <div><strong>Longitude:</strong> ${bus.longitude.toFixed(4)}</div>
+          <div><strong>Heading:</strong> ${headingText}</div>
+          <div><strong>Stops Reached:</strong> ${completedCount}${totalStops ? ` / ${totalStops}` : ''}</div>
+          <div><strong>Last Update:</strong> ${bus.lastUpdateText}</div>
+          <div><strong>Latitude:</strong> ${bus.latitude.toFixed(5)}</div>
+          <div><strong>Longitude:</strong> ${bus.longitude.toFixed(5)}</div>
         </div>
+        ${bus.completedStops && bus.completedStops.length > 0 ? `
+          <div style="margin-bottom:12px;padding:8px 10px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;font-size:11.5px;color:#166534;">
+            <strong>Completed Stops:</strong> ${bus.completedStops.join(" ➔ ")}
+          </div>
+        ` : ''}
         <div style="display:flex;gap:8px;">
           <button class="btn btn-primary btn-sm" id="btn-focus-bus" style="flex:1;">Focus on Map</button>
           <button class="btn btn-secondary btn-sm" id="btn-close-drawer">Close</button>
@@ -359,7 +457,10 @@ export class UIController {
     document.getElementById("btn-close-drawer")?.addEventListener("click", () => {
       drawer.style.display = "none";
       this.selectedBus = null;
-      if (this.fleetMap) this.fleetMap.updateBuses(busService.buses, null);
+      if (this.fleetMap) {
+        this.fleetMap.clearRoutePaths();
+        this.fleetMap.updateBuses(busService.buses, null);
+      }
     });
   }
 
@@ -445,15 +546,37 @@ export class UIController {
     });
   }
 
-  openAssignRouteModal(uid, name) {
+  openAssignRouteModal(uid, name, role = "Driver") {
     const select = document.getElementById("modal-assign-route-select");
+    const stopSelect = document.getElementById("modal-assign-stop-select");
+    const stopGroup = document.getElementById("modal-assign-stop-group");
     const nameEl = document.getElementById("modal-assign-driver-name");
     const uidInput = document.getElementById("modal-assign-user-uid");
     
-    if (nameEl) nameEl.textContent = name;
+    if (nameEl) nameEl.textContent = `${name} (${role})`;
     if (uidInput) uidInput.value = uid;
+
+    const populateStopsForRoute = (routeId) => {
+      if (!stopSelect) return;
+      const selectedRoute = routeService.routes.find(r => r.routeId === routeId);
+      if (selectedRoute && selectedRoute.stops && selectedRoute.stops.length > 0) {
+        stopSelect.innerHTML = `<option value="">-- Select Stop --</option>` +
+          selectedRoute.stops.map((s, idx) => `<option value="${s}">${idx + 1}. ${s}</option>`).join("");
+      } else {
+        stopSelect.innerHTML = `<option value="">-- No stops configured --</option>`;
+      }
+    };
+
     if (select) {
       select.innerHTML = routeService.routes.map(r => `<option value="${r.routeId}">${r.routeName}</option>`).join("");
+      select.onchange = () => populateStopsForRoute(select.value);
+      if (routeService.routes.length > 0) {
+        populateStopsForRoute(routeService.routes[0].routeId);
+      }
+    }
+
+    if (stopGroup) {
+      stopGroup.style.display = role.toLowerCase() === "student" ? "block" : "none";
     }
 
     this.openModal("modal-assign-route");
@@ -468,7 +591,7 @@ export class UIController {
 
     const students = userService.getStudents();
     if (students.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--text-muted);">No students registered in /users collection.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--text-muted);">No students registered in /users collection. Use "Bulk CSV Import" to load student roster.</td></tr>`;
       return;
     }
 
@@ -478,12 +601,16 @@ export class UIController {
           <div style="font-weight:700;">${s.name}</div>
           <div style="font-size:11.5px;color:var(--text-muted);">${s.email}</div>
         </td>
-        <td>${s.phone || 'N/A'}</td>
-        <td><span class="badge badge-live">${s.routeName || s.routeId || 'Unassigned'}</span></td>
+        <td>
+          <div>${s.phone || 'N/A'}</div>
+          ${s.rollNumber ? `<div style="font-size:11px;color:var(--text-muted);">Roll: ${s.rollNumber}</div>` : ''}
+        </td>
+        <td><span class="badge badge-live">${s.assignedRouteName || s.routeName || s.routeId || 'Unassigned'}</span></td>
+        <td><span class="badge ${s.selectedStopName && s.selectedStopName !== '—' ? 'badge-live' : 'badge-offline'}">${s.selectedStopName || '—'}</span></td>
         <td><span class="badge badge-offline">Student</span></td>
         <td>
           <button class="btn btn-secondary btn-sm btn-assign-student-route" data-uid="${s.uid}" data-name="${s.name}">
-            Change Route
+            Assign Route & Stop
           </button>
         </td>
       </tr>
@@ -493,7 +620,7 @@ export class UIController {
       btn.addEventListener("click", () => {
         const uid = btn.getAttribute("data-uid");
         const name = btn.getAttribute("data-name");
-        this.openAssignRouteModal(uid, name);
+        this.openAssignRouteModal(uid, name, "Student");
       });
     });
   }
@@ -517,6 +644,7 @@ export class UIController {
         <td>
           <div style="font-weight:700;">${r.routeName}</div>
           <div style="font-size:11.5px;color:var(--text-muted);">${r.stops.length} Stops &bull; Start: ${r.stops[0] || 'N/A'} ➔ End: ${r.stops[r.stops.length - 1] || 'N/A'}</div>
+          ${r.scheduledTimes && r.scheduledTimes.length > 0 ? `<div style="font-size:11px;color:#0D47A1;margin-top:2px;">🕐 Scheduled: ${r.scheduledTimes.join(" &bull; ")}</div>` : ''}
         </td>
         <td>${r.schedule?.morning || '7:15 AM'} / ${r.schedule?.evening || '5:15 PM'}</td>
         <td>${r.assignedDriverName || 'Unassigned'}</td>
@@ -563,16 +691,252 @@ export class UIController {
     });
   }
 
+  openAddRouteModal() {
+    this.addRouteStops = [];
+    document.getElementById("form-add-route")?.reset();
+    const stopInput = document.getElementById("add-route-stop-input");
+    if (stopInput) stopInput.value = "";
+    this.renderStopSequenceList('add');
+    this.openModal("modal-add-route");
+  }
+
   openEditRouteModal(route) {
     this.editingRoute = JSON.parse(JSON.stringify(route));
     document.getElementById("form-route-id").value = route.routeId;
     document.getElementById("form-route-name").value = route.routeName;
     document.getElementById("form-route-morning").value = route.schedule?.morning || "7:15 AM";
     document.getElementById("form-route-evening").value = route.schedule?.evening || "5:15 PM";
-    document.getElementById("form-route-stops").value = route.stops.join(", ");
     
+    // Populate this.editRouteStops with exact stop coordinates and scheduled times
+    this.editRouteStops = (route.stops || []).map((stopName, idx) => {
+      const coord = (route.stopCoordinates && route.stopCoordinates[idx])
+        ? route.stopCoordinates[idx]
+        : { lat: 13.0850 - (idx * 0.015), lng: 80.2100 + (idx * 0.008) };
+      const time = (route.scheduledTimes && route.scheduledTimes[idx]) ? route.scheduledTimes[idx] : "";
+      return {
+        name: stopName,
+        lat: coord.lat,
+        lng: coord.lng,
+        scheduledTime: time
+      };
+    });
+
+    const stopInput = document.getElementById("form-route-stop-input");
+    if (stopInput) stopInput.value = "";
+
+    this.renderStopSequenceList('edit');
     this.openModal("modal-edit-route");
   }
+
+  /**
+   * Searches Chennai presets + live OpenStreetMap Photon API for place autocomplete
+   */
+  async searchLocations(query) {
+    if (!query || query.trim().length < 2) return [];
+    const q = query.trim().toLowerCase();
+    
+    // 1. Instant local matches in curated Chennai transit database
+    const localMatches = CHENNAI_PRESET_LOCATIONS.filter(loc => 
+      loc.name.toLowerCase().includes(q) || loc.desc.toLowerCase().includes(q)
+    ).map(loc => ({ ...loc }));
+
+    // 2. Query live Photon (Komoot / OpenStreetMap) geocoding service centered on Chennai
+    try {
+      const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&lat=13.0827&lon=80.2707&limit=5`;
+      const resp = await fetch(url);
+      if (resp.ok) {
+        const data = await resp.json();
+        if (data.features && Array.isArray(data.features)) {
+          for (const f of data.features) {
+            const props = f.properties || {};
+            const coords = f.geometry?.coordinates || [80.27, 13.08];
+            const name = props.name || props.street || query;
+            const descParts = [props.street, props.city || props.county, props.state].filter(Boolean);
+            const desc = descParts.join(", ") || "Chennai, Tamil Nadu";
+            
+            // Avoid duplicates
+            if (!localMatches.some(m => m.name.toLowerCase() === name.toLowerCase())) {
+              localMatches.push({
+                name: name,
+                desc: desc,
+                lat: coords[1],
+                lng: coords[0]
+              });
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.warn("Photon autocomplete warning:", err);
+    }
+
+    return localMatches.slice(0, 6);
+  }
+
+  /**
+   * Binds autocomplete input, dropdown and click listeners for Add/Edit route modals
+   */
+  setupStopAutocomplete(type) {
+    const inputId = type === 'add' ? 'add-route-stop-input' : 'form-route-stop-input';
+    const dropdownId = type === 'add' ? 'add-route-autocomplete-list' : 'form-route-autocomplete-list';
+    const manualBtnId = type === 'add' ? 'btn-add-stop-manual' : 'btn-edit-stop-manual';
+
+    const input = document.getElementById(inputId);
+    const dropdown = document.getElementById(dropdownId);
+    const manualBtn = document.getElementById(manualBtnId);
+
+    if (!input || !dropdown) return;
+
+    let debounceTimer = null;
+
+    input.addEventListener("input", (e) => {
+      clearTimeout(debounceTimer);
+      const val = e.target.value.trim();
+      if (val.length < 2) {
+        dropdown.style.display = "none";
+        dropdown.innerHTML = "";
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        const results = await this.searchLocations(val);
+        if (results.length === 0) {
+          dropdown.innerHTML = `<div style="padding:10px 14px;color:var(--text-muted);font-size:12px;">No matching locations found. Click "+ Add" to add custom name.</div>`;
+          dropdown.style.display = "block";
+          return;
+        }
+
+        dropdown.innerHTML = results.map((item, idx) => `
+          <div class="autocomplete-item" data-idx="${idx}">
+            <span class="autocomplete-item-icon">📍</span>
+            <div class="autocomplete-item-info">
+              <div class="autocomplete-item-name">${item.name}</div>
+              <div class="autocomplete-item-desc">${item.desc} (${item.lat.toFixed(4)}, ${item.lng.toFixed(4)})</div>
+            </div>
+          </div>
+        `).join("");
+        dropdown.style.display = "block";
+
+        dropdown.querySelectorAll(".autocomplete-item").forEach(itemEl => {
+          itemEl.addEventListener("click", () => {
+            const idx = parseInt(itemEl.getAttribute("data-idx"), 10);
+            const selected = results[idx];
+            if (!selected) return;
+
+            const targetArray = type === 'add' ? this.addRouteStops : this.editRouteStops;
+            targetArray.push({
+              name: selected.name,
+              lat: selected.lat,
+              lng: selected.lng,
+              scheduledTime: ""
+            });
+
+            input.value = "";
+            dropdown.style.display = "none";
+            dropdown.innerHTML = "";
+            this.renderStopSequenceList(type);
+          });
+        });
+      }, 250);
+    });
+
+    // Hide dropdown on outside click
+    document.addEventListener("click", (e) => {
+      if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Manual Add button handler
+    if (manualBtn) {
+      manualBtn.addEventListener("click", () => {
+        const val = input.value.trim();
+        if (!val) return;
+
+        const targetArray = type === 'add' ? this.addRouteStops : this.editRouteStops;
+        // Default coordinate around Chennai if custom
+        const lat = 13.0850 - (targetArray.length * 0.015);
+        const lng = 80.2100 + (targetArray.length * 0.008);
+
+        targetArray.push({
+          name: val,
+          lat: lat,
+          lng: lng,
+          scheduledTime: ""
+        });
+
+        input.value = "";
+        dropdown.style.display = "none";
+        this.renderStopSequenceList(type);
+      });
+    }
+  }
+
+  /**
+   * Renders the interactive sequence of added stops with time and remove options
+   */
+  renderStopSequenceList(type) {
+    const listId = type === 'add' ? 'add-route-stops-list' : 'form-route-stops-list';
+    const hiddenTextareaId = type === 'add' ? 'add-route-stops' : 'form-route-stops';
+    const hiddenTimesId = type === 'add' ? 'add-route-scheduled-times' : 'form-route-scheduled-times';
+
+    const container = document.getElementById(listId);
+    const targetArray = type === 'add' ? this.addRouteStops : this.editRouteStops;
+
+    if (container) {
+      if (targetArray.length === 0) {
+        container.innerHTML = `<div style="padding:14px;background:#F8FAFC;border:1px dashed #CBD5E1;border-radius:8px;text-align:center;font-size:12px;color:var(--text-muted);">No stops added yet. Type a location above (e.g. Nathamuni) to select.</div>`;
+      } else {
+        container.innerHTML = targetArray.map((stop, i) => `
+          <div class="stop-sequence-item" data-index="${i}">
+            <div class="stop-seq-number">${i + 1}</div>
+            <div class="stop-seq-details">
+              <div class="stop-seq-name">${stop.name}</div>
+              <div class="stop-seq-coord">📍 ${stop.lat.toFixed(4)}, ${stop.lng.toFixed(4)}</div>
+            </div>
+            <input type="text" class="stop-seq-time" placeholder="e.g. 7:30 AM" value="${stop.scheduledTime || ''}" title="Scheduled Arrival Time" />
+            <button type="button" class="stop-seq-remove" title="Remove Stop">&times;</button>
+          </div>
+        `).join("");
+
+        // Bind remove buttons and time change listeners
+        container.querySelectorAll(".stop-sequence-item").forEach(itemEl => {
+          const idx = parseInt(itemEl.getAttribute("data-index"), 10);
+          const timeInput = itemEl.querySelector(".stop-seq-time");
+          const removeBtn = itemEl.querySelector(".stop-seq-remove");
+
+          if (timeInput) {
+            timeInput.addEventListener("input", (e) => {
+              if (targetArray[idx]) targetArray[idx].scheduledTime = e.target.value.trim();
+              this.syncHiddenFields(type);
+            });
+          }
+
+          if (removeBtn) {
+            removeBtn.addEventListener("click", () => {
+              targetArray.splice(idx, 1);
+              this.renderStopSequenceList(type);
+            });
+          }
+        });
+      }
+    }
+
+    this.syncHiddenFields(type);
+  }
+
+  syncHiddenFields(type) {
+    const hiddenTextareaId = type === 'add' ? 'add-route-stops' : 'form-route-stops';
+    const hiddenTimesId = type === 'add' ? 'add-route-scheduled-times' : 'form-route-scheduled-times';
+    const targetArray = type === 'add' ? this.addRouteStops : this.editRouteStops;
+
+    const textarea = document.getElementById(hiddenTextareaId);
+    const timesInput = document.getElementById(hiddenTimesId);
+
+    if (textarea) textarea.value = targetArray.map(s => s.name).join(", ");
+    if (timesInput) timesInput.value = targetArray.map(s => s.scheduledTime || "").join(", ");
+  }
+
 
   // ============================================================
   // VIEW: ALERTS
@@ -864,7 +1228,11 @@ export class UIController {
     document.querySelectorAll("[data-open-modal]").forEach(btn => {
       btn.addEventListener("click", () => {
         const modalId = btn.getAttribute("data-open-modal");
-        this.openModal(modalId);
+        if (modalId === "modal-add-route") {
+          this.openAddRouteModal();
+        } else {
+          this.openModal(modalId);
+        }
       });
     });
   }
@@ -895,20 +1263,38 @@ export class UIController {
       const name = document.getElementById("add-route-name").value.trim();
       const morning = document.getElementById("add-route-morning").value.trim();
       const evening = document.getElementById("add-route-evening").value.trim();
-      const stopsStr = document.getElementById("add-route-stops").value.trim();
 
-      const stops = stopsStr.split(",").map(s => s.trim()).filter(Boolean);
-      
-      // Default stop coordinates starting around Chennai
-      const stopCoordinates = stops.map((_, i) => ({
-        lat: 13.0850 - (i * 0.015),
-        lng: 80.2100 + (i * 0.008)
-      }));
+      let stops = [];
+      let stopCoordinates = [];
+      let scheduledTimes = [];
+
+      if (this.addRouteStops && this.addRouteStops.length > 0) {
+        stops = this.addRouteStops.map(s => s.name);
+        stopCoordinates = this.addRouteStops.map(s => ({ lat: s.lat, lng: s.lng }));
+        scheduledTimes = this.addRouteStops.map(s => s.scheduledTime || "");
+      } else {
+        const stopsStr = document.getElementById("add-route-stops").value.trim();
+        const scheduledTimesStr = document.getElementById("add-route-scheduled-times")?.value.trim() || "";
+        stops = stopsStr.split(",").map(s => s.trim()).filter(Boolean);
+        scheduledTimes = scheduledTimesStr ? scheduledTimesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
+        stopCoordinates = stops.map((_, i) => ({
+          lat: 13.0850 - (i * 0.015),
+          lng: 80.2100 + (i * 0.008)
+        }));
+      }
+
+      if (stops.length === 0) {
+        this.toast("Please add at least 1 stop to the route.", "warning");
+        return;
+      }
+
+      this.toast(`Saving route "${name}" & computing road paths...`, "info");
 
       await routeService.saveRoute({
         routeId: id,
         routeName: name,
         stops: stops,
+        scheduledTimes: scheduledTimes,
         stopCoordinates: stopCoordinates,
         schedule: { morning, evening },
         isActive: true
@@ -916,7 +1302,7 @@ export class UIController {
 
       await auditService.logAction("ROUTE_CREATED", "ROUTE", id, { name, stopsCount: stops.length }, authService.userProfile);
       this.closeAllModals();
-      this.toast(`New route "${name}" created successfully!`);
+      this.toast(`New route "${name}" created with accurate GPS stops & road path!`);
     });
 
     // Form: Edit Route
@@ -926,20 +1312,46 @@ export class UIController {
       const name = document.getElementById("form-route-name").value;
       const morning = document.getElementById("form-route-morning").value;
       const evening = document.getElementById("form-route-evening").value;
-      const stopsStr = document.getElementById("form-route-stops").value;
 
-      const stops = stopsStr.split(",").map(s => s.trim()).filter(Boolean);
+      let stops = [];
+      let stopCoordinates = [];
+      let scheduledTimes = [];
+
+      if (this.editRouteStops && this.editRouteStops.length > 0) {
+        stops = this.editRouteStops.map(s => s.name);
+        stopCoordinates = this.editRouteStops.map(s => ({ lat: s.lat, lng: s.lng }));
+        scheduledTimes = this.editRouteStops.map(s => s.scheduledTime || "");
+      } else {
+        const stopsStr = document.getElementById("form-route-stops").value;
+        const scheduledTimesStr = document.getElementById("form-route-scheduled-times")?.value.trim() || "";
+        stops = stopsStr.split(",").map(s => s.trim()).filter(Boolean);
+        scheduledTimes = scheduledTimesStr ? scheduledTimesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
+        stopCoordinates = stops.map((_, i) => ({
+          lat: 13.0850 - (i * 0.015),
+          lng: 80.2100 + (i * 0.008)
+        }));
+      }
+
+      if (stops.length === 0) {
+        this.toast("Please add at least 1 stop to the route.", "warning");
+        return;
+      }
+
+      this.toast(`Updating route "${name}" & regenerating street polyline...`, "info");
+
       await routeService.saveRoute({
         routeId: id,
         routeName: name,
         stops: stops,
+        scheduledTimes: scheduledTimes,
+        stopCoordinates: stopCoordinates,
         schedule: { morning, evening },
         isActive: true
       });
 
       await auditService.logAction("ROUTE_SAVED", "ROUTE", id, { name, stopsCount: stops.length }, authService.userProfile);
       this.closeAllModals();
-      this.toast(`Route ${name} saved successfully.`);
+      this.toast(`Route "${name}" saved with updated stop GPS coordinates!`);
     });
 
     // Form: Assign Route to Driver/Student
@@ -947,12 +1359,86 @@ export class UIController {
       e.preventDefault();
       const uid = document.getElementById("modal-assign-user-uid").value;
       const routeId = document.getElementById("modal-assign-route-select").value;
+      const stopName = document.getElementById("modal-assign-stop-select")?.value || "";
       const route = routeService.routes.find(r => r.routeId === routeId);
 
-      await userService.assignRoute(uid, routeId, route?.routeName);
-      await auditService.logAction("USER_ROUTE_ASSIGNED", "USER", uid, { routeId, routeName: route?.routeName }, authService.userProfile);
+      await userService.assignRoute(uid, routeId, route?.routeName, stopName);
+      await auditService.logAction("USER_ROUTE_ASSIGNED", "USER", uid, { routeId, routeName: route?.routeName, stopName }, authService.userProfile);
       this.closeAllModals();
-      this.toast(`Route assigned successfully.`);
+      this.toast(`Route assignment updated successfully.`);
+    });
+
+    // CSV File Selection & Parsing Handler
+    const csvFileInput = document.getElementById("csv-file-input");
+    const previewContainer = document.getElementById("csv-preview-container");
+    const previewTbody = document.getElementById("csv-preview-tbody");
+    const recordCountEl = document.getElementById("csv-record-count");
+    const submitCsvBtn = document.getElementById("btn-submit-csv");
+
+    csvFileInput?.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const text = event.target.result;
+        const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+        if (lines.length < 2) {
+          this.toast("CSV file must contain a header row and data rows.", "error");
+          return;
+        }
+
+        // Header: Name, Email, Phone, RollNumber, RouteId, StopName
+        const parsed = [];
+        for (let i = 1; i < lines.length; i++) {
+          const parts = lines[i].split(",").map(p => p.trim().replace(/^["']|["']$/g, ''));
+          if (parts.length >= 2) {
+            parsed.push({
+              name: parts[0] || "Student",
+              email: parts[1] || "",
+              phone: parts[2] || "",
+              rollNumber: parts[3] || "",
+              routeId: parts[4] || "",
+              stopName: parts[5] || ""
+            });
+          }
+        }
+
+        this.parsedCsvData = parsed;
+        if (recordCountEl) recordCountEl.textContent = parsed.length;
+        if (previewTbody) {
+          previewTbody.innerHTML = parsed.slice(0, 10).map(row => `
+            <tr>
+              <td style="padding:4px 8px;">${row.name}</td>
+              <td style="padding:4px 8px;">${row.email}</td>
+              <td style="padding:4px 8px;">${row.routeId || '—'}</td>
+              <td style="padding:4px 8px;">${row.stopName || '—'}</td>
+            </tr>
+          `).join("");
+        }
+
+        if (previewContainer) previewContainer.style.display = "block";
+        if (submitCsvBtn) submitCsvBtn.disabled = parsed.length === 0;
+      };
+      reader.readAsText(file);
+    });
+
+    // Form: Submit Bulk CSV Import
+    document.getElementById("form-csv-import")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!this.parsedCsvData || this.parsedCsvData.length === 0) {
+        this.toast("Please select a valid CSV file first.", "error");
+        return;
+      }
+
+      const count = await userService.batchImportStudents(this.parsedCsvData);
+      await auditService.logAction("STUDENTS_BULK_IMPORTED", "STUDENT", "BATCH", { count }, authService.userProfile);
+      this.closeAllModals();
+      this.toast(`Successfully imported ${count} student records to Firestore!`);
+      this.parsedCsvData = [];
+      if (csvFileInput) csvFileInput.value = "";
+      if (previewContainer) previewContainer.style.display = "none";
+      if (submitCsvBtn) submitCsvBtn.disabled = true;
     });
 
     // Form: Broadcast Alert
@@ -1071,6 +1557,296 @@ export class UIController {
         });
       });
     }
+  }
+
+  // ============================================================
+  // PHASE 2: GEOCODE REVIEW & PIN ADJUSTER CONTROLLER
+  // ============================================================
+  initGeocodeReview() {
+    this.morningRoutes = JSON.parse(JSON.stringify(MORNING_ROUTES_DATA));
+    this.selectedGeocodeRouteIdx = null;
+    this.selectedGeocodeStopIdx = null;
+    this.geocodeMap = null;
+    this.geocodeMarker = null;
+
+    const openBtn = document.getElementById("btn-open-geocode-review");
+    if (openBtn) {
+      openBtn.addEventListener("click", () => {
+        this.openModal("modal-geocode-review");
+        this.renderGeocodeReview();
+        setTimeout(() => {
+          if (!this.geocodeMap) {
+            this.geocodeMap = L.map("rev-map-el").setView([13.0827, 80.2707], 11);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              attribution: "&copy; OpenStreetMap contributors"
+            }).addTo(this.geocodeMap);
+          } else {
+            this.geocodeMap.invalidateSize();
+          }
+        }, 300);
+      });
+    }
+
+    const filterSelect = document.getElementById("rev-filter-status");
+    if (filterSelect) {
+      filterSelect.addEventListener("change", () => {
+        this.renderGeocodeReviewStops(filterSelect.value);
+      });
+    }
+
+    const downloadCsvBtn = document.getElementById("btn-download-geocode-csv");
+    if (downloadCsvBtn) {
+      downloadCsvBtn.addEventListener("click", () => {
+        this.downloadGeocodeCsv();
+      });
+    }
+
+    const saveManualBtn = document.getElementById("btn-save-manual-coord");
+    if (saveManualBtn) {
+      saveManualBtn.addEventListener("click", () => {
+        this.saveManualStopCoordinates();
+      });
+    }
+
+    const latInput = document.getElementById("rev-input-lat");
+    const lngInput = document.getElementById("rev-input-lng");
+    [latInput, lngInput].forEach(inp => {
+      inp?.addEventListener("change", () => {
+        const lat = parseFloat(latInput.value);
+        const lng = parseFloat(lngInput.value);
+        if (!isNaN(lat) && !isNaN(lng) && this.geocodeMarker && this.geocodeMap) {
+          this.geocodeMarker.setLatLng([lat, lng]);
+          this.geocodeMap.panTo([lat, lng]);
+        }
+      });
+    });
+
+    const importAllBtn = document.getElementById("btn-import-all-morning-routes");
+    if (importAllBtn) {
+      importAllBtn.addEventListener("click", async () => {
+        await this.importApprovedMorningRoutes();
+      });
+    }
+  }
+
+  renderGeocodeReview() {
+    let total = 0;
+    let ok = 0;
+    let review = 0;
+    let failed = 0;
+
+    this.morningRoutes.forEach(r => {
+      r.stopCoordinates.forEach(s => {
+        total++;
+        if (s.status === "ok" || s.status === "ok_manual") ok++;
+        else if (s.status === "needs_review") review++;
+        else failed++;
+      });
+    });
+
+    const setT = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setT("rev-stat-total", total);
+    setT("rev-stat-ok", ok);
+    setT("rev-stat-review", review);
+    setT("rev-stat-failed", failed);
+
+    const filterSelect = document.getElementById("rev-filter-status");
+    this.renderGeocodeReviewStops(filterSelect ? filterSelect.value : "needs_review");
+  }
+
+  renderGeocodeReviewStops(filter = "all") {
+    const listEl = document.getElementById("rev-stops-list");
+    if (!listEl) return;
+
+    const items = [];
+    this.morningRoutes.forEach((route, rIdx) => {
+      route.stopCoordinates.forEach((stop, sIdx) => {
+        if (filter === "needs_review" && stop.status !== "needs_review") return;
+        if (filter === "ok" && stop.status !== "ok" && stop.status !== "ok_manual") return;
+
+        items.push({
+          routeIdx: rIdx,
+          stopIdx: sIdx,
+          routeNumber: route.routeNumber,
+          routeName: route.routeName,
+          stopName: stop.name,
+          scheduledTime: stop.scheduledTime,
+          status: stop.status,
+          lat: stop.lat,
+          lng: stop.lng,
+          address: stop.address || ""
+        });
+      });
+    });
+
+    if (items.length === 0) {
+      listEl.innerHTML = `<div style="padding:30px;text-align:center;color:var(--text-muted);font-size:12px;">No stops match filter "${filter}".</div>`;
+      return;
+    }
+
+    listEl.innerHTML = items.map((it) => {
+      const isSelected = this.selectedGeocodeRouteIdx === it.routeIdx && this.selectedGeocodeStopIdx === it.stopIdx;
+      const statusColor = it.status === "ok" ? "#059669" : (it.status === "ok_manual" ? "#0284C7" : (it.status === "needs_review" ? "#D97706" : "#DC2626"));
+      const statusBadge = it.status === "ok" ? "OK" : (it.status === "ok_manual" ? "OK (Manual)" : (it.status === "needs_review" ? "Needs Review" : "Failed"));
+
+      return `
+        <div class="geocode-stop-item" data-ridx="${it.routeIdx}" data-sidx="${it.stopIdx}" style="padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:space-between;background:${isSelected ? '#E0F2FE' : 'transparent'};font-size:12px;">
+          <div>
+            <div style="font-weight:700;">R${it.routeNumber}: ${it.stopName}</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Route ${it.routeName} &bull; 🕐 ${it.scheduledTime || '—'}</div>
+          </div>
+          <span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;color:white;background:${statusColor};white-space:nowrap;">
+            ${statusBadge}
+          </span>
+        </div>
+      `;
+    }).join("");
+
+    listEl.querySelectorAll(".geocode-stop-item").forEach(el => {
+      el.addEventListener("click", () => {
+        const rIdx = parseInt(el.getAttribute("data-ridx"), 10);
+        const sIdx = parseInt(el.getAttribute("data-sidx"), 10);
+        this.inspectGeocodeStop(rIdx, sIdx);
+      });
+    });
+
+    // Auto-select first item if none selected
+    if (this.selectedGeocodeRouteIdx === null && items.length > 0) {
+      this.inspectGeocodeStop(items[0].routeIdx, items[0].stopIdx);
+    }
+  }
+
+  inspectGeocodeStop(rIdx, sIdx) {
+    this.selectedGeocodeRouteIdx = rIdx;
+    this.selectedGeocodeStopIdx = sIdx;
+
+    const route = this.morningRoutes[rIdx];
+    const stop = route.stopCoordinates[sIdx];
+
+    const titleEl = document.getElementById("rev-selected-stop-title");
+    const metaEl = document.getElementById("rev-selected-stop-meta");
+    const latInput = document.getElementById("rev-input-lat");
+    const lngInput = document.getElementById("rev-input-lng");
+    const gmapsLink = document.getElementById("rev-gmaps-link");
+
+    if (titleEl) titleEl.textContent = `Route ${route.routeNumber} (${route.routeName}) — Stop ${sIdx + 1}: ${stop.name}`;
+    if (metaEl) metaEl.textContent = `Status: ${stop.status.toUpperCase()} &bull; Scheduled: ${stop.scheduledTime} &bull; Source: ${stop.source || 'nominatim'}`;
+    if (latInput) latInput.value = stop.lat !== null && stop.lat !== undefined ? stop.lat : "";
+    if (lngInput) lngInput.value = stop.lng !== null && stop.lng !== undefined ? stop.lng : "";
+
+    if (gmapsLink) {
+      if (stop.lat && stop.lng) {
+        gmapsLink.href = `https://www.google.com/maps?q=${stop.lat},${stop.lng}`;
+        gmapsLink.style.display = "inline-block";
+      } else {
+        gmapsLink.style.display = "none";
+      }
+    }
+
+    // Update map marker
+    const lat = stop.lat || 13.0827;
+    const lng = stop.lng || 80.2707;
+
+    if (this.geocodeMap) {
+      this.geocodeMap.setView([lat, lng], 14);
+      if (this.geocodeMarker) {
+        this.geocodeMarker.setLatLng([lat, lng]);
+      } else {
+        this.geocodeMarker = L.marker([lat, lng], { draggable: true }).addTo(this.geocodeMap);
+        this.geocodeMarker.on("dragend", (e) => {
+          const pos = e.target.getLatLng();
+          if (latInput) latInput.value = pos.lat.toFixed(6);
+          if (lngInput) lngInput.value = pos.lng.toFixed(6);
+          if (gmapsLink) {
+            gmapsLink.href = `https://www.google.com/maps?q=${pos.lat.toFixed(6)},${pos.lng.toFixed(6)}`;
+          }
+        });
+      }
+    }
+
+    // Highlight in list
+    document.querySelectorAll(".geocode-stop-item").forEach(el => {
+      const isThis = parseInt(el.getAttribute("data-ridx"), 10) === rIdx && parseInt(el.getAttribute("data-sidx"), 10) === sIdx;
+      el.style.background = isThis ? "#E0F2FE" : "transparent";
+    });
+  }
+
+  saveManualStopCoordinates() {
+    if (this.selectedGeocodeRouteIdx === null || this.selectedGeocodeStopIdx === null) {
+      this.toast("Please select a stop to adjust.", "warning");
+      return;
+    }
+
+    const latInput = document.getElementById("rev-input-lat");
+    const lngInput = document.getElementById("rev-input-lng");
+    const lat = parseFloat(latInput?.value);
+    const lng = parseFloat(lngInput?.value);
+
+    if (isNaN(lat) || isNaN(lng)) {
+      this.toast("Please provide valid latitude and longitude numbers.", "error");
+      return;
+    }
+
+    const route = this.morningRoutes[this.selectedGeocodeRouteIdx];
+    const stop = route.stopCoordinates[this.selectedGeocodeStopIdx];
+
+    stop.lat = lat;
+    stop.lng = lng;
+    stop.status = "ok_manual";
+    stop.source = "manual_admin_adjuster";
+
+    this.toast(`Updated Stop "${stop.name}" coordinates to (${lat.toFixed(5)}, ${lng.toFixed(5)}) as OK (Manual)!`);
+    this.renderGeocodeReview();
+  }
+
+  downloadGeocodeCsv() {
+    let csv = "RouteNumber,RouteDocId,StopIndex,StopName,ScheduledTime,Status,Confidence,Source,Lat,Lng,Address,GoogleMapsUrl\n";
+    this.morningRoutes.forEach(r => {
+      r.stopCoordinates.forEach((s, idx) => {
+        const mapsUrl = s.lat && s.lng ? `https://www.google.com/maps?q=${s.lat},${s.lng}` : "N/A";
+        const safeName = `"${s.name.replace(/"/g, '""')}"`;
+        const safeAddr = `"${(s.address || '').replace(/"/g, '""')}"`;
+        csv += `${r.routeNumber},${r.routeId},${idx + 1},${safeName},${s.scheduledTime || ''},${s.status},${s.confidence || 1.0},${s.source || 'cache'},${s.lat || ''},${s.lng || ''},${safeAddr},${mapsUrl}\n`;
+      });
+    });
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "geocode_review.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    this.toast("Downloaded geocode_review.csv");
+  }
+
+  async importApprovedMorningRoutes() {
+    let approvedCount = 0;
+    this.toast("Importing morning routes to Cloud Firestore with merge writes...", "info");
+
+    for (const r of this.morningRoutes) {
+      const allValid = r.stopCoordinates.every(s => s.status === "ok" || s.status === "ok_manual");
+      if (allValid) {
+        await routeService.saveRoute({
+          routeId: r.routeId,
+          routeNumber: r.routeNumber,
+          routeName: r.routeName,
+          shift: "morning",
+          singleStop: r.singleStop === true,
+          stops: r.stops,
+          scheduledTimes: r.scheduledTimes,
+          stopCoordinates: r.stopCoordinates.map(s => ({ lat: s.lat, lng: s.lng })),
+          isActive: true
+        });
+        approvedCount++;
+      }
+    }
+
+    await auditService.logAction("MORNING_ROUTES_IMPORTED", "ROUTE", "BATCH", { approvedCount }, authService.userProfile);
+    this.toast(`Successfully imported ${approvedCount} morning routes to Cloud Firestore!`, "success");
+    this.closeAllModals();
   }
 }
 

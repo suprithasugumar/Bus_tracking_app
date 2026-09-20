@@ -1,0 +1,4854 @@
+window.MORNING_ROUTES_DATA = [
+  {
+    "routeId": "route_01",
+    "routeNumber": "1",
+    "routeName": "THIRUVOTTIYUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVOTTIYUR",
+      "N-4",
+      "KASIMEDU SIGNAL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:10",
+      "06:15",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVOTTIYUR",
+        "lat": 13.1602,
+        "lng": 80.3024,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVOTTIYUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "N-4",
+        "lat": 13.118,
+        "lng": 80.2965,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "N-4, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KASIMEDU SIGNAL",
+        "lat": 13.125,
+        "lng": 80.298,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KASIMEDU SIGNAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ijioAw`ciNiB[J_@dG~@nCp@bCp@tBd@tB\\|@NvCl@xD`AvAZTDHBh@JVBr@Dp@FdBZbAZpHbC|DlArA^vAb@jEvAtBr@b@LxBp@RF|Ab@l@PbAZF@ZJ`@Nr@PnCt@z@VZJrAsJHs@h@yC@MBKrHxAvBb@xEz@z@RlARtBb@dDn@F@lDp@xARdANlAPlARdAPd@HbARnC`@d@Tl@Nn@NH@~@PtDn@nGpArB^HBTDb@HdCb@|Cl@@?VFpCf@v@Nb@HPDJ@b@Hj@JlB\\TBf@B^B\\FFFb@Jx@Nd@FVDTB~@Jr@Jx@LtFr@J@\\DlAB^DTRB@h@HXD~ARTBbAJvBVRwBLs@Fu@H{@J}@?GD]Dg@H}@N}AJeAFq@sC]QrAE`@MtA{@KwASy@K]Gg@Ew@Ki@KOCo@KK@O?kAx@OWWLg@X[FK?ECC?g@Is@FIBEBOBA?YBa@?EGGEKAWCMAo@GK?FKBMBQ@e@AIWKe@MOCWIUKOEWGQC",
+    "roadPointsCount": 173
+  },
+  {
+    "routeId": "route_02",
+    "routeNumber": "2",
+    "routeName": "PURASAIWALKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PURASAIWALKAM TANK",
+      "GENGU REDDY SUB WAY",
+      "CHETPET",
+      "VALLUVAR KOTTAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:20",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PURASAIWALKAM TANK",
+        "lat": 13.0898,
+        "lng": 80.257,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PURASAIWALKAM TANK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GENGU REDDY SUB WAY",
+        "lat": 13.0782,
+        "lng": 80.2523,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GENGU REDDY SUB WAY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHETPET",
+        "lat": 13.0718,
+        "lng": 80.2415,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHETPET, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VALLUVAR KOTTAM",
+        "lat": 13.0539,
+        "lng": 80.2415,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALLUVAR KOTTAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "eq{nAqezhNIk@f@Iy@cGdA@nBDzIFN@B?NFBt@Hj@VhAV`APl@XjAJ\\?R@F\\`BZnAFPXhAVx@DHLBV@HCL?rCHlADvBHn@@VB^@bCHb@@rAc@f@YVKTCb@@`BJxALZBr@Hv@Hb@@XChAMVCFx@BXH~B@b@@V@n@E`AAf@nAAFB@V??GDqA@?L@h@?J?Z?j@l@Al@EtBUtAOrAOfCKrF]RAd@EHI|@ITEXMTKNEN?PBfBH\\@d@Bp@Ff@DBCBAB?B?B@@B@@@B?B?@DNDNHRBJBLDTBVB`@D|@j@dCHh@L~@V`BD^r@tFdAhDjB|E`BlFr@nCH\\`@dBZzA@FFp@Bh@?\\?NARKBeB^MBcB^WFOBiAViB`@UHi@P??{BjAULe@T]JqAVqB`@E@E@g@DuJDs@AcBOq@Ei@C]@ESZAP?r@HhBRTBv@@tJEb@EzBc@nAW^Mb@WTMvBkAf@Ut@SjDy@DAXElB_@l@Mf@MLCFAFAHCpBe@lCg@dA]xCcArA]V]FOFUBo@CQ?EKoAGs@U}BSq@CKK]AEoCaAMEaASUYEES]E_A?KCi@?QBeA^_@VKn@D\\BT@D?`@Bv@@`A@fABt@BD@B?D?fAB`@BpBDpDDd@@`CFjCB^@P?VDdApADFNJBH`Ak@ZQPINGj@YxBq@dAWpCo@tEgA~@UBAJCzCq@rAW|Ae@VM~@c@PHVMv@_@VMHEn@YDClAk@DZRtA@JHh@D\\BLL`Ar@fFh@~C@HFp@JvANzAB^TdDBd@GxAMrAAHE`@Ep@JA@VFx@RrAFh@JbADT@FH`@DlA?D?NIGKMIC]SCA[Qu@MsCK",
+    "roadPointsCount": 306
+  },
+  {
+    "routeId": "route_03",
+    "routeNumber": "3",
+    "routeName": "PARRYS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PARRYS CORNER",
+      "KANNAGI STATUE",
+      "LIGHT HOUSE",
+      "ALL INDIA RADIO",
+      "MRC NAGAR",
+      "SRP TOOLS",
+      "KANDANCHAVADI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:23",
+      "06:25",
+      "06:35",
+      "06:40",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PARRYS CORNER",
+        "lat": 13.0887,
+        "lng": 80.2882,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARRYS CORNER, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANNAGI STATUE",
+        "lat": 13.0601,
+        "lng": 80.2828,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANNAGI STATUE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "LIGHT HOUSE",
+        "lat": 13.0398,
+        "lng": 80.2785,
+        "scheduledTime": "06:23",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LIGHT HOUSE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ALL INDIA RADIO",
+        "lat": 13.035,
+        "lng": 80.277,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALL INDIA RADIO, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MRC NAGAR",
+        "lat": 13.018,
+        "lng": 80.275,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MRC NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SRP TOOLS",
+        "lat": 12.9791,
+        "lng": 80.2526,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SRP TOOLS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANDANCHAVADI",
+        "lat": 12.9666,
+        "lng": 80.2478,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANDANCHAVADI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "gk{nAgh`iNCe@Ck@E{@IgBG{A?AAg@AS@_@FQfCh@bA\\~Al@vAh@|A^fBXNB~DVJAfBA~DCdAF^JjBn@\\L^FPDtCn@`AVzA`@f@DJ@z@DpALxB|@nHnAxFdAb@HRFJDTLh@XRJtBfALFRJJD??PBPBRDL@VBF@`@D`@FRBVFXJJDVLNJ\\P\\NXJ`@Lj@J`BXXDfC`@zDn@r@H`@FnGbAr@B^DhAJzFz@`C\\rFv@bAV`C^t@LLBfC`@~IfABMFs@n@L@?nNfBF@zHz@Ej@?HLBrQbB|J~@n@FxCR~AL~Gf@lHh@hAJjHn@rFf@VBBCF?D?D@DB@DbALzK|@?A@GFm@Hk@lHt@CJ?VQ|AIREAKCEAc@I[E}AY_B[GAaHi@eDYEAWEABC@BnCAvD?n@?xBC`C?JCt@E`FCjBAXd@KJBbBK@?~@If@@h@BP@pADL@L?FAbABz@?rBZL@jAXH@fAb@nAH|ABR@b@Bt@DZENGnBFVBV@zA@@[Fa@Hk@BEVqBBKVkB@KHm@De@TqBPgBTcCVDnBP^DdAP~@Pz@LH?TE`AWVAxB?j@CXCh@CrAAhAl@|@d@LFB@DB\\Tr@T^HjAV^FlDt@n@BlC~@PHr@Tf@RxAf@fAb@B?nAb@HDPDpDpA^TDBfAv@z@jAJLb@n@lEvG`ArA\\f@f@r@^f@FHpAfBx@dA@@rAdB~@eBd@_AFKDKLYZk@Rc@lCcF\\m@DCFEH@rA}Iv@H~ANB@BAb@aA@A?C?AAAMGC?CAy@E]CYAa@EA?C@A@ABOdAsA|IIAGDEB]l@mCbFSb@[j@MXEJGJe@~@_AdBRT`C`D`@d@pD|EJLDFZp@NfAFdA@P?VC~@UpAq@xCGb@K|@BbALjBJvA@D?B?HEHXdDDn@Ft@FPdBbA\\RZRZPrBlAxCdBXNVLTJNDLDFBLBLDLBF@\\F^HTBZBb@B\\@bRR`C?n@?f@@`HFlBD`AL|@Vv@Xt@d@j@h@d@n@Vf@L^l@f@j@R^F`@DlC\\pBXb@FP@j@Fh@FbAHxDb@lFd@~@H|@FnAJr@HvC^d@FlBRT@rDTbDHL?pBAxA?`BAp@?|ACLA~@EjBKjBEdH@Z@`C@J?L?T?~@At@AB?rBAzAJxBLzAFr@FRBRBlDb@v@FPLz@LJBxATr@LF@v@NjAPj@HhAR|@LdDh@R@THz@ZNVFN^z@BJBJ@LBNBZTdB@DBFBDDDDDFDLDJBD@P@lA?VJNAx@?~AAP@P?N@L@P@nAHNBv@Jn@Pn@Xf@^\\V`Ax@JJVNHDJFXN~@\\~AXrATd@F`@Hl@JVDt@Nh@L\\Fx@PpAVl@JPDLBp@J\\Fr@J~B`@rATtATx@N`@JvA`@lCt@~Bp@vBp@hAZr@RnBj@r@X|@\\`A^dCz@vA^~Bh@hAZfAZTDb@Ld@PPFb@Pn@T|An@vBz@~Bv@lAb@NFKXcDkAiCeAc@QeBs@{@[QIQGsAa@oEkAgCm@oAa@}Ak@",
+    "roadPointsCount": 526
+  },
+  {
+    "routeId": "route_04",
+    "routeNumber": "4",
+    "routeName": "KALPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALPAKKAM",
+      "ANUPURAM",
+      "MAHABALIPURAM KOOT ROAD(POONCHERY)",
+      "THANDALAM",
+      "THIRUPORUR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:40",
+      "06:45",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALPAKKAM",
+        "lat": 12.553,
+        "lng": 80.161,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANUPURAM",
+        "lat": 12.569,
+        "lng": 80.125,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANUPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MAHABALIPURAM KOOT ROAD(POONCHERY)",
+        "lat": 12.618,
+        "lng": 80.179,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHABALIPURAM KOOT ROAD(POONCHERY), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THANDALAM",
+        "lat": 12.671,
+        "lng": 80.17,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THANDALAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUPORUR",
+        "lat": 12.724,
+        "lng": 80.187,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUPORUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ytrkA_ahhN??KAGEIGEGCIAK@K@IDIFGHEHCJ?J@HBHDDHBHBH?HAJEHEFTF\\B`@BzAU|Dg@tB[xASvG_AfDE`CPrD|@lL|DdJfDRCVDTANGP]n@qBtAeETo@VSTAP?XFVJNJJNFLNFbCp@LVhEdAXEhF|AfD~@j@LT@FEHAHAH?HBHBDFFFBH@H?HAFAHCFEDGDGBG@Yh@QXMh@Qb@iClLi@jCoClLqAtFkKhHe@ZaDlCyCrCiKrLCDkC`DeKdMi@p@_@VQ^eDtEo@z@u@bA}AxBMVKVSl@CJCVAFO`ACZCROjAUzAOf@SpACLc@|CO~@E^WnBk@~BCJCHi@xA]r@Wf@KLm@bAu@dA}@pAaBvBoCtDqBlCuA`CuBlCqBpC_CvCgC`DoAbBoBzCg@~@o@nAU\\e@r@OSIGGAE?w@HWBC?I?M?uBRQBO@A?M@A@gAHoMdA{ANK@w@Ha@BeE^A@A@gIxIVf@G@{AHoBLoAHqBLoEP?R???SnEQpBMnAInBMzAIUc@EG?Aq@uA{BcFyBgGACy@iDy@gDMm@w@yE}AwIeBwKMs@BKCO?Ea@mEQgBKgA_BsIy@iEs@_F?a@wAJYCgBJqDLoF^w@Dq@D{DRg@DkAFwFXaFVwAB{AOwB[WGi@MwDw@uGoAuDs@wDs@oDq@uAi@q@g@u@m@cAy@kFkE{CkC}ImH_As@i@g@kEkDiGiFoBgBmF{EuCiC_Ay@mDeDkBcBk@UoC{BoI_H{BiBcCqBwD}COOMOc@o@eCeE{A_C{CaFgGeKsGwK}@mAc@e@e@_@iBeAk@Y{@YiBm@qDeAuC}@kDcAk@OWGi@K[I}@OuB_@m@Oq@I_Es@aB_@a@KuAq@}@g@w@k@k@q@y@_Aa@o@]}@o@oBg@oBy@uDs@{Ce@yBe@wBw@kDKe@o@gDI{@GmAGw@GqCAMG{COcFA}@Xz@Z`ALb@Pd@^~@Vn@BH^|@Vt@Rx@Ln@Dr@@BLl@Nl@^bABFl@fANT`A|Al@bABDnEzHn@z@j@`Al@nAXjAThA@`@Bd@@|AAVE|BEpAATsBUwDc@kADa@H]DqFhAmAN_ABcBMmE]uBYsAYkA[uAa@{AWsImAiBYkBk@aBe@}Cy@o@QaASsD_@eAMcBKsBOgE@wBBo@@qDDuDD{BNkCF{ET_BAmHCkCIgDOmAK}@Q}Ao@SMy@q@}@o@i@Uk@]u@_@kAg@EC[Qe@QyB{@ME{@ScAMaD]k@E[AiAEyABcA@eBAiADYAY?OCi@@u@Ea@Cm@CSEg@GYIe@Ss@WQ?a@OUMa@UqBaAcA[eASeAMgAIeGe@{Gg@sNgAO?_K{@c@Ek@GkCSkGk@mAKiKw@aNiAc@E_Ge@cAKgBOEXUv@eAlC{ArCuAdCc@l@MR[h@Sd@s@hBo@|AYt@CP@RHn@d@`DHd@FXVt@DLNz@FD@LBHd@bBHX@N?JnFp@vC`@SxAMx@Kv@SnAe@EG?C@{HgAkDe@FU^yADS??@Q@M?U?S@OVsARmAF[FKHEFAPEO{@EMWu@GYIe@e@aDIo@ASBQXu@n@}Ar@iBRe@Zi@LSb@m@tAeCzAsCdAmCTw@DYuD[mBMqBIoMo@mAGsHOe@C_FEq@AcAEeGMwQ[uIKyAAYAa@C}AKs@Ie@EmDWqIq@eCOyEIeDGoAIoAOiA[mA_@i@Yy@Uk@Iw@Ks@Ca@CcBEYEaAKqAQSOg@K]Is@ScAOuBk@wDaAiEiAiEoA_Be@]GMCa@Is@I_ESmBQiIw@eA?}CCy@Gg@EcBYuBg@}@[y@]}@_@aFsCoB{@yBcAi@Mc@EsAQkKq@q@Ii@Ka@Oa@Ss@a@e@[[O]KuAYuA[iAYeBi@QEgDy@c@MmBc@E?eAWu@Ss@QuBe@e@GY?S?UHuBtAcBpA]R_Ar@aAt@eAh@MH?DADABCBE@A?C?EACCCC?E?Ag@WqAa@eNeCK\\KZSb@Q^B@v@L",
+    "roadPointsCount": 643
+  },
+  {
+    "routeId": "route_05",
+    "routeNumber": "5",
+    "routeName": "STERLING ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NELSON MANICKAM ROAD",
+      "POTHYS(T.NAGAR)",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NELSON MANICKAM ROAD",
+        "lat": 13.065,
+        "lng": 80.224,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NELSON MANICKAM ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POTHYS(T.NAGAR)",
+        "lat": 13.0405,
+        "lng": 80.2335,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POTHYS(T.NAGAR), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "iwvnAqvshNmBQ@IXcCXyBoAOsBGcBYg@Cg@O}DeDIGv@gABGlA{Ab@i@TYj@_BXcAL[@IFk@Ci@KuD@QBk@Jk@ZcCBSDSVuATcAR_An@oCb@gBj@yAb@c@@AHIzB_AxB_ANQHM?U?Uq@yAMe@DKFINAJA`@DhAFtBJ\\Af@?r@WLMfAiAd@k@n@u@l@i@PSZB`@A`@?dBHhCRx@FpA?dCBP@HFBH@NCn@_@zI?TJNNDlADbADT?fBF|ALHAz@Dd@@zHNRBb@FTLbANbGjATBLEv@N`ALB@r@HpDb@dBRjBXpCd@zCd@H@x@JhBTrBVfAJn@HdAHF@x@J^ApBRZB`ABv@?v@?dABf@BP?VA?E@KDc@t@{FFOFId@D^FZ@PCFOBUj@_KL@nALhAFh@JZRb@`AbAzCBBPDFNFLeAj@GB{C|A]PEBGFGFGT",
+    "roadPointsCount": 156
+  },
+  {
+    "routeId": "route_06",
+    "routeNumber": "6",
+    "routeName": "SANTHOME",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SANTHOME",
+      "PATINAPAKKAM",
+      "SATHYA STUDIOS",
+      "NEELANGARAI",
+      "INJAMBAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:45",
+      "06:50",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SANTHOME",
+        "lat": 13.0335,
+        "lng": 80.278,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SANTHOME, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PATINAPAKKAM",
+        "lat": 13.027,
+        "lng": 80.277,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PATINAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SATHYA STUDIOS",
+        "lat": 13.022,
+        "lng": 80.26,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SATHYA STUDIOS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NEELANGARAI",
+        "lat": 12.949,
+        "lng": 80.257,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NEELANGARAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "INJAMBAKKAM",
+        "lat": 12.92,
+        "lng": 80.251,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "INJAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "mqpnAih~hNUtB`AWVAxB?j@CXCh@CrAAhAl@|@d@LFB@DB\\Tr@T^HjAV^FlDt@n@BlC~@b@kAh@iAJYXi@V@v@D}BpFf@RxAf@fAb@B?nAb@HDPDpDpA^TDBfAv@z@jAJLGRMjACNGl@StAENCJEFOPKPCDKLSTMT_@bBa@bCSxAIdAAnA?xALzBJlA@DA~@KV_@p@o@bA[h@S^Wd@a@t@k@`AQ`CALEXQ~BC\\AZObDYvDIrAKjASpEf@NpA`@x@`@jBrAvAtAf@BZDd@JbB^|Ah@TTrFiBhBW\\G`@EPC`AIEaBo@@[@{BD]@_@BAGAy@h@kCLi@j@}ChAyEDOD@h@HzDJJAjBDxADP@J?H@BTBBDDXdDDn@Ft@FPdBbA\\RZRZPrBlAxCdBXNVLTJNDLDFBLBLDLBF@\\F^HTBZBb@B\\@bRR`C?n@?f@@`HFlBD`AL|@Vv@Xt@d@j@h@d@n@Vf@L^l@f@j@R^F`@DlC\\pBXb@FP@j@Fh@FbAHxDb@lFd@~@H|@FnAJr@HvC^d@FlBRT@rDTbDHL?pBAxA?`BAp@?|ACLA~@EjBKjBEdH@Z@`C@J?L?T?~@At@AB?rBAzAJxBLzAFr@F@c@DiA\\gID}A@OBmBDq@BUBSNU^OZAfCF`BJdBPdAJdBFF?X@J?b@@\\?X@\\@nBFhDHbA@T?~ABt@@x@?xAJzCXz@Hn@@b@?hAAVATARA|@CP?|A?fABH@dALd@FF@x@NbAPbCf@nB^x@JlAP`BPdCRz@Dv@A`ACpACb@Bb@D^D\\Fp@P`B`@pAVvBd@|@PdANf@H^HdAPF?`@DxANhAL`@DpANhALzAPhAFf@BpBLL@dAD~@@hABd@Bb@BtAPt@JbBTpAPdANB?rARZDtBVp@HP@jBTl@F`D`@H@n@HVDlAB|EDJ?tA@tAB~@EhC@vEF~A@dBDxCLZBV@@@n@DBa@NaEfBL~@DZBT_ERqDh@Fl@NlAXdB\\m@nIS~BStCjAT^JRDv@Rp@Jn@FXDP@`@Dr@Ft@Fj@DjAHj@Dj@Df@DXBzBTl@FxANjBRxBRpAHvARrARtAND?X@z@Dl@Bj@BT?v@D@?b@DhAJpAL`BNh@Db@DF?|@D~@F\\@H@`BJtBJv@D`CPxAF`AF|F^zBLlAHjAFdH`@D?h@BlBJpBLxBJJ@X@`BJh@BbBDn@BvB@lA@hBFv@Bf@BxBLtA@hAEn@IVEh@Ip@ILE^I^C^ETCH?D?`@D`@Lh@N`@JENGZ",
+    "roadPointsCount": 442
+  },
+  {
+    "routeId": "route_07",
+    "routeNumber": "7",
+    "routeName": "TRIPLICANE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "TRIPLICANE",
+      "ROYAPETTAH",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "TRIPLICANE",
+        "lat": 13.0587,
+        "lng": 80.2757,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TRIPLICANE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ROYAPETTAH",
+        "lat": 13.054,
+        "lng": 80.262,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ROYAPETTAH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "{ounAez}hN@?QzBAd@ALCd@Gj@Gp@KjACPIt@Ed@APK`BCVIdAM~@?LAv@@L\\x@N`@r@fDNpANjB?FJnC?V^~AFf@Bp@EzD@NJ~C?Rj@VTD^JfClAVJZJPB|@NPHpETV@lBTrC^X\\ANk@jK",
+    "roadPointsCount": 51
+  },
+  {
+    "routeId": "route_08",
+    "routeNumber": "8",
+    "routeName": "BESANT NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "BESANT NAGAR BUS STAND",
+      "VANNANTHURAI BUS STAND",
+      "VETTUVANKENI CHRUCH",
+      "AKKARI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:50",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "BESANT NAGAR BUS STAND",
+        "lat": 13.0006,
+        "lng": 80.2658,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BESANT NAGAR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VANNANTHURAI BUS STAND",
+        "lat": 12.993,
+        "lng": 80.26,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANNANTHURAI BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VETTUVANKENI CHRUCH",
+        "lat": 12.935,
+        "lng": 80.254,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VETTUVANKENI CHRUCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AKKARI",
+        "lat": 12.905,
+        "lng": 80.248,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AKKARI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "{cjnAc|{hNRwC@YFSLSR?JAH?zA[H@`@KHCbBWb@G|@O@?dB_@jB_@FAd@IVETCVAV?R?T@n@HN@DEv@FF?ALMjCCD?DM`CKlBUvDGfBIrAIxAWnDKlBKtBC^CV?NCj@]vG?FOpCzDTrCNF{@r@Bf@Bh@BpDTj@wFV@B?BA@CHi@DYObAABC@C?WAk@vFdBN`BHvBNf@DdAFfBLxBTFa@JsDBs@BcA@_@Hs@PK`C\\h@BF@hAF^@F?jAFfAF`AF`@FZAfCF`BJdBPdAJdBFF?X@J?b@@\\?X@\\@nBFhDHbA@T?~ABt@@x@?xAJzCXz@Hn@@b@?hAAVATARA|@CP?|A?fABH@dALd@FF@x@NbAPbCf@nB^x@JlAP`BPdCRz@Dv@A`ACpACb@Bb@D^D\\Fp@P`B`@pAVvBd@|@PdANf@H^HdAPF?`@DxANhAL`@DpANhALzAPhAFf@BpBLL@dAD~@@hABd@Bb@BtAPt@JbBTpAPdANB?rARZDtBVp@HP@jBTl@F`D`@H@n@HVDlAB|EDJ?tA@tAB~@EhC@vEF~A@dBDxCLZBV@@@n@DzAV|@NTBh@H|@PTDr@NtAXjAT^JRDv@Rp@Jn@FXDP@`@Dr@Ft@Fj@DjAHj@Dj@Df@DXBzBTl@FxANjBRxBRpAHvARrARtAND?X@z@Dl@Bj@BT?v@D@?b@DhAJpAL`BNh@Db@DF?|@D~@F\\@H@`BJtBJPsDFwAFeAHkBJuBJyADg@hWbDOrDe@|LjAFdH`@D?h@BlBJpBLxBJJ@X@`BJh@BbBDn@BvB@lA@hBFv@Bf@BxBLtA@hAEn@IVEh@Ip@ILE^I^C^ETCH?D?`@D`@Lh@N`@JND|Ab@n@Lz@L~CZfDPhCJn@BbCHnBFdADxETbABlCH~BFlBBd@BpBFbBFXBr@BpAFnBL^Bn@DhFr@hAPhFr@rBPL@pBP?JiBOWACjDAl@",
+    "roadPointsCount": 343
+  },
+  {
+    "routeId": "route_09",
+    "routeNumber": "9",
+    "routeName": "MANDAVELI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANDAVELI",
+      "KALIYAPPA HOSPITAL",
+      "MOOPANAR BRIDGE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANDAVELI",
+        "lat": 13.028,
+        "lng": 80.261,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANDAVELI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALIYAPPA HOSPITAL",
+        "lat": 13.031,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIYAPPA HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MOOPANAR BRIDGE",
+        "lat": 13.03,
+        "lng": 80.245,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MOOPANAR BRIDGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "iponAm}zhN_@KmA[m@MSCU?UACNM`@QZMFIR@VB^DN^lARbAiIV?zB@PC`BEzA?HE|@?XADAZEzAQfGA`A?ZKh@GdAKlF?RCjC?TGvB{@g@yAeAWQYSs@c@MICAoA}@cBaAIjBCjBDdB?JEpBYvAA^EXKnAENA^Ct@Eh@Cf@OjBO|B]jFCd@OfBrEO|FNLBF@F?FJV@R@lBFdAD`@@`DFD??tBg@B",
+    "roadPointsCount": 81
+  },
+  {
+    "routeId": "route_10",
+    "routeNumber": "10",
+    "routeName": "MADHYAKAILASH",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MADHYAKAILASH",
+      "MADIPAKKAM KOOT ROAD",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MADHYAKAILASH",
+        "lat": 13.007,
+        "lng": 80.248,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHYAKAILASH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADIPAKKAM KOOT ROAD",
+        "lat": 12.968,
+        "lng": 80.198,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADIPAKKAM KOOT ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ikknA_mxhN?O?{@CkB?SGcCAgAAoABoDJ}@PCIx@GhDJbHDzB?BBv@?N?l@@b@?xC?j@?T?^@l@@zC?rA?BBpA?t@Ap@@fA@F?nC?f@@t@?jBAfBIhAMfAI~@CTKr@In@MtAa@fDStAOlAKx@Gh@Ip@CVCPIp@WdCUnBCR{Fzf@Kp@CPCRWbAaEhKMTkAhDITIXUt@[fAGPy@pCGNMb@ADEPGR[jACFAHWbAGNELCFCHG`@GRI`@Gn@v@dDLj@FZ~AnHBJ^xABNRr@b@vAPd@BFl@dBRj@\\jAJ\\P|C?HHf@fBzFjA`EJ\\HZPp@^pAV~@Nj@Lb@h@xBRx@PdAVhCH~@JnA@LXhDLnBD\\DtARl@BJFXFX@DBLHTFTHTHTFRBFHTZt@NZJRTd@PXj@`A@@NVT\\^h@PTRX@BTl@\\v@Xf@`@`@`@b@Pd@b@Td@PXFj@JfBV\\FJ@TD`C^b@J\\J^RTNNPJRN^N`@Hb@Hf@?N?L?H?DEj@SdD?BEpAARIfA@^@b@P~@Vj@v@nAPTHLBBDF`G`I\\d@fAxA`BzB~@hAx@lAnGyEBKFIFCHANBHF^AjJ?DAh@@tFG`B?v@At@@d@EXQb@k@nA}BjAoBFIJOb@c@d@]jAWdD@Z@xAAvBAjACn@A|C}@`@Mj@I~@St@G`I@b@GhASZG^Kb@OjBkAv@q@BC~AwApBwB~A_Cb@}@p@oBt@qBFUl@wAb@@^AHCBEBKHcA@CDCJ@F?lAFdADJ@nBAzA@n@@dDFLnA@DBPfB?pAAnBIG]JGJI@OAo@BEFCP@vBNBWFiAHeAdANv@JpARVNLRJ|ACdAfCRZVvAX`ANTFOrC?VDrBnAJlALtANpD\\@K~AF|AFQlB",
+    "roadPointsCount": 313
+  },
+  {
+    "routeId": "route_11",
+    "routeNumber": "11",
+    "routeName": "POWER HOUSE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "POWER HOUSE",
+      "SAMIYAR MADAM",
+      "WEST MAMBALAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "POWER HOUSE",
+        "lat": 13.052,
+        "lng": 80.222,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POWER HOUSE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SAMIYAR MADAM",
+        "lat": 13.05,
+        "lng": 80.225,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SAMIYAR MADAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WEST MAMBALAM",
+        "lat": 13.037,
+        "lng": 80.224,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WEST MAMBALAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "_ftnAoishNpABB_ANoCPgDdAHfAgIpC\\CNAJEZFg@BO~ALd@FR}A@CPiABGBEJ?ZDLgAVkBJBfB\\|Cp@rBd@~A^tAZxAZ|ANNA^DrAV`Cj@zBb@tCh@nCf@rBl@|CzA`DfAjCdAjBn@tAf@|Al@DABAFGbAiAsBiB",
+    "roadPointsCount": 51
+  },
+  {
+    "routeId": "route_13",
+    "routeNumber": "13",
+    "routeName": "KUTCHERY ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KUTCHERY ROAD",
+      "LUZ",
+      "MYLAPORE TANK",
+      "MANDAVELI BSNL OFFICE",
+      "TANSI NAGAR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KUTCHERY ROAD",
+        "lat": 13.034,
+        "lng": 80.268,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUTCHERY ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "LUZ",
+        "lat": 13.038,
+        "lng": 80.265,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LUZ, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MYLAPORE TANK",
+        "lat": 13.033,
+        "lng": 80.27,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MYLAPORE TANK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANDAVELI BSNL OFFICE",
+        "lat": 13.026,
+        "lng": 80.262,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANDAVELI BSNL OFFICE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "TANSI NAGAR",
+        "lat": 12.986,
+        "lng": 80.224,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TANSI NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "supnAqi|hNo@IYESCM?G?G@ULqCRc@Dy@HSBHTHRFLHJx@f@`Al@GxAa@dDQdDAp@CrBAZ_FMuDAC[@c@IQl@{Eu@M]Lw@f@QFAJC\\Cb@FaA@KPGv@g@\\Mt@LLw@Fg@ZqBLw@?E@IVgBIQCEIGOIeEBaDBqB_@oDu@DOBAz@_@JEzAu@VoA@G@KHc@BOhBJ`BJpANlCn@lBh@d@ZDGVo@DGHQt@_Bv@yAZg@t@cAh@s@Rg@Le@^uAn@Jh@LjARDDEHa@pCzB^`ATb@HfAPhARStAO`AObB`H~@bANR@~@FrB@NBVxALt@LLLVF|AAdAb@Hj@HzC^lAFd@Bl@B^BJ@`@Dl@HhALQ`CALEXQ~BC\\AZObDYvDIrAhB^??iB_@KjASpEf@NpA`@x@`@jBrAvAtAf@BZDd@JbB^|Ah@TTrFiBMmB?WAGAy@h@kCLi@j@}ChAyEDOD@h@HzDJJAjBDxADP@J?H@BTBBDDXdDDn@Ft@FPdBbA\\RZRZPrBlAxCdBXNVLTJNDLDFBLBLDLBF@\\F^HTBZBb@B\\@bRR`C?n@?f@@`HFlBD`AL|@Vv@Xt@d@j@h@d@n@Vf@L^X~@Hl@Bx@BzF@pBDxABz@@jHAt@?VIt@Mr@Mz@Ix@GhDJbHDzB?BBv@?N?l@@b@?xC?j@?T?^@l@@zC?rA?BBpA?t@Ap@@fA@F?nC?f@@t@?jBAfBIhAMfAI~@CTKr@In@MtAa@fDStAOlAKx@Gh@Ip@CVCPIp@WdCUnBCR{Fzf@Kp@CPCRWbAaEhKMTkAhDITIXUt@[fAGPy@pCjDxAfH`DzEvBf@RrB|@NHpAj@jG|@jC\\fDb@TDfB\\hA\\l@ZJF`BbBTVRRt@v@DB`@TTLRLTLTLj@XlAr@hDbBdBv@xB|@xAX~@D\\?f@AF?|ACz@G~@Kt@MtA_@XMtAw@xRkMJIRMXUdAq@dDeCNC^[RU`@g@X_@V]Z_@z@iAT]BAb@k@?AnAcAl@c@f@[BAB?JATC`ABl@Bf@sBX{@Ja@He@Pw@jBd@LB",
+    "roadPointsCount": 359
+  },
+  {
+    "routeId": "route_14",
+    "routeNumber": "14",
+    "routeName": "ADYAR AAVIN",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ADYAR AAVIN",
+      "ADYAR TELEPHONE EXCHANGE",
+      "PTC QUARTERS",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ADYAR AAVIN",
+        "lat": 13.006,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADYAR AAVIN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ADYAR TELEPHONE EXCHANGE",
+        "lat": 13.001,
+        "lng": 80.257,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADYAR TELEPHONE EXCHANGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PTC QUARTERS",
+        "lat": 12.989,
+        "lng": 80.248,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PTC QUARTERS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ofknAsxyhNS?C?C@?B?ZAXgA@Bz@@jHSA?iFAk@A]Cw@AY?eE?_CCmBEs@Km@GSd@?X?L@ZHhFx@rBVJFj@Fh@FbAHxDb@lFd@PARGVMRWLiAl@@m@AGb@Ed@DVFPJJPJnAJr@HvC^d@FlBRT@rDTbDHL?pBAxA?`BAp@?|ACLA~@EjBKjBEdH@Z@`C@J?L?T?~@At@AB?rBAzAJxBLzAFr@F@c@DiA\\gID}AP?GxAMjDGnBItBAj@ARCTG|@Et@QbEIlBCf@OrDAb@B`@Fn@D^?JNAFBLDLAb@GVENCjB_@VEH?JDJNNj@Hp@@fB?XA`@@zA?NFH?nAAfDAdFG?I??aB",
+    "roadPointsCount": 128
+  },
+  {
+    "routeId": "route_15",
+    "routeNumber": "15",
+    "routeName": "AMMA NANA",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KOTTURPURAM",
+      "THORAIPAKKAM",
+      "KARAPAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KOTTURPURAM",
+        "lat": 13.0186,
+        "lng": 80.252,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOTTURPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THORAIPAKKAM",
+        "lat": 12.943,
+        "lng": 80.237,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THORAIPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KARAPAKKAM",
+        "lat": 12.9266,
+        "lng": 80.2308,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KARAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "qumnAafyhNAHe@Sk@Y}As@w@k@KEKKUMeBu@T[Re@Hk@\\}BX_BVw@BIJWjA}Cd@mARg@h@sAj@yAHw@BW@w@?I@s@?_@AeA?a@?K?o@A}AE}DCe@As@UOUQKKKIIGcA{@a@i@q@o@sA{@GOEICI@IBKFEHCJAjBDxADP@J?H@BTBBDDXdDDn@Ft@FPdBbA\\RZRZPrBlAxCdBXNVLTJNDLDFBLBLDLBF@\\F^HTBZBb@B\\@bRR`C?n@?f@@`HFlBD`AL|@Vv@Xt@d@j@h@d@n@Vf@L^l@f@j@R^F`@DlC\\pBXb@FP@j@Fh@FbAHxDb@lFd@~@H|@FnAJr@HvC^d@FlBRT@rDTbDHL?pBAxA?`BAp@?|ACLA~@EjBKjBEdH@Z@`C@J?L?T?~@At@AB?rBAzAJxBLzAFr@FRBRBlDb@v@FPLz@LJBxATr@LF@v@NjAPj@HhAR|@LdDh@R@THz@ZNVFN^z@BJBJ@LBNBZTdB@DBFBDDDDDFDLDJBD@P@lA?VJNAx@?~AAP@P?N@L@P@nAHfANn@Pn@Xf@^\\V`Ax@JJVNHDJFXN~@\\~AXrATd@F`@Hl@JVDt@Nh@L\\Fx@PpAVl@JPDLBp@J\\Fr@J~B`@rATtATx@N`@JvA`@lCt@~Bp@vBp@hAZr@RnBj@r@X|@\\`A^dCz@vA^~Bh@hAZfAZTDb@Ld@PPFb@Pn@T|An@vBz@~Bv@lAb@NFv@VHDF@dA\\x@VvDtAbEpANDJB~Bp@^JfBh@b@NnC`AF@XJfA\\HBFBZJPF`@L??THfBh@jCx@bBd@`@JfD|@b@Jd@JjAX`@Jb@H^HB@PDF@`Ez@REj@NNDF@f@LNPRH`AXlA\\nA^|Ad@vDhAv@\\x@^^RRNb@d@V@JJl@p@JNZb@z@~@NNb@b@HHt@x@LLPPNPp@h@DDl@Xx@\\r@PjAR|@L~@NlB\\fB`@j@N\\JZJz@Xt@^n@Xn@VlC|@nDpAEPfBr@dBn@f@Rd@PpG~BhAb@ZH|DlAbAX`AXt@NvA\\dDl@`BZD@n@Jh@HXDj@Jl@HCRCRMXj@R`C`AJF\\NNFRi@He@D[|AJ`@BhBJ",
+    "roadPointsCount": 381
+  },
+  {
+    "routeId": "route_17",
+    "routeNumber": "17",
+    "routeName": "DEVAR STATUE (NANDANAM JUNCTION)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DEVAR STATUE (NANDANAM JUNCTION)",
+      "VELACHERY VIJAYANAGAR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DEVAR STATUE (NANDANAM JUNCTION)",
+        "lat": 13.031,
+        "lng": 80.241,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DEVAR STATUE (NANDANAM JUNCTION), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELACHERY VIJAYANAGAR",
+        "lat": 12.9723,
+        "lng": 80.2212,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY VIJAYANAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "}dpnA{`whNo@_BWq@LMP?TPxD|@JBLDCHi@|Ai@vAQh@?j@@VNv@HRXr@bD~Gf@v@zG|HFH`@^PTjBfEjD~GRb@vAbHXrALh@j@pAz@xAt@bAFFn@z@X^`A~Ad@l@tA`BtAtAzAbAx@nAPPjBxAvBtA|AbADD~@p@z@l@h@\\JHJDZNTFXFXBT@H?H?LALAFALEnKaDnC}@jASbCo@|@Sv@SbA]t@UtAc@~Ag@b@MXIh@OxBi@`HsBlAQZCVFRNFZETqCdIEXkAhDITIXUt@[fAGPy@pCjDxAfH`DzEvBf@RrB|@NHpAj@jG|@jC\\fDb@TDfB\\hA\\l@ZJF`BbBTVRRt@v@DB`@TTLRLTLTLj@XlAr@hDbBdBv@xB|@xAX~@D\\?f@AF?|ACz@G~@Kt@MtA_@XMtAw@xRkMJIRMXUdAq@dDeCNC^[RU`@g@X_@V]Z_@z@iAT]BAb@k@?AnAcAl@c@f@[BAB?JATC`ABl@BvBPx@?h@Ap@Ir@w@R?p@HD@|@VjAp@bAj@JD`@TB@~BnAl@V`@Pd@H`AXpAj@dBjALD`@Nz@Gj@Av@CR?ZAH?n@AVAF?hACF?\\ATA^?R?HAD?D?p@CF?F?~@CRAJ?h@?D?zA?p@A`A@\\APCFCPMRMLPTVFFNPXVPLFDLF^JLBVHb@Lf@Pl@PD@vAf@lBl@t@VxA^x@Tp@gH@Mi@G?C",
+    "roadPointsCount": 243
+  },
+  {
+    "routeId": "route_18",
+    "routeNumber": "18",
+    "routeName": "GANDHIMANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GANDHIMANDAPAM",
+      "GUINDY RACE COURCE",
+      "NGO COLONY",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GANDHIMANDAPAM",
+        "lat": 13.011,
+        "lng": 80.236,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GANDHIMANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GUINDY RACE COURCE",
+        "lat": 12.998,
+        "lng": 80.218,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GUINDY RACE COURCE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NGO COLONY",
+        "lat": 12.985,
+        "lng": 80.205,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NGO COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "otknA{{uhN??BEF?J?DAFGDAB?NDTB{Fzf@Kp@CPCRWbAaEhKMTkAhDITIXUt@[fAGPy@pCjDxAfH`DzEvBf@RrB|@NHpAj@jG|@jC\\fDb@TDfB\\hA\\l@ZJF`BbBTVRRt@v@DB`@TTLRLTLTLj@XlAr@hDbBdBv@fAd@p@VxAX~@D\\?f@AINMNUX[X]XmBzAy@v@kAbAc@\\??CBmB`B[T{@t@gA~@}@r@WRQNGD_@Z{BvAMJMHULKDmAd@?n@?F?X?^?NBFHB|@\\PHJ@x@Vf@JhAJf@F`ET\\DN@lACMlDEd@K`AIt@ABC\\c@zFvCZ|BZxARbAPfANF@~@LXD~@Jj@Ff@FTBD@rARz@LH@LD`APHBtAPhBXh@JlEn@zA`@LF~An@pDbAj@LjD`@bAP^HjABr@Bx@FTAVkC|APh@Dt@DdCThAJdAJv@Hd@D",
+    "roadPointsCount": 155
+  },
+  {
+    "routeId": "route_19",
+    "routeNumber": "19",
+    "routeName": "AYODHYA MANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYODHYA MANDAPAM",
+      "VELACHERY RAILWAY STATION",
+      "PALLIKARANAI SIVAN KOIL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:50",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYODHYA MANDAPAM",
+        "lat": 13.038,
+        "lng": 80.221,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYODHYA MANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELACHERY RAILWAY STATION",
+        "lat": 12.9784,
+        "lng": 80.2185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY RAILWAY STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PALLIKARANAI SIVAN KOIL",
+        "lat": 12.935,
+        "lng": 80.214,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PALLIKARANAI SIVAN KOIL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "qnqnAgdshN?@xAR^D|ARlBV~ARfB_An@@XeFNiADkAFmEZmD?G?EAEAEECEAsAC{AUBQBc@?c@B[CUJ}Bd@{B?G@INkA@IB_@Da@?C?}@Cm@?y@?UGMBeA@OJoAHm@J}@@GCAEEEECC?E?CBIPGH?`@HvBSH?FAtBKnBEtCM`AEzAGjCKtBEd@Av@Ed@Cn@ElG_@h@EFADE@G@GGuBGi@Iu@[aBCO\\Ab@CjBOhAOd@IRb@vAbHXrALh@j@pAz@xAt@bAFFn@z@X^`A~Ad@l@tA`BtAtAzAbAx@nAPPjBxAvBtA|AbADD~@p@z@l@h@\\JHJDZNTFXFXBT@H?H?LALAFALEnKaDnC}@jASbCo@|@Sv@SbA]t@UtAc@~Ag@b@MXIh@OxBi@`HsBlAQZCVFRNFZETqCdIEXkAhDITIXUt@[fAGPy@pCjDxAfH`DzEvBf@RrB|@NHpAj@jG|@jC\\fDb@TDfB\\hA\\l@ZJF`BbBTVRRt@v@DB`@TTLRLTLTLj@XlAr@hDbBdBv@xB|@xAX~@D\\?f@AF?|ACz@G~@Kt@MtA_@XMtAw@xRkMJIRMHFVL|Ct@dBd@`Bb@~Ad@~A^r@J~@LnBPZBdDb@vBZr@HzBFvCClD?xCA`@@@?p@CxAIl@InA[pD{@XIj@SxBi@BA@?n@UdA[TIJG\\KZKHQXKLEBAJC`Cs@hA]`A[XIFCB?VI\\MVKRINIBFFNBJCBMJMLKFKFUL[Jg@N[Jk@PcBb@wC|@ODMDBlB???@@?@?rDEz@E@A@AEqAT@|ADrADCKJsAp@cCAOAKCKGOCGFCLMDEBEDIBOOKEEGIIGc@_@KKGIKMKQRMLPTVFFNPXVPLFDLF^JLBVHb@Lf@Pl@PD@vAf@lBl@t@VxA^x@TLB^JFJPDXFHBD@b@LdAZhBf@b@LNF|b@lM\\FrA^b@NfA\\DBTFNHlWnHf@PlBj@bD`Af@LtC|@LFpA^vBp@z@Tf@PrCv@nCt@|Bn@xDfATFrEpAVTz@Tl[hJz@V^@vGrBf@LPD\\JPFr@T\\JTJVPHJp@|@^`@BFb@b@BDb@d@p@h@LJt@j@lAp@d@T~Ah@zBb@tIlB@WDsAFSTSJYFo@NeD?kE?IA[Au@CiAAgC?o@Yo@EIHsAVqF?EKWH}BHuAN}C?[J_AfGXnH`@",
+    "roadPointsCount": 418
+  },
+  {
+    "routeId": "route_20",
+    "routeNumber": "20",
+    "routeName": "PERUNGUDI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PERUNGUDI",
+      "RADIANCE APT.",
+      "KAMATCHI HOSPITAL",
+      "S KOLATHUR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "06:55",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PERUNGUDI",
+        "lat": 12.9651,
+        "lng": 80.2466,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERUNGUDI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RADIANCE APT.",
+        "lat": 12.955,
+        "lng": 80.225,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RADIANCE APT., Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KAMATCHI HOSPITAL",
+        "lat": 12.948,
+        "lng": 80.215,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAMATCHI HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "S KOLATHUR",
+        "lat": 12.942,
+        "lng": 80.201,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "S KOLATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "_hcnAqdxhNSrAALCTe@vDUnAo@rAOZCJGZKdAKbAAHIjA?@?B@?@@J@@?@@?@?@OvAx@Fn@Bj@DL@DDBFAHEV]|ABHLHzERrBf@v@Jf@F`@Ij@@x@FxAJdBRt@J~@Jn@Jl@HlANLHlAPLL\\Dn@Bz@@LALENEVGf@Al@Bp@Dr@Dr@DB?`@BP@R@J?~@Fn@Bx@Lv@NRRJr@DLdDj@Ez@Ev@ATALAd@EnACjAAVALEv@?HC`@A\\?p@?bBSvEDZJd@r@lBp@xCn@`Dd@bEh@~EPxDQfDOjDOlAWlBq@zDW~AIv@qHPq@p@EVcB^_D_@~C^bB_@DWp@q@jFMdACHw@V_Bp@{DVmBNmANkDPgDQyDi@_Fe@cEo@aDq@yCs@mBKe@E[RwE?cB?q@@]Ba@?IDw@@M@WBkADoA@e@@M@UDw@D{@dCb@x@NbATD@t@F^Hd@DD?jA?f@HfBn@nAf@p@Zb@Jh@Ld@LZD~@HvAHL{AJmAH[^BKz@UjCo@xHYvDGn@GjAG|@GxCBjBLxDDnAHlCx@z^@b@TzM@^Bn@?RDlA?B@`@@TLnE@RHxAHpA@VXzF@RD`AF`BB`@Dx@@RN~C?B@PRvE@TFlADp@B\\R`F@VVvI?T?BAlA?h@?n@@LAj@?^ZJzCz@tBl@zAd@hBh@XVvGrBf@LPD\\JPFr@T\\JTJVPHJp@|@^`@BFQR{@gAW\\SvAI~@Ez@IzBIvBAXGvCRAjAMr@I|@I~@KJBJHHFBNyC|BKrCAXM|De@CGlCtADEzAH?F@j@@HOBw@`AB?D",
+    "roadPointsCount": 279
+  },
+  {
+    "routeId": "route_23",
+    "routeNumber": "23",
+    "routeName": "VGP",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VGP",
+      "PERUMBAKKAM",
+      "MEDAVAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:15",
+      "07:20",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VGP",
+        "lat": 12.909,
+        "lng": 80.246,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VGP, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PERUMBAKKAM",
+        "lat": 12.904,
+        "lng": 80.198,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERUMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM",
+        "lat": 12.9215,
+        "lng": 80.1936,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "afxmAukxhNJ}A?EAACAKAJoA^_FqCQw@EcAEe@C@IXBr@BpAFnBL^Bn@DhFr@hAPhFr@rBPL@pBPz@HvDTdFXbCTz@Pv@N`D~@vA`@zBj@TFf@J~ARz@LTDCNaAtGW|BEb@_@rDE`@c@rEe@nF?@OrAGf@Ix@{@dJGn@k@jGKl@WtCO|AYnCQz@IVq@`Cq@zBGTCNUzBGxAGjBAb@AV?NAH?H@v@KjFKxEE|AC`@ALVNLDb@DNNpCF~GP?RqACwDKw@Aa@AkAEI?WAO?SAYAA`@?T?DQdSCbBAp@K~BANw@lMCj@GbACRa@nHEd@WzCCPYlBwCbKENaClIMb@wCfKIVmBzG_CxGABCHaBhFw@vCy@lCe@bAaAvAGJMTM^WrAU`CApACp@?`A@h@IrBE`BI`E`BJJ?J@`AF~@BB?J?v@?rAFjDTnBh@nAx@f@^{AvDQf@]C}C[gB[SC}A[eAWWGO?K?Y@GCWIMEs@Qm@QSISd@o@p@o@^wA|@oCbBOH_BbAu@h@kAp@yA|@kAv@gAr@eAn@g@XGDMHo@R]FuAT}@LwC^eCZiBTK@{BXkCd@_AXEUEMMUGIQWyEkEUSWUWSWU]WYSMt@CL?LBP@PEb@GVMNELMZQ?I?EBCD?`@?XA`@GXGTKh@Mp@?BCBO@}@EuCKATm@A",
+    "roadPointsCount": 237
+  },
+  {
+    "routeId": "route_25",
+    "routeNumber": "25",
+    "routeName": "MADIPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAM NAGAR",
+      "UTI BANK",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAM NAGAR",
+        "lat": 12.968,
+        "lng": 80.201,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAM NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "UTI BANK",
+        "lat": 12.962,
+        "lng": 80.195,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "UTI BANK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "_zcnAigohNCpBlADxAD|BJpBLtBRHBH@v@FN@HDFJ~ET?l@?D?JBl@DnC@F@BBBD@`AN^R\\f@VB`AL^Jx@TC`@CVEJCJKJOLOPKLGJEDE@G?E@G@CFCDAJGl@WpDz@FW~BGj@tAP`BJ@_@?Q",
+    "roadPointsCount": 56
+  },
+  {
+    "routeId": "route_30",
+    "routeNumber": "30",
+    "routeName": "PERAMBUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PERAMBUR RAILWAY STATION",
+      "PERAMBUR CHURCH",
+      "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PERAMBUR RAILWAY STATION",
+        "lat": 13.1143,
+        "lng": 80.2416,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERAMBUR RAILWAY STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PERAMBUR CHURCH",
+        "lat": 13.111,
+        "lng": 80.238,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERAMBUR CHURCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE",
+        "lat": 13.118,
+        "lng": 80.212,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ok`oAycwhNh@DfDREtB@XRrBBHLz@@Jv@|C@FlB@lBJHBqAdCXRn@NnARF@\\B@IFy@JiA@CBg@RBB??BC`@SCC@ABSbCAH]CGAoASo@OYS]d@m@|@GHWj@Qf@a@~@Qf@Wj@Yj@_@h@QRMFc@d@_@b@Y\\OPAFKf@S|@_@fBI^Qt@Qv@S`AKTGFKHMBQBu@DMFKFa@b@g@lAs@hAaAlBa@|@KTeBbEsA|CKZQv@EPGX]zACNOp@On@CJu@dDWlAm@h@KJkAfA_@\\kGvEc@N{ATE@uAZu@RmAb@SJMH]N[VyAfAMLsAnA[l@KFw@tAQZEHk@z@e@p@U\\e@r@UXGJeA~ACDgAbBbBz@PNJFJTHf@FtED~C?PnAJ~ALLJ@R@lDAT?LCtBBR@PHTZj@Rb@Dd@Af@Ij@Md@CZ@n@^~BhAC~AE|A?P?pACJ?l@?`AAT?lA?pBAH?vAEtAGnACtA?zA[d@CHDDHFr@AHA\\",
+    "roadPointsCount": 173
+  },
+  {
+    "routeId": "route_31",
+    "routeNumber": "31",
+    "routeName": "MANALI NEW TOWN",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANALI NEW TOWN",
+      "MANALI MARKET",
+      "MATHUR",
+      "MILK COLONY",
+      "ARUL NAGAR",
+      "POST OFFICE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:00",
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANALI NEW TOWN",
+        "lat": 13.203,
+        "lng": 80.278,
+        "scheduledTime": "06:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANALI NEW TOWN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANALI MARKET",
+        "lat": 13.17,
+        "lng": 80.26,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANALI MARKET, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MATHUR",
+        "lat": 13.165,
+        "lng": 80.245,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MILK COLONY",
+        "lat": 13.155,
+        "lng": 80.24,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MILK COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ARUL NAGAR",
+        "lat": 13.148,
+        "lng": 80.235,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ARUL NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POST OFFICE",
+        "lat": 13.14,
+        "lng": 80.23,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POST OFFICE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "iuqoAmh~hNKzAz@FCZSzCAPGn@lCP~ALL@f@Hf@DnAJf@Dl@DxBNb@BrAJvF\\J??LCxCEnFEzHErFApAA`C?J`BCnD@vGQhAAxCAn@AhIKD?P?PArCCH?nEC|FE~@?f@AP?|ACrDCT?bAAhAAvBCvCEZ@rCA|@?pA?pBCrBEj@?J?P@?P@t@FjLBtMA`ChDjb@dBrHTnBZfAXdADRDV@T@TBf@|@WXGXCPCFCHAHAH?h@EhBKtIm@~B_@TEn@UPQFG\\u@BIb@{@RUPGLAhBb@j@L`CZR@j@BJAP?\\AjAEVAdAGTATAd@GpCc@RGPGMeAI_BC}@?QCoBD{B?uA?eA|BHdBF?|AGt@KV?DGrBLdDHfANG~@[jC{@BAjAc@FAbBc@RE`KM~CGnEGOlBIjACZIhBEXGf@Kj@K\\W|@Od@CJKZMf@ADM\\CFM\\KX{@bCAFSj@CFADW`@gAjBMRSXs@tAYx@CFMZeAfCg@tB[rAEj@CvAAp@Ez@AfB?tB@fDBfEB^?`@?h@IbChB@X?P@`@?\\?R?P?R@X?pA@tIDb@BnBEpCIJ@FDDJ?lA?L@xB~@@P?hCBbA?tACdCCbAKnAEd@@`A@X?lA@lA@dCKjAA|BAV@RFlAZ[nBCjA\\zBr@tAK|AoDpBv@fD??w@gDnDqBbAi@~C_Db@a@`Ai@jAIj@TVH@@zAj@HDbBn@jBv@Ml@MEk@IMFIPWnB[vD?J@DfAX[nEGnAGfAARCz@EtACzAANAv@KxDCFG@o@AGBADIfADH?F@v@DPAZDf@?JBj@B\\lA?x@?j@A|@AH?j@?\\?J?D?|@CLA\\GTCv@@J?dADBCBAFAr@Gt@CHmB??IlBu@Bs@FG@C@CB?DGvA?JBJN^FPLfBB|@Ex@Ab@ERYdBi@vBtDmAtBrAnAx@NL~@jAHHLB`D`@XBbALB?zARdAJvCZj@Hp@JfDT\\D`@HtBn@vBh@`AL",
+    "roadPointsCount": 349
+  },
+  {
+    "routeId": "route_32",
+    "routeNumber": "32",
+    "routeName": "REDHILLS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "REDHILLS",
+      "KAVANKARAI",
+      "PUZHAL CAMP",
+      "KALIKUPPAM",
+      "PUDHUR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:10",
+      "06:15",
+      "06:25",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "REDHILLS",
+        "lat": 13.198,
+        "lng": 80.196,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "REDHILLS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KAVANKARAI",
+        "lat": 13.185,
+        "lng": 80.188,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAVANKARAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUZHAL CAMP",
+        "lat": 13.168,
+        "lng": 80.185,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUZHAL CAMP, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALIKUPPAM",
+        "lat": 13.145,
+        "lng": 80.178,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIKUPPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUDHUR",
+        "lat": 13.135,
+        "lng": 80.168,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUDHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "iypoAyjnhNPe@nCSv@YFCbAOPCDaAxEgDpA}@tCiA\\Od@MNE~Ae@tBYjAEr@?dCFN@jALLBHB\\L\\Hh@BP@RA^GrBa@\\Kv@I|@CN?zBEPE~Ba@D?hBUpBc@Ih@Mt@QnA?V@XDf@Br@?d@?dBAhA?X@v@@l@@v@Bp@F`A@RFh@Bl@B|@?H?DCv@AN?ZAt@EpAAh@?LCx@ATDb@GfA@N?D@F?FFBJ@H@FHZ@xDDF?bCAJAz@GVC@VBPAPERKNaB|@kC|A}@z@a@b@aA`AUJ]Nm@RC?q@R_@Jq@VQF_@TKJGHGHGFCFJP@HAD?BUl@Zf@Vd@^h@d@d@h@d@p@^??q@_@i@e@e@e@_@i@We@[g@Tm@?C@EAIKQEFCMFKDGDGJKLQXSVKnAc@n@Sp@SZMTKTOPOz@}@jAeAnBqAbBy@LIDQAQCSAWVC@VBPAPERKNaB|@kC|A}@z@a@b@f@OxAq@bDyAnD{@~Es@lJ]dD?tRj@~EbAxCh@lKf@zLbB~SdF??t@Hp@i@hAuBpA}I^iBbB_ElAeBLM@G?EAGf@_@RYJWDIDGFCL?xUf@J@LDDgALGtAFEQj@_EJ}@@GBKj@yCRaBN{@D[HOFCPIDd@Tp@BD\\p@NTT\\LF`@TpAX^Fv@PtBX~AAfBa@hAFn@LVNNJ?@VTH\\BJ@BHp@PhBHTJP~CdAr@Vx@VFBRPZVLJlAdAfAvApEvGNZDFZb@x@lANZHV`@r@LFNL|CtEd@XZLjARTBjBX`AJ|G~@z@JtBXbD`@xBhABBp@p@Xt@Pb@^z@`AlCvAzDvDjKLt@f@jBFXTbAp@hDK@WCy@G]Ck@Fi@^e@DSTSPMLKLGNQ\\IPCDg@t@Yf@ELCFKVGDGBOBSBM@]BQ@GDUCUAa@Ca@IKAc@IQA[AM@wADE~@?j@FfCd@zEWiCMqAGgC?k@D_AvAELAZ@P@b@HJ@`@H`@BT@TBFEPA\\CLARCNCFCFEJWBGDMXg@f@u@BEHQP]FOJMLMRQRUd@Eh@_@j@G\\Bx@FVBJABL\\tAL`@Zh@b@p@x@r@TRJH|@v@fDtCbGfFdA`ABBJH`@Z|@r@RPBBjBxAZVrBnBZXJHbAz@nBzAjA~@xAhAb@\\XTn@f@ZVX^P\\Hl@@JBv@?J@P?dBB~A@h@@\\?P@XBlB?BAZ?fA?b@QEyCo@gBe@YhAIf@GNCLY~@UPYd@KJ[ZQR]Bk@?sAWKn@",
+    "roadPointsCount": 442
+  },
+  {
+    "routeId": "route_33",
+    "routeNumber": "33",
+    "routeName": "PADI EAST AVENUE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PADI EAST AVENUE",
+      "MANIKANDAPURAM BUS STAND",
+      "AMBATTUR OT",
+      "AVADI CHECKPOST",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:20",
+      "06:30",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PADI EAST AVENUE",
+        "lat": 13.098,
+        "lng": 80.182,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PADI EAST AVENUE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANIKANDAPURAM BUS STAND",
+        "lat": 13.108,
+        "lng": 80.168,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANIKANDAPURAM BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR OT",
+        "lat": 13.1189,
+        "lng": 80.1506,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR OT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AVADI CHECKPOST",
+        "lat": 13.115,
+        "lng": 80.105,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AVADI CHECKPOST, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "oe}nAqpkhN}AFZbCDX@LBLnA~HB^Bb@BxAA^An@AxBO|BQdBEf@?BOrDAHAREf@O|@_@jBYfAUn@IRg@nA}ArFGVg@`CObAIhB?P[~ECp@KhBEfAALOA@[HiBByAN{BHuB?EeCCaCGYAy@ImAUaAe@u@q@IEiAi@iAOqBOa@?oBLw@@}BGMvC[tIkDQeBIeCMQjDAPQdDiCDg@ReAF?WA_@Ky@AEIMKcCCq@?K?O@a@@k@N{DLsCLqCBs@^cLsJe@{@I}Je@{DO{AEoBEo@?g@De@Hi@Pa@Vc@^]d@Wf@Md@Kd@I`AGh@SzAGf@CZKl@OpBWtBSr@K`@ABI\\]p@u@v@EFo@h@QFQ@wB@qAPOFg@Li@JSF_@Lc@NaBn@c@N]Lw@\\aAd@OHKNGRCVCh@b@rDDXDPA`@AV?nACHEjAK^]b@ETGV@bC?TI^a@jBG^AbACt@OzBIrAM|AA`ACj@EbA^ABpBBTDFvCrBfCv@fA^tAd@RDbBLZDPFv@\\jAh@a@dDUhCKhAGj@[`D?FEb@W|CYjCUdC?B_@zDARYpCADMxA^MZC\\@h@DJ@FOX}@??Y|@GNnANVB|@LN@j@HF@LBF@EJICSCi@KcBS}AOe@EU?c@Ba@Nc@\\a@`@g@r@c@^g@\\qAl@_@VONA@qBrDQZQ\\Yn@IPc@|@k@fAq@nAw@xAmA~BsAjCq@jAe@x@CFS\\MRaCtEgAhBa@b@[TKH]Vk@`@_An@sBvAcC`Be@ZuCrBuA~@cA~@u@z@QZAHGPG\\UvAEf@Gr@MzAQjCOnB?HAPAZ?j@?xAAjAAj@AjA?B?P?LC~B?V?~B?z@?nAEh@Eb@EVKt@If@WbBUnA[tBGb@Cf@@d@@d@DVBRDRZx@b@x@bBbCbC`Dt@~@LRf@n@dCrCHJ`BrBl@v@|@lApDlEf@t@L^^nBD\\T~@DRXfBNt@ThAv@rCRr@Tl@dAxDh@lBb@vAbAbEf@lBh@rBPp@Pp@RdAJj@Fj@F`ADx@FvA?LBd@@TFT`AnBfBvC@?LR|AzBpBfB\\Zl@j@h@f@HLHJFRDNLh@Pv@XhALj@DPR|@N|@Jp@HrAFrAHtBDnA@n@?V?DA\\EnAANC~@C`@AT?l@?DBbAH~ANbDD~A?BDlD@fA?v@BtAB`A?TFvC?~@@d@?R@v@Bp@`A@N?L@LFH?J?j@@xA?TAPEHCNIFCDIVQLMHWDOFe@JmABMFmA@YH{ABm@B[Bg@HmA@MHiAF}@VaCPwAR{BDe@VmDb@kFNeARqBJQFi@b@cEDe@BSj@Ff@@z@Bf@@X@Cl@Y?GD",
+    "roadPointsCount": 451
+  },
+  {
+    "routeId": "route_34",
+    "routeNumber": "34",
+    "routeName": "THIRUVALLUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVALLUR BUS STAND",
+      "PUTTLUR",
+      "SEVAPATET",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:20",
+      "06:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVALLUR BUS STAND",
+        "lat": 13.143,
+        "lng": 79.91,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVALLUR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUTTLUR",
+        "lat": 13.135,
+        "lng": 79.94,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUTTLUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SEVAPATET",
+        "lat": 13.125,
+        "lng": 79.97,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEVAPATET, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "i_foAqlvfN?_@@m@?U?}CDk@FWJYnAoARUr@]~CKJAJO@QBSa@oFDuBAsBAqCXaFL}AHiADg@Bg@@k@@g@Co@E{@A_@@[Da@Jg@Ha@RgANk@Pe@Vq@pBeDdDcFp@uAZu@cBM@sA?yC?eAJyANQEGAIG{EDsBa@ECGE_IAoBGq@s@EqDHWMKEaDuBGI]]_@Uj@q@|CoCd@YnBaAhASXMpB}@jCcA|Au@rC_AxCaAjG{Cp@o@nAcB|AcDL]Hc@XiCDqDBeA?gFAQGqAQsAm@{CmA_EsAuFQqAIeBPqD|@sJp@aGTaCV_CR_CP_COwDc@cB_@sAyFiK_@q@sEkIw@yBc@kB]gHgAsVa@_KG_J^_FD_@Nu@`BiGbAqBdByCn@y@`AaAzAuAhCmBpK_J|E}D~AwApAaAhBgBb@a@f@}@BiA|@kDFo@fAF`@NBt@?b@D`B?T?L@b@BfAE|EAT?L?lACv@?FEp@Ep@CXC\\Gx@KlAE`@IrAE|@CjA?FE~ClAA`@@F?dADrAFGbCpADnADpAFnADnADnADEvACz@??",
+    "roadPointsCount": 175
+  },
+  {
+    "routeId": "route_35",
+    "routeNumber": "35",
+    "routeName": "AYANAVARAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYANAVARAM",
+      "ESI HOSPITAL",
+      "MEDAVAKKAM TANK ROAD",
+      "SECRETARIAT COLONY",
+      "KELLYS",
+      "MUMMY DADY BUS STAND",
+      "KILPAUK GARDEN",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:18",
+      "06:20",
+      "06:23",
+      "06:25",
+      "06:28",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYANAVARAM",
+        "lat": 13.098,
+        "lng": 80.233,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYANAVARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ESI HOSPITAL",
+        "lat": 13.095,
+        "lng": 80.236,
+        "scheduledTime": "06:18",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ESI HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM TANK ROAD",
+        "lat": 13.092,
+        "lng": 80.242,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM TANK ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SECRETARIAT COLONY",
+        "lat": 13.088,
+        "lng": 80.245,
+        "scheduledTime": "06:23",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SECRETARIAT COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KELLYS",
+        "lat": 13.082,
+        "lng": 80.248,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KELLYS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MUMMY DADY BUS STAND",
+        "lat": 13.08,
+        "lng": 80.242,
+        "scheduledTime": "06:28",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUMMY DADY BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KILPAUK GARDEN",
+        "lat": 13.082,
+        "lng": 80.235,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KILPAUK GARDEN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "oe}nAeouhNvDZLkABg@\\yCJ{@Dw@EYj@?HGNe@NgBN{ApEh@D?BA@A@E@KHiAbAFD@`D\\dE`@?{@FyABq@?AZwIHmCR_H?MN?bA?B{BMSEKAKBi@P_E|AJTBlAFr@FtALNDbBB@j@?rC?XB~@Pp@~@k@fCeBzB{AXeA^qC^aAj@s@HGAEJiADm@Di@kCUk@GvD\\Eh@El@KhA@D|@k@j@c@r@e@rAcAx@q@ZSVIPAH@x@YlAc@pB}@RSjBiBNKPCdBPdAF|Dd@@cA?MDeABeA?c@{AOwAMKvBI`C|Dd@IpAIzAGh@YzAQxAY`CfAHB?XBdDV|AHHtBDpA?|Ar@@p@??hFs@?s@?CjAHzBD~ABTFt@JR^dAjAzB@xAARw@AE?EBk@Zc@ZDx@FtAEXSv@q@`A]`@[T@FeAz@GJQAw@EYAC??@??",
+    "roadPointsCount": 150
+  },
+  {
+    "routeId": "route_36",
+    "routeNumber": "36",
+    "routeName": "DAGAC (AMBEDKAR COLLEGE)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DAGAC (AMBEDKAR COLLEGE)",
+      "SHARMA NAGAR",
+      "ERUKKANCHERY",
+      "KANGACHATHIRAM",
+      "KALPANA",
+      "PORUR TOLL PLAZA",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DAGAC (AMBEDKAR COLLEGE)",
+        "lat": 13.118,
+        "lng": 80.26,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DAGAC (AMBEDKAR COLLEGE), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SHARMA NAGAR",
+        "lat": 13.122,
+        "lng": 80.265,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SHARMA NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ERUKKANCHERY",
+        "lat": 13.13,
+        "lng": 80.26,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ERUKKANCHERY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANGACHATHIRAM",
+        "lat": 13.138,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANGACHATHIRAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALPANA",
+        "lat": 13.13,
+        "lng": 80.23,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALPANA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PORUR TOLL PLAZA",
+        "lat": 13.032,
+        "lng": 80.145,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PORUR TOLL PLAZA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "scaoAexzhNSrBQ@I?uHJAoBDgH@i@?uC?sAF}ED{CCqAoBDeBCaDCm@?m@AM{BkBAG|A?bBCnG?rBAxE@dF?R?T?jB?nBkBHw@Bs@Ew@@_A?}@@Q?U@_A@w@Dy@DaAD}@B]@G?uABkABq@BO?k@BaA@eBDC?a@Bk@?W@mA??oAIcCAWnA@HhFmA?kABqBFSAoADmDFW?q@B[?iADiADuA?q@@_@DkABkAB{@?I?i@@eA?QC]zBc@pCQ|ACNAf@E~@AtABr@OEOAE?@HDh@yCg@GAE@G@CDYd@E@C?G?E?EA{A]o@OgCi@JyBh@DrB\\RDJ@nCb@jAXl@XPDJFDDD?N@NDDNJPT^b@ZrC|BnAv@hAz@hA\\f@PhCHbAD`@BZDVBTDb@NPHPLXZPLFHz@dAJL`@x@rB~DdBbDN\\N^N`@FRDNRAfAOFAJBdAFf@Ed@Ch@@h@HfATp@NpBh@`B`@PDjBd@n@LJD^PLAjATvAZZFPBpAX\\HFHZTHFKPMNaAlAkAnAy@`AWXSRIHu@x@MLgAvAWZ]d@w@hAg@l@e@n@[d@_AtAGLMRk@x@]d@u@hAe@p@eA`BU\\y@nAi@~@aBjCcBjC}BnDMPGH{@vAORm@~@cDjFGHuHrLoAjBMRKLwG~JoDnFa@n@S\\zC\\pAJLBN@n@QD?r@KG`AUtBAR?D@D@DBBh@Pl@@`@Bl@Ah@?R?n@?t@Ad@AfAELAd@AFA\\AbAElACHAt@C@?F?jBKf@A^?F?HAAoAAi@|@AF?L?T@l@?A\\@DMDgC?@nAI@G?_@?g@@kBJG?A?u@BI@mABcAD]@G@e@@M@gADe@@u@@o@?S?i@?m@@a@Cm@AA`@OtCDx@?n@@j@CFAH}AAsAGoACu@BwAJoALaANK@qGg@a@p@Y`@k@z@w@jAi@x@s@dAo@~@KNo@`AW^SZuAvBIJS\\_AtA_B~Bg@x@g@x@g@v@W`@mAfB{@vAGLIPI`@Eh@F`@E`@O\\WV]La@B{@`@m@n@g@p@s@`Ak@|@s@bA_BdC{@rAo@`A_@l@gCxD}BlD_ChDeBxByAtBU~@_BtB{A|BW\\?h@@HA\\Jb@Rf@PX\\XXHn@TrAb@jAd@t@`@`At@TRb@f@h@r@n@`AXr@Rd@n@~B\\tAEf@dCnJNt@l@vBfA~DlDxMtAfDzBtCfDpDxC|C|BzCx@vAp@rAXl@Tf@Xj@jA|Dz@|DhAnGHf@VtAz@jDpKzXfChGz@xBx@~BVtAJj@@HVzA?^AVIt@Sh@I`@a@dFu@bKQbCE`@AfBHnATjAVjA`@hAhApBjCzBdIxEfIbFz@h@tEzB`LrEhLpEd^dNv@X`LvDhGlBfBb@nBPjFNbCDpFVvGZrDNlIb@~Px@tBRvSpDn@Lt@Jf@F`K\\hQ`@p[r@b`@|@`EQzE_@fCIvB@pBDbRd@dBDrGPxJLrJDjp@\\fQEdGAjDC`GCrBFhAD`GbAh@XpAd@dBfArBfBpBvCzLxRvB~Dd@fAlEfLv@bBdA`Bv@x@lA~@dBv@jBf@bBR`EPdNXrABfD@?QAw@lA@@eBpAElAE`ACr@ClDAj@CJ?RAHA`@AF?nAE|AKzAC|AEbBGnAIlBMZCBKNKx@VjAX^Cv@E~AIh@??JFnH?~A?pB@bIC~@Z@vA\\rA\\TJDB`@Z^^h@t@BBl@j@f@\\r@ZpAl@NJL}@DoB@i@fDP",
+    "roadPointsCount": 559
+  },
+  {
+    "routeId": "route_37",
+    "routeNumber": "37",
+    "routeName": "SRIPERUMBUDUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SRIPERUMBUDUR",
+      "IRUNGATTUKOTTAI",
+      "PAPPANCHATHIRAM",
+      "CHEMBARAMBAKKAM",
+      "NAZARATHPETTAI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SRIPERUMBUDUR",
+        "lat": 12.97,
+        "lng": 79.945,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SRIPERUMBUDUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "IRUNGATTUKOTTAI",
+        "lat": 12.985,
+        "lng": 79.995,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IRUNGATTUKOTTAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PAPPANCHATHIRAM",
+        "lat": 13.01,
+        "lng": 80.035,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PAPPANCHATHIRAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHEMBARAMBAKKAM",
+        "lat": 13.02,
+        "lng": 80.065,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHEMBARAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NAZARATHPETTAI",
+        "lat": 13.035,
+        "lng": 80.085,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NAZARATHPETTAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "mednAug}fNb@Dr@Hx@D?SD}A?kC@o@?{@@mA@}BAeCEy@MyCMcBE{D_@AuDaAMCaA_@_Am@g@g@gAuASYCE[_@m@y@W_@kAwAU]_DcEi@u@e@s@AC{@oAS]MUy@qAg@y@Yo@GSCME]BU?CFWs@k@y@y@MSq@eAw@qA_EiHeBwCuAqBmCmD{BaDy@_Bo@cBeA}EQu@a@aB}@uCi@yAs@aBkB}EuA}DUs@_HmTWq@Qe@Yq@i@uAoAgCUg@uAgCKSg@y@kAiBmG{JcCyDsH_LoF_IkAeBS[yBcDwA}BoCiEi@w@k@u@k@m@i@g@eA}@g@_@m@_@QK_Ag@c@Se@Sa@MqAc@_GgBoC}@yAe@oAc@ICAA]MOGBIBQNF`@PJBpAd@pA`@fDbAjF`BvAd@\\JhAf@lAn@HFBSPeAJ}Ad@qB@EZwDrAA~@KNINMLGfAG@ExDeDTSJKzAaBpA_A`Ba@VKf@Qf@QdAe@xEwBbBw@HCHAHATAd@CdESvEUrAIlEY\\AdFSnAIl@ETIvAk@nBcAXQp@a@dBgARSHSRmADUsCk@ECEECE?EAKEiAAIAGEGEAGCQ?oGO_GGEqFHw@J}@Fw@?{@?_@Gs@UcAYw@qA_B_B{Ae@]WScAm@y@a@k@OcCk@kBi@}@g@mEwBzC_MlA{FBSp@sBl@}A~@_BzG}ISSGEGEKEKEwA[eCg@s@OiIiBME}IkBkOiD}FoA_YaGQG}Cq@ICKCQGK@KAKAICIGIGEIEKAKAK@KBKKkCEgH_@}h@yKBeIF?Mk@cq@??j@bq@dIGvJI`@?TA?R@v@F|IBrEBbD@dCDnCBzG@dFDhAJXLV^f@JBJBHFFFFHBJBJ?JAJAJEJGFIHIDKBK@KAOXMZETBxHQ@_GFeIJI@wHBiNkB{HCqC?UAa@|BsDLcBVc@h@Bl@OdA_BzGa@rDS~A_@hCYtBmAn@kARyDj@eCVeBv@[LILQVK`@Ad@OjAY~BEVCXCh@A\\AR?tA?VCh@AHAHAFEDCBEBOJWLEKWk@m@}A[cA]eA?AGQKWu@iCGW_@kA}DaL_@aAYq@i@sAQ_@M[OWQa@u@{AqAaCuA}BcFqI}@{AmBeDm@eAw@gBEMEIGWSaAQeAMcBY{HSoB_@{B[mA]eAa@eA[q@oCuFGKcJyPaDaG_G_LKSoD_Hy@{AqAmCuC{FcBgD_@y@oAeCyA}CqBaEqBeEwBiEeBgD[m@{@eBcCaG_@eAoAeEYkAgBaJq@gDg@wCs@wE[iB]kBMi@wAeGuBkIwAcFmAyDaAaD{@iCGSEKVIDLdAxCbAbDjAxDhA|DJ`@zBrI`AjERG|@u@Va@`@k@h@iAJQhByDJMRM\\ElBQ`@MVSZm@DY|@kIHWFKPETCT?V?XAZ?DADC@GBcAB]BOBYNcBb@DFBjAJ\\D`@B\\@tALrDTr@@t@Bx@BbAm@j@Md@G^Aj@@n@Jn@w@v@gAf@YbAe@nBw@d@O~@Yr@UL?pA@lAB??mACqAAM?s@T_AXe@NoBv@cAd@g@Xw@fAo@v@o@Kk@A_@@e@Fk@LcAl@y@Cu@Cs@AsDUuAM]Aa@C]EkAKGCc@EsDk@aDo@SMEM?MDq@CQEK_@i@k@]YUa@M]Gu@MeBKQAe@Am@IYAGAK?c@Ae@As@?Q@G@IDa@XKHUHI@K?g@GwB]IAmDs@WAfCpIDLWFEKI]_EmNkAsDy@qBiDyH{AyD{AuEQu@Qu@Qw@S}@[sAu@mD{AuHYwAKe@i@qCo@qCCSEUSuAEW[}AG_@Gi@Ii@GmAA]Es@GcAAGCYOcASo@Qg@i@yA_@eAKc@Kk@C_@Em@Ca@?UAk@EsECsDA]?a@EgDAk@G}@I}@EYKq@Ia@EWYiBWyACQI[Ic@]iB]iAg@kB[iAy@}BSu@[eBUiBCQO_DOeCMy@Mm@]aAU]WYIKw@o@e@W_@SaAe@s@[qB{@SGNYhA`@`Br@ZNVNJDJDZRLFRLNHf@ZNHVPHHNLd@j@P`@HZDb@F\\NPNXFRHRBV@TB\\DTHNJLLHPHzBd@v@T`@Xl@j@v@l@XNb@NTH^Ff@APE^Kf@Mt@UrBk@v@SFClBc@jAU^IjCg@nAWjASZEb@IREvAUlB]dGoAr@O^KvD}@RE\\ITI|@c@VMVKd@U`@OLDPFTJDDJDJFLDHBJDRFLBHBj@Jr@LlEdAb@ZHfBE`AAv@A|ABJo@DMBGFGL_@vC}AU",
+    "roadPointsCount": 741
+  },
+  {
+    "routeId": "route_39",
+    "routeNumber": "39",
+    "routeName": "KANCHIPURAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KANCHIPURAM",
+      "WALAJABAD",
+      "ORAGADAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:30",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KANCHIPURAM",
+        "lat": 12.834,
+        "lng": 79.703,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANCHIPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WALAJABAD",
+        "lat": 12.795,
+        "lng": 79.82,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WALAJABAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ORAGADAM",
+        "lat": 12.835,
+        "lng": 79.955,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ORAGADAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "epimAk~meNJsB@KN@hDTzBC|AED?RAd@AvEY\\??UNaCDq@Fq@FsARkAf@wBFYz@{ANKxG_DbCkA`EoBf@EXWz@aADGbAwAb@i@jAuAHMX]fAiAl@eAJ_@`@cAr@kBd@aAhAiCp@oAZgAh@aCn@wB^uAr@mCPy@f@cBLa@n@uBrFcPViAcAM]CcBGQCMGGU@mADuH?e@@w@@aBJcJ@}F@w@@eAAwC?uBHOdABhDJX?PODOPiCL_ARaA\\cB\\_Bj@eDHe@d@oCFg@Hs@BWReB?CRoBNw@d@_C@GXiB@MJw@Di@J{@JaA@KBUHw@@O@KBQ@KLmB?I?W?K?sA?cB?Q?K?w@?Q?a@?O?yA?M?E@k@?I?e@FsB@M@e@Cs@EaAFs@Fg@BYf@mE\\{B`@gBBIJ[j@iBBIDQ|@uBVm@Te@^s@t@yADIJQz@qAFGzEaFv@aAHKnAoBDGBExAkCnB_D|BkDbAyAPMj@ONEd@Qz@s@b@k@JMb@q@Rg@N[`@}BRs@?Ed@eC`BeE|DoI~@wAN]NY@EZo@Xw@Zy@DKZ_Ap@iBTq@FOl@cBRqABQXeBBI@MRgAD]@GLgA?EDUBYFa@ZgDXuB@Ob@aDLeALaB?cBBoED]VmBTgB@I@GXiB?iBAyAHcBLyAx@uENuA@e@FeBJ}@Ps@Vg@h@c@fB{AhCmCv@w@~@aAv@y@PQDEZ[h@k@n@o@`@q@@CX_AHa@Je@DYFY|@{Ft@mChAaDRg@hAaFb@qCDi@JqA?KEy@Kk@c@sAGm@BqDNuDD_@\\uDPgB@KJcA@GXqCNwANaBHgANiBB_BK_CAmBNuAb@mBBORuABQ@GCOHg@N_AJo@Fw@Ds@?{@AQGo@Om@Og@EKNId@SBAZ]LQNKP{BX{DB{AGe@_AgEa@cBCIAq@Da@BOPaA\\gA\\y@h@iAPYd@oAV{@Nq@j@qE@CLk@H]j@_BTu@d@gAn@mBt@_BP_@Ti@FKNc@DQl@yCDW\\sAXy@J]N]P]DIDIv@sALU@ELSvAcEf@kANu@JwA@MCYDk@?CQCOEUGMOCAECOEgA]yAa@qA_@g@?fA_EBM{@WeA[cBe@Z}AcB_@??bB^[|AYIaBvFkAe@oAa@WGOI]KYKu@[IC]Ok@UOGUKcA_@[OuAi@}@[UI[KaBm@[KMEg@@k@MKC]MEA_@IaA[iA[i@My@We@Sa@[SSWa@a@{@Uy@Iu@AcAEi@Gi@W}@Yo@U]qB{CEG{@mA[_@q@k@iBwAsEiDg@_@e@a@OK{@s@c@[q@k@eCqBgDkCyCeCmBeBiAeBq@_Bi@uAyAsDwAkEGQm@oHEo@CO_AwLOqBAOq@yIMqAg@iGC]mCs[c@aGAIGy@y@{KIkAAG_@iFw@oEI[cBaHqEuQuDiOe@qBAGQs@e@{BMs@m@qIEu@SgEIsAi@iJa@mC]cAa@aAyBmD}B}CeB{Ai@W}@[gAe@gDcBcB_Am@Yc@UyBeAgAc@g@Uo@k@i@w@c@u@]gAKq@MeACcABu@BkA?e@Ac@ES{@e@MEqA_@wA[g@Q_@MaAk@yAaAaAw@mBsAUQSMc@[UOWSSOeBiAwAgAmAcAy@s@c@g@k@{@Ww@WcAo@eCoAiFcAiEMg@Ke@w@gBe@o@OS[[oCeC]_@Yg@c@q@g@mAw@kCYcBi@uHAKIwAOyAMk@UaAUo@{AmCeAoAs@e@k@]q@_@wFcCo@_@k@g@g@m@kA{AiE_HS]iCsD}@qA_@kAOy@QcBIeCOgEG{DEmEA}FFgILqN?gB@[?{@Bw@DqBH}@Jw@NcAz@{DzAqHbB_IlAsFjAgF`@uBJ_A@k@Im@{@qDkAoFa@iBmAqFWqAc@sBu@sDQy@u@{Cy@yDIa@_AyDi@oCq@aDc@iBs@sC_AwDmBsICKWkAQs@q@wBUs@K]{@cCoA_Ck@u@}@kA}DaFW[{HsJqBgCc@i@{AeBOQ_@g@OPk@u@_AqAm@s@s@y@y@_Ai@q@u@kAi@D}BTyJ|@AQbFi@|@IlE_@f@GBA`AIt@GvAMz@KH?l@GbCU`BQpBS~De@xFa@`AK|Fc@dFq@bB]f@Mh@OfAg@fAq@hBqA|@s@lFcEnB{AnAaAd@]lDiCNM|KmIpDoCZYbA}@z@_AjF_HMOESK?SY{@aAgAeB{@l@[c@@{@}BaDUOMD]V",
+    "roadPointsCount": 688
+  },
+  {
+    "routeId": "route_40",
+    "routeNumber": "40",
+    "routeName": "NATRAJA THEATERE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NATRAJA THEATERE",
+      "CHENNAI CORPORATION (RIPON BUILDING)",
+      "PANTHEON ROAD ( EGMORE RAMADA HOTEL )",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NATRAJA THEATERE",
+        "lat": 13.088,
+        "lng": 80.275,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NATRAJA THEATERE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHENNAI CORPORATION (RIPON BUILDING)",
+        "lat": 13.083,
+        "lng": 80.278,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHENNAI CORPORATION (RIPON BUILDING), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PANTHEON ROAD ( EGMORE RAMADA HOTEL )",
+        "lat": 13.074,
+        "lng": 80.261,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PANTHEON ROAD ( EGMORE RAMADA HOTEL ), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "kg{nAcy}hNq@DqDVM@eCPoCLwCB@MlEMxAKxAGl@Cj@CfBMd@Ev@ExAMHAtAG`BIbBIjBK|AK~Ge@b@E`COLAb@E~AIVCBCHWa@mGAMAO]CqCMG?gAECSg@yBIYd@CVCRFz@Zb@NvBt@NLL`@Bj@@JHzA^bFLz@DTDt@Bb@@`ABR?r@L|C?BXvBBXX|BTjCBXLr@Jp@DTBPBFBFDLDJBH@H@JBN?N@T?R@\\PrLAjEE|H@P@PNCbH[t@GNADAPA??J?ZC|AKf@Cl@CZ?ZAT@N@PBJ@TB`@FL@H@H@H@@ABABAD?D?DBDBBF@FADAFC@TPDJ@@DL?@FPHR@BFLTj@Vj@@BBDt@jAFJ|CpEdAtAFFBDJL~ArBJLHHLHTJXLB?B@D@B@BD@D?B?BADEDEBE?E?ECCECEMIEEEEKIIIOQ_A?A?",
+    "roadPointsCount": 175
+  },
+  {
+    "routeId": "route_41",
+    "routeNumber": "41",
+    "routeName": "NATHAMUNI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NATHAMUNI",
+      "K4 POLICE STATION",
+      "18TH MAIN ROAD",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NATHAMUNI",
+        "lat": 13.103,
+        "lng": 80.207,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NATHAMUNI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "K4 POLICE STATION",
+        "lat": 13.09,
+        "lng": 80.215,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "K4 POLICE STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "18TH MAIN ROAD",
+        "lat": 13.085,
+        "lng": 80.218,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "18TH MAIN ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "yd~nAqlphN~BZv@Lr@Pb@wAhCkHvBoG|ImWHSNa@pBiGf@{AzAcFpBgITiAFYTFbBh@D@|FrAPDzANN?J?rHTH?DABAD?B@BB@B@D?BCBABA@?dCClBAjAKFA`DzBDfBBzCDdCDCxB?DA~@eCE@{@sBEqCE{BEDaC@aD?MAsABcA@_@?{B?EA?CCACAC?E@C@CDABAD?B@BBjJLjKFxFJtBDbBBvEF",
+    "roadPointsCount": 80
+  },
+  {
+    "routeId": "route_42",
+    "routeNumber": "42",
+    "routeName": "CHENGALPATTU",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VALLAM",
+      "CHENGALPATTU (GOVT. HOSPITAL)",
+      "PARANUR TOLLGATE",
+      "SP KOIL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VALLAM",
+        "lat": 12.715,
+        "lng": 79.98,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALLAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHENGALPATTU (GOVT. HOSPITAL)",
+        "lat": 12.684,
+        "lng": 79.982,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHENGALPATTU (GOVT. HOSPITAL), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PARANUR TOLLGATE",
+        "lat": 12.73,
+        "lng": 80.005,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARANUR TOLLGATE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SP KOIL",
+        "lat": 12.748,
+        "lng": 80.015,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SP KOIL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "wkrlAsadgND?DABE?C?MCOAE@EBMsB_@gF}@yMg@Q?@WlBFnBFtDJvADPD|Ev@zCh@\\HjCd@jCh@vAb@h@Tf@Tp@f@j@`@nA`AJFZRZP|Av@t@^dChARQ\\GL@\\BD?TB|CT|@JjALjH`ANFlIfA|@JbANtEn@lL|AjALb@D`@DlCFf@@h@Gj@SrAi@b@ShA_@x@_@dAo@l@e@tBcBr@k@`EqBhAu@t@o@\\k@~@y@h@SbA?b@O`EgCrAeAZSNQzDoDzByBNIVGfCg@fB{@b@ItBQZA`AKPAnA_@`Ai@HCNCT?hD@fCH^H^JTFb@NnC`AYvAAL{AGc@EA?k@Gg@KuA[UCaAA@WJcCiDAU?OBIBaAh@oA^Q@aAJ[@uBPc@HgBz@gCf@WFOH{BxB{DnDOP[RsAdAaEfCc@NcA?i@R_Ax@]j@u@n@iAt@aEpBs@j@uBbBm@d@eAn@y@^iA^c@RsAh@k@Ri@Fg@AmCGa@Ec@EkAMmL}AuEo@cAO}@KmIgAQ@IAaH}@iCU{CY]C_@?WDCBKJIRSKuDmBaBw@u@[w@i@_Aw@aAs@i@Yi@WwA_@yGkAeAQsB_@gF}@yMg@Q?iEU_Jm@oMiBuG}@mCc@cC]mBM_BImV{@uBSw@UkAe@kAw@_Ay@gAyAe@u@iDcFuAoBg@g@w@u@y@q@mAy@]UwA_AgBkAqBkAyEgDsCwBmA}@uCuBcI}F\\I`@IPMHEjASTEHIJK`BiCLUbCkItE{N~CqJ`AwC@Iz@}DJc@BOt@sCj@wDTDr@TLBtD`AdAVfCh@`ARtGjCrEeE|AkA~B{BxAsAlDiFrE{Gr@oAjGyJfBmCh@w@LUEYe@_@o@]yC{Ay@i@Ma@?_ABeDNyG?oBAaCKyC?S@GDMKe@KUyA_AgAkAy@sAGq@@eCAmAAu@IwBm@cDYuAWk@IMc@e@EGCA}AcBMSKWGMo@mBWg@OUIIKCSCiB@OB[CyCq@mH_BeFiAgLgC{A]_Ci@kAWG?Q?SDMP}AvEYLWFgB@iA@m@vAoBpEu@tAqArBk@x@o@p@g@Xe@Tk@VyDbBGBcDvAa@TUPa@`@KJSH[@Ad@k@jQ?LBD",
+    "roadPointsCount": 344
+  },
+  {
+    "routeId": "route_43",
+    "routeNumber": "43",
+    "routeName": "RAMAPURAM JUNCTION",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAMAPURAM JUNCTION",
+      "DLF",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAMAPURAM JUNCTION",
+        "lat": 13.032,
+        "lng": 80.178,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAMAPURAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DLF",
+        "lat": 13.028,
+        "lng": 80.172,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DLF, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "chpnAgwjhNg@~CADe@dAw@|A{@hAWh@KR[jAMdA[~CdBLd@DbAFGl@rATz@N|@PrATd@H`@HtAVdGfA[~AUnAWnAtA\\l@NjA\\pAuC",
+    "roadPointsCount": 30
+  },
+  {
+    "routeId": "route_46",
+    "routeNumber": "46",
+    "routeName": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+      "VIRUGAMBAKKAM SIGNAL",
+      "GERUGAMBAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+        "lat": 13.065,
+        "lng": 80.198,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIRUGAMBAKKAM SIGNAL",
+        "lat": 13.0537,
+        "lng": 80.2012,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VIRUGAMBAKKAM SIGNAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GERUGAMBAKKAM",
+        "lat": 13.0038,
+        "lng": 80.1384,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GERUGAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "}vvnAeunhNA?yAk@_CaAYUROPH^NZL~@^`Br@fChATJhAd@x@\\VLhAf@DBj@TjAh@dCbAdAh@pAn@DBf@VDDB?xAh@t@\\BEj@sAd@oAd@qAnAPlAb@jAf@Tq@Pi@HQAS?E@K?GF@L?H@J?T?J@JARETBTDn@@tA?b@?lCAtBD|@BbA?^uGNmBH{CUALqG|@Bt@@UzGlBTXD`AJ`@F`ALVDrAFB@`BFlBDf@@jDD^?j@@H?tABlEJ?k@?QVD?JAlA?d@?xAA|@CjF?H?fDBtB@N@JDLHPL\\hArBJTL`A@ZFz@Bh@F|@@p@?jAFjBDxADdA?f@?TAj@FfBAZFbAPpAZlAPl@@J^pAH\\Lh@@DJb@LVXh@JLJN`B~BR`@LXd@lAd@lAfC~GLb@DLRn@Tt@d@pA@B@DT`@\\\\TTVPPf@DJT~@Rz@TbARfA?BDVL`AHv@FlA@X?h@?ZCx@?l@C`D?b@@V@RBLLbAJp@H^XtALn@Lt@h@dDJn@ThAb@zBBNT~@Pj@Xx@\\~@Xp@t@|AHRd@`Al@rAXv@j@fAl@vA@BFVJn@Lt@Jx@Lf@Fh@@ZB\\Jt@@NT`BB^Fx@H~@J`B@n@Dz@?xA@\\?R@z@HtAB^Jl@PjABJ^dDVnDBTDl@D~@PjBJl@Jr@VdADNFRN\\FP?@pA~C^r@NXT\\ZV\\TfAl@p@^x@h@fAz@^XZRl@b@LLl@\\TNZTx@l@x@p@h@d@TTBBrApAXT^VPHZJZPrEhCZLv@\\x@f@fBjATLfAr@f@ZTPp@`@XPjGfEd@Z`CdBRRh@f@|@~@r@p@jArAfAnAr@v@LLJH`@b@DBt@p@h@f@VVXXd@b@\\^b@f@~@z@r@r@hChC`A`AxDbEBBPP@Bj@j@NNpBrBFD~CzC^`@`@b@LNPXVd@?@Th@~@dCd@~@Z~@nBfFPh@BDTn@z@pBh@zAJRxAb@jBbANHb@Lh@HDAf@?LCl@Kx@Cp@AnCPF@d@Np@JfAPf@DF@x@N`A\\XLTHZFZBB?h@BxCEbAAH?|@At@AN?nAAr@AjA?lAE`BBHAL?NCLCHCFCDCDEFGNOPQPMFEFCHELCRCRAXAP?T@P?fCP@kC?gB?K@iA?uA?cA?O",
+    "roadPointsCount": 392
+  },
+  {
+    "routeId": "route_47",
+    "routeNumber": "47",
+    "routeName": "IYYAPANTHANGAL BUS STAND",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "IYYAPANTHANGAL BUS STAND",
+      "IYYAPANTHANGAL HYUNDAI SHOWROOM",
+      "KATTUPAKKAM",
+      "KUMMANACHAVADI (DMART)",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "IYYAPANTHANGAL BUS STAND",
+        "lat": 13.041,
+        "lng": 80.138,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IYYAPANTHANGAL BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "IYYAPANTHANGAL HYUNDAI SHOWROOM",
+        "lat": 13.042,
+        "lng": 80.132,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IYYAPANTHANGAL HYUNDAI SHOWROOM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KATTUPAKKAM",
+        "lat": 13.044,
+        "lng": 80.125,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KATTUPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KUMMANACHAVADI (DMART)",
+        "lat": 13.048,
+        "lng": 80.112,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUMMANACHAVADI (DMART), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "_crnAo~bhNg@KcAQO?KlBc@xEyAQs@EcADs@FuAnBi@t@sAbCkAbBGREb@|@HOrAThCPfFDb@?|@NBJBDFAP~Bd@PDf@LB@DB@@@D?DAL@D?@B@B@RDBD?@?B?N?DBB@@BB`@Hv@LXFDONcABMDKBGX_@BGTc@LQR[DI@G?CBO@G@I@G@EFKBGDIDI@E@C@C@EbAPLs@\\DHi@b@Fb@FKz@j@DKn@A@DNDAF@DBD?F@P@LDTFZFZLTHNEPCH?FUFW@Eh@sBtCoJ`@wAb@}Ad@HeAjDWx@IVCHEN[bACHEP]dAABQj@_@pA{@`Dw@tCGRy@~Cg@dBk@hBaB~FMTs@nCELiAfDwAfEm@fBY|@GRABYM}Bk@UEkAWmAa@XuA`@kB{@`ElA`@jAVTD|Bj@XLu@pBm@nBsDfMcBfFk@|Ba@|AM`@Ot@Ip@Gp@EVUj@Nh@Jb@H`@H`@Hf@B^Af@EVKX?DKn@Or@I`@Ml@m@fCS|@Sv@UnAMl@Sr@Od@Wh@Q\\GLUEE?cAKyBUq@GIAg@II?AN",
+    "roadPointsCount": 196
+  },
+  {
+    "routeId": "route_48",
+    "routeNumber": "48",
+    "routeName": "THIRUVERKADU ARCH",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVERKADU ARCH",
+      "NOLAMBUR",
+      "VELAMMAL HALL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVERKADU ARCH",
+        "lat": 13.065,
+        "lng": 80.135,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVERKADU ARCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NOLAMBUR",
+        "lat": 13.078,
+        "lng": 80.165,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NOLAMBUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELAMMAL HALL",
+        "lat": 13.082,
+        "lng": 80.17,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELAMMAL HALL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "guvnA{gbhNzCt@r@Vp@Vd@DLk@Ng@Zi@d@m@`@g@b@q@HEHAF?tAr@l@XnAf@x@TF@F?F?DAHA@?NEGOQg@Oa@Kc@Mc@Ic@Oq@Kw@Gg@Ek@E}@EsAI{D?SC}@MqHI{CG}BWcIEk@EsAE_AAOOyBAOAGYuEAMAYCW?CCg@E_AAk@ASA_AGsIAk@?u@?]@WBa@De@Jc@@EFS@EN_@Ti@^}@BEOGIEIKQGaD{@e@OYIGCGCu@OWGuAG_@?Y@o@@}@DS?}BBE@[FYHGBg@PK@G@SBk@@a@AMCIAe@Ie@G]AM?M?EDEFQp@ILMHe@GwGaBoDu@m@MmDs@gDm@u@Sa@Ia@KYOgAg@aA[UEqD[uBG}@E_@Ki@Q}A_BQWkDwCa@]EEUQMQKM]Ya@Sk@[qBeAA?a@U{@c@UMkAo@yBa@IAuAWxAgPgAWPuAJ{@@ODyA@SEW?eE?[EWYeAWoAi@{CLCpA[dAS`AQbASrAWVHDAHFFBH?Z?|BD`BF@????@GzBAB??A?aCG}@E]A]?UAMiA@_@H]WIsAVcARaAPeARqAZMB]eB]cBKg@YqAGSa@gBs@_EY{A[yA_A_FHC`B]",
+    "roadPointsCount": 216
+  },
+  {
+    "routeId": "route_49",
+    "routeNumber": "49",
+    "routeName": "AMBEDKAR NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AMBEDKAR NAGAR",
+      "RETTERI",
+      "VINAYAGAPURAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AMBEDKAR NAGAR",
+        "lat": 13.135,
+        "lng": 80.215,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBEDKAR NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RETTERI",
+        "lat": 13.125,
+        "lng": 80.208,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RETTERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VINAYAGAPURAM",
+        "lat": 13.132,
+        "lng": 80.202,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VINAYAGAPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "yldoAk~qhNR@|@?K_AYwACSASc@QmA]R]fCx@fAZr@XtAb@jCz@dI|B`Ab@v@\\v@b@hAz@n@|@hA|AR`@Zx@h@jAjAnCnE~J\\x@JNxA|Cf@jAdCbF`@bAZETCdAAp@A`@?x@IIeCmAuDMI_@HJn@Hj@t@hF?jBCvBq@@G@I?j@pAhBtEjAlCa@VMWm@uAaA{Ag@_AOa@GOg@eAQGgCAoACiACM?wA?wAAkA?Gb@a@Gu@GWEs@IOA_AKsAOe@Gi@GoAMI|@M|AIl@E`@KdAEj@CNDP}BUE@CBCfAGlASrAUvA",
+    "roadPointsCount": 96
+  },
+  {
+    "routeId": "route_50",
+    "routeNumber": "50",
+    "routeName": "GOVARDANAGIRI",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "GOVARDANAGIRI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOVARDANAGIRI",
+        "lat": 13.115,
+        "lng": 80.112,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOVARDANAGIRI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_51",
+    "routeNumber": "51",
+    "routeName": "CHINTHAMANI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "CHINTHAMANI",
+      "BLUE STAR",
+      "SHANTHI COLONY",
+      "ANNA ARCH",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "CHINTHAMANI",
+        "lat": 13.085,
+        "lng": 80.222,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHINTHAMANI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "BLUE STAR",
+        "lat": 13.084,
+        "lng": 80.218,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BLUE STAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SHANTHI COLONY",
+        "lat": 13.083,
+        "lng": 80.212,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SHANTHI COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANNA ARCH",
+        "lat": 13.0754,
+        "lng": 80.2176,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANNA ARCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "kuznAqjshNDmC]y@oA}BGKbBeAJGFJ~BpDPd@Bn@YdJArAG~EE`F?LBJFDBDBFL?@?rA@T?`C@fEJL?AXUpNKtNE`BIxG?d@CzB?NWA@MD{B_CCJ}FDgD~BFNwNVoN?YL?j@?d@@lCLNBnBBfBAxAClCBZ?jAE|BUn@IvAKv@EnABd@Dj@@h@?xBFTBAJALAFAHCZC\\KnAG~@KdBS?R_DGg@EMIUMOIU",
+    "roadPointsCount": 82
+  },
+  {
+    "routeId": "route_52",
+    "routeNumber": "52",
+    "routeName": "KK NAGAR DEPOT",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KK NAGAR DEPOT",
+      "SIVANPARK",
+      "VALASARAVAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KK NAGAR DEPOT",
+        "lat": 13.035,
+        "lng": 80.201,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KK NAGAR DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SIVANPARK",
+        "lat": 13.038,
+        "lng": 80.195,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SIVANPARK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VALASARAVAKKAM",
+        "lat": 13.0479,
+        "lng": 80.1751,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALASARAVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "e|pnAigohNFe@QAm@Cq@I{@GwAOUdDShCKjAGbAGt@CTEh@El@Eh@Gl@Ej@Gz@Gv@Gp@G`AI`AUKyBQS`CQhCi@tHiAKu@G{@KwBQQbCgBWaFe@MAy@GsDWi@CaCWUCy@G]Eq@AEb@MdBINILKDK@K?eABO@oABM@y@Ta@H{AH?jAFjBDxADdA?f@?TAj@FfBAZFbAPpAZlAPl@@J^pAH\\Lh@@DJb@LVXh@JLJN`B~BR`@LXd@lAd@lAfC~GLb@DLRn@Tt@d@pA@B@DT`@\\\\TTVPPf@DJT~@Rz@TbARfA?BDVL`AHv@FlA@X?h@?ZCx@?l@C`D?b@@V@RBLLbAJp@H^XtALn@Lt@OD]iBqCIi@E}@I]Ca@K[Me@UYSq@_@i@GgCQO?uAEMAA?gCIu@Aw@Yi@SSIcAYYIcAa@MrCWxEtAAAj@",
+    "roadPointsCount": 154
+  },
+  {
+    "routeId": "route_53",
+    "routeNumber": "53",
+    "routeName": "COLLECTOR NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "COLLECTOR NAGAR",
+      "JJ NAGAR POLICE STATION",
+      "7H BUS DEPOT",
+      "7M BUS DEPOT",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "COLLECTOR NAGAR",
+        "lat": 13.085,
+        "lng": 80.185,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "COLLECTOR NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "JJ NAGAR POLICE STATION",
+        "lat": 13.088,
+        "lng": 80.18,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "JJ NAGAR POLICE STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "7H BUS DEPOT",
+        "lat": 13.089,
+        "lng": 80.175,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "7H BUS DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "7M BUS DEPOT",
+        "lat": 13.091,
+        "lng": 80.172,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "7M BUS DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "itznAgclhNDb@Bb@NjCFhAHhALrC?LNvAHbADh@FbADb@Dj@HdAAB?@A@E@s@FE@ADADHdBeAHm@?u@@qABk@@[?u@?U?oA@{@BK?{A?D}IC|FA~Aa@?C|DAtCAlB?XGjBWdJ?NWAa@A_@Ag@KKAmBIoEIwBEK~DEbBIhDIxClAB",
+    "roadPointsCount": 60
+  },
+  {
+    "routeId": "route_54",
+    "routeNumber": "54",
+    "routeName": "VANAGARAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VANAGARAM",
+      "PARIVAKKAM SIGNAL",
+      "POONAMALLEE BYPASS",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VANAGARAM",
+        "lat": 13.058,
+        "lng": 80.145,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANAGARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PARIVAKKAM SIGNAL",
+        "lat": 13.052,
+        "lng": 80.118,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARIVAKKAM SIGNAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POONAMALLEE BYPASS",
+        "lat": 13.048,
+        "lng": 80.102,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POONAMALLEE BYPASS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "{iunA{hdhNt@?@g@?O?}@?EjB?JmBD}AnAFY|G[|Gq@CmCMUA_@CGA]KUMIE]ScBcAMEWAkAIOEe@SSOEAC?a@GiBUa@Ei@EWCQCOCGCGAEAK?EAE?K?G?I??BLjBJfBDvALvDHdCBv@FhBFjBDjBBxBBrA@p@@f@@`@JjEF~ADv@Dl@Fh@Jl@Hd@H^Rt@Pl@Vt@FR@@FTd@nAFR^bA|AnEFRxAnEdDvJVv@Xx@Vj@P\\LXPVLVRXBDRXFJRXxBrCzFtH\\f@R\\LZJ^H\\F\\PhA`@vCJt@Ff@B`@?`@?\\Cb@CXE`@ERCNGZM`@oAfFs@fDGTmArFi@bCPDGTER}@lE\\@\\BPDZHHuARExBKb@C`@ARGd@Uf@e@f@c@l@ObEwBlDcBDCF`Bq@@L?b@AGaBVOVK\\Ij@IzAKdBAI{Av@]dBo@@Ax@WhAa@x@UXInAs@oAu@BO|BnAPJPHz@n@d@Zp@f@FDj@f@XTVZN\\DJNX\\|@j@vAj@xA\\x@JP@BPRPTNh@Jb@H`@H`@Hf@B^Af@EVKX?DKn@Or@I`@Ml@m@fCS|@Sv@UnAMl@Sr@Od@Wh@Q\\GLSh@g@vAwAhEe@rAYt@u@bBKPiBpDiAlCW|@M^i@vBg@pB{@tCQx@GVId@Cd@G|BD|D?vCVOn@yAdBLjAJ",
+    "roadPointsCount": 234
+  },
+  {
+    "routeId": "route_55",
+    "routeNumber": "55",
+    "routeName": "AYAPAKKAM JUNCTION",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYAPAKKAM JUNCTION",
+      "DECLATHON",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYAPAKKAM JUNCTION",
+        "lat": 13.102,
+        "lng": 80.142,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYAPAKKAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DECLATHON",
+        "lat": 13.095,
+        "lng": 80.158,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DECLATHON, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "m_~nAsvchNHyAhAHB@@@?B?`@@@BB^DRmCtALpAFlAJlAJdDXnBL~BP^D@k@@QDaBDoA?GBUH}ABy@?EBeA@w@AI?cAA_AAi@Eu@ASKg@Ok@~BKhB@fCA|@FB_Bc@kCACSwAIqACUEa@@c@Dk@T{EFwANyG@QXoBViBB_AGkCNcBFs@La@Dk@@c@@[Cc@Ba@Rq@Am@Ey@Em@?KA_@Es@",
+    "roadPointsCount": 74
+  },
+  {
+    "routeId": "route_56",
+    "routeNumber": "56",
+    "routeName": "ICF",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ICF",
+      "PADI SARAVANA STORES",
+      "AMBATTUR INDUSTRIAL ESTATE",
+      "AMBATTUR TELEPHONE EXACHANGE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:50",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ICF",
+        "lat": 13.098,
+        "lng": 80.218,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ICF, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PADI SARAVANA STORES",
+        "lat": 13.097,
+        "lng": 80.182,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PADI SARAVANA STORES, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR INDUSTRIAL ESTATE",
+        "lat": 13.0906,
+        "lng": 80.1652,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR INDUSTRIAL ESTATE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR TELEPHONE EXACHANGE",
+        "lat": 13.1098,
+        "lng": 80.1558,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR TELEPHONE EXACHANGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ie}nAarrhNi@OkA_@o@jFoBk@MEQEQ|@eAvD_BhFUr@ELIRMd@Sh@GDa@jB[~@aBpF_A~C[zAo@nCGXs@vC?BOp@I\\Mj@GRCPELI`@AHo@nBADADa@hAg@rAMZa@nB?^AH?p@BlCDbBBxB?L\\d@LNJDKj@?@Ht@JdBBt@RzC@pAF|@LdCNdCFh@Jr@Dr@BVD`@PlAp@pCvBhJVnAPj@PBLFPPJVBXCXKRONUJUB?bA~AlPFb@BNDRRt@Pr@H^L^Zb@`@d@d@t@Zn@DLf@zA\\zAX|AJr@?DD\\F\\@H?@DZPnALp@Jd@R~ABND?`ADnCVF@l@DxANjCVhAJ]hBIv@Gf@Cb@G\\CJSbAIdAKbACV?@E|@I`@ABABE@mDP_AJDX@LBLnA~HB^Bb@BxAA^An@AxBO|BQdBEf@?BOrDAHAREf@O|@_@jBYfAUn@IRg@nA}ArFGVg@`CObAIhBv@?bA@z@?rDHpCDhFLrFNf@DNDpCHpBHnITOnGG~CAf@InDC~AC`AE|A?XhFTfIZH?ApAAH[vNCh@?l@ALI?K?AP?h@AXqDWU?O@QDuAj@qAt@kAf@{CbAqBf@}Bf@i@JQDUJa@^s@v@kAlAa@f@KXCXFhA@^?JDl@Dx@@l@Sp@C`@Bb@AZAb@Ej@M`@Gr@ObBFjCC~@WhBYnBUFy@VaB^uAXyBh@y@Po@NcDv@aCh@WHsDz@aATQBgKpAQBaBPiMaDcCo@SGSOWIg@Wg@WoAs@QOEIAI?GBGeA@wBDO?]@eAE?Q?i@NaANmANANGJKDW@u@CUKQOMGEU_@MYI[CY@UBg@?M?OCIYYy@y@m@o@",
+    "roadPointsCount": 295
+  },
+  {
+    "routeId": "route_58",
+    "routeNumber": "58",
+    "routeName": "AMBATTUR ORAGADAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AMBATTUR ORAGADAM",
+      "AMBATTUR OT",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AMBATTUR ORAGADAM",
+        "lat": 13.1235,
+        "lng": 80.1592,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR ORAGADAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR OT",
+        "lat": 13.1189,
+        "lng": 80.1506,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR OT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "}dboAwaghN@j@ZAB@@HFDDDHL@H@B@b@?bAAjAbCCGwAy@wElA@VBBTDFvCrBfCv@fA^tAd@RDbBLZDPFv@\\jAh@a@dDUhCKhAGj@[`D?FEb@W|CYjCUdC?B_@zDARYpCADMxA^MZC\\@h@DJ@FOX}@",
+    "roadPointsCount": 53
+  },
+  {
+    "routeId": "route_59",
+    "routeNumber": "59",
+    "routeName": "SENTHIL NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SENTHIL NAGAR",
+      "MADURAVOYAL ERIKARAI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SENTHIL NAGAR",
+        "lat": 13.072,
+        "lng": 80.175,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SENTHIL NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADURAVOYAL ERIKARAI",
+        "lat": 13.065,
+        "lng": 80.155,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADURAVOYAL ERIKARAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ccxnAgdjhN~@PhEz@`A\\j@Rr@VJD|AZv@Np@L`APVDt@TD@HDRH^`@V^TdADb@V`CVtB\\fBdAzFBd@H`DBjAFRL\\Zr@l@vC\\`B`@dBj@xAxAbErArDhA|D@PB\\^tE?N?L@H?F?L?p@V?d@nE@TBp@@b@D|AHjCXrC@PBJXdDR`B@J@DFf@Fh@Ht@NpAHv@BPK@_ALE?E@i@FEDCHE`@eD[",
+    "roadPointsCount": 75
+  },
+  {
+    "routeId": "route_60",
+    "routeNumber": "60",
+    "routeName": "MUGALIVAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MUGALIVAKKAM",
+      "KOLAPAKKAM",
+      "GERUGAMBAKKAM",
+      "THIRUNEERMALAI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50",
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MUGALIVAKKAM",
+        "lat": 13.018,
+        "lng": 80.162,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUGALIVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLAPAKKAM",
+        "lat": 13.0084,
+        "lng": 80.1524,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GERUGAMBAKKAM",
+        "lat": 13.0038,
+        "lng": 80.1384,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GERUGAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUNEERMALAI",
+        "lat": 12.965,
+        "lng": 80.115,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUNEERMALAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "wqmnA_tghN???CB{ALoAj@@R@\\@h@@B\\Ct@IbAGv@Cb@Ch@AX?@Al@Af@GtCTf@P`@BJBL@NBBVl@DX?z@Aj@t@NdAR`BRhBPV?H?L?R?N@xABvCHbABtADh@B?FHtANvB`CHdA?Dp@J~APdCV`CHbANjBHbANjBJdARfC`@`CBF@BDH\\^XS|@Br@R\\HjAJd@@z@Hn@gD@E@EDq@L{AAIEEGCaAKOCNB`AJFBDD@HIx@C`@Ep@ADADo@fD{@Ie@AkAK]Is@S}@CYRVVLb@BDL|AJbABRDj@@NJdA?X?B?DKhAADQjAYnD?Te@|BAJSbACj@Gj@Q|AA|@Cv@@\\?RDbA@p@GhA?b@BhAHnB?lABtFI~AQvDEXEp@WvCCf@A|@JdAJn@BnAIfA_@`Dx@N`A\\XLTHZFZBB?h@BxCEbAAH?|@At@AN?nAAr@AjA?lAE`BBHAL?NCLCHCFCDCDEFGNOPQPMFEFCHELCRCRAXAP?T@P?fCP@kC?gB?K@iA?uA?cA?O???N?bA?tAAhA?J?fBAjCt@D~@HxEl@h@J~@CfBBZDz@?h@@J?x@BvAErBFl@Fb@@x@EpAAp@DnD@rADvANN@H@~CXh@@J@p@CzAQX?j@Bh@LLFFJBJ?PAJGNCPMNGJGNCNI~@CRAL?L@FBHFHHFNBj@L|@ZhBt@v@`@d@\\JT@ZYzAAP@PDj@r@vDDj@DTJXBTARETUf@]~@IbAT~B@FBFBAD@D?D@JDJDTHNDTHtGlBr@NZHRDL@ZBN?j@DvAFnAFB@lALnANbARt@F~@J~BL\\yAbAJJ@dB^H@f@JdEXF]@UD]NoA@SRsCTUx@CXWNeABIDKFCH?f@@R@LBtG\\fAD|BVXINJMbAMbApE`AdDr@FBz@`@jAr@dLzBvCj@j@RJp@@FtAjDrBjD\\j@~@|AXxAVlAVVf@f@h@h@FBx@VRJp@^`A\\x@j@DDZh@n@b@`@FzC@VFLz@VtBJV`AFt@b@H|@Wt@@\\`@pAb@Zv@l@ZVjA~@|@h@XNzI|DgCzG",
+    "roadPointsCount": 383
+  },
+  {
+    "routeId": "route_61",
+    "routeNumber": "61",
+    "routeName": "MANGADU",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANGADU",
+      "KOVUR",
+      "KUNDRATHUR",
+      "DMART",
+      "MADHA COLLEGE",
+      "THIRUMUDIVAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:50",
+      "06:55",
+      "07:00",
+      "07:05",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANGADU",
+        "lat": 13.028,
+        "lng": 80.12,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANGADU, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOVUR",
+        "lat": 13.012,
+        "lng": 80.115,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOVUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KUNDRATHUR",
+        "lat": 12.998,
+        "lng": 80.098,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUNDRATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DMART",
+        "lat": 12.985,
+        "lng": 80.092,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DMART, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADHA COLLEGE",
+        "lat": 12.975,
+        "lng": 80.085,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHA COLLEGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUMUDIVAKKAM",
+        "lat": 12.962,
+        "lng": 80.082,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUMUDIVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "esonAym_hNIb@EFIDU@EBEDMl@_@rB{@jDq@QQGqA_@_AUqHuBa@Ks@vBUn@O^Ob@Qn@Q\\ITUb@M\\Od@Mf@ITA\\ALTf@DHLPN^P`@Rt@DZJZRv@H\\JZFZPf@Ln@Rf@@D@@L`@Hd@@JPf@JXXJHLFH@X@d@@Z@T?f@?\\?T@TB\\B^A`@?LlAGDAn@A~C?H?L?rCEP?zAGxABF?P@d@BNBPDNFh@Tf@VNJ^RFBVLTN^T\\RPNjC|BFFNN@@`@\\rCbCDBr@l@nAfA|AvAl@h@fA`AFDB@x@t@vBjBzAvANLp@l@p@h@fB`BrAjAvBjBh@f@`Az@l@j@FFzApANLPHL@Z@h@A`Ec@f@ExAOJALAn@Gt@Cd@Ep@@h@@H@^Bp@FNBJ@NDv@RvA^z@T^HD@vARD?NBtC^VRPBdANxCd@NDpBZr@RpAb@f@Rn@VRHLFdE|ATHLDx@TVD|@@x@BlBDZ?t@@VB@?@?`@F~@d@lCnBL??E@G?AE_@E[e@_Bi@}Ao@aBEMc@gAOk@YoAEWG}A?[ByACo@Gk@OaA?CMu@AEIc@ScAWwBKcAGaAAc@Cc@?CKgGEwBIyBC]Mo@KYMW[e@GIEGe@o@M[a@uBEMSm@uCqEKSACEGU_@wA}BGKWa@e@o@e@e@a@Ye@O[E_@A_GBiB@S?WKCEGKEYBcA@]i@CGAIKEME]CEA?CAI?e@@IBGFQVEBEB??G?sA@rAAF?DCDCPWFGHCd@AH?B@@?BDD\\DLHJF@h@BJsBHkARqB?CJc@Z_B`@mAV{@Tq@T}@Dq@@GBcALkANy@J@GRId@MjACt@?RG|@CHQj@Up@Yz@Qj@M`@g@dCSnBIjAK`CANA`ABVHJPHP@hBC~FC`@@\\Df@P`@Z\\\\HHf@n@BFPXHJtA|BT^FJb@p@f@t@vA|BX|@`@tBLZb@l@LP\\b@LXLZLp@B^FxBFtB@r@@h@FhD@f@@V@LF~@LbAFl@Fj@D\\^jBLr@@FBHDXBXBPFp@?T?RAlA?Z@b@Fx@RfAR|@f@rAnAdDl@nB`@nAB@BD@FAFLZPXTT\\V|@j@n@\\fBv@fAf@JD`@P@?j@LTLnBZ~@An@MLAjA?Fo@pAD|D`@XBk@t@Mv@MdAKpArAJzAJp@Fz@HhAHPBpARz@JD@vCt@p@Nb@JvAh@J@J@bAFnA?zBHXDlBVn@HhAL`@Xl@^j@d@VR`Ar@h@h@j@Tp@RJB@?bB^nAXdBPrAPNBb@FlBPr@Fv@J^`B?DFB\\Lt@NrAd@t@HfCXtANjABx@FlBBbARlEt@Hn@F~@Ab@Ob@[lA?J@DBHDHDDFBbAAhFEvHEjDGdDC~CCzDAb@At@Kd@IRCH@FBDDDFDH?D@B@LErAIxBAZAj@G|BI|BGbBEzA?FOxCB@@@B@?B@B?BA@ABA@A@C@C?C?U@gCBmA@{A?B_@`IC@AB?B?B@T?pGCfD?`FAfA?hG?j@AhC@nCP@HD`@Ln@BNf@v@j@t@V~@Nz@XzAShBBRFpBJnCZl@jAb@jDbAf@TVFZR`@VvDBBMJYDs@HoA@KPyACUDUPs@Tu@fFXCv@",
+    "roadPointsCount": 572
+  },
+  {
+    "routeId": "route_63",
+    "routeNumber": "63",
+    "routeName": "CMBT",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "CMBT",
+      "MMDA",
+      "VADAPALANI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "CMBT",
+        "lat": 13.0694,
+        "lng": 80.1948,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CMBT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MMDA",
+        "lat": 13.064,
+        "lng": 80.208,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MMDA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VADAPALANI",
+        "lat": 13.0524,
+        "lng": 80.212,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VADAPALANI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "wrwnAk`nhNwF@E?}GDuE@eDBCBIFKLE^B`AHp@B`@?^AhAE~B?|@?lBi@EJoB@EBkB@yA?}AKcAISM[CEe@o@k@o@q@cAMa@Sq@EQESIa@Gg@CQSmAEWi@yCg@iCKq@a@gCUwAO}@EMKOQGQCM@QFGNET@\\D`@HZRZLHXFTAPCz@Gb@EnAMpAS`Ac@`AaA^KDGnC}CdBuBvBgC`AiA|D{ElA{AvAsBh@}@xAgCzBcExAuCFOHY`B{Cr@oA^T^TDD`@V\\RLDRDD@\\Bj@@d@@d@BhA@pA@`CDnBDJ??DClAyBE@sAaCEqAAiAAe@Ce@Ak@A]CEASEME]Sa@WEE_@U_@Ud@{@h@aAl@gA\\_@|@s@^YrCyBx@e@r@g@h@WlAa@h@Qf@EnAK~AEf@ApBCf@?xCBZ?p@@L?jBD~ABxA@lAB`AB\\?dCBt@?bA@`CBrA@lFBjB?LAPCzASjCc@nCc@XA??",
+    "roadPointsCount": 163
+  },
+  {
+    "routeId": "route_66",
+    "routeNumber": "66",
+    "routeName": "THIRUMANGALAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUMANGALAM",
+      "WAVES",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUMANGALAM",
+        "lat": 13.085,
+        "lng": 80.198,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUMANGALAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WAVES",
+        "lat": 13.082,
+        "lng": 80.192,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WAVES, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "gtznAitnhNg@?e@A@q@EWIUAC{C?kDDGpGGdFAfAAjBCbCExC?JGjC?ZvABjD@lCTb@DfCRh@FJB|@PH@`@JVF~A`@\\HD@dBZr@N",
+    "roadPointsCount": 34
+  },
+  {
+    "routeId": "route_67",
+    "routeNumber": "67",
+    "routeName": "MADHANANDAPURAM",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "MADHANANDAPURAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MADHANANDAPURAM",
+        "lat": 13.025,
+        "lng": 80.148,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHANANDAPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_68",
+    "routeNumber": "68",
+    "routeName": "METHA NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "METHA NAGAR",
+      "ANAGAPUTHUR BUS STAND",
+      "RETTAI PILLAIYAR KOVIL,PAMMAL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "METHA NAGAR",
+        "lat": 12.982,
+        "lng": 80.138,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "METHA NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANAGAPUTHUR BUS STAND",
+        "lat": 12.972,
+        "lng": 80.125,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANAGAPUTHUR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RETTAI PILLAIYAR KOVIL,PAMMAL",
+        "lat": 12.965,
+        "lng": 80.132,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RETTAI PILLAIYAR KOVIL,PAMMAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "cofnAc}bhNG\\AJ@HBF@D@@JFdA`@fBdAjB`A^Lv@VdBh@r@RlB^JBfATf@Jd@JxBV\\DxCXd@Dh@DrALF?fDb@H@KXITGJM`BAJOxBKbBGx@D^B\\@H@FHd@NRNFPJZB\\HTFVNTT`@lABRDVD|@LbBJb@PXCdABZXr@Zb@LT@VAT[b@Yf@Y`B]jBGZSd@AFSz@Ej@@b@?D?@?BJp@@FtAjDrBjD\\j@HIPONeADc@JGREf@QJCzCg@LeAmAQRcBNoATyAPwAHwAP}ABKlBVnCb@lANnB\\p@LD@p@JrBXr@Jh@JdCd@lARRNrALt@qEZuBjALJsA?aAJcAHs@Fa@Pk@H[BQ@aBF_BBi@AaA",
+    "roadPointsCount": 129
+  },
+  {
+    "routeId": "route_69",
+    "routeNumber": "69",
+    "routeName": "MAHINDRA CITY",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MAHINDRA CITY",
+      "KATTANKOLATHUR",
+      "MARAIMALAI NAGAR",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MAHINDRA CITY",
+        "lat": 12.735,
+        "lng": 80.005,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHINDRA CITY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KATTANKOLATHUR",
+        "lat": 12.752,
+        "lng": 80.022,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KATTANKOLATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MARAIMALAI NAGAR",
+        "lat": 12.785,
+        "lng": 80.035,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MARAIMALAI NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "wgvlA{}hgNU~@AJANB@@B@B?DJB|CxBjCrBrAbAlA~@XTsEdEuGkCaASgCi@eAWuDaAMCs@UCRSpACLUbAAJs@vDER_AlDc@xA}AnFe@lAu@~BqFjP{BpH_@r@iA~ASPUHe@Lc@FOBG?UEa@H]HwAeAcCoBMIYU}@q@_CcB]WwCwB}McKsGaFaBsAwAeAe@UmB}@aCwAuE{BeDmBcDsB}@k@gAm@iAe@_DmA}EkAuBc@wDw@mEcAqEs@gAQsAOwBIm@SKCYI}E_Bu@WsAe@YI]IYEUDY@[CYGe@OWMUMQQGSAWF[LYLM\\G`@?XDn@P`@RVTNXZNj@TbA^hA`@bF`B`AZ\\JlAn@\\FbCZ`Fv@@KN{@r@iEl@mELSl@g@nAmEz@{CNs@PkAEWGuCMa@MaBD_BDKh@sBJ]^sAPq@@Ej@qBTu@`@iAPc@JQLQLs@RaBVyAR}AH]PSPSn@o@LQDQPa@\\eAh@eBZ}@FSPk@He@AKCIGKJOHKz@sG\\qBfBwL??gBvL]pB{@rGIJKNFJBH@JId@Qj@GR[|@i@dB]dAQ`@EPMPo@n@QRQRI\\S|AWxAS`BMr@MPKPQb@a@hAUt@k@pBADQp@_@rAK\\i@rBEJE~AL`BL`@FtCDVQjAOr@{@zCoAlEm@f@MRm@lEs@hEOz@AJf@LfAVzAZvCd@|Bf@rFrAzAn@vB~@pBbA^TKd@}@k@gAm@iAe@_DmA}EkAuBc@wDw@mEcAqEs@gAQsAO}Cu@{CaAiA_@kCy@sAc@cCu@wBq@sK_E}@]_A[UKgBw@_DmAiTyHyLaEe@OGCoBo@wBs@mBq@ICaUyHiFkBkAa@{EcBkI{Dw@]MIQImJmE}HaEg@QiB_AaCmAeE{BuC_BsGuDwFcDOIKGT_@LWBGFKt@{A`BaD~@kB~@kBf@cAfBmDFMpAgCxAwCfCeFdAqB`AmBbAsBbBgDr@uAj@iA|@gBr@wA\\gAnDyGrB_Et@oEL{@b@kCxE~@zE~@|@PFH?HOjA",
+    "roadPointsCount": 318
+  },
+  {
+    "routeId": "route_70",
+    "routeNumber": "70",
+    "routeName": "KAUVERY HOSPITAL",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KAUVERY HOSPITAL",
+      "CROMPET BUS STAND",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:55",
+      "07:05",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KAUVERY HOSPITAL",
+        "lat": 12.962,
+        "lng": 80.148,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAUVERY HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CROMPET BUS STAND",
+        "lat": 12.9516,
+        "lng": 80.1416,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CROMPET BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "usbnAq{dhNmChEb@TtB~@hD|AjBz@PHl@R?LFHJBTJpH|Cd@T?LtBbAtAh@xAl@~@`@z@Z`@eBJg@BIBIBIFSl@}BpBj@|Ad@Jc@nAXL?n@J|Bn@nA^r@^b@JzBr@dCp@GROb@GDO?m@xEMbA",
+    "roadPointsCount": 45
+  },
+  {
+    "routeId": "route_71",
+    "routeNumber": "71",
+    "routeName": "NANGANALLUR J.K MAHAL",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "NANGANALLUR J.K MAHAL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NANGANALLUR J.K MAHAL",
+        "lat": 12.982,
+        "lng": 80.188,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NANGANALLUR J.K MAHAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_75",
+    "routeNumber": "75",
+    "routeName": "POTHERI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "POTHERI",
+      "GUDUVANCHERY",
+      "KOLAPKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10",
+      "07:20",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "POTHERI",
+        "lat": 12.748,
+        "lng": 80.025,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POTHERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GUDUVANCHERY",
+        "lat": 12.842,
+        "lng": 80.062,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GUDUVANCHERY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLAPKKAM",
+        "lat": 12.868,
+        "lng": 80.125,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLAPKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "soxlAezlgNIbBOzB@RDNHFhAPl@B\\@b@@J@JHLPLX\\`@DDBFDNCh@a@`DO~ABVDLHDDBfCl@D@i@|BGb@cDvAa@TUPa@`@KJSH[@YBE@_@FWLi@ZyC|BmAjAqBrB_DhDw_@na@Yp@KTIRe@tAQh@SXMHODw@FkAHg@J[TQ`@i@r@UV]NK@]@m@EyAOo@Ew@Da@XQjAOr@{@zCoAlEm@f@MRm@lEs@hEOz@AJf@LfAVzAZvCd@|Bf@rFrAzAn@vB~@pBbA^TKd@}@k@gAm@iAe@_DmA}EkAuBc@wDw@mEcAqEs@gAQsAO}Cu@{CaAiA_@kCy@sAc@cCu@wBq@sK_E}@]_A[UKgBw@_DmAiTyHyLaEe@OGCoBo@wBs@mBq@ICaUyHiFkBkAa@{EcBkI{Dw@]MIQImJmE}HaEg@QiB_AaCmAeE{BuC_BsGuDwFcDOIKGwR}KkAo@{@i@oC{A_DiBaDkBi@YyKmG}CeBmBeA_JgFcGgDwC_BuC_BmAu@sGqDaDeBkC{AgBaAoEmCcWcPECa@Y[Su@c@{@i@iHaFmGsDCAyOuJWOkD{BiAeAYYkAmAuC{Ck@o@wFiGyBaCOOqCyCGEOOyFoGe@g@GIkAkA_AcAe@m@gFyFuC_DeAgA{D}DyA}AcHuHkAmAo@q@{AaBsAyA{C_DWS{BeCoAwAwA_B_@_@kAqAuA{AgAmAgAkAi@c@aHwGo@q@yAsAmAoA}EaDeF}COIk@]m@a@_CwAXc@n@`@tDdCvGnEtDjC`At@rAfAd@b@PLf@d@VTpAnAh@p@j@n@zA`BZU`Aq@fBoAdAu@FEhBqAZSJK]a@OIYOYIXH@@VLNH\\`@KJ[RiBpAGDeAt@gBnAaAp@[TvB|Bh@l@xAxAhAnAHH`@b@JN~AbBp@v@HHp@p@fAlASRWS{BeCoAwAwA_B_@_@kAqAuA{AgAmAgAkAi@c@aHwGo@q@yAsAmAoA}EaDeF}COIk@]m@a@_CwAqCmBOKcAs@_@UiAu@oBuAqAw@_BiAwBwAEEaCcBSMIEGGyJyGa@Yg@[i@a@GEmLgIsBqAKGwAw@iAq@uBoAgD_BgBg@yAa@wQ}E}Aa@wCq@sGoBiA]UGk@O}@Wu@UkEkAkA]WGgA[GAkA]EAs@UyBq@IC[IKCiDeAkEwAg@@eFuAa@KeDy@qA]eDaAg@OMCZcAz@gCl@}B|EgRBMRu@J]r@yBjJwOHO~@oBpAyElLic@VmAxAmSX{DHy@J_A@MRmBFi@T{BVwCNeBRaB^_DFs@RwAXoBXeCTsBTy@HY`A{DBQN_@f@aB|BsH~DsMt@cCLa@vA_FjJu[~@cDzHkXhCcJcUcIq@pBKpAOlDOvB@LHFNDD@@B?FQxBIrAq@We@Qk@Qi@Q]OC@C@ADObA",
+    "roadPointsCount": 421
+  },
+  {
+    "routeId": "route_77",
+    "routeNumber": "77",
+    "routeName": "VARATHARAJAN THEATRE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VARATHARAJAN THEATRE",
+      "MAPPEDU",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VARATHARAJAN THEATRE",
+        "lat": 12.925,
+        "lng": 80.12,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VARATHARAJAN THEATRE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MAPPEDU",
+        "lat": 12.905,
+        "lng": 80.135,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAPPEDU, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ak{mA_n_hNEEd@]^W~AtBD?lAy@LIHENK@O@s@`@gQHkDJ}FJqFBuA@SBsAPeIBcADoB?CBsB?e@@UF{FBgBD}AHuDD}BJaHDuBBiABgC?o@@wA@s@?m@@uB?cB@iC?SCiDCkAAoAA]RAn@[jAq@XQd@W`B_Al@]fAm@n@_@\\WjBkAp@a@HELItE}BBAPCHKLGtAnAl@f@n@j@vAnARPXTb@Pd@LnAVfB^@@`Dt@jCh@fCl@jATp@Hh@BhBHbCJzAJnAHxAHdBLvAHbAHCVANAR]|C_@rBUfAWbBjBh@qAfEFRYjA~Ad@RFUnAhAXc@lF",
+    "roadPointsCount": 107
+  },
+  {
+    "routeId": "route_79",
+    "routeNumber": "79",
+    "routeName": "MADRAS CHRISTIAN COLLEGE (MCC)",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "MCC COLLEGE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MCC COLLEGE",
+        "lat": 12.922,
+        "lng": 80.124,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MCC COLLEGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_80",
+    "routeNumber": "80",
+    "routeName": "IRUMBULIYUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "IRUMBULIYUR",
+      "SSM NAGAR",
+      "NEDUKUNDRAM TVS",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:05",
+      "07:15",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "IRUMBULIYUR",
+        "lat": 12.915,
+        "lng": 80.108,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IRUMBULIYUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SSM NAGAR",
+        "lat": 12.902,
+        "lng": 80.095,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SSM NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NEDUKUNDRAM TVS",
+        "lat": 12.885,
+        "lng": 80.082,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NEDUKUNDRAM TVS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "cnymAs_}gN?r@BCB?DA~@AtAAkAzGwBC|DhFr@|@JNhAxAxC~D~AxBhAzAJLn@Hr@DTBjAXnAh@\\PRNh@^x@~@f@dAb@|ANj@\\|@^dA@B\\bAWLJPNRJN@DJJhBlBvEjDHFtDdC~CnB\\m@JSt@eBHS~@iCZw@b@mAXk@d@aAlAkCt@sA?|BoEnJo@zANHFB@A@ABA@?@?@?B?L@R@VBT@Z?R?Z?RAVCRCTCHCF?FBFBrB~AKLr@p@^^|@~@}@tAgC~Do@k@IM?IDKzDeG_@_@s@q@JMsB_BGCGCG?IBUBSBWBS@[?S?[?UAWCSAMAC?A?A?A?C@A@A@A@Up@ICMGIRuAtDfD~BvF`E`Ap@hGfE|FfETPbO`KDBRNlAx@lFpDLHDD|@l@rNtJ~BzAlB`AbDfAnA`@b@NpH|BfGdBpOdFx@Fd@Ft@Fl@N~Ad@TFZLbBf@`Bf@dAZ^L`AX~Aj@\\Lh@LjAZfCx@LD[`AMC}GoBOE]Bo@KqM{DkA[qBm@oAa@AA",
+    "roadPointsCount": 178
+  },
+  {
+    "routeId": "route_81",
+    "routeNumber": "81",
+    "routeName": "MAHALAKSHMI NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MAHALAKSHMI NAGAR",
+      "CAMP ROAD",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MAHALAKSHMI NAGAR",
+        "lat": 12.918,
+        "lng": 80.135,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHALAKSHMI NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CAMP ROAD",
+        "lat": 12.912,
+        "lng": 80.142,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CAMP ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "q`zmAijbhNcBUwDa@u@GsBSG?sB?m@TCBKDIBk@VA?g@HwCBQ?GzBKxEAr@?HCdASLBgBD}AHuDD}BJaHDuBBiABgC?o@@wA@s@?m@@uB?cB@iC?SCiDCkAAoAA]RAn@[jAq@XQd@W`B_Al@]fAm@n@_@\\WjBkAp@a@HELItE}BBAPCHKLGtAnAl@f@n@j@vAnARPXTb@Pd@LnAVfB^@@`Dt@jCh@fCl@jATDZ@JBfBHnAt@F",
+    "roadPointsCount": 81
+  },
+  {
+    "routeId": "route_82",
+    "routeNumber": "82",
+    "routeName": "LAKSHMIPURAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "LAKSHMIPURAM",
+      "MUDICHUR (ATTA COMPANY)",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:05",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "LAKSHMIPURAM",
+        "lat": 12.932,
+        "lng": 80.088,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LAKSHMIPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MUDICHUR (ATTA COMPANY)",
+        "lat": 12.925,
+        "lng": 80.075,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUDICHUR (ATTA COMPANY), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "su|mAseygNHIJAV@jAXd@ZFAD?dANLBFABCBKHk@D_@NoA?Gt@uG@UDIBCFCD?^DF?DCBEBGFa@XsCLoBDw@fABFF@FIt@BFHDxECjCAjEC?MKuAFSn@KxB[JAv@Or@M~@Qp@Mj@KbAQZGLCj@KnCg@jAKJCp@|Dd@xCLz@lAdINnAFVHR~@rBP\\fAjC`@nAH~@Bn@?H?FDt@?DBb@B`@@NBZD^Hp@Hr@RjAh@~B\\rAh@zBZlAPr@J^`@vABFn@zBHTFLtBtBHHJHfB`BFHb@^vCzCT^N\\DLFZFj@Bz@?|@AtAC~A?bB?X?`@?P@LAX?\\Aj@Bl@SAO?M?KCi@[k@[YMa@OoA[s@O}@OeASy@Qu@O[GgB[{AUcCe@]IcEu@kASy@Q]GaB[e@Km@M_@Ik@OMCk@E]EYGKCYhBQpAGVWdBUEm@Ig@hD",
+    "roadPointsCount": 160
+  },
+  {
+    "routeId": "route_85",
+    "routeNumber": "85",
+    "routeName": "VELACHERY RAILWAY STATION",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "VELACHERY RAILWAY STATION-KAIVELI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VELACHERY RAILWAY STATION-KAIVELI",
+        "lat": 12.9784,
+        "lng": 80.2185,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY RAILWAY STATION-KAIVELI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_86",
+    "routeNumber": "86",
+    "routeName": "SEMBAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SEMBAKKAM",
+      "MADAMBAKKAM JUNCTION",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SEMBAKKAM",
+        "lat": 12.928,
+        "lng": 80.155,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADAMBAKKAM JUNCTION",
+        "lat": 12.915,
+        "lng": 80.162,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADAMBAKKAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "g_|mAagfhNGCg@IPo@XcANi@pAPZFjAPlAL`C\\p@HZFf@Hz@JR@`AFhABrABfADOkA[sBAWP{DRcF@IH}B@[?]?M?W@Q?IB]?MBo@@SDWXmARDx@JlBLnBTv@Bn@?P?Z?jARF@f@@f@@D@BDAD[dCfALFq@hD^|@BP@|@DJAHADADGBK@k@BgA\\@B?@A@CDwAdAD@eAx@BDg@@YBYb@iCDGFEHEn@DRBf@Dt@HF@fAJRuC~@\\VJIz@",
+    "roadPointsCount": 93
+  },
+  {
+    "routeId": "route_87",
+    "routeNumber": "87",
+    "routeName": "GOWRIVAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GOWRIVAKKAM",
+      "SANTOSAHPURAM",
+      "VIJAYANAGARAM",
+      "SBIOA",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10",
+      "07:15",
+      "07:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOWRIVAKKAM",
+        "lat": 12.924,
+        "lng": 80.168,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOWRIVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SANTOSAHPURAM",
+        "lat": 12.918,
+        "lng": 80.175,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SANTOSAHPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIJAYANAGARAM",
+        "lat": 12.912,
+        "lng": 80.182,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VIJAYANAGARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SBIOA",
+        "lat": 12.905,
+        "lng": 80.188,
+        "scheduledTime": "07:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SBIOA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "e_{mAgqhhNB?~@DxAFlADB?@A@CX}AbAVt@kDBMdBuHxAyG`@eBRDdBZtB^dCd@vB^V_CPsAV}BpAHBUFq@Dm@@E?IHeABYHm@LcAHc@DU@GMCqAQOC}AU_@GkBYJi@ERETjBX^F|ATNBpAPLBNcAXwAi@KXoBA@k@Ni@JZoBN[bAgGr@gERyArBHzB@NgBJeALsB?K?W?E?CBCBAF?D@xAXBABC?CFi@?C@EFQVFdARDUXyADQrDXFiBD_BMhEsDYBEDOBI|@kCd@kBb@{Cg@GcAMSAAEAC@KHoA?CPgC?IPkCH}@Ds@Ds@HiALeALgALmAqASqASf@oFVsCBSFu@h@sF?MH@nEVf@Bj@DbBNb@BF?LBJ@FBRLHFbAt@l@b@pDdC@@vCrBZVPJfD|BHD`Ad@zCfBhAn@",
+    "roadPointsCount": 150
+  },
+  {
+    "routeId": "route_88",
+    "routeNumber": "88",
+    "routeName": "RAJAKILPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAJAKILPAKKAM",
+      "KOZHIPANNAI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAJAKILPAKKAM",
+        "lat": 12.922,
+        "lng": 80.148,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAJAKILPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOZHIPANNAI",
+        "lat": 12.915,
+        "lng": 80.152,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOZHIPANNAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "qyzmAi{dhNoBK@~AS?M_KAoD?yAEcECc@R?lH{@~GOjCI|@?|@@X?f@@jDDn@B^BjA@bBHZ@R@FCDGDGHI",
+    "roadPointsCount": 28
+  },
+  {
+    "routeId": "route_89",
+    "routeNumber": "89",
+    "routeName": "KAIVELI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KAIVELI JUNCTION",
+      "CHITALAPAKKAM",
+      "CHITALAPAKKAM KOOT ROAD",
+      "MEDAVAKKAM MAMBAKKAM JUNCTION",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:05",
+      "07:10",
+      "07:15",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KAIVELI JUNCTION",
+        "lat": 12.975,
+        "lng": 80.205,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAIVELI JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHITALAPAKKAM",
+        "lat": 12.935,
+        "lng": 80.172,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHITALAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHITALAPAKKAM KOOT ROAD",
+        "lat": 12.93,
+        "lng": 80.178,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHITALAPAKKAM KOOT ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM MAMBAKKAM JUNCTION",
+        "lat": 12.918,
+        "lng": 80.19,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM MAMBAKKAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "}denAg`phNJ{AkAI[EyAKsAK[AWBSRq@|@`@jDRdB\\xDXvBFl@JdARxBLnA@DBPFr@Hr@LnA^zCb@tELlAP~AP|A^pCNxBb@jDPnAJrAJdA@^UxBD@v@T@@nCx@v@VXFlAVZJl@NRFbAXJDF@FBZLx@V`AZ\\JVHB@b@NB@n@Rj@Pd@PB?d@RXJ~CpAhA\\jA`@NFd@NrBn@fA^FBtAb@RF\\Lj@R^H|A`@n@VRFnA\\RBPDD@nAXl@LpBZj@HzAP~BXpALxAL`BRtBLn@BfABx@B`AAbA@b@@p@?Z?d@?pBB`@AZ@f@BbAB\\Bh@@hAJ|AVN@rBPnAJ|ALtAJn@Fl@FfC`@h@JrBb@`Cn@|@Rp@R\\HNF@?^FVF^H`@FNF`@FLBf@J~@Px@Rz@^r@h@LHh@^lBrAt@h@vBdBHFFDTJJBH@l@@N@J?^@pB?~@@t@DnE@dCRXBH?`@DV@bEN|AL~APJ@JBLBj@HtDl@vA@nB?fE@l@EHA^CzAKJ?bD^LBRB`@F?HE|A?jAIn@EpDDjB?L@JCFEHIBGD?JDz@DzAD`@@JBX@f@?JDzAEHs@hAGL]f@Sf@CBUx@SXq@l@y@r@i@l@UXy@~@S~@SrBKz@ABC@C?YEI`BE`@C~AAfA~IZD@r@By@E_J[@gAB_BDa@HaBXDB?BA@CJ{@RsBR_Ax@_ATYh@m@x@s@p@m@RYTy@BCRg@\\g@FMr@iADIE{A?KAg@CY^O\\Uv@{@v@cALMZOdAUJChBs@Dr@FxBvDRdCZr@L??s@MeC[wDSGyBEs@p@YFCN[BSHe@\\uBd@sCBK`ALbADV?\\Cx@MPCHAfEs@fGaADAjBS`D]d@Gb@ED?j@GdAML@fAO~AUfD_@nCSh@GlBk@lA[p@Qp@QtCs@LSDM@Q?q@Ik@[_BAIC_@?a@DYFWBEHUTc@r@_AFI|AsBrAgBbAqAdAwAJOnAcBZg@\\s@DGWEOCEECIAW@[DW",
+    "roadPointsCount": 349
+  },
+  {
+    "routeId": "route_90",
+    "routeNumber": "90",
+    "routeName": "BOLLINENI HILLS",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "BOLLINENI HILLS",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "BOLLINENI HILLS",
+        "lat": 12.908,
+        "lng": 80.195,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BOLLINENI HILLS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_93",
+    "routeNumber": "93",
+    "routeName": "PALLIKARANAI JEYACHANDRAN",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "PALLIKARANAI JEYACHANDRAN",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PALLIKARANAI JEYACHANDRAN",
+        "lat": 12.942,
+        "lng": 80.218,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PALLIKARANAI JEYACHANDRAN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_96",
+    "routeNumber": "96",
+    "routeName": "KALMANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALMANDAPAM",
+      "BEACH STATION",
+      "SECRETARIAT",
+      "THIRUVANMIYUR JAYANTHI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:20",
+      "06:35",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALMANDAPAM",
+        "lat": 13.11,
+        "lng": 80.295,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALMANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "BEACH STATION",
+        "lat": 13.092,
+        "lng": 80.292,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BEACH STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SECRETARIAT",
+        "lat": 13.078,
+        "lng": 80.288,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SECRETARIAT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUVANMIYUR JAYANTHI",
+        "lat": 12.9829,
+        "lng": 80.2591,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVANMIYUR JAYANTHI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ap_oAsraiNWjAlBb@`D|@P?XHfAZB?^Jl@P`FrA~@RRBVW~AkF`@yA\\e@\\Uf@K^?h@JvIbBnJjA`BTfDf@tH~AjQnETDNDj@Lp@Np@NnAVdDt@dDr@D@rHhBLB~DdAt@N\\HPDNDLFJDD@fCh@bA\\~Al@vAh@|A^fBXNB~DVJAfBA~DCdAF^JjBn@\\L^FPDtCn@`AVzA`@f@DJ@z@DpALxB|@~B`@nDl@xFdAb@HRFJDTLh@XRJtBfALFRJJD??PBPBRDL@VBF@`@D`@FRBVFXJJDVLNJ\\P\\NXJ`@Lj@J`BXXDfC`@zDn@r@H`@FnGbAr@B^DhAJzFz@`C\\rFv@bAV`C^t@LLBfC`@~IfAlGv@rGt@R@J@hHt@LBrQbB|J~@n@FxCR~AL~Gf@lHh@hAJjHn@rFf@VBBCF?D?D@DB@DbALzK|@xEz@|@NFSNgALQBKJu@Lq@@CBG@EBEBCDCDADAHAF?H?P@n@DbDN~BNANKtAEt@AJALENi@|BIZDHJB~@VZHJD^HNDVFb@J^DPBB?v@Jt@HVDnBP^DdAP~@Pz@LH?TE`AWVAxB?j@CXCh@CrAAhAl@|@d@LFB@DB\\Tr@T^HjAV^FlDt@n@BlC~@PHr@Tf@RxAf@fAb@B?nAb@HDPDpDpA^TDBfAv@z@jAJLb@n@lEvG`ArA\\f@f@r@^f@FHpAfBx@dA@@rAdBRT`C`D`@d@pD|EJLDFZp@NfAFdA@P?VC~@UpAq@xCGb@K|@BbALjBJvA@D?B?HEHXdDDn@Ft@FPdBbA\\RZRZPrBlAxCdBXNVLTJNDLDFBLBLDLBF@\\F^HTBZBb@B\\@bRR`C?n@?f@@`HFlBD`AL|@Vv@Xt@d@j@h@d@n@Vf@L^l@f@j@R^F`@DlC\\pBXb@FP@j@Fh@FbAHxDb@lFd@~@H|@FnAJr@HvC^d@FlBRT@rDTbDHL?pBAxA?`BAp@?|ACLA~@EjBKjBEdH@Z@`C@J?L?T?~@At@AB?rBAzAJxBLzAFr@F@c@DiA\\gID}A@OBmBDq@BUBSNU^OZAfCF`BJdBPdAJdBFF?X@J?b@@\\?X@\\@nBFhDHbA@T?~ABt@@x@?APyAAw@A{@AiAAG?cAAmAE",
+    "roadPointsCount": 396
+  },
+  {
+    "routeId": "route_97",
+    "routeNumber": "97",
+    "routeName": "SEMMANCHERI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SEMMANCHERI",
+      "NAVALUR",
+      "MARINA MALL",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:15",
+      "07:20",
+      "07:25",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SEMMANCHERI",
+        "lat": 12.875,
+        "lng": 80.222,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEMMANCHERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NAVALUR",
+        "lat": 12.855,
+        "lng": 80.228,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NAVALUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MARINA MALL",
+        "lat": 12.835,
+        "lng": 80.231,
+        "scheduledTime": "07:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MARINA MALL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "avqmA}wshNLgG_@A_@?o@?QCGECGAk@CKEGIEsAKMnC?PCXGxAQvBCNICBOTyDPcEJ{C@W@MwABaDNwADsADw@BAUx@Cf@Ch@CtAIxAEhACr@C^AD?B?H?H?tEDxGd@lDLV@`@@nJF`CJV@r@Df@B|EV|A?fI]pCMdDDP@nFFhC@hEKnBEdENj@@rEb@bAHH@@OHkDLuECIIKEICGAG@kBJmCHQbCHnAFpADHqBpBHxAD|AFrADAn@EvB??DwB@o@sAE}AGyAEqBIIpBqAEoAGcCIIPKlCAjB@FBFDHHJBHMtEIjDANl@DnC@pDO`G[tEUdFU|D@@?F?bHLnDBV@j@?lB@xEA`ICjAA`@AxBAfBCB?`Ku@VErAQz@KfGgA|@QJAb@I~@QdDm@lCc@b@GdBS^GVA|K}@?Qb@El@GC{@GgB?{@Dw@Hq@@_@Ce@Gq@",
+    "roadPointsCount": 160
+  },
+  {
+    "routeId": "route_98_ttk_road",
+    "routeNumber": "98",
+    "routeName": "TTK ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "TTK ROAD",
+      "ALWARPET JUNCTION",
+      "ADAMBAKKAM POLICE BOOTH",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "TTK ROAD",
+        "lat": 13.042,
+        "lng": 80.252,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TTK ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ALWARPET JUNCTION",
+        "lat": 13.038,
+        "lng": 80.254,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALWARPET JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ADAMBAKKAM POLICE BOOTH",
+        "lat": 12.99,
+        "lng": 80.202,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADAMBAKKAM POLICE BOOTH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ogrnAueyhND?PAlAAFAnAAp@?lB?F@FDBPfC\\jCZ?CBYRaCL{A@SB]HkADg@Fq@Fw@pAJR@HBBB@DG`@AFCDE?iBSGp@Ef@IjAC\\ARMzAS`CCX?BCf@UpCKfAKdAE|@Ej@G|@SnCS`CEVEPQzAx@HRDI\\Kd@EPQt@S~@?BKh@]hBa@bCIf@SnA@@?B?@AFA@A@WnFm@hJE~@AVIPEbAJ@bBJzCRfADlAJd@BjBLrAHbAFdBJx@HvBJPBAF@JBL|@jBr@rAt@rAHNLRXt@HT@JDd@dBEdBAxBGJ?~ACh@Ef@CR?NA@E@EBEDAFCF?FBDDBD@FAFCFCDGBE?G?HTj@p@zA`BpAtArCpCbBfBr@xAtALVDb@B`@Ld@Vh@f@p@lAJ`@hAOd@IRb@vAbHXrALh@j@pAz@xAt@bAFFn@z@X^`A~Ad@l@tA`BtAtAzAbAx@nAPPjBxAvBtA|AbADD~@p@z@l@h@\\JHJDZNTFXFXBT@H?H?LALAFALEnKaDnC}@jASbCo@|@Sv@SbA]t@UtAc@~Ag@b@MXIh@OxBi@`HsBlAQZCVFRNFZETqCdIEXkAhDITIXUt@[fAGPy@pCGNMb@ADEPGR[jACFAHWbAGNELCFCHG`@GRI`@Gn@v@dDLj@FZ~AnHBJ^xABNRr@b@vAPd@BFl@dBRj@\\jAJ\\P|C?HHf@fBzFjA`EJ\\HZPp@^pAV~@Nj@Lb@h@xBRx@PdAVhCH~@JnA@LXhDLnBD\\DtARl@BJFXFX@DBLHTFTHTHTFRBFHTZt@NZJRTd@PXj@`A@@NVT\\^h@PTRX@BTl@\\v@Xf@`@`@`@b@Pd@b@Td@PXFj@JfBV\\FJ@TD`C^b@J\\J^RTNN?t@E`@C`@?`FDrA@bAAX?p@@b@?h@C\\CpDQj@KbCo@d@EnAKTEfAMpAQ|@C^CpB?\\AbA?~@ANG`@AxACL?\\@bDLDC~AFrFh@Vq@Nu@N[N[DQ",
+    "roadPointsCount": 353
+  },
+  {
+    "routeId": "route_98_golden_flats",
+    "routeNumber": "98",
+    "routeName": "GOLDEN FLATS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GOLDEN FLATS",
+      "WAVIN",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOLDEN FLATS",
+        "lat": 13.088,
+        "lng": 80.185,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOLDEN FLATS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WAVIN",
+        "lat": 13.092,
+        "lng": 80.172,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WAVIN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "ig{nAgclhNBqAVAE|BW~NGnGAlGC|DAtCAlB?XGjBWdJ?NWAa@A_@Ag@KyBKoEIwBEK~DEbBIhDIhC",
+    "roadPointsCount": 25
+  },
+  {
+    "routeId": "route_99",
+    "routeNumber": "99",
+    "routeName": "THILLAI GANGA NAGAR SUBWAY",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THILLAI GANGA NAGAR SUBWAY",
+      "VANUVAMPET CHURCH",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:55",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THILLAI GANGA NAGAR SUBWAY",
+        "lat": 12.995,
+        "lng": 80.198,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THILLAI GANGA NAGAR SUBWAY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VANUVAMPET CHURCH",
+        "lat": 12.988,
+        "lng": 80.195,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANUVAMPET CHURCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "{binAatnhNn@fC`@~B?FC?CBABAD?B@D@BAh@PzDiB@{IHB~@D`ABnADnADz@NBHF^AjJ?DAh@@tFG`B?v@At@@d@EXQb@k@nA}BjAoBFIJOb@c@d@]jAWdD@Z@xAAvBAjACn@A|C}@Lb@aDt@LDk@pDkAQPaA",
+    "roadPointsCount": 53
+  },
+  {
+    "routeId": "route_100",
+    "routeNumber": "100",
+    "routeName": "MADIPAKKAM KEELKATALAI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KEELKATALAI",
+      "KOVILAMBAKKAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:00",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KEELKATALAI",
+        "lat": 12.958,
+        "lng": 80.185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KEELKATALAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOVILAMBAKKAM",
+        "lat": 12.948,
+        "lng": 80.188,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOVILAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "uzanAgclhNFo@B]B_@GIa@GeBQGG?AACNsAHaAF]Fu@@O?Ib@@p@?Z?d@?pBB`@AZ@f@BbAB\\Bh@@hAJ|AVN@rBPnAJ|ALtAJn@Fl@FfC`@h@JrBb@`Cn@|@Rp@R\\HNF@?^FVF^HBgAD_AD}A?CVaGBs@RoA@YDk@Bc@?CRcA@MBi@FcBLiCFyE?{B@MFgEN@?TItIIvDOtDGxA?Lp@HTBhA\\hAV@?F?B@?F?@An@Cb@AR?FCXAZCx@OB[?",
+    "roadPointsCount": 93
+  },
+  {
+    "routeId": "route_102",
+    "routeNumber": "102",
+    "routeName": "MOOLAKADAI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MOOLAKADAI",
+      "MADHAVARAM ROUNDTANA",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MOOLAKADAI",
+        "lat": 13.132,
+        "lng": 80.245,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MOOLAKADAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADHAVARAM ROUNDTANA",
+        "lat": 13.148,
+        "lng": 80.238,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHAVARAM ROUNDTANA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "yycoAg{whN~@Lh@FGf@Eb@?r@?V?RCV?RABG@e@Aw@AmBCInBEbAAh@GAaAGa@CsBG_@?_@AWAy@IiAQyJ_@yDM{@G_@I]MKCIKg@n@y@bAoAz@aAn@OLgBjAaBdAWNkEjCcAl@s@d@WNe@V_@X[RSRILILERIv@QtBQSIGIIe@MoAa@wAe@]KuA_@cA]W^_@`@a@f@WZe@l@e@KiAU{Ca@Cd@ALOvBMvA",
+    "roadPointsCount": 76
+  },
+  {
+    "routeId": "route_104",
+    "routeNumber": "104",
+    "routeName": "DAILY THANTHI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DAILY THANTHI",
+      "DASAPRAKASH",
+      "ARUMBAKKAM",
+      "NERKUNDRAM",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "06:50",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DAILY THANTHI",
+        "lat": 13.082,
+        "lng": 80.265,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DAILY THANTHI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DASAPRAKASH",
+        "lat": 13.081,
+        "lng": 80.255,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DASAPRAKASH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ARUMBAKKAM",
+        "lat": 13.068,
+        "lng": 80.211,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ARUMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NERKUNDRAM",
+        "lat": 13.068,
+        "lng": 80.185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NERKUNDRAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "agznAkw{hN@s@?k@?I?OAmAm@?mAEs@C{@Ac@?M?eEMKzAMtBGtAG`AA\\I~FKfAUv@EJ?BCBA@q@~@Up@CHEHCPAHEXCH}@hAOTI\\UhCO`CCj@Ch@AbAAZJp@b@nB|@nDFPHL@F\\`BZnAFPXhAVx@DHLBV@HCL?rCHlADvBHn@@VB^@bCHb@@rAc@f@YVKTCb@@v@Dh@DxALZBr@Hv@Hb@@XChAMVCFx@BXH~B@b@@V@n@E`AAf@?Z?D?L@h@?J?Z?j@?t@?fA@~A?F@f@@`@?RBRBPb@vCPxBLlAd@zDD^V~BFf@FrCDx@Bp@@R@TFx@Bp@J|Ab@vGBV@NHp@TjBFZ@LThAFRHh@@Nj@tDJl@N`A`@|C@F@HNfAFn@TxBf@dElAfJ@J\\~BP`At@pDHThAvEz@`C|@~CPdAPdCLfDZrFCvAW`FALAHStDCd@IlCCzAGlBAJ]rCGx@uA`NIbAAJALAFAHCZC\\KnAG~@KdBCn@`AB`AH~@JrBN`@D\\Bv@Ft@J^BR@r@Bf@@h@Ah@Aj@DnFZP@F@P@|EXDfB@fA?XBnA@HCjADbC~@C?`AAnAvADGx@UpC??TqCZ@`@?\\EPG?j@Aj@ANdIj@JD^b@x@e@r@g@h@WlAa@h@Qf@EnAK~AEf@ApBCf@?xCBAf@sBGw@EU?q@BsEJ}ANMBODGBsAf@_Al@_@Ra@\\KHq@h@{C`Ck@f@s@hAsA~BmD|FKNEFeCrEkC|E_BfCw@fAqA`BsCfD}AhBuBjCmGlHI`@e@h@[TWRqAd@iANUPc@TQZEV@f@TjAXnB`@lCC^P~@XhBVt@N^P\\LVt@~@VXXZBFHPDPN\\Hp@B`@?^AhAE~B?|@?lB@|APn@NZjBnBz@nAt@|AnA|CL`@Nh@v@dC`B|FBJjAIzA?dAAt@L\\HnBn@\\LP?H?XGHE`@]|Ht@L@RFCHSz@UbA]CE?A@CBAFE`@?BABC@C?o@GaAC",
+    "roadPointsCount": 344
+  },
+  {
+    "routeId": "route_105",
+    "routeNumber": "105",
+    "routeName": "THATHANKUPPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THATHANKUPPAM",
+      "ANNA NAGAR WEST DEPOT",
+      "ROHINI THEATRE",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THATHANKUPPAM",
+        "lat": 13.105,
+        "lng": 80.188,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THATHANKUPPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANNA NAGAR WEST DEPOT",
+        "lat": 13.092,
+        "lng": 80.198,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANNA NAGAR WEST DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ROHINI THEATRE",
+        "lat": 13.072,
+        "lng": 80.201,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ROHINI THEATRE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "sl~nAgolhN?rBbHUfPq@NAZEEa@M{@WmA]cBi@wAc@{@a@m@W]o@o@Uo@Ow@_@mBOQGQOwAMqAc@eEQeBAEI_Av@CBVJBhABFDnA@lC@D?D?hBAX?H?f@?fACdI?JGnBBdA@rEFrEBdEFDgHBwB?mA@m@DyHpB?x@@?O?E?G@mA?CBA^?@?`@?@mA?ABAfA??G?GyECiBAuAIiBCC?]?uCA?]V?hGAzA?jBBrA@`E@pD@ZJN?~F@nXFdK?HA\\?jFBtBGfIi@rCQpEa@f@ArBITAPCz@Gb@EnAMpAS`Ac@`AaAJMtA}Ah@k@RUn@s@p@_Ar@y@j@q@j@o@NQdAoAv@aAHKn@u@lAyA^`@UTOP}BhC{@~@g@n@QRW\\}@jAFNEfAbAJBGh@ALB",
+    "roadPointsCount": 136
+  },
+  {
+    "routeId": "route_106",
+    "routeNumber": "106",
+    "routeName": "PORUR BAIKADAI",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "PORUR BAIKADAI",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:55",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PORUR BAIKADAI",
+        "lat": 13.035,
+        "lng": 80.158,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PORUR BAIKADAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": ""
+  },
+  {
+    "routeId": "route_108",
+    "routeNumber": "108",
+    "routeName": "ALANDUR METRO",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ALANDUR METRO",
+      "NANGANALLUR PETROL BUNK",
+      "MEENAMBAKKAM",
+      "CHROMPET SARAVANA STORES",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:00",
+      "07:05",
+      "07:15",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ALANDUR METRO",
+        "lat": 13.003,
+        "lng": 80.201,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALANDUR METRO, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NANGANALLUR PETROL BUNK",
+        "lat": 12.985,
+        "lng": 80.192,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NANGANALLUR PETROL BUNK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEENAMBAKKAM",
+        "lat": 12.978,
+        "lng": 80.182,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEENAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHROMPET SARAVANA STORES",
+        "lat": 12.954,
+        "lng": 80.145,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHROMPET SARAVANA STORES, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "_tjnAefohNv@Lb@J\\J^RTNNPJRN^N`@Hb@Hf@?N?L?H?DEj@SdD?BEpAARIfA@^@b@P~@Vj@v@nAPTHLBBDF`G`I\\d@fAxA`BzB~@hAx@lAnGyEBKFIFCHANBHF^AjJ?DAh@@tFG`B?v@At@@d@EXQb@k@nA}BjAoBFIJOb@c@d@]jAWdD@Z@K\\u@nFc@dDTB`ALpATNBhALnAT`BTnBXb@F`ANb@Jr@HdANlALl@HCz@KpDh@@tAHv@Dj@@T@b@@lCNCzBAj@EvBAjEb@DX?^@VBX@Z@Z?L?h@@\\@\\BT?l@@dAJGlEKlCAh@At@EjAGNINi@b@FNDJLXHLN`@d@tADTTvA?XCdDhADzBIF?B?VClAIf@Cn@EXClAGD?LnE?DBp@D~B{@RUF}Ab@_@J_ARUF{@Ro@RC?QHg@XiBlAOJ_Ax@aApAmAzBMRI^Ib@Gl@In@M`BWbCgCY[E_AKiD_@qBQ]EOBwAZ]NGB}FzB]NBFrCvE~AjCfCdE`GvKlCjFpEtInBxDN\\JRP`@NZdCnFb@rA?@^rAbAxFXvA\\|@b@~@T^`AzAbA`BzCzE|N~VX`@z@rAb@n@rCnEbDnFfAtBn@hAt@hAPXBBPPTRXVTLLH`@RpK`E|Aj@jAb@x@XpAf@bCv@`AXbAb@hAd@jCfAp@X`@P|@d@|At@h@T|@b@`@Rf@RLFZCZN~NvGNFZND?H?HBDFFHJBTJpH|Cd@T?LtBbAtAh@xAl@~@`@z@Z`@eBJg@BIBIBIFSl@}BpBj@|Ad@Jc@nAXH_@FYJc@",
+    "roadPointsCount": 271
+  },
+  {
+    "routeId": "route_110",
+    "routeNumber": "110",
+    "routeName": "RAJENDRA PRASAD ROAD (B)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAJENDRA PRASAD ROAD",
+      "SELIYUR POLICE STATION",
+      "VIT CHENNAI"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10",
+      "08:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAJENDRA PRASAD ROAD",
+        "lat": 12.938,
+        "lng": 80.135,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAJENDRA PRASAD ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SELIYUR POLICE STATION",
+        "lat": 12.922,
+        "lng": 80.142,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SELIYUR POLICE STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIT CHENNAI",
+        "lat": 12.8406,
+        "lng": 80.1534
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true,
+    "polylinePoints": "y{}mAojbhN?E~JlAH?J?L@P@bAXt@Rz@RFBzA^~@Tx@Rp@PpA\\PQTYX_@PS|@{@jAw@hAs@`A_@ZEXAJAp@DvEAtA?z@BvADL}@`BAh@@X@P@dA@F?H?b@EJYn@DdAH~@FLFf@^F?tAB`CFX@bBBX@`@@`@@dB@JaHDuBBiABgC?o@@wA@s@?m@@uB?cB@iC?SCiDCkAAoAA]RABdB?L@v@@jAnBH~@T?aAAIAEKEMCYAOKKCK?",
+    "roadPointsCount": 88
+  }
+];

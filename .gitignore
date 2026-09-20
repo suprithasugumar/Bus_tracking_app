@@ -88,3 +88,5 @@ node_modules/
 *_log*.txt
 doctor*.txt
 analyze*.txt
+sign_dart.ps1
+trust_cert.ps1

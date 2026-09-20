@@ -270,6 +270,60 @@ export const DEFAULT_CHENNAI_ROUTES = [
   }
 ];
 
+export function decodePolyline(encoded) {
+  const points = [];
+  let index = 0, len = encoded.length;
+  let lat = 0, lng = 0;
+  while (index < len) {
+    let b, shift = 0, result = 0;
+    do {
+      b = encoded.charCodeAt(index++) - 63;
+      result |= (b & 0x1f) << shift;
+      shift += 5;
+    } while (b >= 0x20);
+    const dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+    lat += dlat;
+
+    shift = 0;
+    result = 0;
+    do {
+      b = encoded.charCodeAt(index++) - 63;
+      result |= (b & 0x1f) << shift;
+      shift += 5;
+    } while (b >= 0x20);
+    const dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+    lng += dlng;
+
+    points.push({ lat: lat / 1e5, lng: lng / 1e5 });
+  }
+  return points;
+}
+
+export async function fetchRoadEncodedPolyline(coordinates) {
+  if (!coordinates || coordinates.length < 2) return "";
+  try {
+    const coordsStr = coordinates.map(c => `${Number(c.lng).toFixed(6)},${Number(c.lat).toFixed(6)}`).join(";");
+    const resp = await fetch(`https://router.project-osrm.org/route/v1/driving/${coordsStr}?overview=full&geometries=polyline`);
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.code === "Ok" && data.routes && data.routes.length > 0) {
+        return data.routes[0].geometry || "";
+      }
+    }
+  } catch (err) {
+    console.warn("[RouteService] OSRM route fetch warning:", err);
+  }
+  return "";
+}
+
+export async function fetchRoadPolyline(coordinates) {
+  const encoded = await fetchRoadEncodedPolyline(coordinates);
+  if (encoded) {
+    return decodePolyline(encoded);
+  }
+  return coordinates || [];
+}
+
 class RouteService {
   constructor() {
     this.routes = [];
@@ -289,15 +343,31 @@ class RouteService {
       const list = [];
       snapshot.forEach((d) => {
         const data = d.data();
+        let polylinePoints = [];
+        let encodedPolyline = "";
+
+        if (typeof data.polylinePoints === "string" && data.polylinePoints.length > 0) {
+          encodedPolyline = data.polylinePoints;
+          polylinePoints = decodePolyline(data.polylinePoints);
+        } else if (Array.isArray(data.polylinePoints) && data.polylinePoints.length > 0) {
+          polylinePoints = data.polylinePoints;
+        } else if (Array.isArray(data.stopCoordinates)) {
+          polylinePoints = data.stopCoordinates;
+        }
+
         list.push({
           id: d.id,
           routeId: d.id,
           routeName: data.routeName || `Route ${d.id}`,
           stops: Array.isArray(data.stops) ? data.stops : [],
           stopCoordinates: Array.isArray(data.stopCoordinates) ? data.stopCoordinates : [],
+          polylinePoints: polylinePoints,
+          encodedPolyline: encodedPolyline,
+          scheduledTimes: Array.isArray(data.scheduledTimes) ? data.scheduledTimes : [],
           assignedDriverId: data.assignedDriverId || "",
           assignedDriverName: data.assignedDriverName || "",
-          schedule: data.schedule || { morning: "7:30 AM", evening: "5:00 PM" },
+          busNumber: data.busNumber || "",
+          schedule: data.schedule || { morning: "07:30", evening: "17:00" },
           isActive: data.isActive !== false
         });
       });
@@ -337,24 +407,36 @@ class RouteService {
   }
 
   /**
-   * Save or Update a route
+   * Save or Update a route with road-following encoded polyline string
    */
   async saveRoute(route) {
     const routeId = route.routeId || `route_${String(this.routes.length + 1).padStart(2, "0")}`;
     const routeRef = doc(db, "routes", routeId);
+
+    let encodedPolyline = "";
+    if (typeof route.polylinePoints === "string" && route.polylinePoints.length > 0) {
+      encodedPolyline = route.polylinePoints;
+    } else if (route.stopCoordinates && route.stopCoordinates.length >= 2) {
+      encodedPolyline = await fetchRoadEncodedPolyline(route.stopCoordinates);
+    }
     
     const payload = {
       routeName: route.routeName,
       stops: route.stops || [],
       stopCoordinates: route.stopCoordinates || [],
+      polylinePoints: encodedPolyline,
+      scheduledTimes: route.scheduledTimes || [],
       assignedDriverId: route.assignedDriverId || "",
-      schedule: route.schedule || { morning: "7:30 AM", evening: "5:00 PM" },
+      assignedDriverName: route.assignedDriverName || "",
+      busNumber: route.busNumber || "",
+      schedule: route.schedule || { morning: "07:30", evening: "17:00" },
       isActive: route.isActive !== false
     };
 
     await setDoc(routeRef, payload, { merge: true });
     return routeId;
   }
+
 
   /**
    * Assign driver to route

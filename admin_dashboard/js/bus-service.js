@@ -17,7 +17,7 @@ class BusService {
     this.buses = [];
     this.listeners = [];
     this.unsubscribe = null;
-    this.staleThresholdSeconds = 15;
+    this.staleThresholdSeconds = 25;
     this.offlineThresholdSeconds = 60;
   }
 
@@ -25,7 +25,7 @@ class BusService {
    * Set custom stale/offline thresholds in seconds
    */
   setThresholds(staleSec, offlineSec) {
-    this.staleThresholdSeconds = staleSec || 15;
+    this.staleThresholdSeconds = staleSec || 25;
     this.offlineThresholdSeconds = offlineSec || 60;
   }
 
@@ -102,13 +102,18 @@ class BusService {
         const id = docSnap.id;
         const bus = {
           id: id,
-          driverId: id,
+          driverId: data.driverId || id,
+          busId: data.busId || data.routeId || id,
           latitude: typeof data.latitude === "number" ? data.latitude : 13.0827,
           longitude: typeof data.longitude === "number" ? data.longitude : 80.2707,
           isOnline: data.isOnline === true,
+          isTracking: data.isTracking === true || data.isOnline === true,
           routeName: data.routeName || "Unassigned Route",
           routeId: data.routeId || "",
           speed: typeof data.speed === "number" ? Math.round(data.speed) : 0,
+          heading: typeof data.heading === "number" ? data.heading : 0,
+          currentStopIndex: typeof data.currentStopIndex === "number" ? data.currentStopIndex : 0,
+          completedStops: Array.isArray(data.completedStops) ? data.completedStops : [],
           passengerCount: typeof data.passengerCount === "number" ? data.passengerCount : 0,
           timestamp: data.timestamp || null,
           driverName: data.driverName || "Driver " + id.substring(0, 5)

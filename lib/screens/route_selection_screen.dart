@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/route_model.dart';
 import '../models/bus_model.dart';
 import '../services/firestore_service.dart';
+import '../services/tracking_service.dart';
+import '../services/notification_service.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
 
@@ -37,7 +39,13 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
       // Seed routes on first run (no-op if already seeded)
       await _firestoreService.seedDefaultRoutesIfEmpty();
       final routes = await _firestoreService.getRoutes();
-      final favId = await _firestoreService.getFavoriteRoute(widget.uid);
+      final profile = await _firestoreService.getUserProfile(widget.uid);
+      final favId = profile?.favoriteRouteId ?? await _firestoreService.getFavoriteRoute(widget.uid);
+      final defaultRoute = profile?.effectiveDefaultRouteId ?? favId;
+
+      await NotificationService.setDefaultRoute(defaultRoute);
+      await NotificationService.setCurrentViewingRoute(null);
+
       if (mounted) {
         setState(() {
           _routes = routes;
@@ -59,15 +67,30 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
     final newFav = _favoriteRouteId == routeId ? '' : routeId;
     setState(() => _favoriteRouteId = newFav.isEmpty ? null : newFav);
     await _firestoreService.saveFavoriteRoute(widget.uid, newFav);
+    await NotificationService.setDefaultRoute(newFav.isNotEmpty ? newFav : null);
+    await NotificationService.setCurrentViewingRoute(null);
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(newFav.isNotEmpty ? '⭐ Saved as Favorite Route!' : 'Removed from Favorites'),
+        content: Text(newFav.isNotEmpty ? '⭐ Saved as Default Route!' : 'Removed from Default Routes'),
         duration: const Duration(seconds: 2),
       ),
     );
   }
 
   void _navigateToLogin() {
+    if (TrackingService.instance.isTracking) {
+      final activeRouteName = TrackingService.instance.activeRoute?.routeName ?? 'your route';
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            '📍 Live tracking for $activeRouteName continues in background until reaching VIT Chennai College.',
+          ),
+          backgroundColor: const Color(0xFF0D47A1),
+          duration: const Duration(seconds: 4),
+        ),
+      );
+    }
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (_) => const LoginScreen()),
@@ -298,8 +321,15 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
     }
   }
 
-  void _navigateToRoute(RouteModel route) {
-    Navigator.push(
+  Future<void> _navigateToRoute(RouteModel route) async {
+    if (widget.role.toLowerCase() == 'student') {
+      _firestoreService.recordRouteAccess(widget.uid, route.routeId, route.routeName);
+    }
+    // Set viewing route asynchronously in background without blocking screen transition
+    NotificationService.setCurrentViewingRoute(route.routeId);
+
+    if (!mounted) return;
+    await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (_) => HomeScreen(
@@ -309,6 +339,9 @@ class _RouteSelectionScreenState extends State<RouteSelectionScreen> {
         ),
       ),
     );
+
+    // Revert to student's default route when exiting back to Route Selection
+    NotificationService.setCurrentViewingRoute(null);
   }
 }
 
@@ -456,23 +489,38 @@ class _RouteCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               Row(
                 children: [
-                  _ScheduleChip(
-                    icon: Icons.wb_sunny_outlined,
-                    time: route.morningSchedule,
-                  ),
-                  const SizedBox(width: 8),
-                  _ScheduleChip(
-                    icon: Icons.nights_stay_outlined,
-                    time: route.eveningSchedule,
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF0D47A1).withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: const Color(0xFF0D47A1).withValues(alpha: 0.2)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.schedule, size: 14, color: Color(0xFF0D47A1)),
+                        const SizedBox(width: 5),
+                        Text(
+                          'Trip starts by ${_formatStartTime(route.morningSchedule)}',
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF0D47A1),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   const Spacer(),
                   Text(
                     '${route.stops.length} stops',
                     style: const TextStyle(
                       fontSize: 12,
+                      fontWeight: FontWeight.w500,
                       color: Colors.grey,
                     ),
                   ),
@@ -484,34 +532,17 @@ class _RouteCard extends StatelessWidget {
       ),
     );
   }
-}
 
-class _ScheduleChip extends StatelessWidget {
-  final IconData icon;
-  final String time;
-
-  const _ScheduleChip({required this.icon, required this.time});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.grey.shade300),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 12, color: Colors.grey[600]),
-          const SizedBox(width: 4),
-          Text(
-            time,
-            style: TextStyle(fontSize: 11, color: Colors.grey[600]),
-          ),
-        ],
-      ),
-    );
+  static String _formatStartTime(String timeStr) {
+    if (timeStr.isEmpty) return '6:45 AM';
+    final clean = timeStr.trim().toUpperCase().replaceAll('AM', '').replaceAll('PM', '').trim();
+    final parts = clean.contains(':') ? clean.split(':') : clean.split('.');
+    if (parts.isEmpty) return timeStr;
+    final hour = int.tryParse(parts[0].trim()) ?? 6;
+    final min = parts.length > 1 ? (int.tryParse(parts[1].trim()) ?? 0) : 0;
+    final minStr = min.toString().padLeft(2, '0');
+    final h = hour > 12 ? hour - 12 : (hour == 0 ? 12 : hour);
+    final period = hour >= 12 ? 'PM' : 'AM';
+    return '$h:$minStr $period';
   }
-}
+}

@@ -34,6 +34,12 @@ exports.sendRouteNotificationOnCreate = onDocumentCreated(
       title = "🚨 Bus Breakdown Alert!";
     } else if (type === "delay") {
       title = "⚠️ Bus Delay Alert!";
+    } else if (type === "approaching") {
+      title = "🚌 Bus Approaching Your Stop (~5 Mins)";
+    } else if (type === "arrival") {
+      title = "✅ Bus Arrived at Stop";
+    } else if (type === "completed") {
+      title = "🏁 Route Trip Completed";
     }
 
     const topic = `route_${routeId}`;

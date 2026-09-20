@@ -1,0 +1,4142 @@
+[
+  {
+    "routeId": "route_01",
+    "routeNumber": "1",
+    "routeName": "THIRUVOTTIYUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVOTTIYUR",
+      "N-4",
+      "KASIMEDU SIGNAL"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:10",
+      "06:15"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVOTTIYUR",
+        "lat": 13.1602,
+        "lng": 80.3024,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVOTTIYUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "N-4",
+        "lat": 13.118,
+        "lng": 80.2965,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "N-4, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KASIMEDU SIGNAL",
+        "lat": 13.125,
+        "lng": 80.298,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KASIMEDU SIGNAL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_02",
+    "routeNumber": "2",
+    "routeName": "PURASAIWALKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PURASAIWALKAM TANK",
+      "GENGU REDDY SUB WAY",
+      "CHETPET",
+      "VALLUVAR KOTTAM"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:20",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PURASAIWALKAM TANK",
+        "lat": 13.0898,
+        "lng": 80.257,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PURASAIWALKAM TANK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GENGU REDDY SUB WAY",
+        "lat": 13.0782,
+        "lng": 80.2523,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GENGU REDDY SUB WAY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHETPET",
+        "lat": 13.0718,
+        "lng": 80.2415,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHETPET, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VALLUVAR KOTTAM",
+        "lat": 13.0539,
+        "lng": 80.2415,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALLUVAR KOTTAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_03",
+    "routeNumber": "3",
+    "routeName": "PARRYS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PARRYS CORNER",
+      "KANNAGI STATUE",
+      "LIGHT HOUSE",
+      "ALL INDIA RADIO",
+      "MRC NAGAR",
+      "SRP TOOLS",
+      "KANDANCHAVADI"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:23",
+      "06:25",
+      "06:35",
+      "06:40",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PARRYS CORNER",
+        "lat": 13.0887,
+        "lng": 80.2882,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARRYS CORNER, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANNAGI STATUE",
+        "lat": 13.0601,
+        "lng": 80.2828,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANNAGI STATUE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "LIGHT HOUSE",
+        "lat": 13.0398,
+        "lng": 80.2785,
+        "scheduledTime": "06:23",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LIGHT HOUSE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ALL INDIA RADIO",
+        "lat": 13.035,
+        "lng": 80.277,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALL INDIA RADIO, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MRC NAGAR",
+        "lat": 13.018,
+        "lng": 80.275,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MRC NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SRP TOOLS",
+        "lat": 12.9791,
+        "lng": 80.2526,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SRP TOOLS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANDANCHAVADI",
+        "lat": 12.9666,
+        "lng": 80.2478,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANDANCHAVADI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_04",
+    "routeNumber": "4",
+    "routeName": "KALPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALPAKKAM",
+      "ANUPURAM",
+      "MAHABALIPURAM KOOT ROAD(POONCHERY)",
+      "THANDALAM",
+      "THIRUPORUR"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:40",
+      "06:45",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALPAKKAM",
+        "lat": 12.553,
+        "lng": 80.161,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANUPURAM",
+        "lat": 12.569,
+        "lng": 80.125,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANUPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MAHABALIPURAM KOOT ROAD(POONCHERY)",
+        "lat": 12.618,
+        "lng": 80.179,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHABALIPURAM KOOT ROAD(POONCHERY), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THANDALAM",
+        "lat": 12.671,
+        "lng": 80.17,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THANDALAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUPORUR",
+        "lat": 12.724,
+        "lng": 80.187,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUPORUR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_05",
+    "routeNumber": "5",
+    "routeName": "STERLING ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NELSON MANICKAM ROAD",
+      "POTHYS(T.NAGAR)"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NELSON MANICKAM ROAD",
+        "lat": 13.065,
+        "lng": 80.224,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NELSON MANICKAM ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POTHYS(T.NAGAR)",
+        "lat": 13.0405,
+        "lng": 80.2335,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POTHYS(T.NAGAR), Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_06",
+    "routeNumber": "6",
+    "routeName": "SANTHOME",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SANTHOME",
+      "PATINAPAKKAM",
+      "SATHYA STUDIOS",
+      "NEELANGARAI",
+      "INJAMBAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:45",
+      "06:50",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SANTHOME",
+        "lat": 13.0335,
+        "lng": 80.278,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SANTHOME, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PATINAPAKKAM",
+        "lat": 13.027,
+        "lng": 80.277,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PATINAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SATHYA STUDIOS",
+        "lat": 13.022,
+        "lng": 80.26,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SATHYA STUDIOS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NEELANGARAI",
+        "lat": 12.949,
+        "lng": 80.257,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NEELANGARAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "INJAMBAKKAM",
+        "lat": 12.92,
+        "lng": 80.251,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "INJAMBAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_07",
+    "routeNumber": "7",
+    "routeName": "TRIPLICANE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "TRIPLICANE",
+      "ROYAPETTAH"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "TRIPLICANE",
+        "lat": 13.0587,
+        "lng": 80.2757,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TRIPLICANE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ROYAPETTAH",
+        "lat": 13.054,
+        "lng": 80.262,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ROYAPETTAH, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_08",
+    "routeNumber": "8",
+    "routeName": "BESANT NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "BESANT NAGAR BUS STAND",
+      "VANNANTHURAI BUS STAND",
+      "VETTUVANKENI CHRUCH",
+      "AKKARI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:50",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "BESANT NAGAR BUS STAND",
+        "lat": 13.0006,
+        "lng": 80.2658,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BESANT NAGAR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VANNANTHURAI BUS STAND",
+        "lat": 12.993,
+        "lng": 80.26,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANNANTHURAI BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VETTUVANKENI CHRUCH",
+        "lat": 12.935,
+        "lng": 80.254,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VETTUVANKENI CHRUCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AKKARI",
+        "lat": 12.905,
+        "lng": 80.248,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AKKARI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_09",
+    "routeNumber": "9",
+    "routeName": "MANDAVELI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANDAVELI",
+      "KALIYAPPA HOSPITAL",
+      "MOOPANAR BRIDGE"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANDAVELI",
+        "lat": 13.028,
+        "lng": 80.261,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANDAVELI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALIYAPPA HOSPITAL",
+        "lat": 13.031,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIYAPPA HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MOOPANAR BRIDGE",
+        "lat": 13.03,
+        "lng": 80.245,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MOOPANAR BRIDGE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_10",
+    "routeNumber": "10",
+    "routeName": "MADHYAKAILASH",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MADHYAKAILASH",
+      "MADIPAKKAM KOOT ROAD"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MADHYAKAILASH",
+        "lat": 13.007,
+        "lng": 80.248,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHYAKAILASH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADIPAKKAM KOOT ROAD",
+        "lat": 12.968,
+        "lng": 80.198,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADIPAKKAM KOOT ROAD, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_11",
+    "routeNumber": "11",
+    "routeName": "POWER HOUSE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "POWER HOUSE",
+      "SAMIYAR MADAM",
+      "WEST MAMBALAM"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "POWER HOUSE",
+        "lat": 13.052,
+        "lng": 80.222,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POWER HOUSE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SAMIYAR MADAM",
+        "lat": 13.05,
+        "lng": 80.225,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SAMIYAR MADAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WEST MAMBALAM",
+        "lat": 13.037,
+        "lng": 80.224,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WEST MAMBALAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_13",
+    "routeNumber": "13",
+    "routeName": "KUTCHERY ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KUTCHERY ROAD",
+      "LUZ",
+      "MYLAPORE TANK",
+      "MANDAVELI BSNL OFFICE",
+      "TANSI NAGAR"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KUTCHERY ROAD",
+        "lat": 13.034,
+        "lng": 80.268,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUTCHERY ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "LUZ",
+        "lat": 13.038,
+        "lng": 80.265,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LUZ, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MYLAPORE TANK",
+        "lat": 13.033,
+        "lng": 80.27,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MYLAPORE TANK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANDAVELI BSNL OFFICE",
+        "lat": 13.026,
+        "lng": 80.262,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANDAVELI BSNL OFFICE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "TANSI NAGAR",
+        "lat": 12.986,
+        "lng": 80.224,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TANSI NAGAR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_14",
+    "routeNumber": "14",
+    "routeName": "ADYAR AAVIN",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ADYAR AAVIN",
+      "ADYAR TELEPHONE EXCHANGE",
+      "PTC QUARTERS"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ADYAR AAVIN",
+        "lat": 13.006,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADYAR AAVIN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ADYAR TELEPHONE EXCHANGE",
+        "lat": 13.001,
+        "lng": 80.257,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADYAR TELEPHONE EXCHANGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PTC QUARTERS",
+        "lat": 12.989,
+        "lng": 80.248,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PTC QUARTERS, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_15",
+    "routeNumber": "15",
+    "routeName": "AMMA NANA",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KOTTURPURAM",
+      "THORAIPAKKAM",
+      "KARAPAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KOTTURPURAM",
+        "lat": 13.0186,
+        "lng": 80.252,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOTTURPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THORAIPAKKAM",
+        "lat": 12.943,
+        "lng": 80.237,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THORAIPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KARAPAKKAM",
+        "lat": 12.9266,
+        "lng": 80.2308,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KARAPAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_17",
+    "routeNumber": "17",
+    "routeName": "DEVAR STATUE (NANDANAM JUNCTION)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DEVAR STATUE (NANDANAM JUNCTION)",
+      "VELACHERY VIJAYANAGAR"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DEVAR STATUE (NANDANAM JUNCTION)",
+        "lat": 13.031,
+        "lng": 80.241,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DEVAR STATUE (NANDANAM JUNCTION), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELACHERY VIJAYANAGAR",
+        "lat": 12.9723,
+        "lng": 80.2212,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY VIJAYANAGAR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_18",
+    "routeNumber": "18",
+    "routeName": "GANDHIMANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GANDHIMANDAPAM",
+      "GUINDY RACE COURCE",
+      "NGO COLONY"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GANDHIMANDAPAM",
+        "lat": 13.011,
+        "lng": 80.236,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GANDHIMANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GUINDY RACE COURCE",
+        "lat": 12.998,
+        "lng": 80.218,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GUINDY RACE COURCE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NGO COLONY",
+        "lat": 12.985,
+        "lng": 80.205,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NGO COLONY, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_19",
+    "routeNumber": "19",
+    "routeName": "AYODHYA MANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYODHYA MANDAPAM",
+      "VELACHERY RAILWAY STATION",
+      "PALLIKARANAI SIVAN KOIL"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:50",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYODHYA MANDAPAM",
+        "lat": 13.038,
+        "lng": 80.221,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYODHYA MANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELACHERY RAILWAY STATION",
+        "lat": 12.9784,
+        "lng": 80.2185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY RAILWAY STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PALLIKARANAI SIVAN KOIL",
+        "lat": 12.935,
+        "lng": 80.214,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PALLIKARANAI SIVAN KOIL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_20",
+    "routeNumber": "20",
+    "routeName": "PERUNGUDI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PERUNGUDI",
+      "RADIANCE APT.",
+      "KAMATCHI HOSPITAL",
+      "S KOLATHUR"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "06:55",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PERUNGUDI",
+        "lat": 12.9651,
+        "lng": 80.2466,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERUNGUDI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RADIANCE APT.",
+        "lat": 12.955,
+        "lng": 80.225,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RADIANCE APT., Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KAMATCHI HOSPITAL",
+        "lat": 12.948,
+        "lng": 80.215,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAMATCHI HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "S KOLATHUR",
+        "lat": 12.942,
+        "lng": 80.201,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "S KOLATHUR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_23",
+    "routeNumber": "23",
+    "routeName": "VGP",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VGP",
+      "PERUMBAKKAM",
+      "MEDAVAKKAM"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:15",
+      "07:20"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VGP",
+        "lat": 12.909,
+        "lng": 80.246,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VGP, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PERUMBAKKAM",
+        "lat": 12.904,
+        "lng": 80.198,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERUMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM",
+        "lat": 12.9215,
+        "lng": 80.1936,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_25",
+    "routeNumber": "25",
+    "routeName": "MADIPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAM NAGAR",
+      "UTI BANK"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAM NAGAR",
+        "lat": 12.968,
+        "lng": 80.201,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAM NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "UTI BANK",
+        "lat": 12.962,
+        "lng": 80.195,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "UTI BANK, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_30",
+    "routeNumber": "30",
+    "routeName": "PERAMBUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PERAMBUR RAILWAY STATION",
+      "PERAMBUR CHURCH",
+      "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PERAMBUR RAILWAY STATION",
+        "lat": 13.1143,
+        "lng": 80.2416,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERAMBUR RAILWAY STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PERAMBUR CHURCH",
+        "lat": 13.111,
+        "lng": 80.238,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PERAMBUR CHURCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE",
+        "lat": 13.118,
+        "lng": 80.212,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLATHUR JUNCTION NEAR VINAYGAR TEMPLE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_31",
+    "routeNumber": "31",
+    "routeName": "MANALI NEW TOWN",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANALI NEW TOWN",
+      "MANALI MARKET",
+      "MATHUR",
+      "MILK COLONY",
+      "ARUL NAGAR",
+      "POST OFFICE"
+    ],
+    "scheduledTimes": [
+      "06:00",
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANALI NEW TOWN",
+        "lat": 13.203,
+        "lng": 80.278,
+        "scheduledTime": "06:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANALI NEW TOWN, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANALI MARKET",
+        "lat": 13.17,
+        "lng": 80.26,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANALI MARKET, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MATHUR",
+        "lat": 13.165,
+        "lng": 80.245,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MILK COLONY",
+        "lat": 13.155,
+        "lng": 80.24,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MILK COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ARUL NAGAR",
+        "lat": 13.148,
+        "lng": 80.235,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ARUL NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POST OFFICE",
+        "lat": 13.14,
+        "lng": 80.23,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POST OFFICE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_32",
+    "routeNumber": "32",
+    "routeName": "REDHILLS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "REDHILLS",
+      "KAVANKARAI",
+      "PUZHAL CAMP",
+      "KALIKUPPAM",
+      "PUDHUR"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:10",
+      "06:15",
+      "06:25",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "REDHILLS",
+        "lat": 13.198,
+        "lng": 80.196,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "REDHILLS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KAVANKARAI",
+        "lat": 13.185,
+        "lng": 80.188,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAVANKARAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUZHAL CAMP",
+        "lat": 13.168,
+        "lng": 80.185,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUZHAL CAMP, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALIKUPPAM",
+        "lat": 13.145,
+        "lng": 80.178,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIKUPPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUDHUR",
+        "lat": 13.135,
+        "lng": 80.168,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUDHUR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_33",
+    "routeNumber": "33",
+    "routeName": "PADI EAST AVENUE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "PADI EAST AVENUE",
+      "MANIKANDAPURAM BUS STAND",
+      "AMBATTUR OT",
+      "AVADI CHECKPOST"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:20",
+      "06:30",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PADI EAST AVENUE",
+        "lat": 13.098,
+        "lng": 80.182,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PADI EAST AVENUE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MANIKANDAPURAM BUS STAND",
+        "lat": 13.108,
+        "lng": 80.168,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANIKANDAPURAM BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR OT",
+        "lat": 13.1189,
+        "lng": 80.1506,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR OT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AVADI CHECKPOST",
+        "lat": 13.115,
+        "lng": 80.105,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AVADI CHECKPOST, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_34",
+    "routeNumber": "34",
+    "routeName": "THIRUVALLUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVALLUR BUS STAND",
+      "PUTTLUR",
+      "SEVAPATET"
+    ],
+    "scheduledTimes": [
+      "06:05",
+      "06:20",
+      "06:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVALLUR BUS STAND",
+        "lat": 13.143,
+        "lng": 79.91,
+        "scheduledTime": "06:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVALLUR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PUTTLUR",
+        "lat": 13.135,
+        "lng": 79.94,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PUTTLUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SEVAPATET",
+        "lat": 13.125,
+        "lng": 79.97,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEVAPATET, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_35",
+    "routeNumber": "35",
+    "routeName": "AYANAVARAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYANAVARAM",
+      "ESI HOSPITAL",
+      "MEDAVAKKAM TANK ROAD",
+      "SECRETARIAT COLONY",
+      "KELLYS",
+      "MUMMY DADY BUS STAND",
+      "KILPAUK GARDEN"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:18",
+      "06:20",
+      "06:23",
+      "06:25",
+      "06:28",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYANAVARAM",
+        "lat": 13.098,
+        "lng": 80.233,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYANAVARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ESI HOSPITAL",
+        "lat": 13.095,
+        "lng": 80.236,
+        "scheduledTime": "06:18",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ESI HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM TANK ROAD",
+        "lat": 13.092,
+        "lng": 80.242,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM TANK ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SECRETARIAT COLONY",
+        "lat": 13.088,
+        "lng": 80.245,
+        "scheduledTime": "06:23",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SECRETARIAT COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KELLYS",
+        "lat": 13.082,
+        "lng": 80.248,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KELLYS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MUMMY DADY BUS STAND",
+        "lat": 13.08,
+        "lng": 80.242,
+        "scheduledTime": "06:28",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUMMY DADY BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KILPAUK GARDEN",
+        "lat": 13.082,
+        "lng": 80.235,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KILPAUK GARDEN, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_36",
+    "routeNumber": "36",
+    "routeName": "DAGAC (AMBEDKAR COLLEGE)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DAGAC (AMBEDKAR COLLEGE)",
+      "SHARMA NAGAR",
+      "ERUKKANCHERY",
+      "KANGACHATHIRAM",
+      "KALPANA",
+      "PORUR TOLL PLAZA"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DAGAC (AMBEDKAR COLLEGE)",
+        "lat": 13.118,
+        "lng": 80.26,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DAGAC (AMBEDKAR COLLEGE), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SHARMA NAGAR",
+        "lat": 13.122,
+        "lng": 80.265,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SHARMA NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ERUKKANCHERY",
+        "lat": 13.13,
+        "lng": 80.26,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ERUKKANCHERY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KANGACHATHIRAM",
+        "lat": 13.138,
+        "lng": 80.255,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANGACHATHIRAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KALPANA",
+        "lat": 13.13,
+        "lng": 80.23,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALPANA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PORUR TOLL PLAZA",
+        "lat": 13.032,
+        "lng": 80.145,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PORUR TOLL PLAZA, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_37",
+    "routeNumber": "37",
+    "routeName": "SRIPERUMBUDUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SRIPERUMBUDUR",
+      "IRUNGATTUKOTTAI",
+      "PAPPANCHATHIRAM",
+      "CHEMBARAMBAKKAM",
+      "NAZARATHPETTAI"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SRIPERUMBUDUR",
+        "lat": 12.97,
+        "lng": 79.945,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SRIPERUMBUDUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "IRUNGATTUKOTTAI",
+        "lat": 12.985,
+        "lng": 79.995,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IRUNGATTUKOTTAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PAPPANCHATHIRAM",
+        "lat": 13.01,
+        "lng": 80.035,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PAPPANCHATHIRAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHEMBARAMBAKKAM",
+        "lat": 13.02,
+        "lng": 80.065,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHEMBARAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NAZARATHPETTAI",
+        "lat": 13.035,
+        "lng": 80.085,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NAZARATHPETTAI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_39",
+    "routeNumber": "39",
+    "routeName": "KANCHIPURAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KANCHIPURAM",
+      "WALAJABAD",
+      "ORAGADAM"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:30",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KANCHIPURAM",
+        "lat": 12.834,
+        "lng": 79.703,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KANCHIPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WALAJABAD",
+        "lat": 12.795,
+        "lng": 79.82,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WALAJABAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ORAGADAM",
+        "lat": 12.835,
+        "lng": 79.955,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ORAGADAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_40",
+    "routeNumber": "40",
+    "routeName": "NATRAJA THEATERE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NATRAJA THEATERE",
+      "CHENNAI CORPORATION (RIPON BUILDING)",
+      "PANTHEON ROAD ( EGMORE RAMADA HOTEL )"
+    ],
+    "scheduledTimes": [
+      "06:15",
+      "06:20",
+      "06:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NATRAJA THEATERE",
+        "lat": 13.088,
+        "lng": 80.275,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NATRAJA THEATERE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHENNAI CORPORATION (RIPON BUILDING)",
+        "lat": 13.083,
+        "lng": 80.278,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHENNAI CORPORATION (RIPON BUILDING), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PANTHEON ROAD ( EGMORE RAMADA HOTEL )",
+        "lat": 13.074,
+        "lng": 80.261,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PANTHEON ROAD ( EGMORE RAMADA HOTEL ), Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_41",
+    "routeNumber": "41",
+    "routeName": "NATHAMUNI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "NATHAMUNI",
+      "K4 POLICE STATION",
+      "18TH MAIN ROAD"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NATHAMUNI",
+        "lat": 13.103,
+        "lng": 80.207,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NATHAMUNI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "K4 POLICE STATION",
+        "lat": 13.09,
+        "lng": 80.215,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "K4 POLICE STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "18TH MAIN ROAD",
+        "lat": 13.085,
+        "lng": 80.218,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "18TH MAIN ROAD, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_42",
+    "routeNumber": "42",
+    "routeName": "CHENGALPATTU",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VALLAM",
+      "CHENGALPATTU (GOVT. HOSPITAL)",
+      "PARANUR TOLLGATE",
+      "SP KOIL"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VALLAM",
+        "lat": 12.715,
+        "lng": 79.98,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALLAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHENGALPATTU (GOVT. HOSPITAL)",
+        "lat": 12.684,
+        "lng": 79.982,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHENGALPATTU (GOVT. HOSPITAL), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PARANUR TOLLGATE",
+        "lat": 12.73,
+        "lng": 80.005,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARANUR TOLLGATE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SP KOIL",
+        "lat": 12.748,
+        "lng": 80.015,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SP KOIL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_43",
+    "routeNumber": "43",
+    "routeName": "RAMAPURAM JUNCTION",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAMAPURAM JUNCTION",
+      "DLF"
+    ],
+    "scheduledTimes": [
+      "06:20",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAMAPURAM JUNCTION",
+        "lat": 13.032,
+        "lng": 80.178,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAMAPURAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DLF",
+        "lat": 13.028,
+        "lng": 80.172,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DLF, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_46",
+    "routeNumber": "46",
+    "routeName": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+      "VIRUGAMBAKKAM SIGNAL",
+      "GERUGAMBAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET)",
+        "lat": 13.065,
+        "lng": 80.198,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALIAMMAN KOIL MAIN ROAD (KOYEMBEDU MARKET), Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIRUGAMBAKKAM SIGNAL",
+        "lat": 13.0537,
+        "lng": 80.2012,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VIRUGAMBAKKAM SIGNAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GERUGAMBAKKAM",
+        "lat": 13.0038,
+        "lng": 80.1384,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GERUGAMBAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_47",
+    "routeNumber": "47",
+    "routeName": "IYYAPANTHANGAL BUS STAND",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "IYYAPANTHANGAL BUS STAND",
+      "IYYAPANTHANGAL HYUNDAI SHOWROOM",
+      "KATTUPAKKAM",
+      "KUMMANACHAVADI (DMART)"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "IYYAPANTHANGAL BUS STAND",
+        "lat": 13.041,
+        "lng": 80.138,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IYYAPANTHANGAL BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "IYYAPANTHANGAL HYUNDAI SHOWROOM",
+        "lat": 13.042,
+        "lng": 80.132,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IYYAPANTHANGAL HYUNDAI SHOWROOM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KATTUPAKKAM",
+        "lat": 13.044,
+        "lng": 80.125,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KATTUPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KUMMANACHAVADI (DMART)",
+        "lat": 13.048,
+        "lng": 80.112,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUMMANACHAVADI (DMART), Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_48",
+    "routeNumber": "48",
+    "routeName": "THIRUVERKADU ARCH",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUVERKADU ARCH",
+      "NOLAMBUR",
+      "VELAMMAL HALL"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUVERKADU ARCH",
+        "lat": 13.065,
+        "lng": 80.135,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVERKADU ARCH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NOLAMBUR",
+        "lat": 13.078,
+        "lng": 80.165,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NOLAMBUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VELAMMAL HALL",
+        "lat": 13.082,
+        "lng": 80.17,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELAMMAL HALL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_49",
+    "routeNumber": "49",
+    "routeName": "AMBEDKAR NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AMBEDKAR NAGAR",
+      "RETTERI",
+      "VINAYAGAPURAM"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AMBEDKAR NAGAR",
+        "lat": 13.135,
+        "lng": 80.215,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBEDKAR NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RETTERI",
+        "lat": 13.125,
+        "lng": 80.208,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RETTERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VINAYAGAPURAM",
+        "lat": 13.132,
+        "lng": 80.202,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VINAYAGAPURAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_50",
+    "routeNumber": "50",
+    "routeName": "GOVARDANAGIRI",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "GOVARDANAGIRI"
+    ],
+    "scheduledTimes": [
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOVARDANAGIRI",
+        "lat": 13.115,
+        "lng": 80.112,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOVARDANAGIRI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_51",
+    "routeNumber": "51",
+    "routeName": "CHINTHAMANI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "CHINTHAMANI",
+      "BLUE STAR",
+      "SHANTHI COLONY",
+      "ANNA ARCH"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "CHINTHAMANI",
+        "lat": 13.085,
+        "lng": 80.222,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHINTHAMANI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "BLUE STAR",
+        "lat": 13.084,
+        "lng": 80.218,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BLUE STAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SHANTHI COLONY",
+        "lat": 13.083,
+        "lng": 80.212,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SHANTHI COLONY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANNA ARCH",
+        "lat": 13.0754,
+        "lng": 80.2176,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANNA ARCH, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_52",
+    "routeNumber": "52",
+    "routeName": "KK NAGAR DEPOT",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KK NAGAR DEPOT",
+      "SIVANPARK",
+      "VALASARAVAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KK NAGAR DEPOT",
+        "lat": 13.035,
+        "lng": 80.201,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KK NAGAR DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SIVANPARK",
+        "lat": 13.038,
+        "lng": 80.195,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SIVANPARK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VALASARAVAKKAM",
+        "lat": 13.0479,
+        "lng": 80.1751,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VALASARAVAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_53",
+    "routeNumber": "53",
+    "routeName": "COLLECTOR NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "COLLECTOR NAGAR",
+      "JJ NAGAR POLICE STATION",
+      "7H BUS DEPOT",
+      "7M BUS DEPOT"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "COLLECTOR NAGAR",
+        "lat": 13.085,
+        "lng": 80.185,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "COLLECTOR NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "JJ NAGAR POLICE STATION",
+        "lat": 13.088,
+        "lng": 80.18,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "JJ NAGAR POLICE STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "7H BUS DEPOT",
+        "lat": 13.089,
+        "lng": 80.175,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "7H BUS DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "7M BUS DEPOT",
+        "lat": 13.091,
+        "lng": 80.172,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "7M BUS DEPOT, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_54",
+    "routeNumber": "54",
+    "routeName": "VANAGARAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VANAGARAM",
+      "PARIVAKKAM SIGNAL",
+      "POONAMALLEE BYPASS"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VANAGARAM",
+        "lat": 13.058,
+        "lng": 80.145,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANAGARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PARIVAKKAM SIGNAL",
+        "lat": 13.052,
+        "lng": 80.118,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PARIVAKKAM SIGNAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "POONAMALLEE BYPASS",
+        "lat": 13.048,
+        "lng": 80.102,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POONAMALLEE BYPASS, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_55",
+    "routeNumber": "55",
+    "routeName": "AYAPAKKAM JUNCTION",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AYAPAKKAM JUNCTION",
+      "DECLATHON"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AYAPAKKAM JUNCTION",
+        "lat": 13.102,
+        "lng": 80.142,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AYAPAKKAM JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DECLATHON",
+        "lat": 13.095,
+        "lng": 80.158,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DECLATHON, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_56",
+    "routeNumber": "56",
+    "routeName": "ICF",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ICF",
+      "PADI SARAVANA STORES",
+      "AMBATTUR INDUSTRIAL ESTATE",
+      "AMBATTUR TELEPHONE EXACHANGE"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:40",
+      "06:50",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ICF",
+        "lat": 13.098,
+        "lng": 80.218,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ICF, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "PADI SARAVANA STORES",
+        "lat": 13.097,
+        "lng": 80.182,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PADI SARAVANA STORES, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR INDUSTRIAL ESTATE",
+        "lat": 13.0906,
+        "lng": 80.1652,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR INDUSTRIAL ESTATE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR TELEPHONE EXACHANGE",
+        "lat": 13.1098,
+        "lng": 80.1558,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR TELEPHONE EXACHANGE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_58",
+    "routeNumber": "58",
+    "routeName": "AMBATTUR ORAGADAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "AMBATTUR ORAGADAM",
+      "AMBATTUR OT"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "AMBATTUR ORAGADAM",
+        "lat": 13.1235,
+        "lng": 80.1592,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR ORAGADAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "AMBATTUR OT",
+        "lat": 13.1189,
+        "lng": 80.1506,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "AMBATTUR OT, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_59",
+    "routeNumber": "59",
+    "routeName": "SENTHIL NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SENTHIL NAGAR",
+      "MADURAVOYAL ERIKARAI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SENTHIL NAGAR",
+        "lat": 13.072,
+        "lng": 80.175,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SENTHIL NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADURAVOYAL ERIKARAI",
+        "lat": 13.065,
+        "lng": 80.155,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADURAVOYAL ERIKARAI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_60",
+    "routeNumber": "60",
+    "routeName": "MUGALIVAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MUGALIVAKKAM",
+      "KOLAPAKKAM",
+      "GERUGAMBAKKAM",
+      "THIRUNEERMALAI"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50",
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MUGALIVAKKAM",
+        "lat": 13.018,
+        "lng": 80.162,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUGALIVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLAPAKKAM",
+        "lat": 13.0084,
+        "lng": 80.1524,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GERUGAMBAKKAM",
+        "lat": 13.0038,
+        "lng": 80.1384,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GERUGAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUNEERMALAI",
+        "lat": 12.965,
+        "lng": 80.115,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUNEERMALAI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_61",
+    "routeNumber": "61",
+    "routeName": "MANGADU",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MANGADU",
+      "KOVUR",
+      "KUNDRATHUR",
+      "DMART",
+      "MADHA COLLEGE",
+      "THIRUMUDIVAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:50",
+      "06:55",
+      "07:00",
+      "07:05",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MANGADU",
+        "lat": 13.028,
+        "lng": 80.12,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MANGADU, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOVUR",
+        "lat": 13.012,
+        "lng": 80.115,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOVUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KUNDRATHUR",
+        "lat": 12.998,
+        "lng": 80.098,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KUNDRATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DMART",
+        "lat": 12.985,
+        "lng": 80.092,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DMART, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADHA COLLEGE",
+        "lat": 12.975,
+        "lng": 80.085,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHA COLLEGE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUMUDIVAKKAM",
+        "lat": 12.962,
+        "lng": 80.082,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUMUDIVAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_63",
+    "routeNumber": "63",
+    "routeName": "CMBT",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "CMBT",
+      "MMDA",
+      "VADAPALANI"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "CMBT",
+        "lat": 13.0694,
+        "lng": 80.1948,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CMBT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MMDA",
+        "lat": 13.064,
+        "lng": 80.208,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MMDA, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VADAPALANI",
+        "lat": 13.0524,
+        "lng": 80.212,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VADAPALANI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_66",
+    "routeNumber": "66",
+    "routeName": "THIRUMANGALAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THIRUMANGALAM",
+      "WAVES"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THIRUMANGALAM",
+        "lat": 13.085,
+        "lng": 80.198,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUMANGALAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WAVES",
+        "lat": 13.082,
+        "lng": 80.192,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WAVES, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_67",
+    "routeNumber": "67",
+    "routeName": "MADHANANDAPURAM",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "MADHANANDAPURAM"
+    ],
+    "scheduledTimes": [
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MADHANANDAPURAM",
+        "lat": 13.025,
+        "lng": 80.148,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHANANDAPURAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_68",
+    "routeNumber": "68",
+    "routeName": "METHA NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "METHA NAGAR",
+      "ANAGAPUTHUR BUS STAND",
+      "RETTAI PILLAIYAR KOVIL,PAMMAL"
+    ],
+    "scheduledTimes": [
+      "06:40",
+      "06:45",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "METHA NAGAR",
+        "lat": 12.982,
+        "lng": 80.138,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "METHA NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANAGAPUTHUR BUS STAND",
+        "lat": 12.972,
+        "lng": 80.125,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANAGAPUTHUR BUS STAND, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "RETTAI PILLAIYAR KOVIL,PAMMAL",
+        "lat": 12.965,
+        "lng": 80.132,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RETTAI PILLAIYAR KOVIL,PAMMAL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_69",
+    "routeNumber": "69",
+    "routeName": "MAHINDRA CITY",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MAHINDRA CITY",
+      "KATTANKOLATHUR",
+      "MARAIMALAI NAGAR"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MAHINDRA CITY",
+        "lat": 12.735,
+        "lng": 80.005,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHINDRA CITY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KATTANKOLATHUR",
+        "lat": 12.752,
+        "lng": 80.022,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KATTANKOLATHUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MARAIMALAI NAGAR",
+        "lat": 12.785,
+        "lng": 80.035,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MARAIMALAI NAGAR, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_70",
+    "routeNumber": "70",
+    "routeName": "KAUVERY HOSPITAL",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KAUVERY HOSPITAL",
+      "CROMPET BUS STAND"
+    ],
+    "scheduledTimes": [
+      "06:55",
+      "07:05"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KAUVERY HOSPITAL",
+        "lat": 12.962,
+        "lng": 80.148,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAUVERY HOSPITAL, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CROMPET BUS STAND",
+        "lat": 12.9516,
+        "lng": 80.1416,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CROMPET BUS STAND, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_71",
+    "routeNumber": "71",
+    "routeName": "NANGANALLUR J.K MAHAL",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "NANGANALLUR J.K MAHAL"
+    ],
+    "scheduledTimes": [
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "NANGANALLUR J.K MAHAL",
+        "lat": 12.982,
+        "lng": 80.188,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NANGANALLUR J.K MAHAL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_75",
+    "routeNumber": "75",
+    "routeName": "POTHERI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "POTHERI",
+      "GUDUVANCHERY",
+      "KOLAPKKAM"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10",
+      "07:20"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "POTHERI",
+        "lat": 12.748,
+        "lng": 80.025,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "POTHERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "GUDUVANCHERY",
+        "lat": 12.842,
+        "lng": 80.062,
+        "scheduledTime": "07:10",
+        "status": "needs_review",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GUDUVANCHERY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOLAPKKAM",
+        "lat": 13.0084,
+        "lng": 80.1524,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOLAPKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": false,
+    "isActive": true
+  },
+  {
+    "routeId": "route_77",
+    "routeNumber": "77",
+    "routeName": "VARATHARAJAN THEATRE",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "VARATHARAJAN THEATRE",
+      "MAPPEDU"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VARATHARAJAN THEATRE",
+        "lat": 12.925,
+        "lng": 80.12,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VARATHARAJAN THEATRE, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MAPPEDU",
+        "lat": 12.905,
+        "lng": 80.135,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAPPEDU, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_79",
+    "routeNumber": "79",
+    "routeName": "MADRAS CHRISTIAN COLLEGE (MCC)",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "MCC COLLEGE"
+    ],
+    "scheduledTimes": [
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MCC COLLEGE",
+        "lat": 12.922,
+        "lng": 80.124,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MCC COLLEGE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_80",
+    "routeNumber": "80",
+    "routeName": "IRUMBULIYUR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "IRUMBULIYUR",
+      "SSM NAGAR",
+      "NEDUKUNDRAM TVS"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:05",
+      "07:15"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "IRUMBULIYUR",
+        "lat": 12.915,
+        "lng": 80.108,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "IRUMBULIYUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SSM NAGAR",
+        "lat": 12.902,
+        "lng": 80.095,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SSM NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NEDUKUNDRAM TVS",
+        "lat": 12.885,
+        "lng": 80.082,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NEDUKUNDRAM TVS, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_81",
+    "routeNumber": "81",
+    "routeName": "MAHALAKSHMI NAGAR",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MAHALAKSHMI NAGAR",
+      "CAMP ROAD"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MAHALAKSHMI NAGAR",
+        "lat": 12.918,
+        "lng": 80.135,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MAHALAKSHMI NAGAR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CAMP ROAD",
+        "lat": 12.912,
+        "lng": 80.142,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CAMP ROAD, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_82",
+    "routeNumber": "82",
+    "routeName": "LAKSHMIPURAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "LAKSHMIPURAM",
+      "MUDICHUR (ATTA COMPANY)"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:05"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "LAKSHMIPURAM",
+        "lat": 12.932,
+        "lng": 80.088,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "LAKSHMIPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MUDICHUR (ATTA COMPANY)",
+        "lat": 12.925,
+        "lng": 80.075,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MUDICHUR (ATTA COMPANY), Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_85",
+    "routeNumber": "85",
+    "routeName": "VELACHERY RAILWAY STATION",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "VELACHERY RAILWAY STATION-KAIVELI"
+    ],
+    "scheduledTimes": [
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "VELACHERY RAILWAY STATION-KAIVELI",
+        "lat": 12.9784,
+        "lng": 80.2185,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VELACHERY RAILWAY STATION-KAIVELI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_86",
+    "routeNumber": "86",
+    "routeName": "SEMBAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SEMBAKKAM",
+      "MADAMBAKKAM JUNCTION"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SEMBAKKAM",
+        "lat": 12.928,
+        "lng": 80.155,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADAMBAKKAM JUNCTION",
+        "lat": 12.915,
+        "lng": 80.162,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADAMBAKKAM JUNCTION, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_87",
+    "routeNumber": "87",
+    "routeName": "GOWRIVAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GOWRIVAKKAM",
+      "SANTOSAHPURAM",
+      "VIJAYANAGARAM",
+      "SBIOA"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10",
+      "07:15",
+      "07:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOWRIVAKKAM",
+        "lat": 12.924,
+        "lng": 80.168,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOWRIVAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SANTOSAHPURAM",
+        "lat": 12.918,
+        "lng": 80.175,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SANTOSAHPURAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VIJAYANAGARAM",
+        "lat": 12.912,
+        "lng": 80.182,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VIJAYANAGARAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SBIOA",
+        "lat": 12.905,
+        "lng": 80.188,
+        "scheduledTime": "07:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SBIOA, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_88",
+    "routeNumber": "88",
+    "routeName": "RAJAKILPAKKAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAJAKILPAKKAM",
+      "KOZHIPANNAI"
+    ],
+    "scheduledTimes": [
+      "07:05",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAJAKILPAKKAM",
+        "lat": 12.922,
+        "lng": 80.148,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAJAKILPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOZHIPANNAI",
+        "lat": 12.915,
+        "lng": 80.152,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOZHIPANNAI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_89",
+    "routeNumber": "89",
+    "routeName": "KAIVELI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KAIVELI JUNCTION",
+      "CHITALAPAKKAM",
+      "CHITALAPAKKAM KOOT ROAD",
+      "MEDAVAKKAM MAMBAKKAM JUNCTION"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:05",
+      "07:10",
+      "07:15"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KAIVELI JUNCTION",
+        "lat": 12.975,
+        "lng": 80.205,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KAIVELI JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHITALAPAKKAM",
+        "lat": 12.935,
+        "lng": 80.172,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHITALAPAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHITALAPAKKAM KOOT ROAD",
+        "lat": 12.93,
+        "lng": 80.178,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHITALAPAKKAM KOOT ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEDAVAKKAM MAMBAKKAM JUNCTION",
+        "lat": 12.918,
+        "lng": 80.19,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEDAVAKKAM MAMBAKKAM JUNCTION, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_90",
+    "routeNumber": "90",
+    "routeName": "BOLLINENI HILLS",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "BOLLINENI HILLS"
+    ],
+    "scheduledTimes": [
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "BOLLINENI HILLS",
+        "lat": 12.908,
+        "lng": 80.195,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BOLLINENI HILLS, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_93",
+    "routeNumber": "93",
+    "routeName": "PALLIKARANAI JEYACHANDRAN",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "PALLIKARANAI JEYACHANDRAN"
+    ],
+    "scheduledTimes": [
+      "07:05"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PALLIKARANAI JEYACHANDRAN",
+        "lat": 12.942,
+        "lng": 80.218,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PALLIKARANAI JEYACHANDRAN, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_96",
+    "routeNumber": "96",
+    "routeName": "KALMANDAPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KALMANDAPAM",
+      "BEACH STATION",
+      "SECRETARIAT",
+      "THIRUVANMIYUR JAYANTHI"
+    ],
+    "scheduledTimes": [
+      "06:10",
+      "06:15",
+      "06:20",
+      "06:35"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KALMANDAPAM",
+        "lat": 13.11,
+        "lng": 80.295,
+        "scheduledTime": "06:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KALMANDAPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "BEACH STATION",
+        "lat": 13.092,
+        "lng": 80.292,
+        "scheduledTime": "06:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "BEACH STATION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SECRETARIAT",
+        "lat": 13.078,
+        "lng": 80.288,
+        "scheduledTime": "06:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SECRETARIAT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "THIRUVANMIYUR JAYANTHI",
+        "lat": 12.9829,
+        "lng": 80.2591,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THIRUVANMIYUR JAYANTHI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_97",
+    "routeNumber": "97",
+    "routeName": "SEMMANCHERI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "SEMMANCHERI",
+      "NAVALUR",
+      "MARINA MALL"
+    ],
+    "scheduledTimes": [
+      "07:15",
+      "07:20",
+      "07:25"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "SEMMANCHERI",
+        "lat": 12.875,
+        "lng": 80.222,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SEMMANCHERI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NAVALUR",
+        "lat": 12.855,
+        "lng": 80.228,
+        "scheduledTime": "07:20",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NAVALUR, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MARINA MALL",
+        "lat": 12.835,
+        "lng": 80.231,
+        "scheduledTime": "07:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MARINA MALL, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_98_ttk_road",
+    "routeNumber": "98",
+    "routeName": "TTK ROAD",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "TTK ROAD",
+      "ALWARPET JUNCTION",
+      "ADAMBAKKAM POLICE BOOTH"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "TTK ROAD",
+        "lat": 13.042,
+        "lng": 80.252,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "TTK ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ALWARPET JUNCTION",
+        "lat": 13.038,
+        "lng": 80.254,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALWARPET JUNCTION, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ADAMBAKKAM POLICE BOOTH",
+        "lat": 12.99,
+        "lng": 80.202,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ADAMBAKKAM POLICE BOOTH, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_98_golden_flats",
+    "routeNumber": "98",
+    "routeName": "GOLDEN FLATS",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "GOLDEN FLATS",
+      "WAVIN"
+    ],
+    "scheduledTimes": [
+      "06:45",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "GOLDEN FLATS",
+        "lat": 13.088,
+        "lng": 80.185,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "GOLDEN FLATS, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "WAVIN",
+        "lat": 13.092,
+        "lng": 80.172,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "WAVIN, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_99",
+    "routeNumber": "99",
+    "routeName": "THILLAI GANGA NAGAR SUBWAY",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THILLAI GANGA NAGAR SUBWAY",
+      "VANUVAMPET CHURCH"
+    ],
+    "scheduledTimes": [
+      "06:55",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THILLAI GANGA NAGAR SUBWAY",
+        "lat": 12.995,
+        "lng": 80.198,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THILLAI GANGA NAGAR SUBWAY, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "VANUVAMPET CHURCH",
+        "lat": 12.988,
+        "lng": 80.195,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "VANUVAMPET CHURCH, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_100",
+    "routeNumber": "100",
+    "routeName": "MADIPAKKAM KEELKATALAI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "KEELKATALAI",
+      "KOVILAMBAKKAM"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:00"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "KEELKATALAI",
+        "lat": 12.958,
+        "lng": 80.185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KEELKATALAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "KOVILAMBAKKAM",
+        "lat": 12.948,
+        "lng": 80.188,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "KOVILAMBAKKAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_102",
+    "routeNumber": "102",
+    "routeName": "MOOLAKADAI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "MOOLAKADAI",
+      "MADHAVARAM ROUNDTANA"
+    ],
+    "scheduledTimes": [
+      "06:25",
+      "06:30"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "MOOLAKADAI",
+        "lat": 13.132,
+        "lng": 80.245,
+        "scheduledTime": "06:25",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MOOLAKADAI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MADHAVARAM ROUNDTANA",
+        "lat": 13.148,
+        "lng": 80.238,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MADHAVARAM ROUNDTANA, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_104",
+    "routeNumber": "104",
+    "routeName": "DAILY THANTHI",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "DAILY THANTHI",
+      "DASAPRAKASH",
+      "ARUMBAKKAM",
+      "NERKUNDRAM"
+    ],
+    "scheduledTimes": [
+      "06:30",
+      "06:35",
+      "06:40",
+      "06:50"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "DAILY THANTHI",
+        "lat": 13.082,
+        "lng": 80.265,
+        "scheduledTime": "06:30",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DAILY THANTHI, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "DASAPRAKASH",
+        "lat": 13.081,
+        "lng": 80.255,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "DASAPRAKASH, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ARUMBAKKAM",
+        "lat": 13.068,
+        "lng": 80.211,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ARUMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NERKUNDRAM",
+        "lat": 13.068,
+        "lng": 80.185,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NERKUNDRAM, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_105",
+    "routeNumber": "105",
+    "routeName": "THATHANKUPPAM",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "THATHANKUPPAM",
+      "ANNA NAGAR WEST DEPOT",
+      "ROHINI THEATRE"
+    ],
+    "scheduledTimes": [
+      "06:35",
+      "06:40",
+      "06:45"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "THATHANKUPPAM",
+        "lat": 13.105,
+        "lng": 80.188,
+        "scheduledTime": "06:35",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "THATHANKUPPAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ANNA NAGAR WEST DEPOT",
+        "lat": 13.092,
+        "lng": 80.198,
+        "scheduledTime": "06:40",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ANNA NAGAR WEST DEPOT, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "ROHINI THEATRE",
+        "lat": 13.072,
+        "lng": 80.201,
+        "scheduledTime": "06:45",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ROHINI THEATRE, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_106",
+    "routeNumber": "106",
+    "routeName": "PORUR BAIKADAI",
+    "shift": "morning",
+    "singleStop": true,
+    "stops": [
+      "PORUR BAIKADAI"
+    ],
+    "scheduledTimes": [
+      "06:55"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "PORUR BAIKADAI",
+        "lat": 13.035,
+        "lng": 80.158,
+        "scheduledTime": "06:55",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "PORUR BAIKADAI, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_108",
+    "routeNumber": "108",
+    "routeName": "ALANDUR METRO",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "ALANDUR METRO",
+      "NANGANALLUR PETROL BUNK",
+      "MEENAMBAKKAM",
+      "CHROMPET SARAVANA STORES"
+    ],
+    "scheduledTimes": [
+      "06:50",
+      "07:00",
+      "07:05",
+      "07:15"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "ALANDUR METRO",
+        "lat": 13.003,
+        "lng": 80.201,
+        "scheduledTime": "06:50",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "ALANDUR METRO, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "NANGANALLUR PETROL BUNK",
+        "lat": 12.985,
+        "lng": 80.192,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "NANGANALLUR PETROL BUNK, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "MEENAMBAKKAM",
+        "lat": 12.978,
+        "lng": 80.182,
+        "scheduledTime": "07:05",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "MEENAMBAKKAM, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "CHROMPET SARAVANA STORES",
+        "lat": 12.954,
+        "lng": 80.145,
+        "scheduledTime": "07:15",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "CHROMPET SARAVANA STORES, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  },
+  {
+    "routeId": "route_110",
+    "routeNumber": "110",
+    "routeName": "RAJENDRA PRASAD ROAD (B)",
+    "shift": "morning",
+    "singleStop": false,
+    "stops": [
+      "RAJENDRA PRASAD ROAD",
+      "SELIYUR POLICE STATION"
+    ],
+    "scheduledTimes": [
+      "07:00",
+      "07:10"
+    ],
+    "stopCoordinates": [
+      {
+        "name": "RAJENDRA PRASAD ROAD",
+        "lat": 12.938,
+        "lng": 80.135,
+        "scheduledTime": "07:00",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "RAJENDRA PRASAD ROAD, Chennai, Tamil Nadu"
+      },
+      {
+        "name": "SELIYUR POLICE STATION",
+        "lat": 12.922,
+        "lng": 80.142,
+        "scheduledTime": "07:10",
+        "status": "ok",
+        "source": "canonical_cache",
+        "confidence": 0.98,
+        "address": "SELIYUR POLICE STATION, Chennai, Tamil Nadu"
+      }
+    ],
+    "allStopsOk": true,
+    "isActive": true
+  }
+]

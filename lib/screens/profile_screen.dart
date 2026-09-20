@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/user_profile.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
+import '../services/notification_service.dart';
 import 'login_screen.dart';
 
 /// Shows the logged-in user's profile data from Firestore.
@@ -30,6 +31,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final _phoneCtrl = TextEditingController();
   bool _isEditing = false;
   bool _isSaving = false;
+  bool _lowDataMode = false;
+  bool _highContrastMap = false;
   UserProfile? _profile;
 
   @override
@@ -45,6 +48,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _profile = profile;
         _nameCtrl.text = profile?.name ?? '';
         _phoneCtrl.text = profile?.phone ?? '';
+        _lowDataMode = profile?.lowDataMode ?? false;
+        _highContrastMap = profile?.highContrastMap ?? false;
       });
     }
   }
@@ -193,14 +198,66 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 14),
 
-                  // Route
-                  _buildReadOnlyTile(
+                  // Transit & Route Information
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'College Transit Details',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+
+                  // Assigned Route with Empty State
+                  _buildTransitTile(
                     label: 'Assigned Route',
-                    value: widget.routeName,
-                    icon: Icons.route,
+                    value: (_profile?.assignedRouteName != null &&
+                            _profile!.assignedRouteName!.isNotEmpty)
+                        ? _profile!.assignedRouteName!
+                        : (widget.routeName.isNotEmpty && widget.routeName != 'Not Assigned')
+                            ? widget.routeName
+                            : 'Route not assigned yet',
+                    icon: Icons.alt_route,
+                    isUnassigned: (_profile?.assignedRouteName == null ||
+                            _profile!.assignedRouteName!.isEmpty) &&
+                        (widget.routeName.isEmpty || widget.routeName == 'Not Assigned'),
+                    emptySubtext:
+                        'Please select your route in route selection or contact college transport administrator.',
+                  ),
+                  const SizedBox(height: 10),
+
+                  // Bus Number
+                  _buildTransitTile(
+                    label: 'Bus Number',
+                    value: (_profile?.assignedBusNumber != null &&
+                            _profile!.assignedBusNumber!.isNotEmpty)
+                        ? _profile!.assignedBusNumber!
+                        : 'Bus # (To be allocated by admin)',
+                    icon: Icons.directions_bus,
+                    isUnassigned: _profile?.assignedBusNumber == null ||
+                        _profile!.assignedBusNumber!.isEmpty,
+                  ),
+                  const SizedBox(height: 10),
+
+                  // Selected Stop
+                  _buildTransitTile(
+                    label: 'Selected Boarding Stop',
+                    value: (_profile?.selectedStopName != null &&
+                            _profile!.selectedStopName!.isNotEmpty)
+                        ? _profile!.selectedStopName!
+                        : 'No stop chosen yet',
+                    icon: Icons.pin_drop,
+                    isUnassigned: _profile?.selectedStopName == null ||
+                        _profile!.selectedStopName!.isEmpty,
+                    emptySubtext:
+                        'Open live tracking and pick your stop for proximity alerts.',
                   ),
 
                   const SizedBox(height: 20),
+
 
                   // ── Preferences & Performance ──
                   const Align(
@@ -221,21 +278,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SwitchListTile(
                           dense: true,
                           title: const Text('Low-Data Mode', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.5)),
-                          subtitle: const Text('Reduces map tile refresh rate to conserve data', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
-                          value: false,
-                          onChanged: (val) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(val ? '🟢 Low-Data mode enabled.' : 'Standard telemetry enabled.')),
-                            );
+                          subtitle: const Text('Reduces map telemetry & polyline refresh rate to conserve data', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
+                          value: _lowDataMode,
+                          activeThumbColor: const Color(0xFF0D47A1),
+                          onChanged: (val) async {
+                            setState(() => _lowDataMode = val);
+                            await _firestoreService.updateUserPreferences(widget.uid, lowDataMode: val);
+                            if (mounted && context.mounted) {
+                              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(val ? '🟢 Low-Data mode enabled.' : 'Standard telemetry enabled.'),
+                                  duration: const Duration(seconds: 2),
+                                ),
+                              );
+                            }
                           },
                         ),
                         const Divider(height: 1),
                         SwitchListTile(
                           dense: true,
                           title: const Text('High-Contrast Map', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.5)),
-                          subtitle: const Text('Enhance visibility of stops and bus markers', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
-                          value: true,
-                          onChanged: (val) {},
+                          subtitle: const Text('Enhance visibility of stops, bus markers, and route paths', style: TextStyle(fontSize: 11.5, color: Colors.grey)),
+                          value: _highContrastMap,
+                          activeThumbColor: const Color(0xFF0D47A1),
+                          onChanged: (val) async {
+                            setState(() => _highContrastMap = val);
+                            await _firestoreService.updateUserPreferences(widget.uid, highContrastMap: val);
+                            if (mounted && context.mounted) {
+                              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(val ? '🎨 High-Contrast map styling enabled.' : 'Standard map styling enabled.'),
+                                  duration: const Duration(seconds: 2),
+                                ),
+                              );
+                            }
+                          },
                         ),
                       ],
                     ),
@@ -258,6 +337,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             borderRadius: BorderRadius.circular(12)),
                       ),
                       onPressed: () async {
+                        final defaultRoute = _profile?.effectiveDefaultRouteId;
+                        if (defaultRoute != null && defaultRoute.isNotEmpty) {
+                          await NotificationService.setDefaultRoute(defaultRoute);
+                        }
+                        await NotificationService.setCurrentViewingRoute(null);
                         await _authService.logout();
                         if (mounted && context.mounted) {
                           Navigator.of(context).pushAndRemoveUntil(
@@ -340,9 +424,96 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           Icon(icon, size: 20, color: Colors.grey[600]),
           const SizedBox(width: 12),
-          Text(value, style: const TextStyle(fontSize: 15)),
+          Expanded(child: Text(value, style: const TextStyle(fontSize: 15))),
         ],
       ),
     );
   }
-}
+
+  Widget _buildTransitTile({
+    required String label,
+    required String value,
+    required IconData icon,
+    bool isUnassigned = false,
+    String? emptySubtext,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: isUnassigned ? const Color(0xFFFFFBEB) : Colors.grey[100],
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isUnassigned ? const Color(0xFFFDE68A) : Colors.grey.shade200,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                icon,
+                size: 18,
+                color: isUnassigned
+                    ? const Color(0xFFD97706)
+                    : const Color(0xFF0D47A1),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: isUnassigned
+                      ? const Color(0xFFB45309)
+                      : Colors.grey.shade700,
+                ),
+              ),
+              if (isUnassigned) ...[
+                const Spacer(),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFEF3C7),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Text(
+                    'Pending',
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFB45309),
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 14.5,
+              fontWeight: FontWeight.bold,
+              color: isUnassigned
+                  ? const Color(0xFF92400E)
+                  : const Color(0xFF1E293B),
+            ),
+          ),
+          if (isUnassigned && emptySubtext != null) ...[
+            const SizedBox(height: 4),
+            Text(
+              emptySubtext,
+              style: TextStyle(
+                fontSize: 11.5,
+                color: Colors.amber.shade900.withValues(alpha: 0.8),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}

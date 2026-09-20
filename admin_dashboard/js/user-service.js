@@ -12,7 +12,8 @@ import {
   setDoc,
   deleteDoc, 
   onSnapshot,
-  serverTimestamp
+  serverTimestamp,
+  writeBatch
 } from "./firebase-config.js";
 
 class UserService {
@@ -36,10 +37,16 @@ class UserService {
           id: d.id,
           name: data.name || "Unnamed User",
           email: data.email || "",
-          phone: data.phone || "N/A",
+          phone: data.phone || data.rollNumber || "N/A",
+          rollNumber: data.rollNumber || "",
           role: data.role || "Student",
-          routeId: data.routeId || "",
-          routeName: data.routeName || "",
+          routeId: data.assignedRouteId || data.routeId || "",
+          routeName: data.assignedRouteName || data.routeName || "",
+          assignedRouteId: data.assignedRouteId || data.routeId || "",
+          assignedRouteName: data.assignedRouteName || data.routeName || "",
+          selectedStopName: data.selectedStopName || "—",
+          selectedStopId: data.selectedStopId || "",
+          selectedStopIndex: data.selectedStopIndex,
           createdAt: data.createdAt || null
         });
       });
@@ -85,14 +92,21 @@ class UserService {
   }
 
   /**
-   * Update student preferred route or driver assigned route
+   * Update student preferred route and stop or driver assigned route
    */
-  async assignRoute(uid, routeId, routeName) {
+  async assignRoute(uid, routeId, routeName, stopName = "") {
     const userRef = doc(db, "users", uid);
-    await updateDoc(userRef, {
+    const payload = {
       routeId: routeId,
-      routeName: routeName || ""
-    });
+      routeName: routeName || "",
+      assignedRouteId: routeId,
+      assignedRouteName: routeName || "",
+      updatedAt: serverTimestamp()
+    };
+    if (stopName) {
+      payload.selectedStopName = stopName;
+    }
+    await updateDoc(userRef, payload);
   }
 
   /**
@@ -107,10 +121,42 @@ class UserService {
       phone: userObj.phone || "",
       role: userObj.role || "Driver",
       routeId: userObj.routeId || "",
+      assignedRouteId: userObj.routeId || "",
       createdAt: serverTimestamp()
     }, { merge: true });
     return uid;
   }
+
+  /**
+   * Batch import students from parsed CSV
+   */
+  async batchImportStudents(studentsList) {
+    if (!studentsList || studentsList.length === 0) return 0;
+    const batch = writeBatch(db);
+
+    studentsList.forEach((st) => {
+      // Use email or clean ID as document key
+      const safeId = st.email ? st.email.replace(/[@.]/g, "_") : `student_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+      const ref = doc(db, "users", safeId);
+      batch.set(ref, {
+        name: st.name || "Student",
+        email: st.email || "",
+        phone: st.phone || "",
+        rollNumber: st.rollNumber || "",
+        role: "Student",
+        routeId: st.routeId || "",
+        assignedRouteId: st.routeId || "",
+        assignedRouteName: st.routeName || st.routeId || "",
+        selectedStopName: st.stopName || "",
+        createdAt: serverTimestamp(),
+        importedVia: "admin_csv_bulk"
+      }, { merge: true });
+    });
+
+    await batch.commit();
+    return studentsList.length;
+  }
 }
 
 export const userService = new UserService();
+

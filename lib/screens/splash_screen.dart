@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/firestore_service.dart';
+import '../services/notification_service.dart';
 import 'login_screen.dart';
-import 'route_selection_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,14 +24,14 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     _animController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 500),
     );
 
     _fadeAnim = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _animController, curve: Curves.easeIn),
     );
 
-    _scaleAnim = Tween<double>(begin: 0.8, end: 1.0).animate(
+    _scaleAnim = Tween<double>(begin: 0.85, end: 1.0).animate(
       CurvedAnimation(parent: _animController, curve: Curves.easeOutBack),
     );
 
@@ -40,43 +40,36 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   Future<void> _checkAuthState() async {
-    // Wait minimum splash duration for smooth branding transition
-    await Future.delayed(const Duration(milliseconds: 1800));
+    // Fast, responsive splash transition (reduced from sluggish delay)
+    await Future.delayed(const Duration(milliseconds: 700));
 
     if (!mounted) return;
 
+    // Run background FCM/route sync without blocking page transition
+    _syncUserDataInBackground();
+
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+      );
+    }
+  }
+
+  void _syncUserDataInBackground() async {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        final role = await _firestoreService.getUserRole(user.uid);
-        if (mounted) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (_) => RouteSelectionScreen(
-                role: role ?? 'Student',
-                uid: user.uid,
-              ),
-            ),
-          );
-        }
-      } else {
-        if (mounted) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => const LoginScreen()),
-          );
+        // Sync FCM token and subscribe to student's default route in background
+        await NotificationService.syncUserToken(user.uid);
+        final profile = await _firestoreService.getUserProfile(user.uid);
+        final defaultRoute = profile?.effectiveDefaultRouteId;
+        if (defaultRoute != null && defaultRoute.isNotEmpty) {
+          await NotificationService.setDefaultRoute(defaultRoute);
+          await NotificationService.setCurrentViewingRoute(null);
         }
       }
-    } catch (e) {
-      if (mounted) {
-        // Fallback to login screen on error
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => const LoginScreen()),
-        );
-      }
-    }
+    } catch (_) {}
   }
 
   @override
@@ -117,13 +110,17 @@ class _SplashScreenState extends State<SplashScreen>
                     ),
                   ),
                   const SizedBox(height: 24),
-                  const Text(
-                    'Campus Express',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      letterSpacing: 1.2,
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24),
+                    child: Text(
+                      'VIT Chennai Bus tracker',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        letterSpacing: 0.8,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 8),

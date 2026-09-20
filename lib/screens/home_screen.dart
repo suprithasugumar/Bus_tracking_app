@@ -27,67 +27,86 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  final Map<int, Widget> _loadedTabs = {};
 
   @override
   void initState() {
     super.initState();
-    // Subscribe to route FCM topic when user enters the screen
-    NotificationService.subscribeToRoute(widget.routeModel.routeId);
+    // Set this route as the active viewing route in background
+    NotificationService.setCurrentViewingRoute(widget.routeModel.routeId);
   }
 
   @override
   void dispose() {
-    // Unsubscribe when leaving
-    NotificationService.unsubscribeFromRoute(widget.routeModel.routeId);
+    // Revert viewing route back to default route
+    NotificationService.setCurrentViewingRoute(null);
     super.dispose();
+  }
+
+  Widget _getTab(int index) {
+    if (_loadedTabs.containsKey(index)) {
+      return _loadedTabs[index]!;
+    }
+    Widget tab;
+    switch (index) {
+      case 0:
+        tab = widget.role.toLowerCase() == 'driver'
+            ? DriverDashboard(
+                uid: widget.uid,
+                routeModel: widget.routeModel,
+              )
+            : StudentTrackingScreen(
+                routeModel: widget.routeModel,
+              );
+        break;
+      case 1:
+        tab = AnnouncementsScreen(
+          routeId: widget.routeModel.routeId,
+          routeName: widget.routeModel.routeName,
+          role: widget.role,
+          uid: widget.uid,
+          displayName: widget.displayName,
+        );
+        break;
+      case 2:
+        tab = TripHistoryScreen(
+          routeId: widget.routeModel.routeId,
+          routeName: widget.routeModel.routeName,
+        );
+        break;
+      case 3:
+      default:
+        tab = ProfileScreen(
+          uid: widget.uid,
+          role: widget.role,
+          routeName: widget.routeModel.routeName,
+        );
+        break;
+    }
+    _loadedTabs[index] = tab;
+    return tab;
   }
 
   @override
   Widget build(BuildContext context) {
-    final screens = [
-      // Tab 0 – Main tracking / dashboard
-      widget.role.toLowerCase() == 'driver'
-          ? DriverDashboard(
-              uid: widget.uid,
-              routeModel: widget.routeModel,
-            )
-          : StudentTrackingScreen(
-              routeModel: widget.routeModel,
-            ),
-
-      // Tab 1 – Announcements
-      AnnouncementsScreen(
-        routeId: widget.routeModel.routeId,
-        routeName: widget.routeModel.routeName,
-        role: widget.role,
-        uid: widget.uid,
-        displayName: widget.displayName,
-      ),
-
-      // Tab 2 – Trip History
-      TripHistoryScreen(
-        routeId: widget.routeModel.routeId,
-        routeName: widget.routeModel.routeName,
-      ),
-
-      // Tab 3 – Profile
-      ProfileScreen(
-        uid: widget.uid,
-        role: widget.role,
-        routeName: widget.routeModel.routeName,
-      ),
-    ];
+    // Ensure current active tab is loaded
+    _getTab(_selectedIndex);
 
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: screens,
+        children: List.generate(
+          4,
+          (i) => _loadedTabs[i] ?? const SizedBox.shrink(),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         selectedItemColor: const Color(0xFF0D47A1),
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
+        selectedFontSize: 11.5,
+        unselectedFontSize: 10.5,
         onTap: (index) {
           if (index == 4) {
             // Logout
@@ -103,11 +122,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.campaign_outlined),
-            label: 'Announcements',
+            label: 'Alerts',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
-            label: 'Trip History',
+            label: 'History',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -120,5 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+
   }
 }

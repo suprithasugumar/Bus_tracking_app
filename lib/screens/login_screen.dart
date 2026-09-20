@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
+import '../services/notification_service.dart';
 import 'route_selection_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -48,6 +49,9 @@ class _LoginScreenState extends State<LoginScreen> {
             );
 
       if (user != null) {
+        // Sync FCM device token with user record in Firestore
+        await NotificationService.syncUserToken(user.uid);
+
         final role = await _firestoreService.getUserRole(user.uid);
 
         // For registration, role is just set – so redirect directly
@@ -77,6 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (mounted) setState(() => _isLoading = false);
     }
   }
+
 
   void _showSnack(String msg) {
     ScaffoldMessenger.of(context).showSnackBar(
